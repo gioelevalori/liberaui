@@ -1,0 +1,29 @@
+/* Nasconde l'input file */
+input[type="file"] {
+  display: none;
+}
+
+/* Stile per il bottone (label) */
+.custom-file-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Effetto hover */
+.custom-file-label:hover {
+  background-color: #0056b3;
+}
+
+/* Nome del file */
+span {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin-left: 10px;
+  color: #333;
+}

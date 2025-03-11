@@ -7,12 +7,13 @@ import { InputNumberComponent } from './input-number/input-number.component';
 import { InputTextareaComponent } from './input-textarea/input-textarea.component';
 import { InputPasswordComponent } from './input-password/input-password.component';
 import { InputDateComponent } from './input-date/input-date.component';
+import { InputFileComponent } from './input-file/input-file.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ButtonComponent, InputTextComponent, InputNumberComponent, 
-    InputTextareaComponent, InputPasswordComponent, InputDateComponent
+  imports: [CommonModule, RouterOutlet, ButtonComponent, InputTextComponent, InputNumberComponent,
+    InputTextareaComponent, InputPasswordComponent, InputDateComponent, InputFileComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
