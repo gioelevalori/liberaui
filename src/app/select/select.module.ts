@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { InputSelectComponent } from './input-select.component';
+import { SelectComponent } from './select.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    InputSelectComponent,
+    SelectComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule, CommonModule
   ],
   providers: [],
   bootstrap: []
 })
-export class InputSelectModule { }
+export class SelectModule { }
