@@ -1,0 +1,18 @@
+.custom-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .primary {
+    background-color: blue;
+    color: white;
+  }
+  
+  .secondary {
+    background-color: gray;
+    color: white;
+  }
+  
