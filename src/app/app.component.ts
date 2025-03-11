@@ -9,12 +9,13 @@ import { InputPasswordComponent } from './input-password/input-password.componen
 import { InputDateComponent } from './input-date/input-date.component';
 import { InputFileComponent } from './input-file/input-file.component';
 import { InputCheckboxComponent } from './input-checkbox/input-checkbox.component';
+import { TableComponent } from './table/table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, ButtonComponent, InputTextComponent, InputNumberComponent,
-    InputTextareaComponent, InputPasswordComponent, InputDateComponent, InputFileComponent, InputCheckboxComponent
+    InputTextareaComponent, InputPasswordComponent, InputDateComponent, InputFileComponent, InputCheckboxComponent, TableComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
