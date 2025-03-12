@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-switch-theme',
   standalone: true,
-  imports: [],
-  template: '<button (click)="toggleTheme()" class="custom-input">{{ isDarkMode ? "🌞 Light Mode" : "🌙 Dark Mode" }}</button>',
+  imports: [CommonModule],
+  template: '<button (click)="toggleTheme()" class="custom-input" [ngClass]="switchColor()">{{ isDarkMode ? "🌞 Light Mode" : "🌙 Dark Mode" }}</button>',
   styleUrl: './switch-theme.component.css',
   encapsulation: ViewEncapsulation.None,
 })
@@ -33,5 +34,9 @@ export class SwitchThemeComponent {
       document.body.classList.remove('dark-theme');
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  public switchColor(): string {
+    return this.isDarkMode ? 'dark-light' : 'dark-theme';
   }
 }
