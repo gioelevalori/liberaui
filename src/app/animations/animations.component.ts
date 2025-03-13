@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './animations.component.css',
   animations: [
     trigger('animation', [
-      // Stato 'in' dinamico
       state('fadeInOut-in', style({ opacity: 1 })),
       state('fadeInOut-out', style({ opacity: 0 })),
       transition('fadeInOut-in <=> fadeInOut-out', animate('2000ms ease-in-out')),
@@ -20,6 +19,10 @@ import { CommonModule } from '@angular/common';
       state('slideInOut-in', style({ transform: 'translateX(0)' })),
       state('slideInOut-out', style({ transform: 'translateX(-100%)' })),
       transition('slideInOut-in <=> slideInOut-out', animate('500ms ease-in-out')),
+
+      state('fadeInDown-in', style({ opacity: 1, transform: 'translateY(0)' })),
+      state('fadeInDown-out', style({ opacity: 0, transform: 'translateY(-50px)' })),
+      transition('fadeInDown-in <=> fadeInDown-out', animate('1000ms ease-out')),
     ])
   ],
 })

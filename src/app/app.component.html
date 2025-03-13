@@ -1,4 +1,4 @@
-<app-animations [animation]="'slideInOut'">
+<app-animations [animation]="'fadeInDown'">
   <app-input-text placeholder="Nome"></app-input-text>
   <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text><br>
   <app-input-number [min]="10" [max]="100" placeholder="Numero"></app-input-number>
@@ -8,7 +8,9 @@
   <app-button color="Black">Invia</app-button>
   <app-input-file></app-input-file>
   <app-input-checkbox></app-input-checkbox>
+</app-animations>
 
+<app-animations [animation]="'fadeInOut'">
   <app-table>
     <thead>
       <tr>
@@ -31,7 +33,9 @@
       <!-- and so on... -->
     </tbody>
   </app-table>
+</app-animations>
 
+<app-animations [animation]="'slideInOut'">
   <app-select [options]="cities"></app-select>
 
   <app-switch-theme></app-switch-theme>
