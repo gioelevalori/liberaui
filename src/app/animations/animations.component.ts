@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 
@@ -7,23 +7,31 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div [@fadeInOut]="state"><ng-content></ng-content></div>
+    <div [@animation]="state"><ng-content></ng-content></div>
   `,
   styleUrl: './animations.component.css',
   animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 1 })),
-      state('out', style({ opacity: 0 })),
-      transition('in <=> out', animate('2000ms ease-in-out')),
+    trigger('animation', [
+      // Stato 'in' dinamico
+      state('fadeInOut-in', style({ opacity: 1 })),
+      state('fadeInOut-out', style({ opacity: 0 })),
+      transition('fadeInOut-in <=> fadeInOut-out', animate('2000ms ease-in-out')),
+
+      state('slideInOut-in', style({ transform: 'translateX(0)' })),
+      state('slideInOut-out', style({ transform: 'translateX(-100%)' })),
+      transition('slideInOut-in <=> slideInOut-out', animate('500ms ease-in-out')),
     ])
   ],
 })
 export class AnimationsComponent {
-  state: 'in' | 'out' = 'out';
+  @Input() animation: string = '';
+  state: string = this.animation + '-out';
 
   ngOnInit() {
+    this.state = `${this.animation}-out`; // Imposta lo stato iniziale
+
     setTimeout(() => {
-      this.state = 'in'; // Attiva l'animazione dopo il caricamento
+      this.state = `${this.animation}-in`; // Attiva l'animazione dopo il caricamento
     });
   }
 }
