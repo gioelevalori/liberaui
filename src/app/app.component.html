@@ -1,3 +1,6 @@
+<app-navigation-bar></app-navigation-bar>
+
+
 <app-animations [animation]="'fadeInDown'">
   <app-input-text placeholder="Nome"></app-input-text>
   <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text><br>
@@ -15,20 +18,26 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Points</th>
-        <th>Points</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Adress</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Dom</td>
-        <td>6000</td>
-        <td>6000</td>
+        <td>Francesco</td>
+        <td>Rossi</td>
+        <td>francescorossigmail.com</td>
+        <td>3435675457</td>
+        <td>Contrada Verdi</td>
       </tr>
       <tr>
         <td>Melissa</td>
-        <td>5150</td>
-        <td>5150</td>
+        <td>Bianchi</td>
+        <td>melissabianchigmail.com</td>
+        <td>3546757545</td>
+        <td>Contrada Rossi</td>
       </tr>
       <!-- and so on... -->
     </tbody>

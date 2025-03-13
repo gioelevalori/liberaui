@@ -13,12 +13,14 @@ import { TableComponent } from './table/table.component';
 import { SelectComponent, SelectOption } from './select/select.component';
 import { SwitchThemeComponent } from "./switch-theme/switch-theme.component";
 import { AnimationsComponent } from './animations/animations.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, ButtonComponent, InputTextComponent, InputNumberComponent,
-    InputTextareaComponent, InputPasswordComponent, InputDateComponent, InputFileComponent, InputCheckboxComponent, TableComponent, SelectComponent, SwitchThemeComponent, AnimationsComponent],
+    InputTextareaComponent, InputPasswordComponent, InputDateComponent, InputFileComponent, InputCheckboxComponent, TableComponent, SelectComponent, SwitchThemeComponent,
+    AnimationsComponent, NavigationBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
