@@ -1,38 +1,41 @@
-<app-input-text placeholder="Nome"></app-input-text>
-<app-input-text [disabled]="true" placeholder="Cognome"></app-input-text><br>
-<app-input-number [min]="10" [max]="100" placeholder="Numero"></app-input-number>
-<app-input-password placeholder="Password"></app-input-password>
-<app-input-date></app-input-date><br>
-<app-input-textarea placeholder="Testo"></app-input-textarea><br>
-<app-button color="Black">Invia</app-button>
-<app-input-file></app-input-file>
-<app-input-checkbox></app-input-checkbox>
+<app-animations>
+  <app-input-text placeholder="Nome"></app-input-text>
+  <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text><br>
+  <app-input-number [min]="10" [max]="100" placeholder="Numero"></app-input-number>
+  <app-input-password placeholder="Password"></app-input-password>
+  <app-input-date></app-input-date><br>
+  <app-input-textarea placeholder="Testo"></app-input-textarea><br>
+  <app-button color="Black">Invia</app-button>
+  <app-input-file></app-input-file>
+  <app-input-checkbox></app-input-checkbox>
 
-<app-table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Points</th>
-      <th>Points</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Dom</td>
-      <td>6000</td>
-      <td>6000</td>
-    </tr>
-    <tr>
-      <td>Melissa</td>
-      <td>5150</td>
-      <td>5150</td>
-    </tr>
-    <!-- and so on... -->
-  </tbody>
-</app-table>
+  <app-table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Points</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dom</td>
+        <td>6000</td>
+        <td>6000</td>
+      </tr>
+      <tr>
+        <td>Melissa</td>
+        <td>5150</td>
+        <td>5150</td>
+      </tr>
+      <!-- and so on... -->
+    </tbody>
+  </app-table>
 
-<app-select [options]="cities"></app-select>
+  <app-select [options]="cities"></app-select>
 
-<app-switch-theme></app-switch-theme>
+  <app-switch-theme></app-switch-theme>
+
+</app-animations>
 
 <router-outlet></router-outlet>

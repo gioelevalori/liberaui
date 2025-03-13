@@ -12,12 +12,13 @@ import { InputCheckboxComponent } from './input-checkbox/input-checkbox.componen
 import { TableComponent } from './table/table.component';
 import { SelectComponent, SelectOption } from './select/select.component';
 import { SwitchThemeComponent } from "./switch-theme/switch-theme.component";
+import { AnimationsComponent } from './animations/animations.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, ButtonComponent, InputTextComponent, InputNumberComponent,
-    InputTextareaComponent, InputPasswordComponent, InputDateComponent, InputFileComponent, InputCheckboxComponent, TableComponent, SelectComponent, SwitchThemeComponent],
+    InputTextareaComponent, InputPasswordComponent, InputDateComponent, InputFileComponent, InputCheckboxComponent, TableComponent, SelectComponent, SwitchThemeComponent, AnimationsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

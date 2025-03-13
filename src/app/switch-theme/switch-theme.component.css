@@ -24,7 +24,7 @@ body {
   color: gray;
 }
 
-.dark-theme {
+.dark-theme .custom-input {
   background-color: #333;
   color: white;
 }
