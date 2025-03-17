@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { ButtonSiteComponent } from './site/buttonSite/buttonSite.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ButtonSiteComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

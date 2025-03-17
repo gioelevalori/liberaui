@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import Prism from 'prismjs';
 
 @Component({
@@ -6,7 +6,8 @@ import Prism from 'prismjs';
   standalone: true,
   imports: [],
   template: '<pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code></pre>',
-  styleUrl: './code.component.css'
+  styleUrl: './code.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class CodeComponent {
   @ViewChild('codeBlock', { static: false }) codeBlock!: ElementRef;
