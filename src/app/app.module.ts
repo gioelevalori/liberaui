@@ -1,19 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { InputTextComponent } from './components/input-text/input-text.component';
-import { ButtonModule } from './button/button.module';
-import { InputTextModule } from './components/input-text/input-text.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    InputTextComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    ButtonModule,
-    InputTextModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
