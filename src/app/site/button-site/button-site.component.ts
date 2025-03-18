@@ -11,5 +11,5 @@ import { ButtonComponent } from '../../components/button/button.component';
   styleUrl: './button-site.component.css'
 })
 export class ButtonSiteComponent {
-  public codeImportButton = `import { ButtonComponent } from './components/button/button.component'`;
+  public codeImport = `import { ButtonComponent } from './components/button/button.component'`;
 }

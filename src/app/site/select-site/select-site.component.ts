@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { SelectComponent, SelectOption } from '../../components/select/select.component';
+import { CodeComponent } from '../../components/code/code.component';
 
 @Component({
   selector: 'app-select-site',
   standalone: true,
-  imports: [SelectComponent],
+  imports: [SelectComponent, CodeComponent],
   templateUrl: './select-site.component.html',
   styleUrl: './select-site.component.css'
 })
@@ -16,4 +17,6 @@ export class SelectSiteComponent {
     { label: 'Istanbul', value: 'IST' },
     { label: 'Paris', value: 'PRS' }
   ];
+
+  public codeImport = `import { SelectComponent } from '../../components/select/select.component'`;
 }
