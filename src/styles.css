@@ -127,3 +127,8 @@ textarea {
   font-weight: 900;
   font-style: italic;
 }
+
+.content-page {
+  width: 60%;
+  margin: 0 auto;
+}
