@@ -1,24 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-side-navigation',
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div id="mySidenav" [ngClass]="{'open': isOpen}" class="sidenav">
+    <div id="mySidenav" [ngClass]="{'minWidth': isOpen} " class="sidenav">
       <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+      <ng-content></ng-content>
     </div>
-    <span style="font-size:30px;cursor:pointer" (click)="openNav()">open</span>
+    <span style="font-size:30px;cursor:pointer" (click)="openNav()">X</span>
   `,
-  styleUrls: ['./side-navigation.component.css']
+  styleUrls: ['./side-navigation.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SideNavigationComponent {
   public isOpen = false;
+  public fullWidth = false;
   public openNav() {
     this.isOpen = true;
   }

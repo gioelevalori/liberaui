@@ -7,8 +7,8 @@ import { ButtonComponent } from '../../components/button/button.component';
   selector: 'app-button-site',
   standalone: true,
   imports: [ButtonComponent, CodeComponent, RouterModule],
-  templateUrl: './buttonSite.component.html',
-  styleUrl: './buttonSite.component.css'
+  templateUrl: './button-site.component.html',
+  styleUrl: './button-site.component.css'
 })
 export class ButtonSiteComponent {
   public codeImportButton = `import { ButtonComponent } from './components/button/button.component'`;

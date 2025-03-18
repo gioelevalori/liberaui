@@ -1,10 +1,19 @@
 import { Routes } from '@angular/router';
-import { ButtonSiteComponent } from './site/buttonSite/buttonSite.component';
+import { ButtonSiteComponent } from './site/button-site/button-site.component';
 import { SelectSiteComponent } from './site/select-site/select-site.component';
 import { TableSiteComponent } from './site/table-site/table-site.component';
 import { HomeComponent } from './site/home/home.component';
 import { InputTextSiteComponent } from './site/input-text-site/input-text-site.component';
 import { InputNumberSiteComponent } from './site/input-number-site/input-number-site.component';
+import { InputFileSiteComponent } from './site/input-file-site/input-file-site.component';
+import { InputPasswordSiteComponent } from './site/input-password-site/input-password-site.component';
+import { InputDateSiteComponent } from './site/input-date-site/input-date-site.component';
+import { InputTextareaSiteComponent } from './site/input-textarea-site/input-textarea-site.component';
+import { InputCheckboxSiteComponent } from './site/input-checkbox-site/input-checkbox-site.component';
+import { SwitchThemeSiteComponent } from './site/switch-theme-site/switch-theme-site.component';
+import { NavigationBarSiteComponent } from './site/navigation-bar-site/navigation-bar-site.component';
+import { SideNavigationSiteComponent } from './site/side-navigation-site/side-navigation-site.component';
+import { AnimationsSiteComponent } from './site/animations-site/animations-site.component';
 
 export const routes: Routes = [
   { path: 'button', component: ButtonSiteComponent },
@@ -12,5 +21,14 @@ export const routes: Routes = [
   { path: 'table', component: TableSiteComponent },
   { path: 'input-text', component: InputTextSiteComponent },
   { path: 'input-number', component: InputNumberSiteComponent },
+  { path: 'input-file', component: InputFileSiteComponent },
+  { path: 'input-pasword', component: InputPasswordSiteComponent },
+  { path: 'input-date', component: InputDateSiteComponent },
+  { path: 'input-textarea', component: InputTextareaSiteComponent },
+  { path: 'input-checkbox', component: InputCheckboxSiteComponent },
+  { path: 'switch-theme', component: SwitchThemeSiteComponent },
+  { path: 'navigation-bar', component: NavigationBarSiteComponent },
+  { path: 'side-navigation', component: SideNavigationSiteComponent },
+  { path: 'animations', component: AnimationsSiteComponent },
   { path: '**', component: HomeComponent }
 ];

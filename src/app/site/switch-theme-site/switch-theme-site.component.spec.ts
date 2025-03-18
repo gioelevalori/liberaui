@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SwitchThemeSiteComponent } from './switch-theme-site.component';
 
-import { ButtonSiteComponent } from './button.component';
-
-describe('ButtonComponent', () => {
-  let component: ButtonSiteComponent;
-  let fixture: ComponentFixture<ButtonSiteComponent>;
+describe('SwitchThemeSiteComponent', () => {
+  let component: SwitchThemeSiteComponent;
+  let fixture: ComponentFixture<SwitchThemeSiteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonSiteComponent]
+      imports: [SwitchThemeSiteComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(ButtonSiteComponent);
+    fixture = TestBed.createComponent(SwitchThemeSiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

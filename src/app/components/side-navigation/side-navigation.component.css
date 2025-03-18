@@ -39,10 +39,13 @@
   transition: width 0.3s ease-in-out;
 }
 
-.sidenav.open {
+.sidenav.fullWidth {
   width: 100%;
 }
 
+.sidenav.minWidth {
+  width: 30%;
+}
 
 @media screen and (max-height: 450px) {
   .sidenav {
