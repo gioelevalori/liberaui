@@ -24,7 +24,9 @@
   }
 
   .custom-button:disabled {
-    background-color: #ddd;
+    opacity: 0.3;
     cursor: not-allowed;
-  }  
+    pointer-events: none;
+  }
+   
   
