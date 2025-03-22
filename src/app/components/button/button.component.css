@@ -22,4 +22,9 @@
     background-color: gray;
     color: white;
   }
+
+  .custom-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }  
   

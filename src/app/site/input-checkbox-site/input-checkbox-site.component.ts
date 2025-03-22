@@ -11,4 +11,6 @@ import { CodeComponent } from '../../components/code/code.component';
 })
 export class InputCheckboxSiteComponent {
   public codeImport = `import { InputCheckboxComponent } from '../../components/input-checkbox/input-checkbox.component';`;
+  public codeDisabled = `<app-input-checkbox [disabled]="true"></app-input-checkbox>`;
+  public codeColor = `<app-input-checkbox color="yellow"></app-input-checkbox>`;
 }
