@@ -1,4 +1,4 @@
-.custom-button {
+.custom-button, a {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -7,6 +7,7 @@
     transition: filter 0.3s ease;
     color: white;
     margin: 0.5rem;
+  text-decoration: none;
   }
 
   .custom-button:hover {
@@ -28,5 +29,10 @@
     cursor: not-allowed;
     pointer-events: none;
   }
+
+a {
+  color: white!important;
+  text-decoration: none;
+}
    
   

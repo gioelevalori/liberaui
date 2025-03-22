@@ -132,3 +132,8 @@ textarea {
   width: 80%;
   margin: 0 auto;
 }
+
+.link-button {
+  color: white;
+  text-decoration: none;
+}

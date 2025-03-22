@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
+    <ng-content></ng-content>
   </div>`,
   styleUrl: './navigation-bar.component.css'
 })

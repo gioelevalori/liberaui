@@ -14,4 +14,10 @@ export class ButtonSiteComponent {
   public codeImport = `import { ButtonComponent } from './components/button/button.component'`;
   public codeColor = `<app-button color="orange">Invia</app-button>`;
   public codeDisabled = `  <app-button color="blue" [disabled]="true">Invia</app-button>`;
+  public codeLink = `
+  <app-button color="blue">
+    <a href="https://angular.dev/" target="_blank" rel="noopener noreferrer" class="link-button">
+      External
+    </a>
+  </app-button>`;
 }
