@@ -5,7 +5,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-  <table class="styled-table"><ng-content></ng-content></table>`,
+  <table class="styled-table">
+    <ng-content></ng-content>
+  </table>`,
   styleUrl: './table.component.css',
   encapsulation: ViewEncapsulation.None,
 })

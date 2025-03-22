@@ -1,3 +1,7 @@
 span {
   font-family: "Fira Code", monospace;
 }
+
+pre {
+  border-radius: 20px;
+}
