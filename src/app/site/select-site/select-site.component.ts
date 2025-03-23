@@ -19,4 +19,6 @@ export class SelectSiteComponent {
   ];
 
   public codeImport = `import { SelectComponent } from '../../components/select/select.component'`;
+  public codeSelect = `<app-select [options]="cities"></app-select>`;
+  public codeDisabled = `<app-select [options]="cities" [disabled]="true"></app-select>`;
 }

@@ -11,4 +11,5 @@ import { CodeComponent } from '../../components/code/code.component';
 })
 export class InputDateSiteComponent {
   public codeImport = `import { InputDateComponent } from '../../components/input-date/input-date.component';`;
+  public codeDate = `<app-input-date></app-input-date>`;
 }

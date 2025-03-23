@@ -1,18 +1,30 @@
 <div class="content-page">
+  <h1>Animations</h1>
+  <p>Animations is an extension to standard input element with theming and keyfiltering.</p>
+  <app-code>{{codeImport}}</app-code>
+
+  <h2>FadeInDown</h2>
+  <p>FadeInDown is an extension to standard input element with theming and keyfiltering.</p>
   <app-animations [animation]="'fadeInDown'">
     <app-input-text placeholder="Nome"></app-input-text>
     <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
   </app-animations>
+  <app-code>{{codeFadeInDown}}</app-code>
 
+  <h2>FadeInOut</h2>
+  <p>FadeInOut is an extension to standard input element with theming and keyfiltering.</p>
   <app-animations [animation]="'fadeInOut'">
     <app-input-text placeholder="Nome"></app-input-text>
     <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
   </app-animations>
+  <app-code>{{codeFadeInOut}}</app-code>
 
+  <h2>SlideInOut</h2>
+  <p>SlideInOut is an extension to standard input element with theming and keyfiltering.</p>
   <app-animations [animation]="'slideInOut'">
     <app-input-text placeholder="Nome"></app-input-text>
     <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
   </app-animations>
+  <app-code>{{codeSlideInOut}}</app-code>
 
-  <app-code>{{codeImport}}</app-code>
 </div>

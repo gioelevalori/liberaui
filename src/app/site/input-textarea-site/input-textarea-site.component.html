@@ -1,4 +1,12 @@
 <div class="content-page">
-  <app-input-textarea placeholder="Testo"></app-input-textarea>
+  <h1>Input Textarea</h1>
+  <p>InputTextarea is an extension to standard input element with theming and keyfiltering.</p>
   <app-code>{{codeImport}}</app-code>
+  
+  <app-input-textarea placeholder="Testo"></app-input-textarea>
+  <app-code>{{codeTextarea}}</app-code>
+
+  <h2>Disabled</h2>
+  <app-input-textarea placeholder="Testo" [disabled]="true"></app-input-textarea>
+  <app-code>{{codeDisabled}}</app-code>
 </div>

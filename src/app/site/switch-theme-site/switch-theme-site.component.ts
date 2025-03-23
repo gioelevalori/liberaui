@@ -11,4 +11,5 @@ import { CodeComponent } from '../../components/code/code.component';
 })
 export class SwitchThemeSiteComponent {
   public codeImport = `import { SwitchThemeComponent } from '../../components/switch-theme/switch-theme.component';`;
+  public codeSwitchTheme = `<app-switch-theme></app-switch-theme>`;
 }

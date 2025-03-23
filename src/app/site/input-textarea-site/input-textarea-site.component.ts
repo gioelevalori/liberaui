@@ -11,4 +11,6 @@ import { CodeComponent } from '../../components/code/code.component';
 })
 export class InputTextareaSiteComponent {
   public codeImport = `import { InputTextareaComponent } from '../../components/input-textarea/input-textarea.component';`;
+  public codeTextarea = `<app-input-textarea placeholder="Testo"></app-input-textarea>`;
+  public codeDisabled = `<app-input-textarea placeholder="Testo" [disabled]="true"></app-input-textarea>`;
 }

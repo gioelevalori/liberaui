@@ -11,4 +11,6 @@ import { CodeComponent } from '../../components/code/code.component';
 })
 export class InputTextSiteComponent {
   public codeImport = `import { InputTextComponent } from '../../components/input-text/input-text.component';`;
+  public codeInputText = `<app-input-text placeholder="Nome"></app-input-text>`;
+  public codeDisabled = `<app-input-text placeholder="Nome" [disabled]="true"></app-input-text>`;
 }

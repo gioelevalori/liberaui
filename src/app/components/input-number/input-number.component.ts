@@ -13,5 +13,4 @@ export class InputNumberComponent {
   @Input() min: number = 0;
   @Input() max: number = 0;
   @Input() disabled: boolean = false;
-
 }

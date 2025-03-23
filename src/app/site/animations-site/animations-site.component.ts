@@ -12,4 +12,19 @@ import { CodeComponent } from '../../components/code/code.component';
 })
 export class AnimationsSiteComponent {
   public codeImport = `import { AnimationsComponent } from '../../components/animations/animations.component';`;
+
+  public codeFadeInDown = `<app-animations [animation]="'fadeInDown'">
+    <app-input-text placeholder="Nome"></app-input-text>
+    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
+    </app-animations>'`;
+
+  public codeFadeInOut = `<app-animations [animation]="'fadeInOut'">
+    <app-input-text placeholder="Nome"></app-input-text>
+    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
+    </app-animations>`;
+
+  public codeSlideInOut = `<app-animations [animation]="'slideInOut'">
+    <app-input-text placeholder="Nome"></app-input-text>
+    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
+    </app-animations>`;
 }

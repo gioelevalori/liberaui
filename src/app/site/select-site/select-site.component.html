@@ -1,4 +1,13 @@
 <div class="content-page">
-  <app-select [options]="cities"></app-select>
+  <h1>Select</h1>
+  <p>Select is a form control for selecting a value from a set of options.</p>
   <app-code>{{codeImport}}</app-code>
+
+  <app-select [options]="cities"></app-select>
+  <app-code>{{codeSelect}}</app-code>
+
+  <h2>Select</h2>
+  <p>Select is a form control for selecting a value from a set of options.</p>
+  <app-select [options]="cities" [disabled]="true"></app-select>
+  <app-code>{{codeDisabled}}</app-code>
 </div>

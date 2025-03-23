@@ -11,4 +11,6 @@ import { CodeComponent } from '../../components/code/code.component';
 })
 export class InputPasswordSiteComponent {
   public codeImport = `import { InputPasswordComponent } from '../../components/input-password/input-password.component';`;
+  public codeInputPassword = `<app-input-password placeholder="Password"></app-input-password>`;
+  public codeDisabled = `<app-input-password placeholder="Password" [disabled]="true"></app-input-password>`;
 }

@@ -11,5 +11,6 @@ import { CodeComponent } from '../../components/code/code.component';
 })
 export class InputNumberSiteComponent {
   public codeImport = `import { InputNumberComponent } from '../../components/input-number/input-number.component';`;
-
+  public codeInputNumber = `<app-input-number placeholder="Numero" [min]="5" [max]="10"></app-input-number>`;
+  public codeDisabled = `<app-input-number placeholder="Numero" [min]="5" [max]="10" [disabled]="true"></app-input-number>`;
 }

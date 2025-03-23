@@ -10,5 +10,6 @@ import { CodeComponent } from '../../components/code/code.component';
   styleUrl: './input-file-site.component.css'
 })
 export class InputFileSiteComponent {
-  public codeImport = `import { InputDateComponent } from '../../components/input-date/input-date.component';`;
+  public codeImport = `import { InputFileComponent } from '../../components/input-file/input-file.component';`;
+  public codeFileUpload = `<app-input-file></app-input-file>`;
 }
