@@ -14,9 +14,12 @@ import { SwitchThemeSiteComponent } from './site/switch-theme-site/switch-theme-
 import { NavigationBarSiteComponent } from './site/navigation-bar-site/navigation-bar-site.component';
 import { SideNavigationSiteComponent } from './site/side-navigation-site/side-navigation-site.component';
 import { AnimationsSiteComponent } from './site/animations-site/animations-site.component';
+import { FixedSideBarSiteComponent } from './site/fixed-side-bar-site/fixed-side-bar-site.component';
+import { ComponentsComponent } from './site/components/components.component';
 
 export const routes: Routes = [
-  { path: 'button', component: ButtonSiteComponent },
+  { path: 'components', component: ComponentsComponent },
+  { path: 'components/button', component: ButtonSiteComponent },
   { path: 'select', component: SelectSiteComponent },
   { path: 'table', component: TableSiteComponent },
   { path: 'input-text', component: InputTextSiteComponent },
@@ -30,5 +33,6 @@ export const routes: Routes = [
   { path: 'navigation-bar', component: NavigationBarSiteComponent },
   { path: 'side-navigation', component: SideNavigationSiteComponent },
   { path: 'animations', component: AnimationsSiteComponent },
+  { path: 'fixed-side-bar', component: FixedSideBarSiteComponent },
   { path: '**', component: HomeComponent }
 ];
