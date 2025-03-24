@@ -19,7 +19,7 @@ import { ComponentsComponent } from './site/components/components.component';
 
 export const routes: Routes = [
   { path: 'components', component: ComponentsComponent },
-  { path: 'components/button', component: ButtonSiteComponent },
+  { path: 'button', component: ButtonSiteComponent },
   { path: 'select', component: SelectSiteComponent },
   { path: 'table', component: TableSiteComponent },
   { path: 'input-text', component: InputTextSiteComponent },

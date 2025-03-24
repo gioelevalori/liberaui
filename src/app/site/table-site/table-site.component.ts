@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TableComponent } from '../../components/table/table.component';
 import { CodeComponent } from '../../components/code/code.component';
+import { ComponentsComponent } from '../components/components.component';
 
 @Component({
   selector: 'app-table-site',
   standalone: true,
-  imports: [TableComponent, CodeComponent],
+  imports: [TableComponent, CodeComponent, ComponentsComponent],
   templateUrl: './table-site.component.html',
   styleUrl: './table-site.component.css'
 })

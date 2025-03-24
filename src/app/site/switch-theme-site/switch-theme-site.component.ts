@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { SwitchThemeComponent } from '../../components/switch-theme/switch-theme.component';
 import { CodeComponent } from '../../components/code/code.component';
+import { ComponentsComponent } from '../components/components.component';
 
 @Component({
   selector: 'app-switch-theme-site',
   standalone: true,
-  imports: [SwitchThemeComponent, CodeComponent],
+  imports: [SwitchThemeComponent, CodeComponent, ComponentsComponent],
   templateUrl: './switch-theme-site.component.html',
   styleUrl: './switch-theme-site.component.css'
 })
