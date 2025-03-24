@@ -3,11 +3,12 @@ import { CodeComponent } from '../../components/code/code.component';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from '../../components/button/button.component';
 import { ComponentsComponent } from '../components/components.component';
+import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-button-site',
   standalone: true,
-  imports: [ButtonComponent, CodeComponent, RouterModule, ComponentsComponent],
+  imports: [ButtonComponent, CodeComponent, RouterModule, ComponentsComponent, AnimationsComponent],
   templateUrl: './button-site.component.html',
   styleUrl: './button-site.component.css'
 })

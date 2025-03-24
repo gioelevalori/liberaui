@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-navigation-bar',
   standalone: true,
   imports: [],
-  template: `<div class="topnav custom-input">
+  template: `<div class="topnav custom-nav">
     <ng-content></ng-content>
   </div>`,
   styleUrl: './navigation-bar.component.css'

@@ -1,14 +1,16 @@
 <app-components></app-components>
 
-<div class="content-page">
-  <h1>Input Text</h1>
-  <p>InputText is an extension to standard input element with theming and keyfiltering.</p>
-  <app-code>{{codeImport}}</app-code>
+<app-animations [animation]="'fadeInDown'">
+  <div class="content-page">
+    <h1>Input Text</h1>
+    <p>InputText is an extension to standard input element with theming and keyfiltering.</p>
+    <app-code>{{codeImport}}</app-code>
 
-  <app-input-text placeholder="Nome"></app-input-text>
-  <app-code>{{codeInputText}}</app-code>
+    <app-input-text placeholder="Nome"></app-input-text>
+    <app-code>{{codeInputText}}</app-code>
 
-  <h2>Disabled</h2>
-  <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
-  <app-code>{{codeDisabled}}</app-code>
-</div>
+    <h2>Disabled</h2>
+    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
+    <app-code>{{codeDisabled}}</app-code>
+  </div>
+</app-animations>

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { InputTextareaComponent } from '../../components/input-textarea/input-textarea.component';
 import { CodeComponent } from '../../components/code/code.component';
 import { ComponentsComponent } from '../components/components.component';
+import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-input-textarea-site',
   standalone: true,
-  imports: [InputTextareaComponent, CodeComponent, ComponentsComponent],
+  imports: [InputTextareaComponent, CodeComponent, ComponentsComponent, AnimationsComponent],
   templateUrl: './input-textarea-site.component.html',
   styleUrl: './input-textarea-site.component.css'
 })

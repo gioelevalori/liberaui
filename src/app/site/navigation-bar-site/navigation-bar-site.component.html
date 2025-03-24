@@ -1,6 +1,8 @@
 <app-components></app-components>
 
-<div class="content-page">
-  <app-navigation-bar></app-navigation-bar>
-  <app-code>{{codeImport}}</app-code>
-</div>
+<app-animations [animation]="'fadeInDown'">
+  <div class="content-page">
+    <app-navigation-bar></app-navigation-bar>
+    <app-code>{{codeImport}}</app-code>
+  </div>
+</app-animations>

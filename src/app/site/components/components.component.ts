@@ -6,11 +6,11 @@ import { FixedSideBarComponent } from '../../components/fixed-side-bar/fixed-sid
 @Component({
   selector: 'app-components',
   standalone: true,
-  imports: [    
+  imports: [
     CommonModule,
-      RouterOutlet,
-      RouterModule,
-      FixedSideBarComponent
+    RouterOutlet,
+    RouterModule,
+    FixedSideBarComponent
   ],
   templateUrl: './components.component.html',
   styleUrl: './components.component.css'

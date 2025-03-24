@@ -1,4 +1,7 @@
 <app-components></app-components>
-<app-fixed-side-bar>
-  <a routerLink="">Home</a>
-</app-fixed-side-bar>
+
+<app-animations [animation]="'fadeInDown'">
+  <app-fixed-side-bar>
+    <a routerLink="">Home</a>
+  </app-fixed-side-bar>
+</app-animations>

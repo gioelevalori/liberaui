@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from "../../components/button/button.component";
 import { RouterModule } from '@angular/router';
+import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonComponent, RouterModule],
+  imports: [ButtonComponent, RouterModule, AnimationsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

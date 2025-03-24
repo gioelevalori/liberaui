@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { TableComponent } from '../../components/table/table.component';
 import { CodeComponent } from '../../components/code/code.component';
 import { ComponentsComponent } from '../components/components.component';
+import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-table-site',
   standalone: true,
-  imports: [TableComponent, CodeComponent, ComponentsComponent],
+  imports: [TableComponent, CodeComponent, ComponentsComponent, AnimationsComponent],
   templateUrl: './table-site.component.html',
   styleUrl: './table-site.component.css'
 })

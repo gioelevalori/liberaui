@@ -16,6 +16,7 @@ import { SideNavigationSiteComponent } from './site/side-navigation-site/side-na
 import { AnimationsSiteComponent } from './site/animations-site/animations-site.component';
 import { FixedSideBarSiteComponent } from './site/fixed-side-bar-site/fixed-side-bar-site.component';
 import { ComponentsComponent } from './site/components/components.component';
+import { InstallationComponent } from './site/installation/installation.component';
 
 export const routes: Routes = [
   { path: 'components', component: ComponentsComponent },
@@ -34,5 +35,6 @@ export const routes: Routes = [
   { path: 'side-navigation', component: SideNavigationSiteComponent },
   { path: 'animations', component: AnimationsSiteComponent },
   { path: 'fixed-side-bar', component: FixedSideBarSiteComponent },
+  { path: 'installation', component: InstallationComponent },
   { path: '**', component: HomeComponent }
 ];

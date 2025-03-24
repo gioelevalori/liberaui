@@ -1,35 +1,37 @@
 <app-components></app-components>
 
-<div class="content-page">
-  <h1>Table</h1>
-  <p>Table displays data in tabular format.</p>
-  <app-code>{{codeImport}}</app-code>
-  <app-table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Adress</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Francesco</td>
-        <td>Rossi</td>
-        <td>francescorossigmail.com</td>
-        <td>3435675457</td>
-        <td>Contrada Verdi</td>
-      </tr>
-      <tr>
-        <td>Melissa</td>
-        <td>Bianchi</td>
-        <td>melissabianchigmail.com</td>
-        <td>3546757545</td>
-        <td>Contrada Rossi</td>
-      </tr>
-    </tbody>
-  </app-table>
-  <app-code>{{codeTable}}</app-code>
-</div>
+<app-animations [animation]="'fadeInDown'">
+  <div class="content-page">
+    <h1>Table</h1>
+    <p>Table displays data in tabular format.</p>
+    <app-code>{{codeImport}}</app-code>
+    <app-table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Adress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Francesco</td>
+          <td>Rossi</td>
+          <td>francescorossigmail.com</td>
+          <td>3435675457</td>
+          <td>Contrada Verdi</td>
+        </tr>
+        <tr>
+          <td>Melissa</td>
+          <td>Bianchi</td>
+          <td>melissabianchigmail.com</td>
+          <td>3546757545</td>
+          <td>Contrada Rossi</td>
+        </tr>
+      </tbody>
+    </app-table>
+    <app-code>{{codeTable}}</app-code>
+  </div>
+</app-animations>
