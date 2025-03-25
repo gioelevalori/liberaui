@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { ButtonComponent } from './button.component';
+import { CommonModule } from '@angular/common';
+import { ButtonComponent } from './button.component';  // Componenti standalone
 
 @NgModule({
   declarations: [
-    ButtonComponent,
+    // Includi qui il componente solo se è necessario (ma non è obbligatorio per i componenti standalone)
   ],
   imports: [
-    BrowserModule
+    CommonModule,
+    ButtonComponent // Importazione di un componente standalone in un modulo
   ],
-  providers: [],
-  bootstrap: []
+  exports: [ // Esportiamo ButtonComponent per renderlo disponibile ad altri moduli
+    ButtonComponent
+  ]
 })
 export class ButtonModule { }

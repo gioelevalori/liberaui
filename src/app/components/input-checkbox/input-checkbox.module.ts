@@ -3,11 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { InputCheckboxComponent } from './input-checkbox.component';
 
 @NgModule({
-  declarations: [
-    InputCheckboxComponent,
-  ],
+  declarations: [],
   imports: [
-    BrowserModule
+    BrowserModule,
+    InputCheckboxComponent
   ],
   providers: [],
   bootstrap: []
