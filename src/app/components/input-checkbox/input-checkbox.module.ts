@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { InputCheckboxComponent } from './input-checkbox.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
   imports: [
-    BrowserModule,
+    CommonModule,
     InputCheckboxComponent
   ],
-  providers: [],
-  bootstrap: []
+  exports: [
+    InputCheckboxComponent
+  ]
 })
 export class InputCheckboxModule { }

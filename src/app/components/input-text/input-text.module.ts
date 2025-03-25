@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { InputTextComponent } from './input-text.component';
 
 @NgModule({
-  declarations: [
-    InputTextComponent,
-  ],
+  declarations: [],
   imports: [
-    BrowserModule
+    InputTextComponent
   ],
-  providers: [],
-  bootstrap: []
+  exports: [
+    InputTextComponent
+  ]
 })
 export class InputTextModule { }

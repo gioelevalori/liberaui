@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { SideNavigationComponent } from './side-navigation.component';
 
 @NgModule({
-  declarations: [
-    SideNavigationComponent,
-  ],
+  declarations: [],
   imports: [
-    BrowserModule
+    CommonModule,
+    SideNavigationComponent
   ],
-  providers: [],
-  bootstrap: []
+  exports: [
+    SideNavigationComponent
+  ]
 })
 export class SideNavigationModule { }

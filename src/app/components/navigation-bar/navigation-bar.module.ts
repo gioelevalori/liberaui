@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { NavigationBarComponent } from './navigation-bar.component';
 
 @NgModule({
-  declarations: [
-    NavigationBarComponent,
-  ],
+  declarations: [],
   imports: [
-    BrowserModule
+    NavigationBarComponent
   ],
-  providers: [],
-  bootstrap: []
+  exports: [
+    NavigationBarComponent
+  ]
 })
 export class NavigationBarModule { }

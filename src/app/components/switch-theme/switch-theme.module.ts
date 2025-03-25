@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { SwitchThemeComponent } from './switch-theme.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [
-    SwitchThemeComponent,
-  ],
+  declarations: [],
   imports: [
-    BrowserModule
+    CommonModule,
+    SwitchThemeComponent
   ],
-  providers: [],
+  exports: [
+    SwitchThemeComponent
+  ],
   bootstrap: []
 })
 export class SwitchThemeModule { }

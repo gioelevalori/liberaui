@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { TableComponent } from './table.component';
 
 @NgModule({
-  declarations: [
-    TableComponent,
-  ],
+  declarations: [],
   imports: [
-    BrowserModule
+    TableComponent
   ],
-  providers: [],
-  bootstrap: []
+  exports: [
+    TableComponent
+  ]
 })
 export class TableModule { }
