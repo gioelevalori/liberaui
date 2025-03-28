@@ -13,12 +13,22 @@
   scrollbar-width: none;
 }
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
+.sidenav a,
+h5 {
   text-decoration: none;
   font-size: 15px;
-  color: #818181;
   display: block;
+}
+
+.sidenav h5 {
+  padding: 16px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  color: #818181;
 }
 
 .sidenav a:hover {

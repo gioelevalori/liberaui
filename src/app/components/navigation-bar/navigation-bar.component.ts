@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `<div class="topnav custom-nav">
-    <ng-content></ng-content>
+    <div class="content-header"><ng-content></ng-content></div>
   </div>`,
   styleUrl: './navigation-bar.component.css'
 })

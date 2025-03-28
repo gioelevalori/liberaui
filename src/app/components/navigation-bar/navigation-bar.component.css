@@ -38,3 +38,9 @@ body {
   color: white;
   border-radius: 20px;
 }
+
+.content-header {
+  display: flex;
+  margin-right: 115px;
+  margin-left: 115px;
+}
