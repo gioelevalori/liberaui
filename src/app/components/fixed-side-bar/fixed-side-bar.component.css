@@ -1,21 +1,22 @@
 .sidenav {
   height: calc(100vh - 150px);
-  width: 300px;
+  width: 200px;
   position: fixed;
   z-index: 1;
   overflow-x: hidden;
   overflow: auto;
   scroll-behavior: smooth;
   top: 90px;
-  left: 0;
+  left: 100px;
   z-index: 1;
-  padding-top: 20px;
+  border-right: 1px solid;
+  scrollbar-width: none;
 }
 
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   color: #818181;
   display: block;
 }
