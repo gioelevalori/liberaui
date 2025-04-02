@@ -8,7 +8,6 @@ import { FixedSideBarComponent } from '../../components/fixed-side-bar/fixed-sid
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
     RouterModule,
     FixedSideBarComponent
   ],

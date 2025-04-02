@@ -7,7 +7,7 @@ import { CardComponent } from './card.component';
     CardComponent
   ],
   exports: [
-    InputTextComponent
+    CardComponent
   ]
 })
 export class CardModule { }
