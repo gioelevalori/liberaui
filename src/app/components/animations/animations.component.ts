@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 
@@ -28,14 +28,39 @@ import { CommonModule } from '@angular/common';
 })
 export class AnimationsComponent {
   @Input() animation: string = '';
-  state: string = this.animation + '-out';
+  @Input() animationScrolling: boolean = false;
+  state: string = '';
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
-    this.state = `${this.animation}-out`; // Imposta lo stato iniziale
+    this.state = `${this.animation}-out`; // Assicura che l'animazione sia impostata correttamente
 
+    if (!this.animationScrolling) {
+      this.activateAnimation();
+    } else {
+      this.observeElement();
+    }
+  }
+
+
+  private activateAnimation() {
     setTimeout(() => {
-      this.state = `${this.animation}-in`; // Attiva l'animazione dopo il caricamento
+      this.state = `${this.animation}-in`;
     });
+  }
+
+  private observeElement() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          this.activateAnimation();
+          observer.disconnect(); // Ferma l'osservazione dopo l'attivazione
+        }
+      },
+      { threshold: 0.3 } // Attiva l'animazione quando il 30% dell'elemento è visibile
+    );
+
+    observer.observe(this.el.nativeElement);
   }
 }
 

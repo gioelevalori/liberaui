@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
 export interface SelectOption {
   value: string | number;
@@ -11,7 +11,8 @@ export interface SelectOption {
   standalone: true,
   imports: [CommonModule],
   template: '<select (change)="onChange($event)" class="custom-input" [disabled]="disabled"><option value="" disabled selected>{{ placeholder }}</option><option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option></select>',
-  styleUrl: './select.component.css'
+  styleUrl: './select.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 
 export class SelectComponent {

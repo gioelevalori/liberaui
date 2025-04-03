@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-input-text',
   standalone: true,
   imports: [],
   template: '<input [type]="type" [placeholder]="placeholder" [disabled]="disabled" class="custom-input" />',
-  styleUrl: './input-text.component.css'
+  styleUrl: './input-text.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class InputTextComponent {
   @Input() placeholder: string = 'Inserisci testo...';
