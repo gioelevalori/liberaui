@@ -18,7 +18,7 @@ import { FixedSideBarSiteComponent } from './site/fixed-side-bar-site/fixed-side
 import { ComponentsComponent } from './site/components/components.component';
 import { InstallationComponent } from './site/installation/installation.component';
 import { CardSiteComponent } from './site/card-site/card-site.component';
-import { BannerComponent } from './components/banner/banner.component';
+import { BannerSiteComponent } from './site/banner-site/banner-site.component';
 
 export const routes: Routes = [
   { path: 'components', component: ComponentsComponent },
@@ -39,6 +39,6 @@ export const routes: Routes = [
   { path: 'fixed-side-bar', component: FixedSideBarSiteComponent },
   { path: 'installation', component: InstallationComponent },
   { path: 'card', component: CardSiteComponent },
-  { path: 'banner', component: BannerComponent },
+  { path: 'banner', component: BannerSiteComponent },
   { path: '**', component: HomeComponent }
 ];

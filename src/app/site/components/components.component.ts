@@ -9,7 +9,8 @@ import { FixedSideBarComponent } from '../../components/fixed-side-bar/fixed-sid
   imports: [
     CommonModule,
     RouterModule,
-    FixedSideBarComponent
+    FixedSideBarComponent,
+    RouterOutlet
   ],
   templateUrl: './components.component.html',
   styleUrl: './components.component.css'

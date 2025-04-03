@@ -1,26 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
   imports: [],
-  template: `<section class="ban_sec">
-  <div class="container">
-    <div class="ban_img">
-<img src="https://i.ibb.co/NVjsGWG/banner.jpg" alt="banner" border="0">
-      <div class="ban_text">
-        <strong>
-          <span>Meeting current</span><br> needs now
-        </strong>
-        <p>You can prioritize a child’s mental, emotional, <br>
-          behavioral, and physical health </p>
-        <a href="#">Lend a hand</a>
+  template: `
+  <section class="ban_sec">
+    <div class="container">
+      <div class="ban_img">
+        <ng-content select="[ban_img]"></ng-content>
+        <div class="ban_text">
+          <ng-content select="[ban_text]"></ng-content>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 `,
-  styleUrl: './banner.component.css'
+  styleUrl: './banner.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class BannerComponent {
 }

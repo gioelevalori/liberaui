@@ -1,14 +1,54 @@
 <app-animations [animation]="'fadeInDown'">
   <div class="content-page">
-    <h1>Home</h1>
-    <p>Library is a collection of rich UI components for Angular. All widgets are open source and free to use under MIT
-      License. PrimeNG is developed by PrimeTek Informatics, a vendor with years of expertise in developing open source
-      UI
-      solutions.</p>
-    <app-button color="green">
-      <a routerLink="installation" class="link-button">
-        Get started
-      </a>
-    </app-button>
+    <app-banner>
+      <img ban_img src="assets/my-durves-image.png" alt="banner">
+      <div ban_text>
+        <h1>Home</h1>
+        <p>Library is a collection of rich UI components for Angular. All widgets are open source and free to use under
+          MIT
+          License. PrimeNG is developed by PrimeTek Informatics, a vendor with years of expertise in developing open
+          source
+          UI
+          solutions.</p>
+        <app-button color="green">
+          <a routerLink="installation" class="link-button">
+            Get started
+          </a>
+        </app-button>
+      </div>
+    </app-banner>
+
+
+    <div style="display: flex;">
+      <app-animations [animation]="'fadeInDown'">
+        <app-card>
+          <h1>Input Text</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+            essentially
+            unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </app-card>
+      </app-animations>
+
+      <app-animations [animation]="'fadeInDown'">
+        <app-card>
+          <h1>Input Text</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+            essentially
+            unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </app-card>
+      </app-animations>
+    </div>
   </div>
 </app-animations>

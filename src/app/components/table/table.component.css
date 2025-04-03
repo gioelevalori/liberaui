@@ -3,6 +3,10 @@
   border-radius: 20px;
   padding: 10px;
   overflow: hidden;
+  background-color: #353535;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
 }
 
 .styled-table thead {
@@ -14,25 +18,5 @@
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
-  border: 1px solid #dddddd;
-  border-radius: 20px;
-}
-
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #d7d6d6;
-}
-
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #000000;
-  border-radius: 20px;
-}
-
-.styled-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-  border-radius: 20px;
+  text-align: left;
 }
