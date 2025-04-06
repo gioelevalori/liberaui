@@ -28,4 +28,12 @@
   </app-animations>
   <app-code>{{codeSlideInOut}}</app-code>
 
+  <h2>Animation scrolling</h2>
+  <p>Animation scrolling is an extension to standard input element with theming and keyfiltering.</p>
+  <app-animations [animation]="'slideInOut'" [animationScrolling]="true">
+    <app-input-text placeholder="Nome"></app-input-text>
+    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
+  </app-animations>
+  <app-code>{{codeScrolling}}</app-code>
+
 </div>

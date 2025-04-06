@@ -28,4 +28,9 @@ export class AnimationsSiteComponent {
     <app-input-text placeholder="Nome"></app-input-text>
     <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
     </app-animations>`;
+
+    public codeScrolling = `<app-animations [animation]="'slideInOut'" [animationScrolling]="true">
+    <app-input-text placeholder="Nome"></app-input-text>
+    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
+    </app-animations>`;
 }
