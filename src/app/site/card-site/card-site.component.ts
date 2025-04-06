@@ -8,7 +8,7 @@ import { CardComponent } from '../../components/card/card.component';
 @Component({
   selector: 'app-card-site',
   standalone: true,
-  imports: [CardComponent, InputTextComponent, CodeComponent, ComponentsComponent, AnimationsComponent],
+  imports: [CardComponent, CodeComponent, AnimationsComponent],
   templateUrl: './card-site.component.html',
   styleUrl: './card-site.component.css'
 })

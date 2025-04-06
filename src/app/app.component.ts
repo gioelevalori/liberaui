@@ -4,6 +4,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { SwitchThemeComponent } from './components/switch-theme/switch-theme.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FixedSideBarComponent } from './components/fixed-side-bar/fixed-side-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RouterModule,
     NavigationBarComponent,
     SwitchThemeComponent,
-    FooterComponent
+    FooterComponent,
+    FixedSideBarComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

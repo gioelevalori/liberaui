@@ -5,10 +5,8 @@
   z-index: 1;
   overflow-x: hidden;
   overflow: auto;
-  scroll-behavior: smooth;
   top: 90px;
-  left: 100px;
-  z-index: 1;
+  left: 0;
   border-right: 1px solid;
   scrollbar-width: none;
 }
@@ -36,7 +34,7 @@ h5 {
 }
 
 .main {
-  margin-left: 300px;
+  margin-left: 200px;  /* Align with the sidebar width */
   margin-top: 100px;
 }
 

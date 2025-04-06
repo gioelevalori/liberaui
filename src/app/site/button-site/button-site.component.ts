@@ -8,7 +8,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 @Component({
   selector: 'app-button-site',
   standalone: true,
-  imports: [ButtonComponent, CodeComponent, RouterModule, ComponentsComponent, AnimationsComponent],
+  imports: [ButtonComponent, CodeComponent, RouterModule, AnimationsComponent],
   templateUrl: './button-site.component.html',
   styleUrl: './button-site.component.css'
 })
