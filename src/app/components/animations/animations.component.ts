@@ -57,7 +57,7 @@ export class AnimationsComponent {
           observer.disconnect(); // Ferma l'osservazione dopo l'attivazione
         }
       },
-      { threshold: 0.3 } // Attiva l'animazione quando il 30% dell'elemento è visibile
+      { threshold: 0.4 } // Attiva l'animazione quando il 30% dell'elemento è visibile
     );
 
     observer.observe(this.el.nativeElement);

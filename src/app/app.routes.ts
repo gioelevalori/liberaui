@@ -28,7 +28,7 @@ export const routes: Routes = [
   { path: 'input-text', component: InputTextSiteComponent },
   { path: 'input-number', component: InputNumberSiteComponent },
   { path: 'input-file', component: InputFileSiteComponent },
-  { path: 'input-pasword', component: InputPasswordSiteComponent },
+  { path: 'input-password', component: InputPasswordSiteComponent },
   { path: 'input-date', component: InputDateSiteComponent },
   { path: 'input-textarea', component: InputTextareaSiteComponent },
   { path: 'input-checkbox', component: InputCheckboxSiteComponent },

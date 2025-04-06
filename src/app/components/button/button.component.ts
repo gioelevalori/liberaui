@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -10,7 +10,8 @@ import { Component, Input } from '@angular/core';
   [disabled]="disabled">
   <ng-content></ng-content>
   </button>`,
-  styleUrl: './button.component.css'
+  styleUrl: './button.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class ButtonComponent {
   @Input() color: string = 'gray';
