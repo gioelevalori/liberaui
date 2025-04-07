@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { InputTextComponent } from '../../components/input-text/input-text.component';
 import { CodeComponent } from '../../components/code/code.component';
-import { ComponentsComponent } from '../components/components.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-input-text-site',
   standalone: true,
-  imports: [InputTextComponent, CodeComponent, ComponentsComponent, AnimationsComponent],
+  imports: [InputTextComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-text-site.component.html',
   styleUrl: './input-text-site.component.css'
 })

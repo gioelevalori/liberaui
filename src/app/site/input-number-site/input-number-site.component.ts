@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { InputNumberComponent } from '../../components/input-number/input-number.component';
 import { CodeComponent } from '../../components/code/code.component';
-import { ComponentsComponent } from '../components/components.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-input-number-site',
   standalone: true,
-  imports: [InputNumberComponent, CodeComponent, ComponentsComponent, AnimationsComponent],
+  imports: [InputNumberComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-number-site.component.html',
   styleUrl: './input-number-site.component.css'
 })

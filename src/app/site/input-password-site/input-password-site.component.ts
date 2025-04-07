@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { InputPasswordComponent } from '../../components/input-password/input-password.component';
 import { CodeComponent } from '../../components/code/code.component';
-import { ComponentsComponent } from '../components/components.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-input-password-site',
   standalone: true,
-  imports: [InputPasswordComponent, CodeComponent, ComponentsComponent, AnimationsComponent],
+  imports: [InputPasswordComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-password-site.component.html',
   styleUrl: './input-password-site.component.css'
 })

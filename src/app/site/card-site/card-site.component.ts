@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { InputTextComponent } from '../../components/input-text/input-text.component';
 import { CodeComponent } from '../../components/code/code.component';
-import { ComponentsComponent } from '../components/components.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 import { CardComponent } from '../../components/card/card.component';
 
 @Component({
   selector: 'app-card-site',
   standalone: true,
-  imports: [CardComponent, CodeComponent, AnimationsComponent],
+  imports: [CardComponent, AnimationsComponent],
   templateUrl: './card-site.component.html',
   styleUrl: './card-site.component.css'
 })

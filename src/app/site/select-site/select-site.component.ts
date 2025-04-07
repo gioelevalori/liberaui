@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { SelectComponent, SelectOption } from '../../components/select/select.component';
 import { CodeComponent } from '../../components/code/code.component';
-import { ComponentsComponent } from '../components/components.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-select-site',
   standalone: true,
-  imports: [SelectComponent, CodeComponent, ComponentsComponent, AnimationsComponent],
+  imports: [SelectComponent, CodeComponent, AnimationsComponent],
   templateUrl: './select-site.component.html',
   styleUrl: './select-site.component.css'
 })

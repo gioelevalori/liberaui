@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { SideNavigationComponent } from '../../components/side-navigation/side-navigation.component';
 import { CodeComponent } from '../../components/code/code.component';
-import { ComponentsComponent } from '../components/components.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
   selector: 'app-side-navigation-site',
   standalone: true,
-  imports: [SideNavigationComponent, CodeComponent, ComponentsComponent, AnimationsComponent],
+  imports: [SideNavigationComponent, CodeComponent, AnimationsComponent],
   templateUrl: './side-navigation-site.component.html',
   styleUrl: './side-navigation-site.component.css'
 })

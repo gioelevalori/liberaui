@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CodeComponent } from '../../components/code/code.component';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from '../../components/button/button.component';
-import { ComponentsComponent } from '../components/components.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
