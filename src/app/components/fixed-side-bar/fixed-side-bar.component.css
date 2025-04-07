@@ -7,7 +7,7 @@
   overflow: auto;
   top: 90px;
   left: 0;
-  border-right: 1px solid;
+  border-right: 1px solid #474747;
   scrollbar-width: none;
 }
 
@@ -34,7 +34,8 @@ h5 {
 }
 
 .main {
-  margin-left: 200px;  /* Align with the sidebar width */
+  margin-left: 200px;
+  /* Align with the sidebar width */
   margin-top: 100px;
 }
 
