@@ -11,8 +11,8 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "paths": {
-      "ng-library-ui": [
-        "./dist/ng-library-ui"
+      "libera-ui": [
+        "./dist/libera-ui"
       ]
     },
     "esModuleInterop": true,

@@ -22,5 +22,5 @@ import { FixedSideBarComponent } from './components/fixed-side-bar/fixed-side-ba
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ng-library';
+  title = 'libera-ui';
 }

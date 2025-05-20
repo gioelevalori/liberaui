@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-library": {
+    "libera-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ng-library",
+            "outputPath": "dist/libera-ui",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng-library:build:production"
+              "buildTarget": "libera-ui:build:production"
             },
             "development": {
-              "buildTarget": "ng-library:build:development"
+              "buildTarget": "libera-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ng-library:build"
+            "buildTarget": "libera-ui:build"
           }
         },
         "test": {
@@ -93,23 +93,23 @@
         }
       }
     },
-    "ng-library-ui": {
+    "libera-ui-ui": {
       "projectType": "library",
-      "root": "projects/ng-library-ui",
-      "sourceRoot": "projects/ng-library-ui/src",
+      "root": "projects/libera-ui-ui",
+      "sourceRoot": "projects/libera-ui-ui/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ng-library-ui/ng-package.json"
+            "project": "projects/libera-ui-ui/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng-library-ui/tsconfig.lib.prod.json"
+              "tsConfig": "projects/libera-ui-ui/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ng-library-ui/tsconfig.lib.json"
+              "tsConfig": "projects/libera-ui-ui/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -117,7 +117,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ng-library-ui/tsconfig.spec.json",
+            "tsConfig": "projects/libera-ui-ui/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
