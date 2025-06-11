@@ -1,0 +1,114 @@
+.ban_sec {
+  width: 100%;
+}
+
+.ban_img {
+  width: 100%;
+  position: relative;
+}
+
+.ban_img img {
+  width: 100%;
+  object-fit: cover;
+  border: 2px solid #4d4d4d;
+  border-radius: 40px;
+}
+
+.ban_text {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.ban_text strong {
+  font-weight: 800;
+  font-size: 62px;
+  line-height: 70px;
+  text-transform: uppercase;
+}
+
+.ban_text strong span {
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 3px;
+}
+
+.ban_text p {
+  font-size: 25px;
+  line-height: 30px;
+  margin: 7px 0 25px;
+}
+
+@media (max-width: 1399px) {
+  .ban_text p {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .ban_text p {
+    font-size: 17px;
+  }
+
+  .ban_text strong {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .ban_text strong span {
+    font-size: 37px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ban_text {
+    left: 4%;
+    /* Migliorato per schermi più piccoli */
+  }
+
+  .ban_text strong {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .ban_text strong span {
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: 2px;
+  }
+
+  .ban_text p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ban_img img {
+    min-height: 290px;
+  }
+}
+
+@media (max-width: 575px) {
+  .ban_text strong {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    width: 100%;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .ban_text strong span {
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: 1px;
+  }
+
+  .ban_text {
+    left: 2%;
+  }
+}

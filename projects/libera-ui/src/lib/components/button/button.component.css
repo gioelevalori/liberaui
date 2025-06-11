@@ -1,0 +1,31 @@
+.custom-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: filter 0.3s ease;
+  color: white;
+  margin: 0.5rem;
+  text-decoration: none;
+}
+
+.custom-button:hover {
+  filter: brightness(85%);
+}
+
+.primary {
+  background-color: blue;
+  color: white;
+}
+
+.secondary {
+  background-color: gray;
+  color: white;
+}
+
+.custom-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
