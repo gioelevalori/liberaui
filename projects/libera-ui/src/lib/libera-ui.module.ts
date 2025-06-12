@@ -36,7 +36,7 @@ import { TableComponent } from './components/table/table.component';
     SwitchThemeComponent,
     TableComponent
   ],
-  exports: [ // <--- AGGIUNGI QUESTO BLOCCO
+  exports: [
     ButtonComponent,
     FixedSideBarComponent,
     FooterComponent,
