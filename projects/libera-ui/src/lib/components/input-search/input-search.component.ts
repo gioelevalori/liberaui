@@ -5,7 +5,7 @@ import { Component, ViewEncapsulation, Input } from '@angular/core';
   standalone: true,
   imports: [],
   template: '<input [type]="type" [placeholder]="placeholder" [disabled]="disabled" class="custom-input" />',
-  styleUrl: './input-search.component.css',
+  styleUrls: ['./input-search.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputSearchComponent {

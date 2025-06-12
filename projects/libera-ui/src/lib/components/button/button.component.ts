@@ -5,12 +5,12 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'app-button',
   standalone: true,
   imports: [CommonModule],
-  template: `<button [ngClass]="buttonClass" 
-  class="custom-button" [style.background-color]="color" 
+  template: `<button [ngClass]="buttonClass"
+  class="custom-button" [style.background-color]="color"
   [disabled]="disabled">
   <ng-content></ng-content>
   </button>`,
-  styleUrl: './button.component.css',
+  styleUrls: ['./button.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class ButtonComponent {

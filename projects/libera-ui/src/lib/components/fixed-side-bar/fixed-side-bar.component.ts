@@ -11,7 +11,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   <div class="main">
     <ng-content select="[main]"></ng-content>
   </div>`,
-  styleUrl: './fixed-side-bar.component.css',
+  styleUrls: ['./fixed-side-bar.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class FixedSideBarComponent {

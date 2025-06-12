@@ -5,7 +5,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   standalone: true,
   imports: [],
   template: '<input [type]="type" [placeholder]="placeholder" [disabled]="disabled" class="custom-input" />',
-  styleUrl: './input-password.component.css',
+  styleUrls: ['./input-password.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputPasswordComponent {

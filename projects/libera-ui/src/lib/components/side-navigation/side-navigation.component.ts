@@ -12,7 +12,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     </div>
     <span style="font-size:30px;cursor:pointer" (click)="openNav()">X</span>
   `,
-  styleUrls: ['./side-navigation.component.css'],
+  styleUrls: ['./side-navigation.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class SideNavigationComponent {

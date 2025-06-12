@@ -6,7 +6,7 @@ import Prism from 'prismjs';
   standalone: true,
   imports: [],
   template: '<pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code></pre>',
-  styleUrl: './code.component.css',
+  styleUrls: ['./code.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class CodeComponent {

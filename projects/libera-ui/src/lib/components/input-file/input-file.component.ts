@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: '<label for="file-upload" class="custom-file-label">Scegli un file</label><input id="file-upload" type="file" (change)="onFileSelected($event)"><span id="file-name">{{ fileName || "Nessun file selezionato" }}</span>',
-  styleUrl: './input-file.component.css'
+  styleUrls: ['./input-file.component.css', '../font.css'],
 })
 export class InputFileComponent {
   fileName: string = '';

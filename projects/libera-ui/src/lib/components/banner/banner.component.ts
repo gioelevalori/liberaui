@@ -16,7 +16,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
     </div>
   </section>
 `,
-  styleUrl: './banner.component.css',
+  styleUrls: ['./banner.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class BannerComponent {

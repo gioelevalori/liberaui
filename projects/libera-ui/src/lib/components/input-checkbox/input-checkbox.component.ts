@@ -8,7 +8,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   template: `<label class="container" [ngStyle]="{'--checkbox-color': color}">
   <input type="checkbox" [disabled]="disabled" checked="checked">
   <span class="checkmark"></span></label>`,
-  styleUrl: './input-checkbox.component.css',
+  styleUrls: ['./input-checkbox.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputCheckboxComponent {

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   template: `<div class="topnav custom-nav">
     <div class="content-header"><ng-content></ng-content></div>
   </div>`,
-  styleUrl: './navigation-bar.component.css'
+  styleUrls: ['./navigation-bar.component.css', '../font.css'],
 })
 export class NavigationBarComponent {
 

@@ -5,7 +5,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   standalone: true,
   imports: [],
   template: '<textarea [placeholder]="placeholder" [disabled]="disabled" class="custom-input"></textarea>',
-  styleUrl: './input-textarea.component.css',
+  styleUrls: ['./input-textarea.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputTextareaComponent {

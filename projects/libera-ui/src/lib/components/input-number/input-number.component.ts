@@ -5,7 +5,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   standalone: true,
   imports: [],
   template: '<input [type]="type" [placeholder]="placeholder" [disabled]="disabled" [min]="min" [max]="max" class="custom-input" />',
-  styleUrl: './input-number.component.css',
+  styleUrls: ['./input-number.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputNumberComponent {

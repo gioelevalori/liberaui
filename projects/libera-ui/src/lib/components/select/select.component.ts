@@ -11,7 +11,7 @@ export interface SelectOption {
   standalone: true,
   imports: [CommonModule],
   template: '<select (change)="onChange($event)" class="custom-input" [disabled]="disabled"><option value="" disabled selected>{{ placeholder }}</option><option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option></select>',
-  styleUrl: './select.component.css',
+  styleUrls: ['./select.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 

@@ -5,7 +5,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   standalone: true,
   imports: [],
   template: '<input type="date" class="custom-input" />',
-  styleUrl: './input-date.component.css',
+  styleUrls: ['./input-date.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputDateComponent {

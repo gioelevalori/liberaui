@@ -8,7 +8,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   <table class="styled-table">
     <ng-content></ng-content>
   </table>`,
-  styleUrl: './table.component.css',
+  styleUrls: ['./table.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class TableComponent {
