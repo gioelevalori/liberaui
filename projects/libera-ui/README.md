@@ -1,24 +1,76 @@
-# LiberaUi
+# 📦 libera-ui
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+**libera-ui** is a UI component library compatible with Angular versions 17 through 19. It is designed to simplify the development of modern, accessible, and responsive user interfaces.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name --project libera-ui` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project libera-ui`.
-> Note: Don't forget to add `--project libera-ui` or else it will be added to the default project in your `angular.json` file. 
+## ✅ Compatibility
 
-## Build
+- Angular 17 ✅  
+- Angular 18 ✅  
+- Angular 19 ✅
 
-Run `ng build libera-ui` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Publishing
+## 📥 Installation
 
-After building your library with `ng build libera-ui`, go to the dist folder `cd dist/libera-ui` and run `npm publish`.
+Using npm:
 
-## Running unit tests
+```bash
+npm install libera-ui
+```
 
-Run `ng test libera-ui` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🧩 Available Components
 
-## Further help
+Here is the complete list of exported components:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Component                  | Description                                 |
+|---------------------------|---------------------------------------------|
+| `AnimationsComponent`     | Custom animation handling                    |
+| `ButtonComponent`         | Standard UI button                          |
+| `FixedSideBarComponent`   | Fixed sidebar                               |
+| `FooterComponent`         | Responsive footer                           |
+| `InputCheckboxComponent`  | Custom checkbox input                       |
+| `InputDateComponent`      | Input field for selecting dates             |
+| `InputFileComponent`      | File upload field                           |
+| `InputNumberComponent`    | Numeric input field                         |
+| `InputPasswordComponent`  | Password field with visibility toggle       |
+| `InputTextComponent`      | Text input field                            |
+| `InputTextareaComponent`  | Multi-line text area                        |
+| `NavigationBarComponent`  | Horizontal navigation bar                   |
+| `SelectComponent`         | Custom dropdown/select menu                 |
+| `SideNavigationComponent` | Vertical side navigation                    |
+| `SwitchThemeComponent`    | Theme switcher (e.g., light/dark mode)      |
+| `TableComponent`          | Styled data table                           |
+
+---
+
+## 🛠️ Services
+
+- `LiberaUiService`: Core service for shared logic or utilities.
+
+---
+
+## 🔍 Quick Example
+
+```html
+<lib-button [label]="'Click me'" (click)="onClick()"></lib-button>
+```
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+## 🤝 Contributing
+
+Pull requests and suggestions are welcome! Feel free to open issues for bugs or feature requests.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
