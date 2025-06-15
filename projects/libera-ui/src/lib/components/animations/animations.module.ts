@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimationsComponent } from './animations.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    AnimationsComponent
+    AnimationsComponent,
+    BrowserAnimationsModule 
   ],
   exports: [
     AnimationsComponent

@@ -4,7 +4,6 @@
 
 export * from './lib/libera-ui.service';
 export * from './lib/libera-ui.component';
-export * from './lib/libera-ui.module';
 
 export * from './lib/components/animations/animations.component';
 export * from './lib/components/button/button.component';

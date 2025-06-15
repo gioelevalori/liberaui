@@ -9,10 +9,10 @@ import { CommonModule } from '@angular/common';
   template: `
     <div [@animation]="state"><ng-content></ng-content></div>
   `,
-  styleUrl: './animations.component.css',
+  styleUrls: ['./animations.component.css'],
   animations: [
     trigger('animation', [
-      state('fadeInOut-in', style({ opacity: 3 })),
+      state('fadeInOut-in', style({ opacity: 1 })),
       state('fadeInOut-out', style({ opacity: 0 })),
       transition('fadeInOut-in <=> fadeInOut-out', animate('2000ms ease-in-out')),
 
@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
       state('slideInOut-out', style({ transform: 'translateX(-100%)' })),
       transition('slideInOut-in <=> slideInOut-out', animate('500ms ease-in-out')),
 
-      state('fadeInDown-in', style({ opacity: 10, transform: 'translateY(0)' })),
+      state('fadeInDown-in', style({ opacity: 1, transform: 'translateY(0)' })),
       state('fadeInDown-out', style({ opacity: 0, transform: 'translateY(-50px)' })),
       transition('fadeInDown-in <=> fadeInDown-out', animate('500ms ease-out')),
     ])
@@ -63,5 +63,3 @@ export class AnimationsComponent {
     observer.observe(this.el.nativeElement);
   }
 }
-
-

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AnimationsComponent } from './animations.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AnimationsComponent', () => {
   let component: AnimationsComponent;
@@ -7,9 +8,11 @@ describe('AnimationsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AnimationsComponent]
-    })
-      .compileComponents();
+      imports: [
+        AnimationsComponent,
+        NoopAnimationsModule
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AnimationsComponent);
     component = fixture.componentInstance;
