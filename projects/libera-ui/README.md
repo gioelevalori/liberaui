@@ -45,17 +45,9 @@ Here is the complete list of exported components:
 
 ---
 
-## 🛠️ Services
+## 🛠️ Site
 
-- `LiberaUiService`: Core service for shared logic or utilities.
-
----
-
-## 🔍 Quick Example
-
-```html
-<lib-button [label]="'Click me'" (click)="onClick()"></lib-button>
-```
+https://libera-ui.netlify.app
 
 ---
 
