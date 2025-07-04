@@ -11,7 +11,7 @@ import { CardComponent } from '../../components/card/card.component';
   styleUrl: './card-site.component.css'
 })
 export class CardSiteComponent {
-  public codeImport = `
+  public codeHtml = `
   <app-card>
     <h1>Input Text</h1>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
