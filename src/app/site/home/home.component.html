@@ -17,35 +17,59 @@
       </div>
     </app-banner>
 
-    <h1 style="text-align: center;">Titolo</h1>
+    <h1 style="text-align: center;">Components</h1>
     <div class="flex-container">
       <app-animations [animation]="'fadeInDown'" [animationScrolling]="true">
         <app-card>
           <h1>Input Text</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-            essentially
-            unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          <p>Enables native inputs to be used within a Form field.
           </p>
+          <app-button color="green">
+            <a routerLink="/input-text" class="link-button">
+              More
+            </a>
+          </app-button>
         </app-card>
       </app-animations>
 
       <app-animations [animation]="'fadeInOut'" [animationScrolling]="true">
         <app-card>
-          <h1>Input Text</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-            essentially
-            unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          <h1>Button</h1>
+          <p>An interactive button with a range of presentation options.
           </p>
+          <app-button color="green">
+            <a routerLink="/button" class="link-button">
+              More
+            </a>
+          </app-button>
+        </app-card>
+      </app-animations>
+    </div>
+
+    <div class="flex-container">
+      <app-animations [animation]="'fadeInDown'" [animationScrolling]="true">
+        <app-card>
+          <h1>Animations</h1>
+          <p>Allows you to animate components.
+          </p>
+          <app-button color="green">
+            <a routerLink="/animations" class="link-button">
+              More
+            </a>
+          </app-button>
+        </app-card>
+      </app-animations>
+
+      <app-animations [animation]="'fadeInOut'" [animationScrolling]="true">
+        <app-card>
+          <h1>Card</h1>
+          <p>A styled container for pieces of itemized content.
+          </p>
+          <app-button color="green">
+            <a routerLink="/card" class="link-button">
+              More
+            </a>
+          </app-button>
         </app-card>
       </app-animations>
     </div>
