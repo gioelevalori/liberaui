@@ -3,7 +3,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 import { BannerComponent } from '../../components/banner/banner.component';
 
 @Component({
-  selector: 'app-banner-site',
+  selector: 'lib-banner-site',
   standalone: true,
   imports: [BannerComponent, AnimationsComponent],
   templateUrl: './banner-site.component.html',

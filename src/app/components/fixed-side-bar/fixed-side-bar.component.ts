@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-fixed-side-bar',
+  selector: 'lib-fixed-side-bar',
   standalone: true,
   imports: [],
   template: `

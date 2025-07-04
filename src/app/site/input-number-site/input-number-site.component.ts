@@ -4,7 +4,7 @@ import { CodeComponent } from '../../components/code/code.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-input-number-site',
+  selector: 'lib-input-number-site',
   standalone: true,
   imports: [InputNumberComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-number-site.component.html',
@@ -12,6 +12,6 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 })
 export class InputNumberSiteComponent {
   public codeImport = `import { InputNumberComponent } from '../../components/input-number/input-number.component';`;
-  public codeInputNumber = `<app-input-number placeholder="Numero" [min]="5" [max]="10"></app-input-number>`;
-  public codeDisabled = `<app-input-number placeholder="Numero" [min]="5" [max]="10" [disabled]="true"></app-input-number>`;
+  public codeInputNumber = `<lib-input-number placeholder="Numero" [min]="5" [max]="10"></lib-input-number>`;
+  public codeDisabled = `<lib-input-number placeholder="Numero" [min]="5" [max]="10" [disabled]="true"></lib-input-number>`;
 }

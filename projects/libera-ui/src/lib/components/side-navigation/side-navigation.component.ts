@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-side-navigation',
+  selector: 'lib-side-navigation',
   standalone: true,
   imports: [CommonModule],
   template: `

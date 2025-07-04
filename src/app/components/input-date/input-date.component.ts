@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-input-date',
+  selector: 'lib-input-date',
   standalone: true,
   imports: [],
   template: '<input type="date" class="custom-input" />',

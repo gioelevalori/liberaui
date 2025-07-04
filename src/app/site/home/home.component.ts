@@ -6,7 +6,7 @@ import { BannerComponent } from '../../components/banner/banner.component';
 import { CardComponent } from '../../components/card/card.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'lib-home',
   standalone: true,
   imports: [ButtonComponent, RouterModule, AnimationsComponent, BannerComponent, CardComponent],
   templateUrl: './home.component.html',

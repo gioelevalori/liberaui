@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-navigation-bar',
+  selector: 'lib-navigation-bar',
   standalone: true,
   imports: [],
   template: `<div class="topnav custom-nav">

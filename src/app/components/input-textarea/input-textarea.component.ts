@@ -1,7 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-input-textarea',
+  selector: 'lib-input-textarea',
   standalone: true,
   imports: [],
   template: '<textarea [placeholder]="placeholder" [disabled]="disabled" class="custom-input"></textarea>',

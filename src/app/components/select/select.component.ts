@@ -7,7 +7,7 @@ export interface SelectOption {
 }
 
 @Component({
-  selector: 'app-select',
+  selector: 'lib-select',
   standalone: true,
   imports: [CommonModule],
   template: '<select (change)="onChange($event)" class="custom-input" [disabled]="disabled"><option value="" disabled selected>{{ placeholder }}</option><option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option></select>',

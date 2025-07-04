@@ -3,7 +3,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-animations',
+  selector: 'lib-animations',
   standalone: true,
   imports: [CommonModule],
   template: `

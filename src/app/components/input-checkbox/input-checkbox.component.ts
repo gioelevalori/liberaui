@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-input-checkbox',
+  selector: 'lib-input-checkbox',
   standalone: true,
   imports: [CommonModule],
   template: `<label class="container" [ngStyle]="{'--checkbox-color': color}">

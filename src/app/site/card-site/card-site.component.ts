@@ -4,7 +4,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 import { CardComponent } from '../../components/card/card.component';
 
 @Component({
-  selector: 'app-card-site',
+  selector: 'lib-card-site',
   standalone: true,
   imports: [CardComponent, AnimationsComponent, CodeComponent],
   templateUrl: './card-site.component.html',
@@ -12,9 +12,9 @@ import { CardComponent } from '../../components/card/card.component';
 })
 export class CardSiteComponent {
   public codeHtml = `
-  <app-card>
+  <lib-card>
     <h1>Input Text</h1>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-  </app-card>
+  </lib-card>
   `;
 }

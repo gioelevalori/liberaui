@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
+  selector: 'lib-button',
   standalone: true,
   imports: [CommonModule],
   template: `<button [ngClass]="buttonClass" 

@@ -1,7 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-banner',
+  selector: 'lib-banner',
   standalone: true,
   imports: [],
   template: `

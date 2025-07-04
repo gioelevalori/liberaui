@@ -7,7 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FixedSideBarComponent } from './components/fixed-side-bar/fixed-side-bar.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'lib-root',
   standalone: true,
   imports: [
     CommonModule,

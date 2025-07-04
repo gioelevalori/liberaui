@@ -1,7 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-tab',
+  selector: 'lib-tab',
   standalone: true,
   imports: [],
   template: `

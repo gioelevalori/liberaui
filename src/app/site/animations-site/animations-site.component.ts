@@ -4,7 +4,7 @@ import { InputTextComponent } from '../../components/input-text/input-text.compo
 import { CodeComponent } from '../../components/code/code.component';
 
 @Component({
-  selector: 'app-animation-site',
+  selector: 'lib-animation-site',
   standalone: true,
   imports: [InputTextComponent, AnimationsComponent, CodeComponent],
   templateUrl: './animations-site.component.html',
@@ -13,23 +13,23 @@ import { CodeComponent } from '../../components/code/code.component';
 export class AnimationsSiteComponent {
   public codeImport = `import { AnimationsComponent } from '../../components/animations/animations.component';`;
 
-  public codeFadeInDown = `<app-animations [animation]="'fadeInDown'">
-    <app-input-text placeholder="Nome"></app-input-text>
-    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
-    </app-animations>'`;
+  public codeFadeInDown = `<lib-animations [animation]="'fadeInDown'">
+    <lib-input-text placeholder="Nome"></lib-input-text>
+    <lib-input-text [disabled]="true" placeholder="Cognome"></lib-input-text>
+    </lib-animations>'`;
 
-  public codeFadeInOut = `<app-animations [animation]="'fadeInOut'">
-    <app-input-text placeholder="Nome"></app-input-text>
-    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
-    </app-animations>`;
+  public codeFadeInOut = `<lib-animations [animation]="'fadeInOut'">
+    <lib-input-text placeholder="Nome"></lib-input-text>
+    <lib-input-text [disabled]="true" placeholder="Cognome"></lib-input-text>
+    </lib-animations>`;
 
-  public codeSlideInOut = `<app-animations [animation]="'slideInOut'">
-    <app-input-text placeholder="Nome"></app-input-text>
-    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
-    </app-animations>`;
+  public codeSlideInOut = `<lib-animations [animation]="'slideInOut'">
+    <lib-input-text placeholder="Nome"></lib-input-text>
+    <lib-input-text [disabled]="true" placeholder="Cognome"></lib-input-text>
+    </lib-animations>`;
 
-  public codeScrolling = `<app-animations [animation]="'slideInOut'" [animationScrolling]="true">
-    <app-input-text placeholder="Nome"></app-input-text>
-    <app-input-text [disabled]="true" placeholder="Cognome"></app-input-text>
-    </app-animations>`;
+  public codeScrolling = `<lib-animations [animation]="'slideInOut'" [animationScrolling]="true">
+    <lib-input-text placeholder="Nome"></lib-input-text>
+    <lib-input-text [disabled]="true" placeholder="Cognome"></lib-input-text>
+    </lib-animations>`;
 }

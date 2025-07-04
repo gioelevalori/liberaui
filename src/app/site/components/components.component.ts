@@ -4,7 +4,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { FixedSideBarComponent } from '../../components/fixed-side-bar/fixed-side-bar.component';
 
 @Component({
-  selector: 'app-components',
+  selector: 'lib-components',
   standalone: true,
   imports: [
     CommonModule,

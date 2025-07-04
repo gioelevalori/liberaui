@@ -4,7 +4,7 @@ import { CodeComponent } from '../../components/code/code.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-input-checkbox-site',
+  selector: 'lib-input-checkbox-site',
   standalone: true,
   imports: [InputCheckboxComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-checkbox-site.component.html',
@@ -12,6 +12,6 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 })
 export class InputCheckboxSiteComponent {
   public codeImport = `import { InputCheckboxComponent } from '../../components/input-checkbox/input-checkbox.component';`;
-  public codeDisabled = `<app-input-checkbox [disabled]="true"></app-input-checkbox>`;
-  public codeColor = `<app-input-checkbox color="yellow"></app-input-checkbox>`;
+  public codeDisabled = `<lib-input-checkbox [disabled]="true"></lib-input-checkbox>`;
+  public codeColor = `<lib-input-checkbox color="yellow"></lib-input-checkbox>`;
 }

@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-table',
+  selector: 'lib-table',
   standalone: true,
   imports: [],
   template: `

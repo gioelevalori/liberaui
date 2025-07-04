@@ -4,7 +4,7 @@ import { CodeComponent } from '../../components/code/code.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-input-file-site',
+  selector: 'lib-input-file-site',
   standalone: true,
   imports: [InputFileComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-file-site.component.html',
@@ -12,5 +12,5 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 })
 export class InputFileSiteComponent {
   public codeImport = `import { InputFileComponent } from '../../components/input-file/input-file.component';`;
-  public codeFileUpload = `<app-input-file></app-input-file>`;
+  public codeFileUpload = `<lib-input-file></lib-input-file>`;
 }

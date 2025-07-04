@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@ang
 import Prism from 'prismjs';
 
 @Component({
-  selector: 'app-code',
+  selector: 'lib-code',
   standalone: true,
   imports: [],
   template: '<pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code></pre>',

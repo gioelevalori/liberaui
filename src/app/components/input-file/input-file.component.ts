@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-input-file',
+  selector: 'lib-input-file',
   standalone: true,
   imports: [],
   template: '<label for="file-upload" class="custom-file-label">Scegli un file</label><input id="file-upload" type="file" (change)="onFileSelected($event)"><span id="file-name">{{ fileName || "Nessun file selezionato" }}</span>',

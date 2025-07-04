@@ -1,16 +1,15 @@
-
-<app-animations [animation]="'fadeInDown'">
+<lib-animations [animation]="'fadeInDown'">
   <div class="content-page">
     <h1>Select</h1>
     <p>Select is a form control for selecting a value from a set of options.</p>
-    <app-code>{{codeImport}}</app-code>
+    <lib-code>{{codeImport}}</lib-code>
 
-    <app-select [options]="cities"></app-select>
-    <app-code>{{codeSelect}}</app-code>
+    <lib-select [options]="cities"></lib-select>
+    <lib-code>{{codeSelect}}</lib-code>
 
     <h2>Select</h2>
     <p>Select is a form control for selecting a value from a set of options.</p>
-    <app-select [options]="cities" [disabled]="true"></app-select>
-    <app-code>{{codeDisabled}}</app-code>
+    <lib-select [options]="cities" [disabled]="true"></lib-select>
+    <lib-code>{{codeDisabled}}</lib-code>
   </div>
-</app-animations>
+</lib-animations>

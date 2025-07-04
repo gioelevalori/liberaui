@@ -4,7 +4,7 @@ import { CodeComponent } from '../../components/code/code.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-switch-theme-site',
+  selector: 'lib-switch-theme-site',
   standalone: true,
   imports: [SwitchThemeComponent, CodeComponent, AnimationsComponent],
   templateUrl: './switch-theme-site.component.html',
@@ -12,5 +12,5 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 })
 export class SwitchThemeSiteComponent {
   public codeImport = `import { SwitchThemeComponent } from '../../components/switch-theme/switch-theme.component';`;
-  public codeSwitchTheme = `<app-switch-theme></app-switch-theme>`;
+  public codeSwitchTheme = `<lib-switch-theme></lib-switch-theme>`;
 }

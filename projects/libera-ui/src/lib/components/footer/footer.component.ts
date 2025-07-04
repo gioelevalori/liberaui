@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'lib-footer',
   standalone: true,
   imports: [],
   template: `<footer><ng-content></ng-content></footer>`,

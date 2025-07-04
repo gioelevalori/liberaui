@@ -4,7 +4,7 @@ import { CodeComponent } from '../../components/code/code.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-input-text-site',
+  selector: 'lib-input-text-site',
   standalone: true,
   imports: [InputTextComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-text-site.component.html',
@@ -12,6 +12,6 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 })
 export class InputTextSiteComponent {
   public codeImport = `import { InputTextComponent } from '../../components/input-text/input-text.component';`;
-  public codeInputText = `<app-input-text placeholder="Nome"></app-input-text>`;
-  public codeDisabled = `<app-input-text placeholder="Nome" [disabled]="true"></app-input-text>`;
+  public codeInputText = `<lib-input-text placeholder="Nome"></lib-input-text>`;
+  public codeDisabled = `<lib-input-text placeholder="Nome" [disabled]="true"></lib-input-text>`;
 }

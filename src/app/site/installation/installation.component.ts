@@ -3,7 +3,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 import { CodeComponent } from '../../components/code/code.component';
 
 @Component({
-  selector: 'app-installation',
+  selector: 'lib-installation',
   standalone: true,
   imports: [AnimationsComponent, CodeComponent],
   templateUrl: './installation.component.html',

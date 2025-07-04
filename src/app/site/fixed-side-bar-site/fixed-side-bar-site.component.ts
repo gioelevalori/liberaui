@@ -3,7 +3,7 @@ import { FixedSideBarComponent } from '../../components/fixed-side-bar/fixed-sid
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-fixed-side-bar-site',
+  selector: 'lib-fixed-side-bar-site',
   standalone: true,
   imports: [FixedSideBarComponent, AnimationsComponent],
   templateUrl: './fixed-side-bar-site.component.html',

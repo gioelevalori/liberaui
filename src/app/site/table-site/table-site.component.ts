@@ -4,7 +4,7 @@ import { CodeComponent } from '../../components/code/code.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-table-site',
+  selector: 'lib-table-site',
   standalone: true,
   imports: [TableComponent, CodeComponent, AnimationsComponent],
   templateUrl: './table-site.component.html',
@@ -12,7 +12,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 })
 export class TableSiteComponent {
   public codeImport = `import { TableComponent } from '../../components/table/table.component';`;
-  public codeTable = `<app-table>
+  public codeTable = `<lib-table>
     <thead>
       <tr>
         <th>Name</th>
@@ -38,5 +38,5 @@ export class TableSiteComponent {
         <td>Contrada Rossi</td>
       </tr>
     </tbody>
-  </app-table>`;
+  </lib-table>`;
 }

@@ -4,7 +4,7 @@ import { CodeComponent } from '../../components/code/code.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-navigation-bar-site',
+  selector: 'lib-navigation-bar-site',
   standalone: true,
   imports: [NavigationBarComponent, CodeComponent, AnimationsComponent],
   templateUrl: './navigation-bar-site.component.html',

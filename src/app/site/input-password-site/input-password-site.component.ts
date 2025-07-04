@@ -4,7 +4,7 @@ import { CodeComponent } from '../../components/code/code.component';
 import { AnimationsComponent } from '../../components/animations/animations.component';
 
 @Component({
-  selector: 'app-input-password-site',
+  selector: 'lib-input-password-site',
   standalone: true,
   imports: [InputPasswordComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-password-site.component.html',
@@ -12,6 +12,6 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
 })
 export class InputPasswordSiteComponent {
   public codeImport = `import { InputPasswordComponent } from '../../components/input-password/input-password.component';`;
-  public codeInputPassword = `<app-input-password placeholder="Password"></app-input-password>`;
-  public codeDisabled = `<app-input-password placeholder="Password" [disabled]="true"></app-input-password>`;
+  public codeInputPassword = `<lib-input-password placeholder="Password"></lib-input-password>`;
+  public codeDisabled = `<lib-input-password placeholder="Password" [disabled]="true"></lib-input-password>`;
 }

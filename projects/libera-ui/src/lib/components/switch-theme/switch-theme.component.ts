@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-switch-theme',
+  selector: 'lib-switch-theme',
   standalone: true,
   imports: [CommonModule],
   template: '<button (click)="toggleTheme()" class="custom-input" [ngClass]="switchColor()">{{ isDarkMode ? "🌙" : "🌞" }}</button>',
