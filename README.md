@@ -1,13 +1,25 @@
-📦 libera-ui
-libera-ui is a UI component library compatible with Angular versions 17 through 19. It is designed to simplify the development of modern, accessible, and responsive user interfaces.
+# 📦 libera-ui
 
-✅ Compatibility
-Angular 17 ✅
-Angular 18 ✅
-Angular 19 ✅
-📥 Installation
-Using npm:
+**libera-ui** is a UI component library compatible with Angular **versions 17 through 19**.  
+It is designed to simplify the development of modern, accessible, and responsive user interfaces.
 
+---
+
+## ✅ Compatibility
+
+| Angular Version | Status |
+|-----------------|--------|
+| 17              | ✅     |
+| 18              | ✅     |
+| 19              | ✅     |
+
+---
+
+## 📥 Installation
+
+Install via **npm**:
+
+```bash
 npm install libera-ui
 🧩 Available Components
 Here is the complete list of exported components:
@@ -29,14 +41,14 @@ SelectComponent	Custom dropdown/select menu
 SideNavigationComponent	Vertical side navigation
 SwitchThemeComponent	Theme switcher (e.g., light/dark mode)
 TableComponent	Styled data table
-🛠️ Site
-https://libera-ui.netlify.app
+
+🛠️ Demo Site
+🔗 https://libera-ui.netlify.app
 
 📄 License
-MIT
+This project is licensed under the MIT License.
+See the LICENSE file for more details.
 
 🤝 Contributing
-Pull requests and suggestions are welcome! Feel free to open issues for bugs or feature requests.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Pull requests and suggestions are welcome!
+Feel free to open issues for bugs or feature requests.
