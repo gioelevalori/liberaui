@@ -137,3 +137,20 @@ textarea {
   color: white;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .content-page {
+    width: 90%;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
