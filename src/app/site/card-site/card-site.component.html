@@ -1,4 +1,9 @@
 <div class="content-page">
+  <app-animations [animation]="'fadeInDown'">
+    <h1>Card</h1>
+    <p>A styled container for pieces of itemized content.</p>
+  </app-animations>
+
   <div style="display: flex;">
     <app-animations [animation]="'fadeInDown'">
       <app-card>
@@ -26,4 +31,5 @@
       </app-card>
     </app-animations>
   </div>
+  <app-code>{{codeImport}}</app-code>
 </div>

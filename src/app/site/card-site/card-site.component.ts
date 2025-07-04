@@ -6,12 +6,15 @@ import { CardComponent } from '../../components/card/card.component';
 @Component({
   selector: 'app-card-site',
   standalone: true,
-  imports: [CardComponent, AnimationsComponent],
+  imports: [CardComponent, AnimationsComponent, CodeComponent],
   templateUrl: './card-site.component.html',
   styleUrl: './card-site.component.css'
 })
 export class CardSiteComponent {
-  public codeImport = `import { InputTextComponent } from '../../components/input-text/input-text.component';`;
-  public codeInputText = `<app-input-text placeholder="Nome"></app-input-text>`;
-  public codeDisabled = `<app-input-text placeholder="Nome" [disabled]="true"></app-input-text>`;
+  public codeImport = `
+  <app-card>
+    <h1>Input Text</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  </app-card>
+  `;
 }
