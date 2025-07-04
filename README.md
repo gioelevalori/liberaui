@@ -52,9 +52,3 @@ See the LICENSE file for more details.
 🤝 Contributing
 Pull requests and suggestions are welcome!
 Feel free to open issues for bugs or feature requests.
-
-sql
-Copia
-Modifica
-
-Fammi sapere se vuoi includere anche un badge per la versione npm, il CI, oppure una sezione "Getting Started".
