@@ -11,7 +11,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './input-checkbox-site.component.css'
 })
 export class InputCheckboxSiteComponent {
-  public codeImport = `import { InputCheckboxComponent } from '../../components/input-checkbox/input-checkbox.component';`;
+  public codeImport = `import { InputCheckboxComponent } from 'libera-ui';`;
   public codeDisabled = `<lib-input-checkbox [disabled]="true"></lib-input-checkbox>`;
   public codeColor = `<lib-input-checkbox color="yellow"></lib-input-checkbox>`;
 }

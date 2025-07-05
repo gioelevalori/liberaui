@@ -11,6 +11,6 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './switch-theme-site.component.css'
 })
 export class SwitchThemeSiteComponent {
-  public codeImport = `import { SwitchThemeComponent } from '../../components/switch-theme/switch-theme.component';`;
+  public codeImport = `import { SwitchThemeComponent } from 'libera-ui';`;
   public codeSwitchTheme = `<lib-switch-theme></lib-switch-theme>`;
 }

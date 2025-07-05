@@ -19,7 +19,7 @@ export class SelectSiteComponent {
     { label: 'Paris', value: 'PRS' }
   ];
 
-  public codeImport = `import { SelectComponent } from '../../components/select/select.component'`;
+  public codeImport = `import { SelectComponent } from 'libera-ui'`;
   public codeSelect = `<lib-select [options]="cities"></lib-select>`;
   public codeDisabled = `<lib-select [options]="cities" [disabled]="true"></lib-select>`;
 }

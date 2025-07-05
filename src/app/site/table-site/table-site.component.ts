@@ -11,7 +11,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './table-site.component.css'
 })
 export class TableSiteComponent {
-  public codeImport = `import { TableComponent } from '../../components/table/table.component';`;
+  public codeImport = `import { TableComponent } from 'libera-ui';`;
   public codeTable = `<lib-table>
     <thead>
       <tr>

@@ -11,6 +11,6 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './input-file-site.component.css'
 })
 export class InputFileSiteComponent {
-  public codeImport = `import { InputFileComponent } from '../../components/input-file/input-file.component';`;
+  public codeImport = `import { InputFileComponent } from 'libera-ui';`;
   public codeFileUpload = `<lib-input-file></lib-input-file>`;
 }

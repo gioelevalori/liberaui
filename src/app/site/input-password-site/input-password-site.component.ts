@@ -11,7 +11,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './input-password-site.component.css'
 })
 export class InputPasswordSiteComponent {
-  public codeImport = `import { InputPasswordComponent } from '../../components/input-password/input-password.component';`;
+  public codeImport = `import { InputPasswordComponent } from 'libera-ui';`;
   public codeInputPassword = `<lib-input-password placeholder="Password"></lib-input-password>`;
   public codeDisabled = `<lib-input-password placeholder="Password" [disabled]="true"></lib-input-password>`;
 }

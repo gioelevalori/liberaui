@@ -12,7 +12,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './button-site.component.css'
 })
 export class ButtonSiteComponent {
-  public codeImport = `import { ButtonComponent } from './components/button/button.component'`;
+  public codeImport = `import { ButtonComponent } from 'libera-ui'`;
   public codeColor = `<lib-button color="orange">Invia</lib-button>`;
   public codeDisabled = `  <lib-button color="blue" [disabled]="true">Invia</lib-button>`;
   public codeLink = `

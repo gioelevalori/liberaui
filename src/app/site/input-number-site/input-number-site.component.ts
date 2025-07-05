@@ -11,7 +11,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './input-number-site.component.css'
 })
 export class InputNumberSiteComponent {
-  public codeImport = `import { InputNumberComponent } from '../../components/input-number/input-number.component';`;
+  public codeImport = `import { InputNumberComponent } from 'libera-ui';`;
   public codeInputNumber = `<lib-input-number placeholder="Numero" [min]="5" [max]="10"></lib-input-number>`;
   public codeDisabled = `<lib-input-number placeholder="Numero" [min]="5" [max]="10" [disabled]="true"></lib-input-number>`;
 }

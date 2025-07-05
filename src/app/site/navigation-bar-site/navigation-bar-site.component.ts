@@ -11,5 +11,5 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './navigation-bar-site.component.css'
 })
 export class NavigationBarSiteComponent {
-  public codeImport = `import { NavigationBarComponent } from '../../components/navigation-bar/navigation-bar.component';`;
+  public codeImport = `import { NavigationBarComponent } from 'libera-ui';`;
 }

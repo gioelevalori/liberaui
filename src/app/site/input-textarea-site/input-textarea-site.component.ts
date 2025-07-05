@@ -11,7 +11,7 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './input-textarea-site.component.css'
 })
 export class InputTextareaSiteComponent {
-  public codeImport = `import { InputTextareaComponent } from '../../components/input-textarea/input-textarea.component';`;
+  public codeImport = `import { InputTextareaComponent } from 'libera-ui';`;
   public codeTextarea = `<lib-input-textarea placeholder="Testo"></lib-input-textarea>`;
   public codeDisabled = `<lib-input-textarea placeholder="Testo" [disabled]="true"></lib-input-textarea>`;
 }

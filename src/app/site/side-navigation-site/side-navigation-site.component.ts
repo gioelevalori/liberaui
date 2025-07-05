@@ -11,5 +11,5 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './side-navigation-site.component.css'
 })
 export class SideNavigationSiteComponent {
-  public codeImport = `import { SideNavigationComponent } from '../../components/side-navigation/side-navigation.component';`;
+  public codeImport = `import { SideNavigationComponent } from 'libera-ui';`;
 }

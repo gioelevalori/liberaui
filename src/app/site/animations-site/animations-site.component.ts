@@ -11,7 +11,7 @@ import { CodeComponent } from '../../components/code/code.component';
   styleUrl: './animations-site.component.css'
 })
 export class AnimationsSiteComponent {
-  public codeImport = `import { AnimationsComponent } from '../../components/animations/animations.component';`;
+  public codeImport = `import { AnimationsComponent } from 'libera-ui';`;
 
   public codeFadeInDown = `<lib-animations [animation]="'fadeInDown'">
     <lib-input-text placeholder="Nome"></lib-input-text>

@@ -11,6 +11,6 @@ import { AnimationsComponent } from '../../components/animations/animations.comp
   styleUrl: './input-date-site.component.css'
 })
 export class InputDateSiteComponent {
-  public codeImport = `import { InputDateComponent } from '../../components/input-date/input-date.component';`;
+  public codeImport = `import { InputDateComponent } from 'libera-ui';`;
   public codeDate = `<lib-input-date></lib-input-date>`;
 }
