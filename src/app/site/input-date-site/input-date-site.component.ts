@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { InputDateComponent } from '../../components/input-date/input-date.component';
-import { CodeComponent } from '../../components/code/code.component';
-import { AnimationsComponent } from '../../components/animations/animations.component';
+import { InputDateComponent } from '../../../../projects/libera-ui/src/lib/components/input-date/input-date.component';
+import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
 
 @Component({
   selector: 'lib-input-date-site',

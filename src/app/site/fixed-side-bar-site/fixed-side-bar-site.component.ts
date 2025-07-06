@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FixedSideBarComponent } from '../../components/fixed-side-bar/fixed-side-bar.component';
-import { AnimationsComponent } from '../../components/animations/animations.component';
+import { FixedSideBarComponent } from '../../../../projects/libera-ui/src/lib/components/fixed-side-bar/fixed-side-bar.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
 
 @Component({
   selector: 'lib-fixed-side-bar-site',

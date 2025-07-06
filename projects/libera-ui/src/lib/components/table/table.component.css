@@ -3,11 +3,9 @@
   border-radius: 20px;
   padding: 10px;
   overflow: hidden;
-  background-color: #353535;
   width: 100%;
   border-collapse: collapse;
   margin: 20px auto;
-  border: 2px solid #c5c5c5;
 }
 
 .styled-table thead {

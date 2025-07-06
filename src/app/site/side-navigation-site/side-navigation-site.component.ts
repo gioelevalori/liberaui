@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SideNavigationComponent } from '../../components/side-navigation/side-navigation.component';
-import { CodeComponent } from '../../components/code/code.component';
-import { AnimationsComponent } from '../../components/animations/animations.component';
+import { SideNavigationComponent } from '../../../../projects/libera-ui/src/lib/components/side-navigation/side-navigation.component';
+import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
 
 @Component({
   selector: 'lib-side-navigation-site',

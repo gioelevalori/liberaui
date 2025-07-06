@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { SwitchThemeComponent } from './components/switch-theme/switch-theme.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { FixedSideBarComponent } from './components/fixed-side-bar/fixed-side-bar.component';
+import { NavigationBarComponent } from './../../projects/libera-ui/src/lib/components/navigation-bar/navigation-bar.component';
+import { SwitchThemeComponent } from './../../projects/libera-ui/src/lib/components/switch-theme/switch-theme.component';
+import { FooterComponent } from './../../projects/libera-ui/src/lib/components/footer/footer.component';
+import { FixedSideBarComponent } from './../../projects/libera-ui/src/lib/components/fixed-side-bar/fixed-side-bar.component';
 
 @Component({
   selector: 'lib-root',

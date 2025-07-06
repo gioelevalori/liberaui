@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { CodeComponent } from '../../components/code/code.component';
+import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
 import { RouterModule } from '@angular/router';
-import { ButtonComponent } from '../../components/button/button.component';
-import { AnimationsComponent } from '../../components/animations/animations.component';
+import { ButtonComponent } from '../../../../projects/libera-ui/src/lib/components/button/button.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
 
 @Component({
   selector: 'lib-button-site',

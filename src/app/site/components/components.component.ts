@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { FixedSideBarComponent } from '../../components/fixed-side-bar/fixed-side-bar.component';
+import { FixedSideBarComponent } from '../../../../projects/libera-ui/src/lib/components/fixed-side-bar/fixed-side-bar.component';
 
 @Component({
   selector: 'lib-components',

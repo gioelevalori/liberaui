@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { TableComponent } from '../../components/table/table.component';
-import { CodeComponent } from '../../components/code/code.component';
-import { AnimationsComponent } from '../../components/animations/animations.component';
+import { TableComponent } from '../../../../projects/libera-ui/src/lib/components/table/table.component';
+import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
 
 @Component({
   selector: 'lib-table-site',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SelectComponent, SelectOption } from '../../components/select/select.component';
-import { CodeComponent } from '../../components/code/code.component';
-import { AnimationsComponent } from '../../components/animations/animations.component';
+import { SelectComponent, SelectOption } from '../../../../projects/libera-ui/src/lib/components/select/select.component';
+import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
 
 @Component({
   selector: 'lib-select-site',

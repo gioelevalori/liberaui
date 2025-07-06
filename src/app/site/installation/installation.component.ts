@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AnimationsComponent } from '../../components/animations/animations.component';
-import { CodeComponent } from '../../components/code/code.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
+import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
 
 @Component({
   selector: 'lib-installation',

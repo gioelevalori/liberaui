@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CodeComponent } from '../../components/code/code.component';
-import { AnimationsComponent } from '../../components/animations/animations.component';
-import { CardComponent } from '../../components/card/card.component';
+import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
+import { CardComponent } from '../../../../projects/libera-ui/src/lib/components/card/card.component';
 
 @Component({
   selector: 'lib-card-site',

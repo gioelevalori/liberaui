@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { InputTextComponent } from '../../components/input-text/input-text.component';
-import { CodeComponent } from '../../components/code/code.component';
-import { AnimationsComponent } from '../../components/animations/animations.component';
+import { InputTextComponent } from '../../../../projects/libera-ui/src/lib/components/input-text/input-text.component';
+import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
+import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
 
 @Component({
   selector: 'lib-input-text-site',
