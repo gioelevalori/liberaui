@@ -1,3 +1,5 @@
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InputNumberSiteComponent } from './input-number-site.component';
@@ -8,7 +10,7 @@ describe('InputNumberSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputNumberSiteComponent]
+      imports: [InputNumberSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
     })
       .compileComponents();
 

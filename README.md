@@ -1,54 +1,67 @@
-# 📦 libera-ui
+# LiberaUI
 
-**libera-ui** is a UI component library compatible with Angular **versions 17 through 19**.  
-It is designed to simplify the development of modern, accessible, and responsive user interfaces.
+An MIT-licensed Angular component library with examples and a live customization playground.
 
----
+- [Documentation and playground](https://gioelevalori.github.io/ng-library/)
+- [Report a bug or suggest a component](https://github.com/gioelevalori/ng-library/issues)
+- [Contributing](CONTRIBUTING.md)
 
-## ✅ Compatibility
+## Run locally
 
-| Angular Version | Status |
-|-----------------|--------|
-| 17              | ✅     |
-| 18              | ✅     |
-| 19              | ✅     |
+Use Node.js 22 and npm.
 
----
+```sh
+npm ci
+npm start
+```
 
-## 📥 Installation
+Open http://127.0.0.1:4200. The demo workspace uses Angular 19. The library declares peer support for Angular 17–19; only the workspace version is verified by the current CI.
 
-Install via **npm**:
+## Build and test
 
-```bash
+```sh
+npm run build
+npm run build:lib
+npm test
+```
+
+Tests use ChromeHeadless. Set `CHROME_BIN` if Chrome is installed outside the standard path.
+
+## Use the library
+
+```sh
 npm install libera-ui
-🧩 Available Components
-Here is the complete list of exported components:
+```
 
-Component	Description
-AnimationsComponent	Custom animation handling
-ButtonComponent	Standard UI button
-FixedSideBarComponent	Fixed sidebar
-FooterComponent	Responsive footer
-InputCheckboxComponent	Custom checkbox input
-InputDateComponent	Input field for selecting dates
-InputFileComponent	File upload field
-InputNumberComponent	Numeric input field
-InputPasswordComponent	Password field with visibility toggle
-InputTextComponent	Text input field
-InputTextareaComponent	Multi-line text area
-NavigationBarComponent	Horizontal navigation bar
-SelectComponent	Custom dropdown/select menu
-SideNavigationComponent	Vertical side navigation
-SwitchThemeComponent	Theme switcher (e.g., light/dark mode)
-TableComponent	Styled data table
+The npm release and this repository may differ. New playground APIs (`radius`, `size`, `type`) are available in source; an npm release is a separate maintainer action.
 
-🛠️ Demo Site
-🔗 https://libera-ui.netlify.app
+```ts
+import { ButtonComponent } from 'libera-ui';
+// Add ButtonComponent to your standalone component's imports.
+```
 
-📄 License
-This project is licensed under the MIT License.
-See the LICENSE file for more details.
+```html
+<lib-button color="#176b3a" [radius]="12" size="comfortable">
+  Create something
+</lib-button>
+```
 
-🤝 Contributing
-Pull requests and suggestions are welcome!
-Feel free to open issues for bugs or feature requests.
+## Playground
+
+Adjust button label, accent, corner radius, spacing, and disabled state. The preview uses the actual library component, and the generated example updates with your choices. Copy feedback reports both success and clipboard errors.
+
+## GitHub Pages
+
+The Pages workflow builds the library, runs tests, builds the site with `/ng-library/` as its base path, and deploys on pushes to `master`. Hash routes support refresh and direct links without a custom server. Repository Settings → Pages must use **GitHub Actions** as its source.
+
+Pull requests run the same checks without deployment. CI uses `npm ci` and the committed lockfile.
+
+## Contribute
+
+Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting a large change. External contributors propose changes through forks and pull requests; maintainers review before merging.
+
+## License and attribution
+
+[MIT](LICENSE). Copyright (c) 2025 Libera-UI. Created by Gioele Valori.
+
+You may use, copy, modify, distribute, and sell copies under MIT. You must preserve the copyright and license notice in copies or substantial portions. MIT does not grant exclusive ownership of the original code to downstream users.

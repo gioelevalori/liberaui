@@ -1,3 +1,5 @@
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavigationBarSiteComponent } from './navigation-bar-site.component';
 
@@ -7,7 +9,7 @@ describe('NavigationBarSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavigationBarSiteComponent]
+      imports: [NavigationBarSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
     })
       .compileComponents();
 

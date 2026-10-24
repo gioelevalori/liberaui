@@ -1,3 +1,5 @@
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InputTextareaSiteComponent } from './input-textarea-site.component';
 
@@ -7,7 +9,7 @@ describe('InputTextareaSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputTextareaSiteComponent]
+      imports: [InputTextareaSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
     })
       .compileComponents();
 

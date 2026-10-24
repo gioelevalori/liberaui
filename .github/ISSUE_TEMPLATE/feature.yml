@@ -1,0 +1,16 @@
+name: Component or feature proposal
+description: Suggest a focused improvement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What user problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior and API
+      description: Include an Angular usage example and accessibility considerations.
+    validations:
+      required: true

@@ -1,3 +1,5 @@
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InputPasswordSiteComponent } from './input-password-site.component';
 
@@ -7,7 +9,7 @@ describe('InputPasswordSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputPasswordSiteComponent]
+      imports: [InputPasswordSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
     })
       .compileComponents();
 

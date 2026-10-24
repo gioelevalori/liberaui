@@ -1,3 +1,5 @@
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InputFileSiteComponent } from './input-file-site.component';
 
@@ -7,7 +9,7 @@ describe('InputFileSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputFileSiteComponent]
+      imports: [InputFileSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
     })
       .compileComponents();
 

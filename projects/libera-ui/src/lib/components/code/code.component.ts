@@ -1,31 +1,38 @@
-import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnChanges, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import Prism from 'prismjs';
-import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'lib-code',
   standalone: true,
-  imports: [ButtonComponent],
-  template: `<pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code><lib-button class="copy-button" (click)="copyCode()">{{ copyButtonText }}</lib-button></pre>`,
+  template: `<div class="code-example"><pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code></pre><button type="button" class="code-copy" (click)="copyCode()">Copy</button><span class="copy-status" role="status">{{ copyButtonText }}</span></div>`,
   styleUrl: './code.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class CodeComponent {
-  @ViewChild('codeBlock', { static: false }) codeBlock!: ElementRef;
-  public copyButtonText = 'Copy';
-  ngAfterViewChecked() {
-    if (this.codeBlock) {
-      Prism.highlightElement(this.codeBlock.nativeElement);
+export class CodeComponent implements AfterViewInit, OnDestroy, OnChanges {
+  @ViewChild('codeBlock') codeBlock!: ElementRef<HTMLElement>;
+  @Input() code: string | null = null;
+  public copyButtonText = '';
+  private resetTimer?: ReturnType<typeof setTimeout>;
+
+  ngAfterViewInit() { this.highlight(); }
+  ngOnChanges() { if (this.codeBlock) this.highlight(); }
+  private highlight() {
+    if (this.code !== null) this.codeBlock.nativeElement.textContent = this.code;
+    Prism.highlightElement(this.codeBlock.nativeElement);
+  }
+
+  public async copyCode() {
+    const text = this.codeBlock?.nativeElement.textContent?.trim();
+    if (!text) return;
+    clearTimeout(this.resetTimer);
+    try {
+      await navigator.clipboard.writeText(text);
+      this.copyButtonText = 'Copied!';
+    } catch {
+      this.copyButtonText = 'Unable to copy. Select the code and copy manually.';
     }
+    this.resetTimer = setTimeout(() => this.copyButtonText = '', 4000);
   }
 
-  public copyCode() {
-    const codeElement = this.codeBlock?.nativeElement;
-    if (!codeElement) return;
-
-    const text = codeElement.textContent?.trim() || '';
-
-    navigator.clipboard.writeText(text).catch(() => {
-    });
-  }
+  ngOnDestroy() { clearTimeout(this.resetTimer); }
 }

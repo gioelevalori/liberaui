@@ -1,3 +1,4 @@
+import { PlaygroundComponent } from './site/playground/playground.component';
 import { Routes } from '@angular/router';
 import { ButtonSiteComponent } from './site/button-site/button-site.component';
 import { SelectSiteComponent } from './site/select-site/select-site.component';
@@ -21,6 +22,7 @@ import { CardSiteComponent } from './site/card-site/card-site.component';
 import { BannerSiteComponent } from './site/banner-site/banner-site.component';
 
 export const routes: Routes = [
+  { path: 'playground', component: PlaygroundComponent, title: 'Playground | LiberaUI' },
   { path: 'components', component: ComponentsComponent },
   { path: 'button', component: ButtonSiteComponent },
   { path: 'select', component: SelectSiteComponent },
@@ -40,5 +42,10 @@ export const routes: Routes = [
   { path: 'installation', component: InstallationComponent },
   { path: 'card', component: CardSiteComponent },
   { path: 'banner', component: BannerSiteComponent },
-  { path: '**', component: HomeComponent }
+  { path: '**', component: HomeComponent, title: 'LiberaUI | Angular components' }
 ];
+
+
+for (const route of routes) {
+  route.title ??= (route.path || 'Overview').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') + ' | LiberaUI';
+}

@@ -1,11 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'lib-switch-theme',
   standalone: true,
-  imports: [CommonModule],
-  template: '<button (click)="toggleTheme()" class="custom-input" [ngClass]="switchColor()">{{ isDarkMode ? "🌙" : "🌞" }}</button>',
+  template: `<button type="button" class="theme-toggle" (click)="toggleTheme()">{{ isDarkMode ? 'Light theme' : 'Dark theme' }}</button>`,
   styleUrls: ['./switch-theme.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
@@ -13,12 +11,10 @@ export class SwitchThemeComponent {
   isDarkMode = false;
 
   ngOnInit() {
-    // Controlla se l'utente ha già un tema salvato
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      this.isDarkMode = savedTheme === 'dark';
-      this.updateTheme();
-    }
+    let savedTheme: string | null = null;
+    try { savedTheme = localStorage.getItem('theme'); } catch { /* Storage may be disabled. */ }
+    this.isDarkMode = savedTheme ? savedTheme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    this.updateTheme();
   }
 
   toggleTheme() {
@@ -27,13 +23,8 @@ export class SwitchThemeComponent {
   }
 
   private updateTheme() {
-    if (this.isDarkMode) {
-      document.body.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light');
-    }
+    document.body.classList.toggle('dark-theme', this.isDarkMode);
+    try { localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light'); } catch { /* Theme still works without persistence. */ }
   }
 
   public switchColor(): string {

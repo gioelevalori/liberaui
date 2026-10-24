@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T00:00:00Z",
+  "title": "Design System: LiberaUI",
+  "extensions": {
+    "shadows": [{ "name": "library-card", "value": "0 0 20px rgba(0, 0, 0, 0.15)", "purpose": "Existing library card elevation." }],
+    "motion": [{ "name": "button-hover", "value": "filter 0.3s ease", "purpose": "Library button brightness transition." }, { "name": "reduced-motion", "value": ".01ms", "purpose": "Global animation and transition duration under prefers-reduced-motion: reduce; animation delays become 0ms and scrolling becomes auto." }],
+    "breakpoints": [{ "name": "documentation-navigation", "value": "760px" }, { "name": "flexible-examples", "value": "768px" }, { "name": "workbench", "value": "960px" }]
+  },
+  "components": [
+    { "name": "Primary link", "kind": "button", "refersTo": "primary-link", "description": "Home action linking into the playground.", "html": "<a class=\"ds-primary\" href=\"#\">Open the playground</a>", "css": ".ds-primary { display:inline-block; font:500 14px Poppins,sans-serif; padding:12px 20px; border-radius:6px; color:var(--background-color); background:var(--docs-accent); text-decoration:none; } .ds-primary:hover { filter:brightness(.9); } .ds-primary:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" },
+    { "name": "Secondary link", "kind": "button", "description": "Bordered home action.", "html": "<a class=\"ds-secondary\" href=\"#\">Get started</a>", "css": ".ds-secondary { display:inline-block; font:500 14px Poppins,sans-serif; padding:12px 20px; border-radius:6px; color:var(--text-primary); border:1px solid var(--border-color); text-decoration:none; } .ds-secondary:hover { background:var(--surface-color); } .ds-secondary:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" },
+    { "name": "Playground field", "kind": "input", "refersTo": "control", "description": "Editable workbench field.", "html": "<input class=\"ds-field\" aria-label=\"Button label\" value=\"Button\" />", "css": ".ds-field { font:inherit; padding:10px; border:1px solid var(--border-color); border-radius:6px; background:var(--background-color); color:var(--text-primary); } .ds-field:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" },
+    { "name": "Documentation navigation", "kind": "nav", "description": "Active documentation route.", "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Playground</a></nav>", "css": ".ds-nav a { display:block; font:600 14px Poppins,sans-serif; padding:9px 12px; margin:2px 0; border-radius:6px; text-decoration:none; color:var(--docs-accent); background:var(--docs-accent-soft); } .ds-nav a:hover { background:var(--docs-accent-soft); } .ds-nav a:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" },
+    { "name": "Library card", "kind": "card", "description": "Existing library container, independent of documentation surface styling.", "html": "<div class=\"ds-card\">LiberaUI card</div>", "css": ".ds-card { padding:15px; border-radius:20px; margin:.5rem; border:2px solid #c5c5c5; background:#c5c5c5; box-shadow:0 0 20px rgba(0,0,0,.15); font-family:Poppins,sans-serif; }" },
+    { "name": "Library button", "kind": "button", "description": "Base library button with the actual gray default.", "html": "<button class=\"ds-button\" type=\"button\">Button</button>", "css": ".ds-button { padding:10px 20px; font:16px Poppins,sans-serif; border:0; border-radius:20px; cursor:pointer; transition:filter .3s ease; color:white; background:gray; margin:.5rem; } .ds-button:hover { filter:brightness(85%); } .ds-button:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" }
+  ],
+  "narrative": {
+    "overview": "Extend the incumbent Poppins documentation interface: green accents, neutral surfaces, light and dark themes, and readable examples. LiberaUI and Gioele Valori attribution remain visible. Components demonstrate customization; documentation chrome provides a consistent frame around those examples.",
+    "dos": ["Do preserve the green documentation frame and coordinated light/dark roles.", "Do keep readable documentation and operable live preview controls distinct in layout.", "Do retain existing library component defaults when presenting examples, and expose intentional customization."],
+    "donts": ["Don't present the documentation accent as the default color of every library component.", "Don't replace Poppins, the established LiberaUI name, or author attribution during routine interface extensions."]
+  }
+}

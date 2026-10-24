@@ -1,8 +1,7 @@
-span {
-  font-family: "Fira Code", monospace;
-}
-
-pre {
-  border-radius: 20px;
-  border: 2px solid #c5c5c5;
-}
+lib-code { display: block; min-width: 0; }
+lib-code .code-example { margin: 24px 0; }
+lib-code pre { border-radius: 12px; margin: 0 0 8px; max-width: 100%; overflow-x: auto; }
+lib-code code, lib-code code span { font-family: 'Fira Code', monospace; }
+lib-code .code-copy { min-height: 40px; padding: 6px 14px; border: 1px solid var(--border-color, #c5c5c5); border-radius: 6px; background: var(--surface-color, #f8f9fa); color: var(--text-primary, #212529); cursor: pointer; }
+lib-code .code-copy:hover { border-color: var(--text-primary, #212529); }
+lib-code .copy-status { margin-left: 12px; font: inherit; font-size: 13px; }

@@ -1,156 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
-
-* {
-  font-family: "Poppins", sans-serif;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span,
-button,
-input,
-textarea {
-  font-family: "Poppins", sans-serif;
-}
-
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-.content-page {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.link-button {
-  color: white;
-  text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .content-page {
-    width: 90%;
-  }
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: row;
-}
-
-@media (max-width: 768px) {
-  .flex-container {
-    flex-direction: column;
-  }
+:root { --docs-accent: #176b3a; --docs-accent-soft: #e9f5ed; }
+* { box-sizing: border-box; }
+html { scroll-padding-top: 100px; }
+body { margin: 0; font-family: 'Poppins', sans-serif; line-height: 1.65; }
+body.dark-theme { --docs-accent: #8cdda9; --docs-accent-soft: #203a2c; }
+button, input, textarea, select { font: inherit; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--docs-accent); outline-offset: 4px; }
+::selection { background: var(--docs-accent); color: var(--surface-color); }
+h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.03em; margin: 0 0 24px; }
+h2 { margin: 40px 0 16px; }
+p { max-width: 72ch; }
+.content-page { width: 100%; max-width: 960px; margin: 0 auto; }
+.content-page > p:first-of-type { color: var(--text-secondary); }
+.content-page img { max-width: 100%; height: auto; }
+.link-button { color: white; text-decoration: none; }
+.flex-container { display: flex; gap: 24px; }
+pre { max-width: 100%; overflow-x: auto; }
+code, code span, pre { font-family: 'Fira Code', monospace; }
+table { font-variant-numeric: tabular-nums; }
+@media (max-width: 768px) { .flex-container { flex-direction: column; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }

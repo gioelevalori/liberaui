@@ -1,3 +1,5 @@
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableSiteComponent } from './table-site.component';
@@ -8,7 +10,7 @@ describe('TableSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TableSiteComponent]
+      imports: [TableSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
     })
     .compileComponents();
     

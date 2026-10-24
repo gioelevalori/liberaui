@@ -1,17 +1,19 @@
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CardSiteComponent } from './card-site.component';
+import { BannerSiteComponent } from './banner-site.component';
 
-describe('CardSiteComponent', () => {
-  let component: CardSiteComponent;
-  let fixture: ComponentFixture<CardSiteComponent>;
+describe('BannerSiteComponent', () => {
+  let component: BannerSiteComponent;
+  let fixture: ComponentFixture<BannerSiteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CardSiteComponent]
+      imports: [BannerSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(CardSiteComponent);
+    fixture = TestBed.createComponent(BannerSiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

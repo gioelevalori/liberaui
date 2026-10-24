@@ -1,3 +1,5 @@
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InputCheckboxSiteComponent } from './input-checkbox-site.component';
 
@@ -7,7 +9,7 @@ describe('InputCheckboxSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputCheckboxSiteComponent]
+      imports: [InputCheckboxSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
     })
       .compileComponents();
 

@@ -1,0 +1,30 @@
+<div class="content-page playground">
+  <h1>Make it yours.</h1>
+  <p>One component, your direction. Tune the details, try the result, and take the Angular code with you.</p>
+  <div class="workbench">
+    <section class="preview" aria-label="Live button preview">
+      <span class="preview-label">Live preview</span>
+      <div class="preview-stage">
+        <lib-button [color]="accent" [disabled]="disabled" [radius]="radius" [size]="size" (click)="activate()">{{ label || 'Create something' }}</lib-button>
+      </div>
+      <p class="preview-status" role="status">{{ disabled ? 'Button disabled. Enable it in the controls to try it.' : clicks ? 'Button activated ' + clicks + (clicks === 1 ? ' time.' : ' times.') : 'Try the button. This is a real component.' }}</p>
+    </section>
+    <section class="controls" aria-label="Button appearance">
+      <div class="controls-heading"><h2>Fine-tune</h2><button type="button" class="reset" (click)="reset()">Reset</button></div>
+      <label for="button-label">Button label</label>
+      <input id="button-label" [(ngModel)]="label" maxlength="48">
+      <fieldset><legend>Accent</legend><div class="swatches">
+        <button *ngFor="let palette of palettes" type="button" class="swatch" [style.background-color]="palette.value" [class.selected]="accent === palette.value" [attr.aria-label]="palette.name" [attr.aria-pressed]="accent === palette.value" (click)="accent = palette.value"><span *ngIf="accent === palette.value">Selected</span></button>
+      </div></fieldset>
+      <label for="radius">Corner radius <output>{{ radius }}px</output></label>
+      <input id="radius" type="range" min="0" max="28" [(ngModel)]="radius">
+      <label for="size">Spacing</label>
+      <select id="size" [(ngModel)]="size"><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select>
+      <label class="checkbox-label"><input type="checkbox" [(ngModel)]="disabled"> Disabled state</label>
+    </section>
+  </div>
+  <h2>Your Angular code</h2>
+  <p>Copy this example into a component that imports <code>ButtonComponent</code>.</p>
+  <lib-code [code]="code" />
+  <p class="workbench-note">The preview uses the same LiberaUI button as your application. No mockup, no separate styling layer.</p>
+</div>

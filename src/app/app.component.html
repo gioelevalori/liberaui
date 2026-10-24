@@ -1,38 +1,23 @@
-<lib-navigation-bar>
-  <h3 routerLink="">LiberaUI</h3>
-  <lib-switch-theme></lib-switch-theme>
-</lib-navigation-bar>
-
-<lib-fixed-side-bar>
-  <div sidebar>
-
-    <h5>Getting starter</h5>
-    <a routerLink="/installation">Installation</a>
-
-    <h5>Components</h5>
-    <a routerLink="/button">Button</a>
-    <a routerLink="/table">Table</a>
-    <a routerLink="/select">Select</a>
-    <a routerLink="/input-text">Input-text</a>
-    <a routerLink="/input-number">Input-number</a>
-    <a routerLink="/input-file">Input-file</a>
-    <a routerLink="/input-password">Input-password</a>
-    <!--<a routerLink="/input-date">Input-date</a>-->
-    <a routerLink="/input-textarea">Input-textarea</a>
-    <a routerLink="/input-checkbox">Input-checkbox</a>
-    <a routerLink="/switch-theme">Switch-theme</a>
-    <!--<a routerLink="/navigation-bar">Navigation-bar</a>-->
-    <!--<a routerLink="/side-navigation">Side-navigation</a>-->
-    <a routerLink="/animations">Animations</a>
-    <!--<a routerLink="/fixed-side-bar">Fixed-side-bar</a>-->
-    <a routerLink="/card">Card</a>
-    <!--<a routerLink="/banner">Banner</a>-->
+<a class="skip-link" href="#main-content" (click)="skipToContent($event)">Skip to content</a>
+<header class="site-header">
+  <a class="brand" routerLink="/" (click)="menuOpen = false">Libera<span>UI</span></a>
+  <div class="header-actions">
+    <a class="repository-link" href="https://github.com/gioelevalori/ng-library">GitHub</a>
+    <lib-switch-theme />
+    <button class="menu-toggle" type="button" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-controls="documentation-nav">{{ menuOpen ? 'Close menu' : 'Menu' }}</button>
   </div>
-  <div main>
-    <router-outlet></router-outlet>
-  </div>
-</lib-fixed-side-bar>
-<br>
-<lib-footer>
-  <p>Built by gioelevalori. Open source and available on GitHub.</p>
-</lib-footer>
+</header>
+<div class="docs-layout">
+  <nav id="documentation-nav" class="docs-nav" [class.is-open]="menuOpen" aria-label="Documentation">
+    <h2>Getting started</h2>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page" (click)="menuOpen = false">Overview</a>
+    <a routerLink="/installation" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="menuOpen = false">Installation</a>
+    <a routerLink="/playground" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="menuOpen = false">Playground</a>
+    <h2>Components</h2>
+    <a *ngFor="let item of navigation" [routerLink]="item.path" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="menuOpen = false">{{ item.label }}</a>
+  </nav>
+  <main id="main-content" tabindex="-1">
+    <router-outlet />
+    <footer class="site-footer">Built by <a href="https://github.com/gioelevalori">gioelevalori</a>. LiberaUI is available under the MIT License.</footer>
+  </main>
+</div>
