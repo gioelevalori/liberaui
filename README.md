@@ -73,3 +73,13 @@ The showcase follows an essential, precise direction inspired by the presentatio
 The home includes local workspace, notification, checklist, team-role, and button examples. The catalog supports text and category filtering. `SwitchComponent` supports `ngModel` and reactive forms. Buttons support `solid`, `secondary`, `outline`, `ghost`, and `destructive` variants plus a loading state. These additions are in repository source and are not yet an npm release.
 
 LiberaUI's original geometric mark is supplied as SVG and a multi-resolution ICO favicon (16–256px).
+
+## Share the site's component style
+
+After building the library from this repository, import its shared theme once in your application's global stylesheet:
+
+```css
+@import 'libera-ui/theme.css';
+```
+
+The theme includes the same neutral colors, Inter font files, borders, focus treatment, and light/dark tokens used by this documentation site. Add `dark-theme` to `body` to select dark mode, or use `SwitchThemeComponent`. Components and catalog previews use this shared theme directly. This source addition requires a future npm release before it is available in the published package.

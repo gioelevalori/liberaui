@@ -1,7 +1,14 @@
-lib-code { display: block; min-width: 0; }
-lib-code .code-example { margin: 24px 0; }
-lib-code pre { border-radius: 12px; margin: 0 0 8px; max-width: 100%; overflow-x: auto; }
-lib-code code, lib-code code span { font-family: 'Fira Code', monospace; }
-lib-code .code-copy { min-height: 40px; padding: 6px 14px; border: 1px solid var(--border-color, #c5c5c5); border-radius: 6px; background: var(--surface-color, #f8f9fa); color: var(--text-primary, #212529); cursor: pointer; }
-lib-code .code-copy:hover { border-color: var(--text-primary, #212529); }
-lib-code .copy-status { margin-left: 12px; font: inherit; font-size: 13px; }
+lib-code { display:block; min-width:0; max-width:100%; }
+lib-code .code-example { min-width:0; margin:24px 0; }
+lib-code pre[class*="language-"] { border:1px solid var(--border-color,#e5e5e8); border-radius:10px; margin:0 0 10px; padding:20px; max-width:100%; overflow-x:auto; background:var(--surface-color,#f7f7f8); }
+lib-code code[class*="language-"],lib-code pre[class*="language-"] { color:var(--text-primary,#18181b); text-shadow:none; font:12px/1.7 ui-monospace,Consolas,monospace; }
+lib-code code span { font-family:inherit; }
+lib-code .token { background:none; }
+lib-code .token.comment,lib-code .token.punctuation,lib-code .token.operator { color:var(--text-secondary,#66666f); }
+lib-code .token.string,lib-code .token.attr-value { color:var(--docs-accent,#176b3a); }
+lib-code .token.keyword,lib-code .token.boolean,lib-code .token.function,lib-code .token.number { color:var(--lib-code-keyword,#6d28d9); }
+lib-code .token.class-name,lib-code .token.tag,lib-code .token.property { color:var(--text-primary,#18181b); }
+lib-code .code-copy { min-height:40px; padding:8px 14px; border:1px solid var(--border-color,#e5e5e8); border-radius:6px; background:var(--background-color,#fff); color:var(--text-primary,#18181b); font-size:12px; cursor:pointer; }
+lib-code .code-copy:hover { background:var(--surface-color,#f7f7f8); }
+lib-code .copy-status { display:inline-block; max-width:100%; overflow-wrap:anywhere; margin-left:12px; font:inherit; font-size:12px; }
+@media(max-width:760px) { lib-code pre[class*="language-"],lib-code code[class*="language-"] { white-space:pre-wrap; overflow-wrap:anywhere; word-break:normal; } lib-code pre[class*="language-"] { padding:16px; } }

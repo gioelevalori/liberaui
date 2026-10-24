@@ -82,7 +82,12 @@
         "name": "header-search-hidden",
         "value": "1100px"
       }
-    ]
+    ],
+    "sharedTheme": {
+      "path": "projects/libera-ui/theme.css",
+      "export": "libera-ui/theme.css",
+      "fonts": "Local Inter Latin and Latin Extended, OFL licensed"
+    }
   },
   "components": [
     {

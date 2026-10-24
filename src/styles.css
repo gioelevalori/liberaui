@@ -1,11 +1,11 @@
-@import '@fontsource-variable/inter';
+@import '../projects/libera-ui/theme.css';
 @import './styles/shell.css';
 @import './styles/showcase.css';
 @import './styles/catalog.css';
 :root { --docs-accent:#176b3a; --docs-accent-soft:#edf7f0; }
 * { box-sizing:border-box; }
 html { scroll-padding-top:90px; scrollbar-color:var(--border-color) var(--background-color); }
-body { --lib-accent:var(--text-primary); --lib-accent-foreground:var(--background-color); margin:0; font-family:'Inter Variable',Inter,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+body { margin:0; font-family:'Inter Variable',Inter,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
 body.dark-theme { --docs-accent:#92d4ac; --docs-accent-soft:#172c21; }
 button,input,textarea,select { font:inherit; }
 button,a,input,textarea,select { -webkit-tap-highlight-color:transparent; }

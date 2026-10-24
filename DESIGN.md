@@ -168,3 +168,7 @@ Keyboard focus uses a visible primary-text outline (2px) with a 3px offset; libr
 - Don't spread the green semantic accent across every action or container.
 - Don't restore Poppins, diffuse card shadows, or rounded 20px ordinary controls during routine extensions.
 - Don't turn selectable demo palettes into a global site recoloring rule.
+
+### Shared implementation
+
+The authoritative theme is `projects/libera-ui/theme.css`, imported by the site's global stylesheet and shipped as `libera-ui/theme.css` with local Inter Latin/Latin Extended font assets and their OFL license. Theme aliases resolve on body. Component previews use the actual library controls, not separate native lookalikes. Cards, navigation, sidebars, banner, footer, fields, and code examples share the same palette and border language. The file input wraps long names; mobile code examples wrap lines instead of relying on horizontal scrolling.

@@ -8,7 +8,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class SwitchThemeComponent {
-  isDarkMode = false;
+  get isDarkMode() { return document.body.classList.contains('dark-theme'); }
+  set isDarkMode(value: boolean) { document.body.classList.toggle('dark-theme', value); }
 
   ngOnInit() {
     let savedTheme: string | null = null;

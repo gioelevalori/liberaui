@@ -1,3 +1,13 @@
+import { InputTextComponent } from '../../../../projects/libera-ui/src/lib/components/input-text/input-text.component';
+import { InputNumberComponent } from '../../../../projects/libera-ui/src/lib/components/input-number/input-number.component';
+import { InputPasswordComponent } from '../../../../projects/libera-ui/src/lib/components/input-password/input-password.component';
+import { InputTextareaComponent } from '../../../../projects/libera-ui/src/lib/components/input-textarea/input-textarea.component';
+import { InputFileComponent } from '../../../../projects/libera-ui/src/lib/components/input-file/input-file.component';
+import { InputCheckboxComponent } from '../../../../projects/libera-ui/src/lib/components/input-checkbox/input-checkbox.component';
+import { SelectComponent } from '../../../../projects/libera-ui/src/lib/components/select/select.component';
+import { CardComponent } from '../../../../projects/libera-ui/src/lib/components/card/card.component';
+import { TableComponent } from '../../../../projects/libera-ui/src/lib/components/table/table.component';
+import { SwitchThemeComponent } from '../../../../projects/libera-ui/src/lib/components/switch-theme/switch-theme.component';
 import { Component, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -7,7 +17,7 @@ import { componentRegistry } from '../../component-registry';
 import { ButtonComponent } from '../../../../projects/libera-ui/src/lib/components/button/button.component';
 import { SwitchComponent } from '../../../../projects/libera-ui/src/lib/components/switch/switch.component';
 
-@Component({ selector:'lib-components', standalone:true, imports:[CommonModule,FormsModule,RouterModule,ButtonComponent,SwitchComponent], templateUrl:'./components.component.html', styleUrl:'./components.component.css' })
+@Component({ selector:'lib-components', standalone:true, imports:[CommonModule,FormsModule,RouterModule,ButtonComponent,SwitchComponent,InputTextComponent,InputNumberComponent,InputPasswordComponent,InputTextareaComponent,InputFileComponent,InputCheckboxComponent,SelectComponent,CardComponent,TableComponent,SwitchThemeComponent], templateUrl:'./components.component.html', styleUrl:'./components.component.css' })
 export class ComponentsComponent {
   query = '';
   category = 'All';

@@ -1,4 +1,6 @@
-.custom-input { box-sizing:border-box; min-height:40px; max-width:100%; padding:9px 12px; font:400 13px/1.5 'Inter Variable',Inter,sans-serif; border:1px solid var(--border-color,#d4d4d8); border-radius:7px; margin:.5rem; background:var(--background-color,#fff); color:var(--text-primary,#18181b); }
-.custom-input::placeholder { color:var(--text-secondary,#66666f); }
-.custom-input:focus-visible { outline:2px solid var(--text-primary,#18181b); outline-offset:3px; }
-.custom-input:disabled { opacity:.5; cursor:not-allowed; }
+:host { display:flex; align-items:center; flex-wrap:wrap; gap:12px; min-width:0; max-width:100%; margin:8px 0; font-family:'Inter Variable',Inter,sans-serif; }
+.custom-file-label { display:inline-flex; align-items:center; position:relative; max-width:100%; min-height:40px; padding:9px 14px; border:1px solid var(--border-color,#e5e5e8); border-radius:7px; background:var(--background-color,#fff); color:var(--text-primary,#18181b); font-size:13px; cursor:pointer; }
+.custom-file-label:hover { background:var(--surface-color,#f7f7f8); }
+.custom-file-label:focus-within { outline:2px solid var(--text-primary,#18181b); outline-offset:3px; }
+input { position:absolute; inset:0; width:100%; min-width:0; opacity:0; cursor:pointer; }
+.file-name { min-width:0; max-width:100%; overflow-wrap:anywhere; font-size:12px; color:var(--text-secondary,#66666f); }

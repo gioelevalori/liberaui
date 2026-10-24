@@ -45,3 +45,7 @@
 .catalog-note { color:var(--text-secondary); font-size:11px; margin:40px 0 0; max-width:80ch; }
 @media(max-width:1000px) { .catalog-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .catalog-tools { flex-direction:column; align-items:start; gap:16px; } }
 @media(max-width:600px) { .catalog-intro { padding:44px 0 30px; }.catalog-grid { grid-template-columns:1fr; gap:24px; }.catalog-search { width:100%; }.catalog-search input { flex:1; }.catalog-categories button { padding:8px 10px; } }
+.catalog-preview > :is(lib-input-text,lib-input-number,lib-input-password,lib-input-textarea,lib-select,lib-input-file,lib-card,lib-table) { display:block; min-width:0; width:100%; max-width:100%; }
+.catalog-preview .custom-input { width:100%; max-width:100%; margin:0; }
+.catalog-preview lib-card .custom-card { margin:0; padding:20px; }
+.catalog-preview lib-table { margin:0; }

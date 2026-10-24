@@ -1,21 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-input-file',
-  standalone: true,
-  imports: [],
-  template: '<label for="file-upload" class="custom-file-label">Scegli un file</label><input id="file-upload" type="file" (change)="onFileSelected($event)"><span id="file-name">{{ fileName || "Nessun file selezionato" }}</span>',
+  selector: 'lib-input-file', standalone: true,
+  template: `<label class="custom-file-label">Choose a file<input type="file" (change)="onFileSelected($event)"></label><span class="file-name" role="status">{{ fileName || 'No file selected' }}</span>`,
   styleUrls: ['./input-file.component.css', '../font.css'],
 })
 export class InputFileComponent {
-  fileName: string = '';
-
+  fileName = '';
   onFileSelected(event: Event) {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length > 0) {
-      this.fileName = input.files[0].name;
-    } else {
-      this.fileName = 'Nessun file selezionato';
-    }
+    this.fileName = (event.target as HTMLInputElement).files?.[0]?.name || '';
   }
 }

@@ -1,29 +1,14 @@
-import { CommonModule } from '@angular/common';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'lib-side-navigation',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
-    <div id="mySidenav" [ngClass]="{'minWidth': isOpen} " class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-      <ng-content></ng-content>
-    </div>
-    <span style="font-size:30px;cursor:pointer" (click)="openNav()">X</span>
-  `,
-  styleUrls: ['./side-navigation.component.css', '../font.css'],
-  encapsulation: ViewEncapsulation.None,
+  selector:'lib-side-navigation', standalone:true,
+  template:`<nav class="sidenav" [hidden]="!isOpen" aria-label="Side navigation"><button type="button" class="closebtn" (click)="closeNav()">Close</button><ng-content></ng-content></nav><button type="button" class="nav-trigger" (click)="openNav()" [attr.aria-expanded]="isOpen">Open navigation</button>`,
+  styleUrls:['./side-navigation.component.css','../font.css'], encapsulation:ViewEncapsulation.None,
 })
 export class SideNavigationComponent {
-  public isOpen = false;
-  public fullWidth = false;
-  public openNav() {
-    this.isOpen = true;
-  }
-
-  public closeNav() {
-    this.isOpen = false;
-  }
+  isOpen = false;
+  fullWidth = false;
+  openNav() { this.isOpen = true; }
+  closeNav() { this.isOpen = false; }
+  @HostListener('document:keydown.escape') onEscape() { this.closeNav(); }
 }
-

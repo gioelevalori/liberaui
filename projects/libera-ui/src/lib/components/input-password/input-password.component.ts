@@ -4,11 +4,12 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'lib-input-password',
   standalone: true,
   imports: [],
-  template: '<input [type]="type" [placeholder]="placeholder" [disabled]="disabled" class="custom-input" />',
+  template: '<input [type]="type" [placeholder]="placeholder" [attr.aria-label]="label || placeholder" [disabled]="disabled" class="custom-input" />',
   styleUrls: ['./input-password.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputPasswordComponent {
+  @Input() label = '';
   @Input() placeholder: string = 'Inserisci testo...';
   @Input() type: string = 'password';
   @Input() disabled: boolean = false;

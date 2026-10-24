@@ -1,9 +1,4 @@
-.custom-input {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #c5c5c5;
-  border-radius: 20px;
-  margin: 0.5rem;
-  background-color: white;
-  color: gray;
-}
+.custom-input { box-sizing:border-box; min-height:40px; min-width:0; max-width:calc(100% - 1rem); padding:9px 12px; font:400 13px/1.5 'Inter Variable',Inter,sans-serif; border:1px solid var(--border-color,#d4d4d8); border-radius:7px; margin:.5rem; background:var(--background-color,#fff); color:var(--text-primary,#18181b); }
+.custom-input::placeholder { color:var(--text-secondary,#66666f); }
+.custom-input:focus-visible { outline:2px solid var(--text-primary,#18181b); outline-offset:3px; }
+.custom-input:disabled { opacity:.5; cursor:not-allowed; }

@@ -12,6 +12,11 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false,
-  "license": "MIT"
+  "sideEffects": [
+    "./theme.css"
+  ],
+  "license": "MIT",
+  "exports": {
+    "./theme.css": "./theme.css"
+  }
 }

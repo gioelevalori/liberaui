@@ -23,3 +23,10 @@ input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--docs-accen
 @media (max-width: 960px) { .workbench { grid-template-columns: 1fr; } .controls { border-left: 0; border-top: 1px solid var(--border-color); } .preview-stage { min-height: 220px; } }
 
 .swatch:disabled { opacity:.35; cursor:not-allowed; }
+
+/* Allow controls to reflow even when their labels or content are unusually long. */
+.controls,.controls fieldset { min-width:0; }
+.swatches { flex-wrap:wrap; padding:4px; }
+.swatch { flex:0 0 36px; }
+.preview-stage > lib-button { min-width:0; max-width:100%; }
+@media(max-width:480px) { .preview,.controls { padding:20px; } .preview-stage { min-height:180px; } }

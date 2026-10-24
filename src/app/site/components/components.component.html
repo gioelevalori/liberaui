@@ -7,21 +7,21 @@
       <div class="catalog-preview" [ngSwitch]="item.path">
         <div *ngSwitchCase="'/button'" class="catalog-button-preview"><lib-button (click)="previewCount = previewCount + 1">{{ previewCount ? 'Clicked ' + previewCount : 'Build something' }}</lib-button><lib-button variant="outline" size="compact" (click)="previewCount = previewCount + 1">Outline</lib-button></div>
         <div *ngSwitchCase="'/switch'" class="catalog-switch-preview"><span>Focus mode</span><lib-switch label="Focus mode preview" [(ngModel)]="previewChecked" /></div>
-        <input *ngSwitchCase="'/input-text'" class="demo-field" placeholder="Your next idea" aria-label="Text input preview">
-        <input *ngSwitchCase="'/input-number'" class="demo-field" type="number" value="12" aria-label="Number input preview">
-        <input *ngSwitchCase="'/input-password'" class="demo-field" type="password" value="liberaui" aria-label="Password input preview">
-        <input *ngSwitchCase="'/input-file'" class="demo-field" type="file" aria-label="File input preview">
-        <textarea *ngSwitchCase="'/input-textarea'" class="demo-field" rows="2" aria-label="Textarea preview" placeholder="Leave room for the details."></textarea>
-        <label *ngSwitchCase="'/input-checkbox'" class="catalog-checkbox"><input type="checkbox" checked> Include the little details</label>
-        <select *ngSwitchCase="'/select'" class="demo-field" aria-label="Select preview"><option>Choose a framework</option><option>Angular</option><option>React</option><option>Vue</option></select>
-        <div *ngSwitchCase="'/table'" class="catalog-mini-table"><div><strong>Component</strong><strong>Status</strong></div><div><span>Button</span><span class="badge badge-success">Ready</span></div><div><span>Switch</span><span class="badge">New</span></div></div>
-        <div *ngSwitchCase="'/card'" class="catalog-mini-card"><strong>Room for an idea.</strong><span>Give your content a place to live.</span></div>
-        <div *ngSwitchCase="'/switch-theme'" class="catalog-theme-preview"><span>Light</span><span>Dark</span></div>
+        <lib-input-text *ngSwitchCase="'/input-text'" placeholder="Your next idea" label="Text input preview" />
+        <lib-input-number *ngSwitchCase="'/input-number'" placeholder="12" [max]="100" label="Number input preview" />
+        <lib-input-password *ngSwitchCase="'/input-password'" placeholder="Your password" label="Password input preview" />
+        <lib-input-file *ngSwitchCase="'/input-file'" />
+        <lib-input-textarea *ngSwitchCase="'/input-textarea'" placeholder="Leave room for the details." label="Textarea preview" />
+        <div *ngSwitchCase="'/input-checkbox'" class="catalog-checkbox"><lib-input-checkbox label="Include the little details" /><span>Include the little details</span></div>
+        <lib-select *ngSwitchCase="'/select'" placeholder="Choose a framework" label="Select preview" [options]="[{value: 'angular', label: 'Angular'},{value: 'react', label: 'React'},{value: 'vue', label: 'Vue'}]" />
+        <lib-table *ngSwitchCase="'/table'"><thead><tr><th>Component</th><th>Status</th></tr></thead><tbody><tr><td>Button</td><td>Ready</td></tr><tr><td>Switch</td><td>New</td></tr></tbody></lib-table>
+        <lib-card *ngSwitchCase="'/card'"><h3>Room for an idea.</h3><p>Give your content a place to live.</p></lib-card>
+        <lib-switch-theme *ngSwitchCase="'/switch-theme'" />
         <div *ngSwitchCase="'/animations'" class="catalog-motion-preview"><span></span><p>Hover to move</p></div>
       </div>
       <div class="catalog-description"><a [routerLink]="item.path"><h2>{{ item.label }}</h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><p>{{ item.description }}</p><span>{{ item.category }}</span></div>
     </article>
   </div>
   <div *ngIf="!filtered.length" class="catalog-empty"><h2>No components found.</h2><p>Try a different word or reset the category.</p><lib-button variant="outline" (click)="query = ''; category = 'All'">Clear filters</lib-button></div>
-  <p class="catalog-note">Button and Switch previews use the library components. Other tiles illustrate native controls; open their documentation for the LiberaUI implementation.</p>
+  <p class="catalog-note">The previews use the library components and the same shared theme as this site. The motion tile illustrates the transition pattern.</p>
 </div>

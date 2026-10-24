@@ -1,7 +1,2 @@
-:root { color-scheme:light; --primary-color:#18181b; --secondary-color:#71717a; --success-color:#176b3a; --danger-color:#b42335; --warning-color:#a16207; --info-color:#2454ce; --background-color:#ffffff; --surface-color:#f7f7f8; --text-primary:#18181b; --text-secondary:#66666f; --text-color:#18181b; --border-color:#e5e5e8; }
-body.dark-theme { color-scheme:dark; --primary-color:#fafafa; --secondary-color:#a1a1aa; --success-color:#92d4ac; --danger-color:#fb7185; --warning-color:#facc15; --info-color:#93b4ff; --background-color:#111113; --surface-color:#1a1a1e; --text-primary:#f4f4f5; --text-secondary:#a1a1aa; --text-color:#f4f4f5; --border-color:#2c2c32; }
-body { background:var(--background-color); color:var(--text-primary); }
 lib-switch-theme .theme-toggle { padding:7px 10px; min-height:34px; border:0; border-radius:6px; background:none; color:var(--text-secondary); cursor:pointer; font:inherit; font-size:11px; white-space:nowrap; }
 lib-switch-theme .theme-toggle:hover { background:var(--surface-color); color:var(--text-primary); }
-.dark-theme .custom-input { background:#1a1a1e; color:#f4f4f5; }
-.dark-theme .custom-card { background:#1a1a1e; color:#f4f4f5; }

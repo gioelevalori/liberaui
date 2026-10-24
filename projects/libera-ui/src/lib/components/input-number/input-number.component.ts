@@ -4,11 +4,12 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'lib-input-number',
   standalone: true,
   imports: [],
-  template: '<input [type]="type" [placeholder]="placeholder" [disabled]="disabled" [min]="min" [max]="max" class="custom-input" />',
+  template: '<input [type]="type" [placeholder]="placeholder" [attr.aria-label]="label || placeholder" [disabled]="disabled" [min]="min" [max]="max" class="custom-input" />',
   styleUrls: ['./input-number.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputNumberComponent {
+  @Input() label = '';
   @Input() placeholder: string = 'Inserisci testo...';
   @Input() type: string = 'number';
   @Input() min: number = 0;

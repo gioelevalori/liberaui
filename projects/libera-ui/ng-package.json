@@ -3,5 +3,9 @@
   "dest": "../../dist/libera-ui",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    "theme.css",
+    "fonts"
+  ]
 }

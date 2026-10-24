@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'lib-navigation-bar',
+  encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [],
   template: `<div class="topnav custom-nav">
