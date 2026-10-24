@@ -16,7 +16,7 @@ Preserve existing Angular components and examples. Add a live component workbenc
 
 ## Brand Commitments
 
-Retain LiberaUI and attribution to Gioele Valori. Spartan UI is the owner's reference for the open source project model. Quality beyond competing libraries is an ambition, not an established comparative claim.
+Retain LiberaUI and attribution to Gioele Valori. The owner selected an essential, precise direction inspired by shadcn/ui and Radix, with interactive examples, coordinated themes, and a dedicated ICO favicon. Spartan UI is the owner's reference for the open source project model. Quality beyond competing libraries is an ambition, not an established comparative claim.
 
 ## Evidence on Hand
 

@@ -1,34 +1,7 @@
-:root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --success-color: #28a745;
-  --danger-color: #dc3545;
-  --warning-color: #ffc107;
-  --info-color: #17a2b8;
-  --background-color: #ffffff;
-  --surface-color: #f8f9fa;
-  --text-primary: #212529;
-  --text-secondary: #59636d;
-  --text-color: #212529;
-  --border-color: #dee2e6;
-}
-body.dark-theme {
-  color-scheme: dark;
-  --primary-color: #6ea8fe;
-  --secondary-color: #adb5bd;
-  --success-color: #75b798;
-  --danger-color: #ea868f;
-  --warning-color: #ffda6a;
-  --info-color: #6edff6;
-  --background-color: #1e1e1e;
-  --surface-color: #282828;
-  --text-primary: #f8f9fa;
-  --text-secondary: #b9c1c9;
-  --text-color: #f8f9fa;
-  --border-color: #495057;
-}
-body { background-color: var(--background-color); color: var(--text-primary); }
-lib-switch-theme .theme-toggle { padding: 9px 14px; min-height: 44px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--surface-color); color: var(--text-primary); cursor: pointer; font: inherit; font-size: 13px; }
-lib-switch-theme .theme-toggle:hover { border-color: var(--text-secondary); }
-.dark-theme .custom-input { background-color: #303030; color: white; }
-.dark-theme .custom-card { background-color: #333; color: white; }
+:root { color-scheme:light; --primary-color:#18181b; --secondary-color:#71717a; --success-color:#176b3a; --danger-color:#b42335; --warning-color:#a16207; --info-color:#2454ce; --background-color:#ffffff; --surface-color:#f7f7f8; --text-primary:#18181b; --text-secondary:#66666f; --text-color:#18181b; --border-color:#e5e5e8; }
+body.dark-theme { color-scheme:dark; --primary-color:#fafafa; --secondary-color:#a1a1aa; --success-color:#92d4ac; --danger-color:#fb7185; --warning-color:#facc15; --info-color:#93b4ff; --background-color:#111113; --surface-color:#1a1a1e; --text-primary:#f4f4f5; --text-secondary:#a1a1aa; --text-color:#f4f4f5; --border-color:#2c2c32; }
+body { background:var(--background-color); color:var(--text-primary); }
+lib-switch-theme .theme-toggle { padding:7px 10px; min-height:34px; border:0; border-radius:6px; background:none; color:var(--text-secondary); cursor:pointer; font:inherit; font-size:11px; white-space:nowrap; }
+lib-switch-theme .theme-toggle:hover { background:var(--surface-color); color:var(--text-primary); }
+.dark-theme .custom-input { background:#1a1a1e; color:#f4f4f5; }
+.dark-theme .custom-card { background:#1a1a1e; color:#f4f4f5; }

@@ -1,102 +1,170 @@
 ---
 name: LiberaUI
-description: Angular components with live customization and light and dark documentation.
+description: Essential, precise Angular components with interactive examples and coordinated light and dark themes.
 colors:
-  docs-accent: "#176b3a"
-  docs-accent-soft: "#e9f5ed"
-  docs-accent-dark: "#8cdda9"
-  docs-accent-soft-dark: "#203a2c"
   background-color: "#ffffff"
-  surface-color: "#f8f9fa"
-  text-primary: "#212529"
-  text-secondary: "#59636d"
-  border-color: "#dee2e6"
-  background-color-dark: "#1e1e1e"
-  surface-color-dark: "#282828"
-  text-primary-dark: "#f8f9fa"
-  text-secondary-dark: "#b9c1c9"
-  border-color-dark: "#495057"
+  surface-color: "#f7f7f8"
+  text-primary: "#18181b"
+  text-secondary: "#66666f"
+  border-color: "#e5e5e8"
+  background-color-dark: "#111113"
+  surface-color-dark: "#1a1a1e"
+  text-primary-dark: "#f4f4f5"
+  text-secondary-dark: "#a1a1aa"
+  border-color-dark: "#2c2c32"
+  docs-accent: "#176b3a"
+  docs-accent-soft: "#edf7f0"
+  docs-accent-dark: "#92d4ac"
+  docs-accent-soft-dark: "#172c21"
+  destructive: "#b42335"
+  ocean: "#2454ce"
+  plum: "#823c9e"
+  clay: "#a33e27"
 typography:
   display:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "clamp(2.5rem, 5vw, 4.5rem)"
-    lineHeight: 1.25
-    letterSpacing: "-.03em"
+    fontFamily: "Inter Variable, Inter, sans-serif"
+    fontSize: "clamp(40px, 4.5vw, 60px)"
+    fontWeight: 550
+    lineHeight: 1.1
+    letterSpacing: "-.04em"
   headline:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "clamp(2rem, 4vw, 3rem)"
-    lineHeight: 1.25
-    letterSpacing: "-.03em"
+    fontFamily: "Inter Variable, Inter, sans-serif"
+    fontSize: "clamp(2rem, 4vw, 2.75rem)"
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: "-.04em"
+  title:
+    fontFamily: "Inter Variable, Inter, sans-serif"
+    fontSize: "22px"
+    fontWeight: 550
+    lineHeight: 1.2
+    letterSpacing: "-.025em"
   body:
-    fontFamily: "Poppins, sans-serif"
-    lineHeight: 1.65
+    fontFamily: "Inter Variable, Inter, sans-serif"
+    lineHeight: 1.6
   label:
-    fontFamily: "Poppins, sans-serif"
-    fontSize: "14px"
+    fontFamily: "Inter Variable, Inter, sans-serif"
+    fontSize: "13px"
   code:
-    fontFamily: "Fira Code, monospace"
+    fontFamily: "ui-monospace, SFMono-Regular, Consolas, monospace"
 rounded:
-  navigation: "6px"
-  workbench: "12px"
-  library-control: "20px"
+  navigation: "5px"
+  field: "6px"
+  library-field: "7px"
+  button: "8px"
+  preview: "10px"
+  card: "12px"
 spacing:
-  action-gap: "12px"
+  compact-gap: "10px"
+  example-gap: "18px"
   content-gap: "24px"
   section-gap: "48px"
 components:
   primary-link:
-    backgroundColor: "{colors.docs-accent}"
+    backgroundColor: "{colors.text-primary}"
     textColor: "{colors.background-color}"
-    rounded: "{rounded.navigation}"
-    padding: "12px 20px"
-  control:
+    rounded: "{rounded.field}"
+    padding: "10px 15px"
+  button-primary:
+    backgroundColor: "{colors.text-primary}"
+    textColor: "{colors.background-color}"
+    rounded: "{rounded.button}"
+    padding: "9px 16px"
+    height: "40px"
+  demo-field:
     backgroundColor: "{colors.background-color}"
     textColor: "{colors.text-primary}"
-    rounded: "{rounded.navigation}"
-    padding: "10px"
+    rounded: "{rounded.field}"
+    padding: "8px 11px"
+  library-card:
+    backgroundColor: "{colors.background-color}"
+    textColor: "{colors.text-primary}"
+    rounded: "{rounded.card}"
+    padding: "24px"
 ---
 
 # Design System: LiberaUI
 
 ## Overview
 
-Extend the incumbent Poppins documentation interface: green accents, neutral surfaces, light and dark themes, and readable examples. LiberaUI and Gioele Valori attribution remain visible. Components demonstrate customization; documentation chrome provides a consistent frame around those examples.
+**Creative North Star: "Essenziale e preciso, ispirato a shadcn/ui e Radix"**
+
+The owner's chosen direction uses self-hosted Inter Variable, neutral surfaces, fine borders, compact controls, and restrained emphasis. Light and dark themes share the same hierarchy. Working Angular examples carry the visual interest through their content and states.
+
+LiberaUI retains its name, Gioele Valori attribution, and MIT notices. The original L mark is shared by the SVG identity and multi-size ICO favicon. Inspiration informs restraint and component clarity; it does not replace the project's identity.
+
+**Key Characteristics:**
+- Neutral typography and actions with small green semantic signals.
+- Flat, bordered surfaces with coordinated light and dark roles.
+- Interactive examples with locally selectable accents.
+- Surface-specific reading and operating layouts.
 
 ## Colors
 
-The primary documentation accent marks actions, active navigation, links, focus and range controls. Its soft companion identifies navigation hover and selection. Neutral background, surface, text and border roles switch together under `body.dark-theme`. The library also retains its independent semantic colors and customizable component colors; the documentation accent does not replace them.
+### Primary
+
+The default action pair is primary text over the page background, inverted for a filled control. Forest green is a small semantic accent for success badges and new labels; its soft companion supports those signals. It is not the universal action fill.
+
+Home examples allow Neutral, Forest, Ocean, Plum, and Clay. These choices affect the local demonstration region. The `--lib-accent` and `--lib-accent-foreground` aliases are declared on `body`, where the current theme's text and background roles resolve; local demos may override them. Explicit button colors use white foreground. Destructive actions use their dedicated red.
+
+### Neutral
+
+Background, raised surface, primary text, supporting text, and border roles change together under `body.dark-theme`. Keep these semantic CSS properties live in components. The dark library card and input overrides use the raised surface rather than the page background.
+
+**The Theme Pair Rule.** Resolve foreground and background from the same active theme, including when the neutral demonstration palette is selected.
 
 ## Typography
 
-Poppins is the interface family; Fira Code identifies source examples. The home heading uses the display role with a narrow measure (16ch). Documentation headings use the headline role. Paragraphs generally stop at 72ch, with the home introduction at 60ch. Navigation labels use the label role; supporting captions use smaller text (12–13px).
+Inter Variable is self-hosted through `@fontsource-variable/inter`, with Inter and sans-serif fallbacks. System monospace identifies code. Variable weights support the quiet hierarchy without a second display family.
+
+The home display role has tight tracking and a short line height; its mobile size becomes `clamp(36px, 8vw, 52px)`. General page headings use the headline role. Catalog headings use `clamp(34px, 4vw, 48px)`. Body paragraphs stop at 72ch; the home introduction stops at 56ch and uses 15px type with 1.75 line height. Navigation is 13px; demo labels and supporting copy range from 10–12px. Numeric tables use tabular figures.
 
 ## Layout
 
-Read documentation in a persistent shell: a sticky header (80px), sidebar (240px), and flexible main column within a centered shell (1600px maximum). Content pages stop at 960px. Main padding grows from 20px to 80px with viewport width.
+The **Read** mode belongs to documentation: a sticky header (68px), a sidebar (218px), and a flexible main column in a centered shell (1344px maximum). Reading pages stop at 900px; main padding scales from 24px to 72px.
 
-Operate the playground through a bordered workbench with a flexible preview beside controls (280px). Below 960px the controls move underneath and the preview stage reduces from 300px to 220px minimum height. At 760px the header becomes 68px, navigation moves behind an explicit Menu button, and main content uses 20px horizontal padding. The shared flexible example layout separately stacks at 768px.
+The home showcase and component catalog use the full shell width without the desktop sidebar. Their content stops at 1280px with 28px side gutters. The home hero pairs its flexible introduction with a 290px install aside. **Operate** mode belongs to the home examples: compact controls and immediate feedback sit inside bordered preview cards, with category filters and a local palette picker above the grid. The catalog pairs category controls with search and a visible result count.
+
+Home examples use three columns with 18px gaps, become two columns at 1050px, and one at 760px. The team demo spans two columns only in the three-column layout. Catalog previews use three columns with 26px gaps, two at 1000px, and one at 600px; catalog tools stack at 1000px. Header search hides at 1100px. At 760px the header becomes 64px, navigation opens through Menu, main gutters become 20px, and the hero stacks. Flexible documentation examples separately stack at 768px. Preserve these distinct breakpoints rather than imposing one universal grid.
 
 ## Elevation & Depth
 
-Documentation uses surface changes and thin borders for depth. The workbench clips its contents within rounded corners. Library cards retain their existing diffuse shadow; do not spread that shadow to documentation containers.
+Thin borders and neutral surface changes provide almost all depth. Cards are flat; the old diffuse library-card shadow has been removed. Only the selected home filter uses the subtle selection shadow (`0 1px 3px #00000012`). The sticky header uses an opaque background, not blur.
+
+**The Bordered Surface Rule.** Use a border and surface role for persistent containers; keep the small selected-filter shadow specific to that state.
 
 ## Shapes
 
-Documentation navigation, links and fields share gently rounded corners. The workbench uses the larger container radius. Existing library inputs, buttons and cards retain their rounder control radius, with the button radius customizable in examples. Swatches are circular.
+Navigation and fields use small corners, buttons slightly fuller corners, and preview containers the larger radii in the frontmatter. One-pixel borders establish edges. Palette swatches and avatars are circular. The switch is a compact pill (38px by 24px) with a circular thumb (16px) that travels 14px. Avoid returning to the former 20px radius for ordinary library buttons and cards.
 
 ## Components
 
-- Navigation uses neutral text, a soft accent hover/active background, and heavier active text. The mobile toggle exposes expanded state.
-- Home actions use a filled accent primary link and bordered secondary link. Primary hover reduces brightness; secondary hover uses the surface color.
-- Playground fields use a neutral background, thin border and consistent padding. Selected swatches gain an offset outline; range and checkbox controls use the documentation accent.
-- Library buttons accept color, class, disabled state, radius, size and native button type. Their base hover reduces brightness over 0.3s. Their default color remains gray; existing primary/secondary classes remain blue/gray.
-- Library inputs and cards retain their established component styles, independently of the documentation field treatment.
-- Keyboard focus uses a visible accent outline (3px) offset by 4px. Reduced motion collapses animation and transition durations globally.
+### Buttons
+
+Library buttons use the button token, 13px medium type, and a 40px minimum height. Primary, secondary, outline, ghost, and destructive variants share the shape. Compact buttons reduce to 32px and comfortable buttons grow to 46px. Filled hover reduces brightness; outline and ghost hover add a surface background. Disabled controls use half opacity. Loading uses a rotating inline spinner. Home action links use the smaller field radius and a 40px minimum height.
+
+### Fields
+
+Demo fields have a 38px minimum height, 12px text, neutral background, and a thin border. Library inputs use a 40px minimum height, the library-field radius, and 13px text. Placeholder text uses the supporting-text role. Search containers expose focus on the entire wrapper.
+
+### Navigation and filters
+
+Header links use supporting text until hovered or current. Sidebar links gain the neutral surface and primary text when active, with a slightly heavier weight. Home filter selection uses a page-background fill and the small selection shadow; catalog categories use the surface fill. Selected circular palette swatches gain an offset outline. Mobile Menu controls the sidebar's expanded state.
+
+### Cards, switches, and tables
+
+Demo and library cards use fine borders, the card radius, and 24px padding. Switch states use the locally resolved accent and foreground pair; the unchecked thumb and border use supporting text for visibility. Tables have a bordered, horizontally scrollable wrapper, preview radius, surface header, fine row separators, and surface hover. The last row has no bottom border.
+
+### Focus and motion
+
+Keyboard focus uses a visible primary-text outline (2px) with a 3px offset; library buttons may override its color. Button color transitions and switch movement take .16s. Checklist progress takes .2s. The catalog motion preview uses a .45s transform with `cubic-bezier(.16,1,.3,1)`. Reduced motion collapses global animation and transition durations to .01ms, removes delays, and stops the loading spinner.
 
 ## Do's and Don'ts
 
-- Do preserve the green documentation frame and coordinated light/dark roles.
-- Do keep readable documentation and operable live preview controls distinct in layout.
-- Do retain existing library component defaults when presenting examples, and expose intentional customization.
-- Don't present the documentation accent as the default color of every library component.
-- Don't replace Poppins, the established LiberaUI name, or author attribution during routine interface extensions.
+- Do preserve the owner's essential, precise direction and the LiberaUI identity, author attribution, and MIT notices.
+- Do use coordinated theme roles and resolve neutral demo accents on the active body theme.
+- Do keep reading navigation and local demonstration controls appropriate to their surface.
+- Do use working examples and visible state feedback to demonstrate customization.
+- Don't spread the green semantic accent across every action or container.
+- Don't restore Poppins, diffuse card shadows, or rounded 20px ordinary controls during routine extensions.
+- Don't turn selectable demo palettes into a global site recoloring rule.

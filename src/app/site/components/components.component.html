@@ -1,25 +1,27 @@
-<lib-fixed-side-bar>
-  <div sidebar>
-    <h5>Components</h5>
-    <a routerLink="/button">Button</a>
-    <a routerLink="/table">Table</a>
-    <a routerLink="/select">Select</a>
-    <a routerLink="/input-text">Input-text</a>
-    <a routerLink="/input-number">Input-number</a>
-    <a routerLink="/input-file">Input-file</a>
-    <a routerLink="/input-password">Input-password</a>
-    <a routerLink="/input-date">Input-date</a>
-    <a routerLink="/input-textarea">Input-textarea</a>
-    <a routerLink="/input-checkbox">Input-checkbox</a>
-    <a routerLink="/switch-theme">Switch-theme</a>
-    <a routerLink="/navigation-bar">Navigation-bar</a>
-    <a routerLink="/side-navigation">Side-navigation</a>
-    <a routerLink="/animations">Animations</a>
-    <a routerLink="/fixed-side-bar">Fixed-side-bar</a>
-    <a routerLink="/card">Card</a>
-    <a routerLink="/banner">Banner</a>
+<div class="component-catalog">
+  <header class="catalog-intro"><h1>A good place to start.</h1><p>Explore the building blocks. Try an interaction, open an example, and make it part of your interface.</p><a class="text-link" routerLink="/playground">Open the customization playground<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></header>
+  <div class="catalog-tools"><div class="catalog-categories" role="group" aria-label="Component category"><button *ngFor="let item of categories" type="button" [class.selected]="category === item" [attr.aria-pressed]="category === item" (click)="category = item">{{ item }}</button></div><label class="catalog-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input type="search" [(ngModel)]="query" aria-label="Filter components" placeholder="Find a component..."></label></div>
+  <p class="catalog-count" aria-live="polite">{{ filtered.length }} {{ filtered.length === 1 ? 'component' : 'components' }}{{ query ? ' matching “' + query + '”' : ' to explore' }}</p>
+  <div class="catalog-grid">
+    <article class="catalog-item" *ngFor="let item of filtered">
+      <div class="catalog-preview" [ngSwitch]="item.path">
+        <div *ngSwitchCase="'/button'" class="catalog-button-preview"><lib-button (click)="previewCount = previewCount + 1">{{ previewCount ? 'Clicked ' + previewCount : 'Build something' }}</lib-button><lib-button variant="outline" size="compact" (click)="previewCount = previewCount + 1">Outline</lib-button></div>
+        <div *ngSwitchCase="'/switch'" class="catalog-switch-preview"><span>Focus mode</span><lib-switch label="Focus mode preview" [(ngModel)]="previewChecked" /></div>
+        <input *ngSwitchCase="'/input-text'" class="demo-field" placeholder="Your next idea" aria-label="Text input preview">
+        <input *ngSwitchCase="'/input-number'" class="demo-field" type="number" value="12" aria-label="Number input preview">
+        <input *ngSwitchCase="'/input-password'" class="demo-field" type="password" value="liberaui" aria-label="Password input preview">
+        <input *ngSwitchCase="'/input-file'" class="demo-field" type="file" aria-label="File input preview">
+        <textarea *ngSwitchCase="'/input-textarea'" class="demo-field" rows="2" aria-label="Textarea preview" placeholder="Leave room for the details."></textarea>
+        <label *ngSwitchCase="'/input-checkbox'" class="catalog-checkbox"><input type="checkbox" checked> Include the little details</label>
+        <select *ngSwitchCase="'/select'" class="demo-field" aria-label="Select preview"><option>Choose a framework</option><option>Angular</option><option>React</option><option>Vue</option></select>
+        <div *ngSwitchCase="'/table'" class="catalog-mini-table"><div><strong>Component</strong><strong>Status</strong></div><div><span>Button</span><span class="badge badge-success">Ready</span></div><div><span>Switch</span><span class="badge">New</span></div></div>
+        <div *ngSwitchCase="'/card'" class="catalog-mini-card"><strong>Room for an idea.</strong><span>Give your content a place to live.</span></div>
+        <div *ngSwitchCase="'/switch-theme'" class="catalog-theme-preview"><span>Light</span><span>Dark</span></div>
+        <div *ngSwitchCase="'/animations'" class="catalog-motion-preview"><span></span><p>Hover to move</p></div>
+      </div>
+      <div class="catalog-description"><a [routerLink]="item.path"><h2>{{ item.label }}</h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><p>{{ item.description }}</p><span>{{ item.category }}</span></div>
+    </article>
   </div>
-  <div main>
-    <router-outlet></router-outlet>
-  </div>
-</lib-fixed-side-bar>
+  <div *ngIf="!filtered.length" class="catalog-empty"><h2>No components found.</h2><p>Try a different word or reset the category.</p><lib-button variant="outline" (click)="query = ''; category = 'All'">Clear filters</lib-button></div>
+  <p class="catalog-note">Button and Switch previews use the library components. Other tiles illustrate native controls; open their documentation for the LiberaUI implementation.</p>
+</div>

@@ -23,3 +23,5 @@ export * from './lib/components/switch-theme/public-api';
 export * from './lib/components/table/public-api';
 export * from './lib/components/card/public-api';
 export * from './lib/components/code/public-api';
+
+export * from './lib/components/switch/switch.component';

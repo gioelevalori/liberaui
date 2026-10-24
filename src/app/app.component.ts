@@ -1,31 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { SwitchThemeComponent } from './../../projects/libera-ui/src/lib/components/switch-theme/switch-theme.component';
+import { componentRegistry } from './component-registry';
 
 @Component({
-  selector: 'lib-root',
-  standalone: true,
-  imports: [CommonModule, RouterModule, SwitchThemeComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'lib-root', standalone: true,
+  imports: [CommonModule, FormsModule, RouterModule, SwitchThemeComponent],
+  templateUrl: './app.component.html', styleUrl: './app.component.css'
 })
 export class AppComponent {
+  constructor(public router: Router) {}
+  @ViewChild('siteSearch') siteSearch?: ElementRef<HTMLInputElement>;
   title = 'libera-ui';
-  skipToContent(event: Event) { event.preventDefault(); document.getElementById('main-content')?.focus(); }
   menuOpen = false;
-  readonly navigation = [
-    { path: '/button', label: 'Button' },
-    { path: '/table', label: 'Table' },
-    { path: '/select', label: 'Select' },
-    { path: '/input-text', label: 'Text input' },
-    { path: '/input-number', label: 'Number input' },
-    { path: '/input-file', label: 'File input' },
-    { path: '/input-password', label: 'Password input' },
-    { path: '/input-textarea', label: 'Textarea' },
-    { path: '/input-checkbox', label: 'Checkbox' },
-    { path: '/switch-theme', label: 'Theme switch' },
-    { path: '/animations', label: 'Animations' },
-    { path: '/card', label: 'Card' }
-  ];
+  searchQuery = '';
+  readonly navigation = componentRegistry;
+  get showcase() { return ['/', '/components'].includes(this.router.url.split('?')[0]); }
+  skipToContent(event: Event) { event.preventDefault(); document.getElementById('main-content')?.focus(); }
+  search() { this.router.navigate(['/components'], {queryParams: this.searchQuery.trim() ? {q: this.searchQuery.trim()} : {}}); this.menuOpen = false; }
+  @HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      if (window.innerWidth > 1100) this.siteSearch?.nativeElement.focus();
+      else this.router.navigate(['/components']);
+    }
+    if (event.key === 'Escape') this.menuOpen = false;
+  }
 }

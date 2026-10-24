@@ -65,3 +65,11 @@ Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) be
 [MIT](LICENSE). Copyright (c) 2025 Libera-UI. Created by Gioele Valori.
 
 You may use, copy, modify, distribute, and sell copies under MIT. You must preserve the copyright and license notice in copies or substantial portions. MIT does not grant exclusive ownership of the original code to downstream users.
+
+## Current site design
+
+The showcase follows an essential, precise direction inspired by the presentation patterns of shadcn/ui and Radix. Inter is bundled locally. Native Angular components remain the implementation; no React runtime or copied React component source is included.
+
+The home includes local workspace, notification, checklist, team-role, and button examples. The catalog supports text and category filtering. `SwitchComponent` supports `ngModel` and reactive forms. Buttons support `solid`, `secondary`, `outline`, `ghost`, and `destructive` variants plus a loading state. These additions are in repository source and are not yet an npm release.
+
+LiberaUI's original geometric mark is supplied as SVG and a multi-resolution ICO favicon (16–256px).

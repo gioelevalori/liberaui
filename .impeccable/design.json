@@ -1,23 +1,160 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-24T00:00:00Z",
+  "generatedAt": "2026-10-24T12:00:00Z",
   "title": "Design System: LiberaUI",
   "extensions": {
-    "shadows": [{ "name": "library-card", "value": "0 0 20px rgba(0, 0, 0, 0.15)", "purpose": "Existing library card elevation." }],
-    "motion": [{ "name": "button-hover", "value": "filter 0.3s ease", "purpose": "Library button brightness transition." }, { "name": "reduced-motion", "value": ".01ms", "purpose": "Global animation and transition duration under prefers-reduced-motion: reduce; animation delays become 0ms and scrolling becomes auto." }],
-    "breakpoints": [{ "name": "documentation-navigation", "value": "760px" }, { "name": "flexible-examples", "value": "768px" }, { "name": "workbench", "value": "960px" }]
+    "colorMeta": {
+      "docs-accent": {
+        "role": "primary",
+        "displayName": "Forest semantic accent"
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Neutral action and primary text"
+      },
+      "background-color": {
+        "role": "neutral",
+        "displayName": "Page background"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Home display",
+        "purpose": "Home introduction; mobile sizing is documented in DESIGN.md."
+      }
+    },
+    "shadows": [
+      {
+        "name": "selected-filter",
+        "value": "0 1px 3px #00000012",
+        "purpose": "Selected home example filter only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-state",
+        "value": ".16s ease",
+        "purpose": "Library button color and switch states."
+      },
+      {
+        "name": "progress",
+        "value": "width .2s ease",
+        "purpose": "Checklist completion bar."
+      },
+      {
+        "name": "catalog-preview",
+        "value": "transform .45s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Catalog motion example."
+      },
+      {
+        "name": "loading-spinner",
+        "value": ".8s linear infinite",
+        "purpose": "Button loading state; stopped for reduced motion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": ".01ms",
+        "purpose": "Global animation and transition duration; zero animation delay and automatic scrolling."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "catalog-single-column",
+        "value": "600px"
+      },
+      {
+        "name": "mobile-navigation-and-showcase",
+        "value": "760px"
+      },
+      {
+        "name": "flexible-documentation-examples",
+        "value": "768px"
+      },
+      {
+        "name": "catalog-two-columns",
+        "value": "1000px"
+      },
+      {
+        "name": "showcase-two-columns",
+        "value": "1050px"
+      },
+      {
+        "name": "header-search-hidden",
+        "value": "1100px"
+      }
+    ]
   },
   "components": [
-    { "name": "Primary link", "kind": "button", "refersTo": "primary-link", "description": "Home action linking into the playground.", "html": "<a class=\"ds-primary\" href=\"#\">Open the playground</a>", "css": ".ds-primary { display:inline-block; font:500 14px Poppins,sans-serif; padding:12px 20px; border-radius:6px; color:var(--background-color); background:var(--docs-accent); text-decoration:none; } .ds-primary:hover { filter:brightness(.9); } .ds-primary:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" },
-    { "name": "Secondary link", "kind": "button", "description": "Bordered home action.", "html": "<a class=\"ds-secondary\" href=\"#\">Get started</a>", "css": ".ds-secondary { display:inline-block; font:500 14px Poppins,sans-serif; padding:12px 20px; border-radius:6px; color:var(--text-primary); border:1px solid var(--border-color); text-decoration:none; } .ds-secondary:hover { background:var(--surface-color); } .ds-secondary:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" },
-    { "name": "Playground field", "kind": "input", "refersTo": "control", "description": "Editable workbench field.", "html": "<input class=\"ds-field\" aria-label=\"Button label\" value=\"Button\" />", "css": ".ds-field { font:inherit; padding:10px; border:1px solid var(--border-color); border-radius:6px; background:var(--background-color); color:var(--text-primary); } .ds-field:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" },
-    { "name": "Documentation navigation", "kind": "nav", "description": "Active documentation route.", "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Playground</a></nav>", "css": ".ds-nav a { display:block; font:600 14px Poppins,sans-serif; padding:9px 12px; margin:2px 0; border-radius:6px; text-decoration:none; color:var(--docs-accent); background:var(--docs-accent-soft); } .ds-nav a:hover { background:var(--docs-accent-soft); } .ds-nav a:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" },
-    { "name": "Library card", "kind": "card", "description": "Existing library container, independent of documentation surface styling.", "html": "<div class=\"ds-card\">LiberaUI card</div>", "css": ".ds-card { padding:15px; border-radius:20px; margin:.5rem; border:2px solid #c5c5c5; background:#c5c5c5; box-shadow:0 0 20px rgba(0,0,0,.15); font-family:Poppins,sans-serif; }" },
-    { "name": "Library button", "kind": "button", "description": "Base library button with the actual gray default.", "html": "<button class=\"ds-button\" type=\"button\">Button</button>", "css": ".ds-button { padding:10px 20px; font:16px Poppins,sans-serif; border:0; border-radius:20px; cursor:pointer; transition:filter .3s ease; color:white; background:gray; margin:.5rem; } .ds-button:hover { filter:brightness(85%); } .ds-button:focus-visible { outline:3px solid var(--docs-accent); outline-offset:4px; }" }
+    {
+      "name": "Primary library button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Neutral by default; inherits local demo accent.",
+      "html": "<button class=\"ds-button\" type=\"button\">Create workspace</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:9px 16px;border:1px solid transparent;border-radius:8px;font:500 13px/1.4 'Inter Variable',Inter,sans-serif;background:var(--lib-accent,var(--text-primary,#18181b));color:var(--lib-accent-foreground,var(--background-color,#fff));cursor:pointer;transition:background-color .16s ease,color .16s ease,border-color .16s ease}.ds-button:hover:not(:disabled){filter:brightness(.9)}.ds-button:focus-visible{outline:2px solid var(--text-primary,#18181b);outline-offset:3px}.ds-button:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+    },
+    {
+      "name": "Demo field",
+      "kind": "input",
+      "refersTo": "demo-field",
+      "description": "Compact editable field in live examples.",
+      "html": "<input class=\"ds-field\" aria-label=\"Workspace name\" placeholder=\"Workspace name\" />",
+      "css": ".ds-field{width:100%;min-height:38px;border:1px solid var(--border-color,#e5e5e8);border-radius:6px;background:var(--background-color,#fff);color:var(--text-primary,#18181b);padding:8px 11px;font:12px 'Inter Variable',Inter,sans-serif}.ds-field::placeholder{color:var(--text-secondary,#66666f)}.ds-field:focus-visible{outline:2px solid var(--text-primary,#18181b);outline-offset:3px}"
+    },
+    {
+      "name": "Documentation navigation",
+      "kind": "nav",
+      "description": "Active reading route uses a quiet neutral fill.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Button</a></nav>",
+      "css": ".ds-nav a{display:block;padding:7px 10px;margin:2px 0;border-radius:5px;text-decoration:none;color:var(--text-secondary,#66666f);font:13px 'Inter Variable',Inter,sans-serif}.ds-nav a:hover,.ds-nav a[aria-current]{background:var(--surface-color,#f7f7f8);color:var(--text-primary,#18181b)}.ds-nav a[aria-current]{font-weight:550}.ds-nav a:focus-visible{outline:2px solid var(--text-primary,#18181b);outline-offset:3px}"
+    },
+    {
+      "name": "Library card",
+      "kind": "card",
+      "refersTo": "library-card",
+      "description": "Flat bordered content container.",
+      "html": "<div class=\"ds-card\">Workspace details</div>",
+      "css": ".ds-card{padding:24px;border:1px solid var(--border-color,#e5e5e8);border-radius:12px;margin:.5rem;background:var(--background-color,#fff);color:var(--text-primary,#18181b);font-family:'Inter Variable',Inter,sans-serif}"
+    },
+    {
+      "name": "Switch",
+      "kind": "custom",
+      "description": "Checked appearance with the local accent and a visible focus ring.",
+      "html": "<button class=\"ds-switch\" type=\"button\" role=\"switch\" aria-checked=\"true\" aria-label=\"Notifications\"><span></span></button>",
+      "css": ".ds-switch{display:flex;align-items:center;width:38px;height:24px;padding:3px;border:1px solid var(--text-secondary,#66666f);border-radius:20px;background:var(--border-color,#e5e5e8);cursor:pointer;transition:background-color .16s}.ds-switch[aria-checked=true]{background:var(--lib-accent,var(--text-primary,#18181b))}.ds-switch span{width:16px;height:16px;border-radius:50%;background:var(--text-secondary,#66666f);transition:transform .16s}.ds-switch[aria-checked=true] span{transform:translateX(14px);background:var(--lib-accent-foreground,var(--background-color,#fff))}.ds-switch:focus-visible{outline:2px solid var(--text-primary,#18181b);outline-offset:3px}.ds-switch:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-switch,.ds-switch span{transition:none}}"
+    }
   ],
   "narrative": {
-    "overview": "Extend the incumbent Poppins documentation interface: green accents, neutral surfaces, light and dark themes, and readable examples. LiberaUI and Gioele Valori attribution remain visible. Components demonstrate customization; documentation chrome provides a consistent frame around those examples.",
-    "dos": ["Do preserve the green documentation frame and coordinated light/dark roles.", "Do keep readable documentation and operable live preview controls distinct in layout.", "Do retain existing library component defaults when presenting examples, and expose intentional customization."],
-    "donts": ["Don't present the documentation accent as the default color of every library component.", "Don't replace Poppins, the established LiberaUI name, or author attribution during routine interface extensions."]
+    "northStar": "Essenziale e preciso, ispirato a shadcn/ui e Radix",
+    "overview": "The owner's chosen direction uses self-hosted Inter Variable, neutral surfaces, fine borders, compact controls, and restrained emphasis. Light and dark themes share the same hierarchy. Working Angular examples carry the visual interest through their content and states.\n\nLiberaUI retains its name, Gioele Valori attribution, and MIT notices. The original L mark is shared by the SVG identity and multi-size ICO favicon. Inspiration informs restraint and component clarity; it does not replace the project's identity.",
+    "keyCharacteristics": [
+      "Neutral typography and actions with small green semantic signals.",
+      "Flat, bordered surfaces with coordinated light and dark roles.",
+      "Interactive examples with locally selectable accents.",
+      "Surface-specific reading and operating layouts."
+    ],
+    "rules": [
+      {
+        "body": "Resolve foreground and background from the same active theme, including when the neutral demonstration palette is selected.",
+        "section": "colors",
+        "name": "The Theme Pair Rule"
+      },
+      {
+        "body": "Use a border and surface role for persistent containers; keep the small selected-filter shadow specific to that state.",
+        "section": "elevation",
+        "name": "The Bordered Surface Rule"
+      }
+    ],
+    "dos": [
+      "Do preserve the owner's essential, precise direction and the LiberaUI identity, author attribution, and MIT notices.",
+      "Do use coordinated theme roles and resolve neutral demo accents on the active body theme.",
+      "Do keep reading navigation and local demonstration controls appropriate to their surface.",
+      "Do use working examples and visible state feedback to demonstrate customization."
+    ],
+    "donts": [
+      "Don't spread the green semantic accent across every action or container.",
+      "Don't restore Poppins, diffuse card shadows, or rounded 20px ordinary controls during routine extensions.",
+      "Don't turn selectable demo palettes into a global site recoloring rule."
+    ]
   }
 }

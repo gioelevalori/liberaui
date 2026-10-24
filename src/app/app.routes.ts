@@ -1,48 +1,28 @@
-import { PlaygroundComponent } from './site/playground/playground.component';
 import { Routes } from '@angular/router';
-import { ButtonSiteComponent } from './site/button-site/button-site.component';
-import { SelectSiteComponent } from './site/select-site/select-site.component';
-import { TableSiteComponent } from './site/table-site/table-site.component';
-import { HomeComponent } from './site/home/home.component';
-import { InputTextSiteComponent } from './site/input-text-site/input-text-site.component';
-import { InputNumberSiteComponent } from './site/input-number-site/input-number-site.component';
-import { InputFileSiteComponent } from './site/input-file-site/input-file-site.component';
-import { InputPasswordSiteComponent } from './site/input-password-site/input-password-site.component';
-import { InputDateSiteComponent } from './site/input-date-site/input-date-site.component';
-import { InputTextareaSiteComponent } from './site/input-textarea-site/input-textarea-site.component';
-import { InputCheckboxSiteComponent } from './site/input-checkbox-site/input-checkbox-site.component';
-import { SwitchThemeSiteComponent } from './site/switch-theme-site/switch-theme-site.component';
-import { NavigationBarSiteComponent } from './site/navigation-bar-site/navigation-bar-site.component';
-import { SideNavigationSiteComponent } from './site/side-navigation-site/side-navigation-site.component';
-import { AnimationsSiteComponent } from './site/animations-site/animations-site.component';
-import { FixedSideBarSiteComponent } from './site/fixed-side-bar-site/fixed-side-bar-site.component';
-import { ComponentsComponent } from './site/components/components.component';
-import { InstallationComponent } from './site/installation/installation.component';
-import { CardSiteComponent } from './site/card-site/card-site.component';
-import { BannerSiteComponent } from './site/banner-site/banner-site.component';
 
 export const routes: Routes = [
-  { path: 'playground', component: PlaygroundComponent, title: 'Playground | LiberaUI' },
-  { path: 'components', component: ComponentsComponent },
-  { path: 'button', component: ButtonSiteComponent },
-  { path: 'select', component: SelectSiteComponent },
-  { path: 'table', component: TableSiteComponent },
-  { path: 'input-text', component: InputTextSiteComponent },
-  { path: 'input-number', component: InputNumberSiteComponent },
-  { path: 'input-file', component: InputFileSiteComponent },
-  { path: 'input-password', component: InputPasswordSiteComponent },
-  { path: 'input-date', component: InputDateSiteComponent },
-  { path: 'input-textarea', component: InputTextareaSiteComponent },
-  { path: 'input-checkbox', component: InputCheckboxSiteComponent },
-  { path: 'switch-theme', component: SwitchThemeSiteComponent },
-  { path: 'navigation-bar', component: NavigationBarSiteComponent },
-  { path: 'side-navigation', component: SideNavigationSiteComponent },
-  { path: 'animations', component: AnimationsSiteComponent },
-  { path: 'fixed-side-bar', component: FixedSideBarSiteComponent },
-  { path: 'installation', component: InstallationComponent },
-  { path: 'card', component: CardSiteComponent },
-  { path: 'banner', component: BannerSiteComponent },
-  { path: '**', component: HomeComponent, title: 'LiberaUI | Angular components' }
+  { path: 'switch', loadComponent: () => import('./site/switch-site/switch-site.component').then(m => m.SwitchSiteComponent) },
+  { path: 'playground', loadComponent: () => import('./site/playground/playground.component').then(m => m.PlaygroundComponent), title: 'Playground | LiberaUI' },
+  { path: 'components', loadComponent: () => import('./site/components/components.component').then(m => m.ComponentsComponent) },
+  { path: 'button', loadComponent: () => import('./site/button-site/button-site.component').then(m => m.ButtonSiteComponent) },
+  { path: 'select', loadComponent: () => import('./site/select-site/select-site.component').then(m => m.SelectSiteComponent) },
+  { path: 'table', loadComponent: () => import('./site/table-site/table-site.component').then(m => m.TableSiteComponent) },
+  { path: 'input-text', loadComponent: () => import('./site/input-text-site/input-text-site.component').then(m => m.InputTextSiteComponent) },
+  { path: 'input-number', loadComponent: () => import('./site/input-number-site/input-number-site.component').then(m => m.InputNumberSiteComponent) },
+  { path: 'input-file', loadComponent: () => import('./site/input-file-site/input-file-site.component').then(m => m.InputFileSiteComponent) },
+  { path: 'input-password', loadComponent: () => import('./site/input-password-site/input-password-site.component').then(m => m.InputPasswordSiteComponent) },
+  { path: 'input-date', loadComponent: () => import('./site/input-date-site/input-date-site.component').then(m => m.InputDateSiteComponent) },
+  { path: 'input-textarea', loadComponent: () => import('./site/input-textarea-site/input-textarea-site.component').then(m => m.InputTextareaSiteComponent) },
+  { path: 'input-checkbox', loadComponent: () => import('./site/input-checkbox-site/input-checkbox-site.component').then(m => m.InputCheckboxSiteComponent) },
+  { path: 'switch-theme', loadComponent: () => import('./site/switch-theme-site/switch-theme-site.component').then(m => m.SwitchThemeSiteComponent) },
+  { path: 'navigation-bar', loadComponent: () => import('./site/navigation-bar-site/navigation-bar-site.component').then(m => m.NavigationBarSiteComponent) },
+  { path: 'side-navigation', loadComponent: () => import('./site/side-navigation-site/side-navigation-site.component').then(m => m.SideNavigationSiteComponent) },
+  { path: 'animations', loadComponent: () => import('./site/animations-site/animations-site.component').then(m => m.AnimationsSiteComponent) },
+  { path: 'fixed-side-bar', loadComponent: () => import('./site/fixed-side-bar-site/fixed-side-bar-site.component').then(m => m.FixedSideBarSiteComponent) },
+  { path: 'installation', loadComponent: () => import('./site/installation/installation.component').then(m => m.InstallationComponent) },
+  { path: 'card', loadComponent: () => import('./site/card-site/card-site.component').then(m => m.CardSiteComponent) },
+  { path: 'banner', loadComponent: () => import('./site/banner-site/banner-site.component').then(m => m.BannerSiteComponent) },
+  { path: '**', loadComponent: () => import('./site/home/home.component').then(m => m.HomeComponent), title: 'LiberaUI | Angular components' }
 ];
 
 

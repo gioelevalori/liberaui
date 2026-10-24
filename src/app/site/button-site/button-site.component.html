@@ -1,29 +1,8 @@
 <div class="content-page">
-  <lib-animations [animation]="'fadeInDown'">
-    <div>
-      <h1>Button</h1>
-      <p>Button is an extension to standard button element with icons and theming.</p>
-      <lib-button color="Black">Invia</lib-button>
-      <lib-code>{{codeImport}}</lib-code>
-
-      <h1>Color</h1>
-      <p>Button is an extension to standard button element with icons and theming.</p>
-      <lib-button color="orange">Invia</lib-button>
-      <lib-code>{{codeColor}}</lib-code>
-
-      <h1>Disabled</h1>
-      <p>Button is an extension to standard button element with icons and theming.</p>
-      <lib-button color="blue" [disabled]="true">Invia</lib-button>
-      <lib-code>{{codeDisabled}}</lib-code>
-
-      <h1>Link</h1>
-      <p>Button is an extension to standard button element with icons and theming.</p>
-      <lib-button color="blue">
-        <a href="https://angular.dev/" class="link-button">
-          External
-        </a>
-      </lib-button>
-      <lib-code>{{codeLink}}</lib-code>
-    </div>
-  </lib-animations>
+  <h1>Button</h1><p>A clear action, with just the right emphasis. Five variants, three sizes, and built-in loading feedback.</p><a class="text-link" routerLink="/playground">Customize this component in the playground</a>
+  <h2>Import</h2><lib-code [code]="importCode" />
+  <h2>Variants</h2><p>Choose hierarchy without creating a separate component.</p><div class="component-demo button-variant-demo"><lib-button *ngFor="let variant of variants" [variant]="variant" (click)="activated = variant">{{ variant | titlecase }}</lib-button></div><p class="example-status" role="status">{{ activated ? (activated | titlecase) + ' button activated.' : 'Try any variant.' }}</p><lib-code [code]="variantCode" />
+  <h2>States</h2><div class="component-demo button-variant-demo"><lib-button [loading]="true">Saving changes</lib-button><lib-button [disabled]="true">Unavailable</lib-button></div><lib-code [code]="stateCode" />
+  <h2>Size & shape</h2><div class="component-demo button-variant-demo"><lib-button size="compact">Compact</lib-button><lib-button>Default</lib-button><lib-button size="comfortable" [radius]="16">Comfortable</lib-button></div><lib-code [code]="sizeCode" />
+  <h2>API</h2><div class="api-table-wrap"><table class="api-table"><thead><tr><th>Input</th><th>Default</th><th>Purpose</th></tr></thead><tbody><tr><td>variant</td><td>solid</td><td>solid, secondary, outline, ghost, destructive</td></tr><tr><td>size</td><td>default</td><td>compact or comfortable; empty uses default sizing</td></tr><tr><td>radius</td><td>8px</td><td>Custom corner radius in pixels</td></tr><tr><td>color</td><td>theme</td><td>Custom solid fill or outline border; check contrast</td></tr><tr><td>loading</td><td>false</td><td>Shows a spinner and prevents duplicate activation</td></tr><tr><td>disabled</td><td>false</td><td>Native disabled state</td></tr><tr><td>type</td><td>button</td><td>button, submit, or reset</td></tr></tbody></table></div><p class="release-note">Variants and loading are available in repository source. The npm release may differ.</p>
 </div>
