@@ -20,14 +20,14 @@
     "./theme.css": "./theme.css"
   },
   "description": "Thoughtful Angular components with a shared theme and live customization playground",
-  "homepage": "https://gioelevalori.github.io/ng-library/",
+  "homepage": "https://gioelevalori.github.io/liberaui/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gioelevalori/ng-library.git",
+    "url": "https://github.com/gioelevalori/liberaui.git",
     "directory": "projects/libera-ui"
   },
   "bugs": {
-    "url": "https://github.com/gioelevalori/ng-library/issues"
+    "url": "https://github.com/gioelevalori/liberaui/issues"
   },
   "keywords": [
     "angular",

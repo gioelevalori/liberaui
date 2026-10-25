@@ -1,16 +1,16 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/gioelevalori/ng-library/master/docs/assets/logo.svg" alt="LiberaUI logo" width="64" height="64">
+<img src="https://raw.githubusercontent.com/gioelevalori/liberaui/master/docs/assets/logo.svg" alt="LiberaUI logo" width="64" height="64">
 
 # LiberaUI
 
 Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-[Demo](https://gioelevalori.github.io/ng-library/) · [Components](https://gioelevalori.github.io/ng-library/#/components) · [Playground](https://gioelevalori.github.io/ng-library/#/playground) · [GitHub](https://github.com/gioelevalori/ng-library)
+[Demo](https://gioelevalori.github.io/liberaui/) · [Components](https://gioelevalori.github.io/liberaui/#/components) · [Playground](https://gioelevalori.github.io/liberaui/#/playground) · [GitHub](https://github.com/gioelevalori/liberaui)
 
 </div>
 
-![LiberaUI component catalog](https://raw.githubusercontent.com/gioelevalori/ng-library/master/docs/assets/components.png)
+![LiberaUI component catalog](https://raw.githubusercontent.com/gioelevalori/liberaui/master/docs/assets/components.png)
 
 ## Install
 
@@ -44,14 +44,14 @@ import { ButtonComponent } from 'libera-ui';
 </lib-button>
 ```
 
-See the [changelog](https://github.com/gioelevalori/ng-library/blob/master/projects/libera-ui/CHANGELOG.md) for release details.
+See the [changelog](https://github.com/gioelevalori/liberaui/blob/master/projects/libera-ui/CHANGELOG.md) for release details.
 
 ## Explore and contribute
 
-Browse the [component catalog](https://gioelevalori.github.io/ng-library/#/components), try the [live playground](https://gioelevalori.github.io/ng-library/#/playground), or read the [contribution guide](https://github.com/gioelevalori/ng-library/blob/master/CONTRIBUTING.md).
+Browse the [component catalog](https://gioelevalori.github.io/liberaui/#/components), try the [live playground](https://gioelevalori.github.io/liberaui/#/playground), or read the [contribution guide](https://github.com/gioelevalori/liberaui/blob/master/CONTRIBUTING.md).
 
 Bug reports, examples, documentation improvements and pull requests are welcome.
 
 ## License
 
-Created by [Gioele Valori](https://github.com/gioelevalori). [MIT](https://github.com/gioelevalori/ng-library/blob/master/LICENSE), copyright (c) 2025 Libera-UI. Preserve the copyright and license notice when reusing the code.
+Created by [Gioele Valori](https://github.com/gioelevalori). [MIT](https://github.com/gioelevalori/liberaui/blob/master/LICENSE), copyright (c) 2025 Libera-UI. Preserve the copyright and license notice when reusing the code.

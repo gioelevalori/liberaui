@@ -8,15 +8,15 @@
 
 Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-[Explore the demo](https://gioelevalori.github.io/ng-library/) · [Components](https://gioelevalori.github.io/ng-library/#/components) · [Live playground](https://gioelevalori.github.io/ng-library/#/playground) · [Contribute](CONTRIBUTING.md)
+[Explore the demo](https://gioelevalori.github.io/liberaui/) · [Components](https://gioelevalori.github.io/liberaui/#/components) · [Live playground](https://gioelevalori.github.io/liberaui/#/playground) · [Contribute](CONTRIBUTING.md)
 
-[![Build and deploy](https://github.com/gioelevalori/ng-library/actions/workflows/pages.yml/badge.svg)](https://github.com/gioelevalori/ng-library/actions/workflows/pages.yml)
+[![Build and deploy](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml/badge.svg)](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-18181b.svg)](LICENSE)
 [![Angular](https://img.shields.io/badge/Built_with-Angular-dd0031.svg)](https://angular.dev/)
 
 </div>
 
-[![LiberaUI in dark mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://gioelevalori.github.io/ng-library/)
+[![LiberaUI in dark mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://gioelevalori.github.io/liberaui/)
 
 ## Your interface, your details
 
@@ -32,10 +32,10 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## See the components
 
-[![LiberaUI component catalog showing buttons, a switch and a text input](docs/assets/components.png)](https://gioelevalori.github.io/ng-library/#/components)
+[![LiberaUI component catalog showing buttons, a switch and a text input](docs/assets/components.png)](https://gioelevalori.github.io/liberaui/#/components)
 
-[Browse the catalog →](https://gioelevalori.github.io/ng-library/#/components)
-[Try the live customization playground →](https://gioelevalori.github.io/ng-library/#/playground)
+[Browse the catalog →](https://gioelevalori.github.io/liberaui/#/components)
+[Try the live customization playground →](https://gioelevalori.github.io/liberaui/#/playground)
 
 ## Try the latest source
 
@@ -44,8 +44,8 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 Use Node.js 22 and npm:
 
 ```sh
-git clone https://github.com/gioelevalori/ng-library.git
-cd ng-library
+git clone https://github.com/gioelevalori/liberaui.git
+cd liberaui
 npm ci
 npm start
 ```
@@ -84,7 +84,7 @@ The theme includes the locally bundled Inter fonts and shared design tokens. Use
 
 Small improvements are welcome: a clearer example, a bug fix, a keyboard interaction or a new component.
 
-1. [Report a bug or propose an idea](https://github.com/gioelevalori/ng-library/issues).
+1. [Report a bug or propose an idea](https://github.com/gioelevalori/liberaui/issues).
 2. Read the [contribution guide](CONTRIBUTING.md).
 3. Fork the repository and open a pull request.
 
@@ -107,7 +107,7 @@ Tests use ChromeHeadless. Set `CHROME_BIN` if Chrome is installed outside the st
 
 ### GitHub Pages
 
-Pushes to `master` build the library, run tests, build the demo with the `/ng-library/` base path, and deploy to GitHub Pages. Pull requests run the checks without deploying.
+Pushes to `master` build the library, run tests, build the demo with the `/liberaui/` base path, and deploy to GitHub Pages. Pull requests run the checks without deploying.
 
 Pages must use GitHub Actions as its source. Hash routes support direct links and refresh without custom server routing.
 
