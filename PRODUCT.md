@@ -1,30 +1,35 @@
-# Product
+# LiberaUI
 
-<!-- impeccable:product-schema 1 -->
+LiberaUI is an MIT-licensed Angular component library with interactive documentation and a live theme editor.
 
-## Platform
+## Scope
 
-web
+- Standalone Angular components with shared typography, color and spacing tokens.
+- Light, dark and Glass surfaces, including reduced-motion and reduced-transparency behavior.
+- Accessible interaction patterns and Angular forms integration.
+- Theme Studio for composing examples, exporting CSS and Angular code, and sharing configurations.
+- Documentation and examples hosted on GitHub Pages.
 
-## Product Purpose
+## Project structure
 
-LiberaUI is an Angular component library with a documentation and demonstration site. The owner wants a public, community-maintained project and beautiful components with live customization previews.
+- `projects/libera-ui/`: public components, exports, theme styles and package documentation.
+- `src/app/`: documentation, interactive examples and Theme Studio.
+- `src/styles/`: documentation-site layout and surface styles.
+- `docs/assets/`: screenshots and repository artwork.
+- `.github/`: issue templates, contribution checks and deployment workflow.
 
-## Capabilities and Constraints
+The library package and private documentation workspace have separate versions. The public package version is maintained in `projects/libera-ui/package.json`.
 
-Preserve existing Angular components and examples. Add a live component workbench with adjustable appearance and copyable Angular code. Publish the documentation on GitHub Pages. Keep the MIT license, attribution, and copyright notices. Contributions arrive through issues and pull requests.
+## Engineering principles
 
-## Brand Commitments
+Examples use the library's real components and must reflect the public API. Controls support keyboard interaction, visible focus, appropriate labels and disabled states. Components share theme tokens and remain usable on narrow screens.
 
-Retain LiberaUI and attribution to Gioele Valori. The owner selected an essential, precise direction inspired by shadcn/ui and Radix, with interactive examples, coordinated themes, and a dedicated ICO favicon. Spartan UI is the owner's reference for the open source project model. Quality beyond competing libraries is an ambition, not an established comparative claim.
+Behavioral fixes should include focused regression coverage. UI changes require a review in light and dark themes, at desktop and mobile widths, and with reduced motion where relevant.
 
-## Evidence on Hand
+## Contributions and releases
 
-Existing component source, documentation examples, and MIT license in projects/libera-ui/LICENSE. No comparative benchmarks or adoption statistics supplied.
+Contributions arrive through issues and pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup and verification. Changes to the public package are recorded in its changelog. The Pages workflow builds the library and site and runs tests before deployment.
 
-## Product Principles
+## License
 
-- Demonstrate customization with working controls.
-- Preserve author attribution while allowing MIT-licensed reuse.
-- Make examples and contribution steps reproducible.
-- Prefer verifiable functionality to superiority claims.
+LiberaUI is maintained by Gioele Valori and distributed under MIT. Preserve copyright and license notices when reusing or contributing code. Font assets retain their separate license notices.

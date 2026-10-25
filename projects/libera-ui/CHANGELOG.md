@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.5.0 — preview, not published
+## 0.5.0 - 2026-10-25
 
 - Default new site visits to Glass while retaining a saved Essential preference.
 - Add accessible Tabs, Accordion and Alert components with interactive documentation.

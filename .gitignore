@@ -43,3 +43,6 @@ Thumbs.db
 
 # Local visual review artifacts
 .impeccable/review/
+
+# Local design tooling
+.impeccable/

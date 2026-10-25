@@ -83,92 +83,40 @@ components:
     padding: "24px"
 ---
 
-# Design System: LiberaUI
+# Design system
 
-## Overview
+LiberaUI uses self-hosted Inter Variable, neutral surfaces, fine borders and compact controls. The same visual language applies to library components, documentation and interactive examples.
 
-**Creative North Star: "Essenziale e preciso, ispirato a shadcn/ui e Radix"**
+## Theme tokens
 
-The owner's chosen direction uses self-hosted Inter Variable, neutral surfaces, fine borders, compact controls, and restrained emphasis. Light and dark themes share the same hierarchy. Working Angular examples carry the visual interest through their content and states.
+`projects/libera-ui/theme.css` defines the shared palette and bundles the font assets. Dark mode is applied with the body's `dark-theme` class. Components resolve foreground and background from the same theme, including inside scoped previews.
 
-LiberaUI retains its name, Gioele Valori attribution, and MIT notices. The original L mark is shared by the SVG identity and multi-size ICO favicon. Inspiration informs restraint and component clarity; it does not replace the project's identity.
+Use semantic tokens for text, surfaces, borders and status colors. Demo accent choices stay local to their example. Reserve status colors for meaningful feedback.
 
-**Key Characteristics:**
-- Neutral typography and actions with small green semantic signals.
-- Flat, bordered surfaces with coordinated light and dark roles.
-- Interactive examples with locally selectable accents.
-- Surface-specific reading and operating layouts.
+## Glass
 
-## Colors
+`projects/libera-ui/glass.css` provides the reusable material. Translucent surfaces use a readable fill, subtle highlight and backdrop blur. They fall back to opaque surfaces when filtering is unavailable or reduced transparency is requested.
 
-### Primary
+The documentation site enables Glass for first visits and preserves an explicit saved Essential preference. Scoped previews can choose a separate light or dark appearance.
 
-The default action pair is primary text over the page background, inverted for a filled control. Forest green is a small semantic accent for success badges and new labels; its soft companion supports those signals. It is not the universal action fill.
+## Layout and typography
 
-Home examples allow Neutral, Forest, Ocean, Plum, and Clay. These choices affect the local demonstration region. The `--lib-accent` and `--lib-accent-foreground` aliases are declared on `body`, where the current theme's text and background roles resolve; local demos may override them. Explicit button colors use white foreground. Destructive actions use their dedicated red.
+Documentation prioritizes reading and keyboard navigation. Examples demonstrate real component states. Containers use flexible widths and allow long content to wrap; data tables and tab strips may scroll locally.
 
-### Neutral
+Use the shared typeface and maintain a clear distinction between page headings, section headings, labels and supporting text. Keep body copy readable and avoid using monospace outside code and data.
 
-Background, raised surface, primary text, supporting text, and border roles change together under `body.dark-theme`. Keep these semantic CSS properties live in components. The dark library card and input overrides use the raised surface rather than the page background.
+## Components and interaction
 
-**The Theme Pair Rule.** Resolve foreground and background from the same active theme, including when the neutral demonstration palette is selected.
+Buttons, inputs, pickers and navigation share theme colors, border treatment and visible focus. States include hover, active, disabled, loading, invalid and empty where applicable. Form examples must keep displayed values synchronized with their Angular form controls.
 
-## Typography
+Icons use authored SVG with consistent thin strokes. Decorative icons are hidden from assistive technology; icon-only controls have accessible action labels.
 
-Inter Variable is self-hosted through `@fontsource-variable/inter`, with Inter and sans-serif fallbacks. System monospace identifies code. Variable weights support the quiet hierarchy without a second display family.
+## Motion
 
-The home display role has tight tracking and a short line height; its mobile size becomes `clamp(36px, 8vw, 52px)`. General page headings use the headline role. Catalog headings use `clamp(34px, 4vw, 48px)`. Body paragraphs stop at 72ch; the home introduction stops at 56ch and uses 15px type with 1.75 line height. Navigation is 13px; demo labels and supporting copy range from 10–12px. Numeric tables use tabular figures.
+Motion explains state changes. Alerts enter briefly, tab and accordion content transitions stay short, and the mobile navigation opens without shifting the page. The menu icon changes continuously between its closed and open forms. Repeated clicks must leave the interface in the requested state.
 
-## Layout
+Respect reduced-motion preferences. No content or action should depend on an animation completing.
 
-The **Read** mode belongs to documentation: a sticky header (68px), a sidebar (218px), and a flexible main column in a centered shell (1344px maximum). Reading pages stop at 900px; main padding scales from 24px to 72px.
+## Review
 
-The home showcase and component catalog use the full shell width without the desktop sidebar. Their content stops at 1280px with 28px side gutters. The home hero pairs its flexible introduction with a 290px install aside. **Operate** mode belongs to the home examples: compact controls and immediate feedback sit inside bordered preview cards, with category filters and a local palette picker above the grid. The catalog pairs category controls with search and a visible result count.
-
-Home examples use three columns with 18px gaps, become two columns at 1050px, and one at 760px. The team demo spans two columns only in the three-column layout. Catalog previews use three columns with 26px gaps, two at 1000px, and one at 600px; catalog tools stack at 1000px. Header search hides at 1100px. At 760px the header becomes 64px, navigation opens through Menu, main gutters become 20px, and the hero stacks. Flexible documentation examples separately stack at 768px. Preserve these distinct breakpoints rather than imposing one universal grid.
-
-## Elevation & Depth
-
-Thin borders and neutral surface changes provide almost all depth. Cards are flat; the old diffuse library-card shadow has been removed. Only the selected home filter uses the subtle selection shadow (`0 1px 3px #00000012`). The sticky header uses an opaque background, not blur.
-
-**The Bordered Surface Rule.** Use a border and surface role for persistent containers; keep the small selected-filter shadow specific to that state.
-
-## Shapes
-
-Navigation and fields use small corners, buttons slightly fuller corners, and preview containers the larger radii in the frontmatter. One-pixel borders establish edges. Palette swatches and avatars are circular. The switch is a compact pill (38px by 24px) with a circular thumb (16px) that travels 14px. Avoid returning to the former 20px radius for ordinary library buttons and cards.
-
-## Components
-
-### Buttons
-
-Library buttons use the button token, 13px medium type, and a 40px minimum height. Primary, secondary, outline, ghost, and destructive variants share the shape. Compact buttons reduce to 32px and comfortable buttons grow to 46px. Filled hover reduces brightness; outline and ghost hover add a surface background. Disabled controls use half opacity. Loading uses a rotating inline spinner. Home action links use the smaller field radius and a 40px minimum height.
-
-### Fields
-
-Demo fields have a 38px minimum height, 12px text, neutral background, and a thin border. Library inputs use a 40px minimum height, the library-field radius, and 13px text. Placeholder text uses the supporting-text role. Search containers expose focus on the entire wrapper.
-
-### Navigation and filters
-
-Header links use supporting text until hovered or current. Sidebar links gain the neutral surface and primary text when active, with a slightly heavier weight. Home filter selection uses a page-background fill and the small selection shadow; catalog categories use the surface fill. Selected circular palette swatches gain an offset outline. Mobile Menu controls the sidebar's expanded state.
-
-### Cards, switches, and tables
-
-Demo and library cards use fine borders, the card radius, and 24px padding. Switch states use the locally resolved accent and foreground pair; the unchecked thumb and border use supporting text for visibility. Tables have a bordered, horizontally scrollable wrapper, preview radius, surface header, fine row separators, and surface hover. The last row has no bottom border.
-
-### Focus and motion
-
-Keyboard focus uses a visible primary-text outline (2px) with a 3px offset; library buttons may override its color. Button color transitions and switch movement take .16s. Checklist progress takes .2s. The catalog motion preview uses a .45s transform with `cubic-bezier(.16,1,.3,1)`. Reduced motion collapses global animation and transition durations to .01ms, removes delays, and stops the loading spinner.
-
-## Do's and Don'ts
-
-- Do preserve the owner's essential, precise direction and the LiberaUI identity, author attribution, and MIT notices.
-- Do use coordinated theme roles and resolve neutral demo accents on the active body theme.
-- Do keep reading navigation and local demonstration controls appropriate to their surface.
-- Do use working examples and visible state feedback to demonstrate customization.
-- Don't spread the green semantic accent across every action or container.
-- Don't restore Poppins, diffuse card shadows, or rounded 20px ordinary controls during routine extensions.
-- Don't turn selectable demo palettes into a global site recoloring rule.
-
-### Shared implementation
-
-The authoritative theme is `projects/libera-ui/theme.css`, imported by the site's global stylesheet and shipped as `libera-ui/theme.css` with local Inter Latin/Latin Extended font assets and their OFL license. Theme aliases resolve on body. Component previews use the actual library controls, not separate native lookalikes. Cards, navigation, sidebars, banner, footer, fields, and code examples share the same palette and border language. The file input wraps long names; mobile code examples wrap lines instead of relying on horizontal scrolling.
+Check light and dark themes, Glass and Essential, keyboard interaction, narrow widths, long labels and disabled states. Screenshots in `docs/assets/` should show the current components and controls. Preserve author attribution and all license notices.
