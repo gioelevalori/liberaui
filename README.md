@@ -39,7 +39,7 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## Try the latest source
 
-> **Release status:** the demo follows this repository. The published npm package is an earlier release and does not yet contain all the APIs and shared theme shown here. Use the source to explore the latest version.
+> **Latest release: 0.2.0.** The shared theme, button variants and loading states, and Angular forms switch are available on npm.
 
 Use Node.js 22 and npm:
 
@@ -57,10 +57,10 @@ Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The
 The published package is available with:
 
 ```sh
-npm install libera-ui
+npm install libera-ui@^0.2.0
 ```
 
-For the latest source APIs, build the library with `npm run build:lib` and integrate the resulting `dist/libera-ui` package into your application. Add `ButtonComponent` to your standalone component's imports:
+Add `ButtonComponent` to your standalone component's imports:
 
 ```ts
 import { ButtonComponent } from 'libera-ui';
@@ -72,13 +72,13 @@ import { ButtonComponent } from 'libera-ui';
 </lib-button>
 ```
 
-When using the latest source build, import the shared theme once in your global stylesheet:
+Import the shared theme once in your global stylesheet:
 
 ```css
 @import 'libera-ui/theme.css';
 ```
 
-The theme includes the locally bundled Inter fonts and shared design tokens. Use `dark-theme` on the body, or the library's theme switch, to enable dark mode. This theme export is a source addition pending a future npm release.
+The theme includes the locally bundled Inter fonts and shared design tokens. Use `dark-theme` on the body, or the library's theme switch, to enable dark mode. The theme export is included in version 0.2.0.
 
 ## Build something with us
 
