@@ -3,6 +3,7 @@
   <div class="studio-workbench">
     <section class="studio-controls" aria-label="Theme and composition controls">
       <h3>Appearance</h3>
+      <label for="studio-material">Surface</label><select id="studio-material" [(ngModel)]="theme.material" (ngModelChange)="change()"><option value="solid">Essential</option><option value="glass">Glass</option></select>
       <fieldset><legend>Accent</legend><div class="studio-swatches"><button *ngFor="let palette of palettes" type="button" [style.background]="palette.value" [attr.aria-label]="palette.name" [attr.aria-pressed]="theme.accent === palette.value" (click)="theme.accent = palette.value; change()"></button><input type="color" aria-label="Custom accent" [(ngModel)]="theme.accent" (ngModelChange)="change()"></div></fieldset>
       <label for="studio-font">Typography</label><select id="studio-font" [(ngModel)]="theme.font" (ngModelChange)="change()"><option value="inter">Inter</option><option value="system">System sans</option><option value="serif">Editorial serif</option></select>
       <label for="studio-radius">Corner radius <output>{{ theme.radius }}px</output></label><input id="studio-radius" type="range" min="0" max="28" [(ngModel)]="theme.radius" (ngModelChange)="theme.radius = +$event; change()">
@@ -18,17 +19,17 @@
         <label>Preview width<select [(ngModel)]="viewport" (ngModelChange)="change()"><option value="full">Available width</option><option value="mobile">Mobile · 360px</option></select></label>
         <label>Test state<select [(ngModel)]="state" (ngModelChange)="change()"><option value="ready">Ready</option><option value="loading">Loading</option><option value="disabled">Disabled</option><option value="error">Error</option><option value="long">Long content</option></select></label>
       </div>
-      <div class="studio-canvas" [class.studio-dark]="mode === 'dark'" [class.studio-mobile]="viewport === 'mobile'" [ngStyle]="tokens">
+      <div class="studio-canvas" [class.studio-dark]="mode === 'dark'" [class.studio-mobile]="viewport === 'mobile'" [class.lib-glass]="theme.material === 'glass'" [class.lib-glass-backdrop]="theme.material === 'glass'" [attr.data-glass-mode]="mode" [ngStyle]="tokens">
         <div class="studio-blocks">
-          <section *ngIf="form" class="studio-block">
+          <section *ngIf="form" class="studio-block" [class.lib-glass-panel]="theme.material === 'glass'">
             <h3>{{ title }}</h3><p>Create a workspace and bring the details together.</p>
             <label class="studio-field-label" for="studio-workspace">Workspace name</label><input id="studio-workspace" class="studio-field" placeholder="e.g. Design studio" [disabled]="unavailable" [attr.aria-invalid]="state === 'error'" [attr.aria-describedby]="state === 'error' ? 'studio-error' : null" (input)="submitted = false">
             <p *ngIf="state === 'error'" id="studio-error" class="studio-error" role="status">This workspace name is already taken. Try another name.</p>
             <lib-button [radius]="theme.radius" [size]="theme.spacing < 20 ? 'compact' : 'comfortable'" [loading]="state === 'loading'" [disabled]="unavailable" (click)="submit()">Create workspace</lib-button>
             <p role="status">{{ submitted ? 'Workspace preview created.' : 'Local preview. Nothing is sent to a server.' }}</p>
           </section>
-          <section *ngIf="settings" class="studio-block"><h3>A little less noise.</h3><p>Choose what reaches you.</p><div class="studio-row"><span>Product updates</span><lib-switch label="Preview product updates" [(ngModel)]="notifications" [disabled]="unavailable" /></div><p>{{ notifications ? 'Updates enabled' : 'Updates paused' }}</p></section>
-          <section *ngIf="actions" class="studio-block"><h3>The right kind of emphasis.</h3><div class="studio-buttons"><lib-button [radius]="theme.radius" [size]="theme.spacing < 20 ? 'compact' : 'comfortable'" [loading]="state === 'loading'" [disabled]="unavailable" (click)="submit()">Continue</lib-button><lib-button variant="outline" [radius]="theme.radius" [disabled]="unavailable" (click)="submitted = false">Reset</lib-button></div><p>Real LiberaUI components. Your shared theme.</p></section>
+          <section *ngIf="settings" class="studio-block" [class.lib-glass-panel]="theme.material === 'glass'"><h3>A little less noise.</h3><p>Choose what reaches you.</p><div class="studio-row"><span>Product updates</span><lib-switch label="Preview product updates" [(ngModel)]="notifications" [disabled]="unavailable" /></div><p>{{ notifications ? 'Updates enabled' : 'Updates paused' }}</p></section>
+          <section *ngIf="actions" class="studio-block" [class.lib-glass-panel]="theme.material === 'glass'"><h3>The right kind of emphasis.</h3><div class="studio-buttons"><lib-button [radius]="theme.radius" [size]="theme.spacing < 20 ? 'compact' : 'comfortable'" [loading]="state === 'loading'" [disabled]="unavailable" (click)="submit()">Continue</lib-button><lib-button variant="outline" [radius]="theme.radius" [disabled]="unavailable" (click)="submitted = false">Reset</lib-button></div><p>Real LiberaUI components. Your shared theme.</p></section>
           <p *ngIf="!form && !settings && !actions" class="studio-empty">Your canvas is clear. Choose a section under Composition to start.</p>
         </div>
       </div>

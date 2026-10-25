@@ -1,6 +1,6 @@
 {
   "name": "libera-ui",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "peerDependencies": {
     "@angular/common": ">=17.0.0 <20.0.0",
     "@angular/core": ">=17.0.0 <20.0.0",
@@ -13,11 +13,13 @@
     "tslib": "^2.3.0"
   },
   "sideEffects": [
-    "./theme.css"
+    "./theme.css",
+    "./glass.css"
   ],
   "license": "MIT",
   "exports": {
-    "./theme.css": "./theme.css"
+    "./theme.css": "./theme.css",
+    "./glass.css": "./glass.css"
   },
   "description": "Thoughtful Angular components with a shared theme and live customization playground",
   "homepage": "https://gioelevalori.github.io/liberaui/",

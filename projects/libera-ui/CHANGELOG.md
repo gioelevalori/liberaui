@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0
+
+- Add opt-in Glass material, with reusable container/panel classes and a glass.css export.
+- Respect reduced transparency and forced-color preferences; use opaque fallback surfaces when backdrop filtering is unavailable.
+- Preserve Glass in theme normalization, shared Studio links and Angular component exports.
+- Add independent site-wide Glass toggle with local preference storage and a mobile-menu control.
+
 ## 0.3.0
 
 - Export typed theme configuration, input normalization, contrast-aware accent foreground, theme tokens and CSS generation helpers.

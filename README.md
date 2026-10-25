@@ -39,7 +39,7 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## Try the latest source
 
-> **Latest release: 0.3.0.** Theme helpers, shared tokens and component customization are available on npm.
+> **Latest release: 0.4.0.** Glass surfaces, theme helpers, shared tokens and component customization are available on npm.
 
 Use Node.js 22 and npm:
 
@@ -57,7 +57,7 @@ Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The
 The published package is available with:
 
 ```sh
-npm install libera-ui@^0.3.0
+npm install libera-ui@^0.4.0
 ```
 
 Add `ButtonComponent` to your standalone component's imports:
@@ -96,6 +96,22 @@ Version 0.3.0 exposes typed helpers:
 import { createThemeCss, DEFAULT_THEME } from 'libera-ui';
 const css = createThemeCss({ ...DEFAULT_THEME, accent: '#2454ce', radius: 16 });
 ```
+
+## Glass material
+
+![Glass material in Theme Studio](docs/assets/glass-theme.png)
+
+Glass is an optional surface treatment, independent of light and dark mode. Use the **Glass** button in the desktop header or mobile menu to try it on the site. In Theme Studio choose **Surface → Glass**; share links and Angular exports keep the selection.
+
+The Glass stylesheet is included by `libera-ui/theme.css` in version 0.4.0 and later. You can also import `libera-ui/glass.css` separately when you already provide the core theme tokens.
+
+```html
+<div class="lib-glass lib-glass-backdrop">
+  <section class="lib-glass-panel">Your content</section>
+</div>
+```
+
+Set `data-glass-mode="dark"` on a scoped Glass container to preview dark material, or use the body’s `dark-theme` class in your app. Translucency falls back to opaque surfaces without backdrop-filter support and when reduced transparency is requested.
 
 ## Build something with us
 

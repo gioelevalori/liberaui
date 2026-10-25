@@ -6,9 +6,10 @@ import { ActivatedRoute, convertToParamMap } from '@angular/router';
 describe('Theme Studio configuration', () => {
   it('rejects injected CSS and clamps untrusted numeric values', () => {
     const theme = normalizeTheme({accent:'red; background:url(evil)', radius:900, spacing:-2, font:'url(evil)'});
-    expect(theme).toEqual({accent:DEFAULT_THEME.accent, radius:28, spacing:12, font:'inter'});
+    expect(theme).toEqual({accent:DEFAULT_THEME.accent, radius:28, spacing:12, font:'inter', material:'solid'});
     expect(createThemeCss(theme)).not.toContain('evil');
     expect(normalizeTheme({radius:Infinity}).radius).toBe(12);
+    expect(normalizeTheme({material:'injected'}).material).toBe('solid');
   });
   it('chooses readable foreground colors and exports shared tokens', () => {
     expect(accentForeground('#ffffff')).toBe('#000000');
@@ -17,10 +18,14 @@ describe('Theme Studio configuration', () => {
     expect(createThemeCss(DEFAULT_THEME)).toContain('body, body.dark-theme');
   });
   it('restores theme, sections and preview state from a shared URL', () => {
-    const config = {version:1, theme:{accent:'#2454ce', radius:4, spacing:24, font:'serif'}, mode:'dark', viewport:'mobile', state:'long', form:false, settings:true, actions:false};
+    const config = {version:1, theme:{accent:'#2454ce', radius:4, spacing:24, font:'serif', material:'glass'}, mode:'dark', viewport:'mobile', state:'long', form:false, settings:true, actions:false};
     TestBed.configureTestingModule({providers:[{provide:ActivatedRoute,useValue:{snapshot:{queryParamMap:convertToParamMap({studio:JSON.stringify(config)})}}}]});
     const studio = TestBed.runInInjectionContext(() => new ThemeStudioComponent());
     expect(studio.theme.radius).toBe(4);
+    expect(studio.theme.material).toBe('glass');
+    expect(studio.componentCode).toContain('lib-glass lib-glass-backdrop');
+    expect(studio.componentCode).toContain('lib-glass-panel');
+    expect(studio.css).toContain('lib-glass-panel');
     expect(studio.mode).toBe('dark');
     expect(studio.form).toBeFalse();
     expect(studio.componentCode).toContain('Product updates');

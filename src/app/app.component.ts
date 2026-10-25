@@ -11,7 +11,21 @@ import { componentRegistry } from './component-registry';
   templateUrl: './app.component.html', styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(public router: Router) {}
+  constructor(public router: Router) {
+    let glass = false;
+    try { glass = localStorage.getItem('liberaui-material') === 'glass'; } catch { /* Works without storage. */ }
+    this.applyMaterial(glass);
+  }
+  glass = false;
+  toggleMaterial() {
+    this.applyMaterial(!this.glass);
+    try { localStorage.setItem('liberaui-material', this.glass ? 'glass' : 'solid'); } catch { /* Works without storage. */ }
+  }
+  private applyMaterial(glass: boolean) {
+    this.glass = glass;
+    document.body.classList.toggle('lib-glass', glass);
+    document.body.classList.toggle('lib-glass-backdrop', glass);
+  }
   @ViewChild('siteSearch') siteSearch?: ElementRef<HTMLInputElement>;
   title = 'libera-ui';
   menuOpen = false;

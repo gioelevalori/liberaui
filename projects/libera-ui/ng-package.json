@@ -7,6 +7,7 @@
   "assets": [
     "theme.css",
     "fonts",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "glass.css"
   ]
 }

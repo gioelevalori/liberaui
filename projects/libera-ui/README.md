@@ -15,10 +15,10 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 ## Install
 
 ```sh
-npm install libera-ui@^0.3.0
+npm install libera-ui@^0.4.0
 ```
 
-Version 0.3.0 includes the shared theme, button variants and loading states, and a switch with Angular forms support.
+Version 0.4.0 includes the shared theme, button variants and loading states, and a switch with Angular forms support.
 
 The library declares Angular 17–19 peer support. The repository workspace and current CI use Angular 19.
 
@@ -45,6 +45,18 @@ import { ButtonComponent } from 'libera-ui';
 ```
 
 See the [changelog](https://github.com/gioelevalori/liberaui/blob/master/projects/libera-ui/CHANGELOG.md) for release details.
+
+## Glass surfaces
+
+The shared theme includes the opt-in Glass material:
+
+```html
+<div class="lib-glass lib-glass-backdrop">
+  <section class="lib-glass-panel">Your content</section>
+</div>
+```
+
+Glass supports light and dark themes, reduced transparency, forced colors and opaque fallback surfaces. In [Theme Studio](https://gioelevalori.github.io/liberaui/#/playground), choose **Surface → Glass** to export a matching Angular component.
 
 ## Theme helpers
 

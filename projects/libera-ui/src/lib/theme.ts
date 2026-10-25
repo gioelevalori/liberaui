@@ -3,8 +3,9 @@ export interface ThemeConfig {
   radius: number;
   spacing: number;
   font: 'inter' | 'system' | 'serif';
+  material?: 'solid' | 'glass';
 }
-export const DEFAULT_THEME: ThemeConfig = { accent: '#176b3a', radius: 12, spacing: 20, font: 'inter' };
+export const DEFAULT_THEME: ThemeConfig = { accent: '#176b3a', radius: 12, spacing: 20, font: 'inter', material: 'solid' };
 export const THEME_FONTS = {
   inter: "'Inter Variable', Inter, sans-serif",
   system: "system-ui, sans-serif",
@@ -18,7 +19,8 @@ export function normalizeTheme(value: unknown): ThemeConfig {
     accent: typeof v['accent'] === 'string' && /^#[0-9a-f]{6}$/i.test(v['accent']) ? v['accent'] : DEFAULT_THEME.accent,
     radius: number('radius', 12, 0, 28),
     spacing: number('spacing', 20, 12, 32),
-    font: ['inter', 'system', 'serif'].includes(v['font'] as string) ? v['font'] as ThemeConfig['font'] : 'inter'
+    font: ['inter', 'system', 'serif'].includes(v['font'] as string) ? v['font'] as ThemeConfig['font'] : 'inter',
+    material: v['material'] === 'glass' ? 'glass' : 'solid'
   };
 }
 export function accentForeground(accent: string): string {
@@ -35,5 +37,6 @@ export function themeTokens(value: ThemeConfig): Record<string, string> {
 }
 export function createThemeCss(value: ThemeConfig): string {
   const declarations = Object.entries(themeTokens(value)).map(([key, val]) => '  ' + key + ': ' + val + ';').join('\n');
-  return "/* Import after libera-ui/theme.css. Applies to light and dark mode. */\nbody, body.dark-theme {\n" + declarations + "\n  font-family: var(--lib-font);\n}\n";
+  const material = normalizeTheme(value).material === 'glass' ? "\n/* Add lib-glass lib-glass-backdrop to body or a container; add lib-glass-panel to surfaces. */\n" : "";
+  return "/* Import after libera-ui/theme.css. Applies to light and dark mode. */\nbody, body.dark-theme {\n" + declarations + "\n  font-family: var(--lib-font);\n}\n" + material;
 }

@@ -67,13 +67,13 @@ export class ThemeStudioComponent {
     const anchor = document.createElement('a');
     anchor.href = url; anchor.download = kind === 'css' ? 'liberaui-theme.css' : 'workspace.component.ts';
     anchor.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
-    this.message = kind === 'css' ? 'Theme CSS downloaded. Import it after libera-ui/theme.css.' : 'Angular component downloaded. Import both theme stylesheets before using it.';
+    this.message = kind === 'css' ? 'Theme CSS downloaded. Import it after libera-ui/theme.css. Glass: add lib-glass lib-glass-backdrop to your container and lib-glass-panel to surfaces.' : 'Angular component downloaded. Import both theme stylesheets before using it.';
   }
   get componentCode() {
     const radius = normalizeTheme(this.theme).radius;
     const size = this.theme.spacing < 20 ? 'compact' : 'comfortable';
     const form = this.form ? `
-    <section class="block">
+    <section class="block${this.theme.material === 'glass' ? ' lib-glass-panel' : ''}">
       <h2>A space for your next idea.</h2>
       <p>Create a workspace and bring the details together.</p>
       <form (ngSubmit)="created = true">
@@ -84,13 +84,13 @@ export class ThemeStudioComponent {
       <p role="status">{{ created ? 'Workspace preview created: ' + name : 'Local example. Nothing is sent to a server.' }}</p>
     </section>` : '';
     const settings = this.settings ? `
-    <section class="block">
+    <section class="block${this.theme.material === 'glass' ? ' lib-glass-panel' : ''}">
       <h2>A little less noise.</h2>
       <div class="row"><span>Product updates</span><lib-switch label="Product updates" [(ngModel)]="notifications" /></div>
       <p>{{ notifications ? 'Updates enabled' : 'Updates paused' }}</p>
     </section>` : '';
     const actions = this.actions ? `
-    <section class="block">
+    <section class="block${this.theme.material === 'glass' ? ' lib-glass-panel' : ''}">
       <h2>The right kind of emphasis.</h2>
       <div class="buttons"><lib-button [radius]="${radius}" size="${size}" (click)="count = count + 1">Continue</lib-button>
       <lib-button variant="outline" [radius]="${radius}" size="${size}" (click)="count = 0">Reset</lib-button></div>
@@ -105,11 +105,12 @@ import { ButtonComponent, SwitchComponent } from 'libera-ui';
   selector: 'app-workspace',
   standalone: true,
   imports: [FormsModule, ButtonComponent, SwitchComponent],
+  host: { class: '${this.theme.material === 'glass' ? 'lib-glass lib-glass-backdrop' : ''}' },
   template: \`${form}${settings}${actions}
   \`,
   styles: [\`
     :host { display:grid; gap:var(--lib-spacing,20px); font-family:var(--lib-font,'Inter Variable',sans-serif); }
-    .block { min-width:0; padding:var(--lib-spacing,20px); border:1px solid var(--border-color); border-radius:var(--lib-radius,12px); background:var(--background-color); color:var(--text-primary); overflow-wrap:anywhere; }
+    .block { min-width:0; padding:var(--lib-spacing,20px); border:1px solid var(--border-color); border-radius:var(--lib-radius,12px); background:var(--lib-panel-background,var(--background-color)); color:var(--text-primary); overflow-wrap:anywhere; }
     h2 { margin:0 0 12px; font-size:22px; } p { color:var(--text-secondary); }
     form { display:grid; gap:12px; } input { width:100%; box-sizing:border-box; min-height:40px; padding:10px; border:1px solid var(--border-color); border-radius:var(--lib-radius,12px); background:var(--surface-color); color:var(--text-primary); font:inherit; }
     .row,.buttons { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }

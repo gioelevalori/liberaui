@@ -2,6 +2,7 @@
 @import './styles/shell.css';
 @import './styles/showcase.css';
 @import './styles/catalog.css';
+@import './styles/glass.css';
 :root { --docs-accent:#176b3a; --docs-accent-soft:#edf7f0; }
 * { box-sizing:border-box; }
 html { scroll-padding-top:90px; scrollbar-color:var(--border-color) var(--background-color); }
