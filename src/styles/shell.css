@@ -43,3 +43,24 @@ kbd { font:10px/1.4 'Inter Variable',sans-serif; white-space:nowrap; color:var(-
   #main-content { padding:32px 20px 0; } .showcase-layout #main-content { padding:0 20px; }
   .site-footer { flex-direction:column; gap:10px; margin-top:48px; }
 }
+/* Keep the documentation scroll area quiet in both color schemes. */
+.docs-nav {
+  scrollbar-color: color-mix(in srgb, var(--text-secondary) 40%, transparent) transparent;
+  scrollbar-gutter: stable;
+  overscroll-behavior-y: contain;
+}
+.docs-nav:hover, .docs-nav:focus-within {
+  scrollbar-color: var(--text-secondary) transparent;
+}
+.docs-nav::-webkit-scrollbar { width: 6px; }
+.docs-nav::-webkit-scrollbar-track { background: transparent; }
+.docs-nav::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+.docs-nav:hover::-webkit-scrollbar-thumb,
+.docs-nav:focus-within::-webkit-scrollbar-thumb { background: var(--text-secondary); }
+.docs-nav::-webkit-scrollbar-button { display: none; }
+@media (forced-colors: active) {
+  .docs-nav, .docs-nav:hover, .docs-nav:focus-within { scrollbar-color: auto; }
+}
