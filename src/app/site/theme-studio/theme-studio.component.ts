@@ -13,7 +13,7 @@ import { createThemeCss, DEFAULT_THEME, normalizeTheme, ThemeConfig, themeTokens
   templateUrl: './theme-studio.component.html', styleUrl: './theme-studio.component.css'
 })
 export class ThemeStudioComponent {
-  theme: ThemeConfig = {...DEFAULT_THEME};
+  theme: ThemeConfig = {...DEFAULT_THEME, material:'glass'};
   mode = 'light';
   viewport = 'full';
   state = 'ready';
@@ -23,6 +23,8 @@ export class ThemeStudioComponent {
   notifications = true;
   message = '';
   submitted = false;
+  workspaceName = '';
+  previewActionCount = 0;
   shareUrl = '';
   readonly palettes = [
     {name:'Forest', value:'#176b3a'}, {name:'Ocean', value:'#2454ce'},
@@ -48,10 +50,10 @@ export class ThemeStudioComponent {
   get title() { return this.state === 'long' ? 'A workspace for every idea, every collaborator, and everything you want to build next' : 'A space for your next idea.'; }
   change() { this.shareUrl = ''; this.message = ''; this.submitted = false; }
   reset() {
-    this.theme = {...DEFAULT_THEME}; this.mode = 'light'; this.viewport = 'full'; this.state = 'ready';
-    this.form = this.settings = this.actions = this.notifications = true; this.change();
+    this.theme = {...DEFAULT_THEME, material:'glass'}; this.mode = 'light'; this.viewport = 'full'; this.state = 'ready';
+    this.form = this.settings = this.actions = this.notifications = true; this.workspaceName = ''; this.previewActionCount = 0; this.change();
   }
-  submit() { if (!this.unavailable && this.state !== 'error') this.submitted = true; }
+  submit() { if (!this.unavailable && this.state !== 'error' && this.workspaceName.trim()) this.submitted = true; }
   async share() {
     const config = {version:1, theme:normalizeTheme(this.theme), mode:this.mode, viewport:this.viewport,
       state:this.state, form:this.form, settings:this.settings, actions:this.actions};
@@ -76,9 +78,9 @@ export class ThemeStudioComponent {
     <section class="block${this.theme.material === 'glass' ? ' lib-glass-panel' : ''}">
       <h2>A space for your next idea.</h2>
       <p>Create a workspace and bring the details together.</p>
-      <form (ngSubmit)="created = true">
+      <form #workspaceForm="ngForm" (ngSubmit)="workspaceForm.valid && name.trim() && (created = true)">
         <label for="workspace-name">Workspace name</label>
-        <input id="workspace-name" name="workspace" [(ngModel)]="name" required placeholder="Design studio">
+        <input id="workspace-name" name="workspace" [(ngModel)]="name" (ngModelChange)="created = false" required maxlength="80" placeholder="Design studio">
         <lib-button type="submit" [radius]="${radius}" size="${size}">Create workspace</lib-button>
       </form>
       <p role="status">{{ created ? 'Workspace preview created: ' + name : 'Local example. Nothing is sent to a server.' }}</p>

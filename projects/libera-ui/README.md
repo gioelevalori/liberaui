@@ -15,10 +15,10 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 ## Install
 
 ```sh
-npm install libera-ui@^0.4.0
+npm install libera-ui@^0.5.0
 ```
 
-Version 0.4.0 includes the shared theme, button variants and loading states, and a switch with Angular forms support.
+Version 0.5.0 adds accessible Tabs, Accordion and Alert, a themed date picker, coordinated select menus, SVG icons and Angular forms support across the input components.
 
 The library declares Angular 17–19 peer support. The repository workspace and current CI use Angular 19.
 
@@ -45,6 +45,17 @@ import { ButtonComponent } from 'libera-ui';
 ```
 
 See the [changelog](https://github.com/gioelevalori/liberaui/blob/master/projects/libera-ui/CHANGELOG.md) for release details.
+
+## Components and Angular forms
+
+Tabs, Accordion and Alert provide keyboard-friendly navigation and feedback. Text, password, number, date, textarea, select and checkbox components support reactive forms and template-driven forms.
+
+```ts
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { InputTextComponent, TabComponent, AccordionComponent, AlertComponent } from 'libera-ui';
+```
+
+Add the required components and ReactiveFormsModule to your standalone imports. Use `[formControl]` or `formControlName` as you would with native inputs.
 
 ## Glass surfaces
 
@@ -76,3 +87,13 @@ Bug reports, examples, documentation improvements and pull requests are welcome.
 ## License
 
 Created by [Gioele Valori](https://github.com/gioelevalori). [MIT](https://github.com/gioelevalori/liberaui/blob/master/LICENSE), copyright (c) 2025 Libera-UI. Preserve the copyright and license notice when reusing the code.
+
+## Themed date and select pickers
+
+`InputDateComponent` provides a calendar that follows the shared light/dark tokens, supports keyboard navigation and optional `min`/`max` ISO dates. Enter dates directly or open the calendar button.
+
+Select menus inherit the shared palette and spacing in browsers supporting `appearance: base-select`. Other browsers retain their native menu and keyboard behavior.
+
+![LiberaUI Glass Theme Studio](https://raw.githubusercontent.com/gioelevalori/liberaui/master/docs/assets/theme-studio.png)
+
+![Themed date picker on mobile](https://raw.githubusercontent.com/gioelevalori/liberaui/master/docs/assets/date-picker.png)

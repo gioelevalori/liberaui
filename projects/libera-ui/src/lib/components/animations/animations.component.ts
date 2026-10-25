@@ -32,7 +32,17 @@ export class AnimationsComponent {
   state: string = '';
   constructor(private el: ElementRef) { }
 
+  private observer?: IntersectionObserver;
+  private animationTimer?: ReturnType<typeof setTimeout>;
+  ngOnDestroy() {
+    this.observer?.disconnect();
+    if (this.animationTimer) clearTimeout(this.animationTimer);
+  }
   ngOnInit() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.state = `${this.animation}-in`;
+      return;
+    }
     this.state = `${this.animation}-out`; // Assicura che l'animazione sia impostata correttamente
 
     if (!this.animationScrolling) {
@@ -44,22 +54,23 @@ export class AnimationsComponent {
 
 
   private activateAnimation() {
-    setTimeout(() => {
+    this.animationTimer = setTimeout(() => {
       this.state = `${this.animation}-in`;
     });
   }
 
   private observeElement() {
-    const observer = new IntersectionObserver(
+    if (typeof IntersectionObserver === 'undefined') { this.activateAnimation(); return; }
+    this.observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           this.activateAnimation();
-          observer.disconnect(); // Ferma l'osservazione dopo l'attivazione
+          this.observer?.disconnect(); // Ferma l'osservazione dopo l'attivazione
         }
       },
       { threshold: 0.4 } // Attiva l'animazione quando il 30% dell'elemento è visibile
     );
 
-    observer.observe(this.el.nativeElement);
+    this.observer.observe(this.el.nativeElement);
   }
 }

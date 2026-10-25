@@ -7,7 +7,8 @@
   --lib-glass-highlight: rgba(255,255,255,.9);
   --lib-glass-shadow: rgba(37,48,75,.12);
 }
-.dark-theme.lib-glass, .dark-theme .lib-glass, .lib-glass[data-glass-mode=dark] {
+.lib-glass[data-glass-mode=light] { --lib-glass-fill:rgba(255,255,255,.76); --lib-glass-line:rgba(255,255,255,.8); --lib-glass-highlight:rgba(255,255,255,.9); --lib-glass-shadow:rgba(37,48,75,.12); }
+.dark-theme.lib-glass, .dark-theme .lib-glass:not([data-glass-mode=light]), .lib-glass[data-glass-mode=dark] {
   --lib-glass-fill: rgba(24,27,36,.82);
   --lib-glass-line: rgba(255,255,255,.17);
   --lib-glass-highlight: rgba(255,255,255,.2);
@@ -41,6 +42,7 @@
   }
 }
 @media(forced-colors:active) {
+  .lib-glass { --lib-panel-background:Canvas; }
   .lib-glass.lib-glass-backdrop { background-image:none; }
   .lib-glass .lib-glass-panel, .lib-glass lib-card .custom-card {
     background:Canvas;color:CanvasText;border-color:CanvasText;

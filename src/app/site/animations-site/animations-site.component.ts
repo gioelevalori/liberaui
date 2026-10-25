@@ -16,7 +16,7 @@ export class AnimationsSiteComponent {
   public codeFadeInDown = `<lib-animations [animation]="'fadeInDown'">
     <lib-input-text placeholder="Nome"></lib-input-text>
     <lib-input-text [disabled]="true" placeholder="Cognome"></lib-input-text>
-    </lib-animations>'`;
+    </lib-animations>`;
 
   public codeFadeInOut = `<lib-animations [animation]="'fadeInOut'">
     <lib-input-text placeholder="Nome"></lib-input-text>

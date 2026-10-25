@@ -1,3 +1,4 @@
+import { IconComponent } from '../../projects/libera-ui/src/lib/components/icon/icon.component';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -7,13 +8,13 @@ import { componentRegistry } from './component-registry';
 
 @Component({
   selector: 'lib-root', standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, SwitchThemeComponent],
+  imports: [CommonModule, FormsModule, RouterModule, SwitchThemeComponent, IconComponent],
   templateUrl: './app.component.html', styleUrl: './app.component.css'
 })
 export class AppComponent {
   constructor(public router: Router) {
-    let glass = false;
-    try { glass = localStorage.getItem('liberaui-material') === 'glass'; } catch { /* Works without storage. */ }
+    let glass = true;
+    try { glass = localStorage.getItem('liberaui-material') !== 'solid'; } catch { /* Works without storage. */ }
     this.applyMaterial(glass);
   }
   glass = false;
@@ -30,7 +31,7 @@ export class AppComponent {
   title = 'libera-ui';
   menuOpen = false;
   searchQuery = '';
-  readonly navigation = componentRegistry;
+  readonly navigation = componentRegistry.map(item => ({...item, icon: item.path.includes('password') ? 'lock' : item.path.includes('file') ? 'upload' : item.path === '/switch-theme' ? 'sun' : item.path === '/alert' ? 'bell' : item.path === '/accordion' ? 'list' : item.path === '/input-date' ? 'calendar' : item.path === '/input-checkbox' ? 'check' : item.path === '/table' ? 'table' : item.path.includes('input') ? 'type' : 'grid'}));
   get showcase() { return ['/', '/components'].includes(this.router.url.split('?')[0]); }
   skipToContent(event: Event) { event.preventDefault(); document.getElementById('main-content')?.focus(); }
   search() { this.router.navigate(['/components'], {queryParams: this.searchQuery.trim() ? {q: this.searchQuery.trim()} : {}}); this.menuOpen = false; }

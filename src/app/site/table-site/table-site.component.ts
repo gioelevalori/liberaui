@@ -19,21 +19,21 @@ export class TableSiteComponent {
         <th>Surname</th>
         <th>Email</th>
         <th>Phone</th>
-        <th>Adress</th>
+        <th>Address</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Francesco</td>
         <td>Rossi</td>
-        <td>francescorossigmail.com</td>
+        <td>francesco@example.com</td>
         <td>3435675457</td>
         <td>Contrada Verdi</td>
       </tr>
       <tr>
         <td>Melissa</td>
         <td>Bianchi</td>
-        <td>melissabianchigmail.com</td>
+        <td>melissa@example.com</td>
         <td>3546757545</td>
         <td>Contrada Rossi</td>
       </tr>

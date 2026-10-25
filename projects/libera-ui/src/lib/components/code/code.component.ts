@@ -1,10 +1,11 @@
+import { IconComponent } from '../icon/icon.component';
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnChanges, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import Prism from 'prismjs';
 
 @Component({
   selector: 'lib-code',
-  standalone: true,
-  template: `<div class="code-example"><pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code></pre><button type="button" class="code-copy" (click)="copyCode()">Copy</button><span class="copy-status" role="status">{{ copyButtonText }}</span></div>`,
+  standalone: true, imports: [IconComponent],
+  template: `<div class="code-example"><pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code></pre><button type="button" class="code-copy" (click)="copyCode()"><lib-icon [name]="copyButtonText === 'Copied!' ? 'check' : 'copy'" [size]="14" /> Copy</button><span class="copy-status" role="status">{{ copyButtonText }}</span></div>`,
   styleUrl: './code.component.css',
   encapsulation: ViewEncapsulation.None,
 })

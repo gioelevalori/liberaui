@@ -5,11 +5,15 @@
   <div class="catalog-grid">
     <article class="catalog-item" *ngFor="let item of filtered">
       <div class="catalog-preview" [ngSwitch]="item.path">
+        <lib-tabs *ngSwitchCase="'/tabs'" [items]="previewTabs" label="Catalog tabs preview" />
+        <lib-accordion *ngSwitchCase="'/accordion'" [items]="previewQuestions" />
+        <lib-alert *ngSwitchCase="'/alert'" title="Ready to build" tone="success">Every detail has a place.</lib-alert>
         <div *ngSwitchCase="'/button'" class="catalog-button-preview"><lib-button (click)="previewCount = previewCount + 1">{{ previewCount ? 'Clicked ' + previewCount : 'Build something' }}</lib-button><lib-button variant="outline" size="compact" (click)="previewCount = previewCount + 1">Outline</lib-button></div>
         <div *ngSwitchCase="'/switch'" class="catalog-switch-preview"><span>Focus mode</span><lib-switch label="Focus mode preview" [(ngModel)]="previewChecked" /></div>
         <lib-input-text *ngSwitchCase="'/input-text'" placeholder="Your next idea" label="Text input preview" />
         <lib-input-number *ngSwitchCase="'/input-number'" placeholder="12" [max]="100" label="Number input preview" />
         <lib-input-password *ngSwitchCase="'/input-password'" placeholder="Your password" label="Password input preview" />
+        <lib-input-date *ngSwitchCase="'/input-date'" label="Date input preview" />
         <lib-input-file *ngSwitchCase="'/input-file'" />
         <lib-input-textarea *ngSwitchCase="'/input-textarea'" placeholder="Leave room for the details." label="Textarea preview" />
         <div *ngSwitchCase="'/input-checkbox'" class="catalog-checkbox"><lib-input-checkbox label="Include the little details" /><span>Include the little details</span></div>

@@ -4,3 +4,5 @@
 .custom-file-label:focus-within { outline:2px solid var(--text-primary,#18181b); outline-offset:3px; }
 input { position:absolute; inset:0; width:100%; min-width:0; opacity:0; cursor:pointer; }
 .file-name { min-width:0; max-width:100%; overflow-wrap:anywhere; font-size:12px; color:var(--text-secondary,#66666f); }
+
+.custom-file-label{gap:8px}

@@ -1,9 +1,10 @@
+import { IconComponent } from '../icon/icon.component';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'lib-switch-theme',
-  standalone: true,
-  template: `<button type="button" class="theme-toggle" (click)="toggleTheme()">{{ isDarkMode ? 'Light theme' : 'Dark theme' }}</button>`,
+  standalone: true, imports: [IconComponent],
+  template: `<button type="button" class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'" [attr.title]="isDarkMode ? 'Light theme' : 'Dark theme'"><lib-icon [name]="isDarkMode ? 'sun' : 'moon'" /></button>`,
   styleUrls: ['./switch-theme.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })

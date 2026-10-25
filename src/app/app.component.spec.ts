@@ -6,6 +6,17 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({ imports: [AppComponent], providers: [provideRouter([])] }).compileComponents();
   });
+  afterEach(() => { localStorage.removeItem('liberaui-material'); document.body.classList.remove('lib-glass','lib-glass-backdrop'); });
+  it('defaults to Glass for new visitors and respects an explicit saved Essential choice',()=>{
+    localStorage.removeItem('liberaui-material');
+    const first=TestBed.createComponent(AppComponent);
+    expect(first.componentInstance.glass).toBeTrue();
+    expect(document.body.classList.contains('lib-glass')).toBeTrue();
+    first.componentInstance.toggleMaterial();
+    expect(localStorage.getItem('liberaui-material')).toBe('solid');
+    const returning=TestBed.createComponent(AppComponent);
+    expect(returning.componentInstance.glass).toBeFalse();
+  });
   it('renders the LiberaUI brand and mobile navigation control', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();

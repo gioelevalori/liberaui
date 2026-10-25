@@ -1,22 +1,19 @@
 /* Site surfaces use the same Glass material exported by the library. */
 body.lib-glass { background-attachment:fixed; }
-body.lib-glass .site-header,
-body.lib-glass .docs-nav.is-open {
+body.lib-glass .site-header, body.lib-glass .docs-nav.is-open { background:var(--background-color); }
+body.lib-glass :is(.example-surface,.component-demo,.catalog-preview,.workbench,.studio-workbench) {
   background:var(--background-color);
+  border-color:var(--lib-glass-line);
+  box-shadow:inset 0 1px 0 var(--lib-glass-highlight),0 12px 36px var(--lib-glass-shadow);
 }
 @supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
   body.lib-glass .site-header,
   body.lib-glass .docs-nav.is-open,
-  body.lib-glass :is(.example-surface,.component-demo,.catalog-preview) {
+  body.lib-glass :is(.example-surface,.component-demo,.catalog-preview,.workbench,.studio-workbench) {
     background:var(--lib-glass-fill);
     -webkit-backdrop-filter:blur(24px) saturate(135%);
     backdrop-filter:blur(24px) saturate(135%);
   }
-}
-body.lib-glass :is(.example-surface,.component-demo,.catalog-preview,.workbench,.studio-workbench) {
-  background:var(--lib-glass-fill);
-  border-color:var(--lib-glass-line);
-  box-shadow:inset 0 1px 0 var(--lib-glass-highlight),0 12px 36px var(--lib-glass-shadow);
 }
 body.lib-glass .docs-nav { background:transparent; }
 body.lib-glass .docs-nav a.active { background:var(--lib-glass-fill); }
@@ -33,8 +30,8 @@ body.lib-glass .docs-nav a.active { background:var(--lib-glass-fill); }
 .lib-glass .studio-block.lib-glass-panel { padding:var(--lib-spacing); }
 .lib-glass .studio-block.lib-glass-panel+.studio-block { padding-top:var(--lib-spacing); }
 @media(max-width:760px) {
-  .header-actions>.material-toggle { display:none; }
-  .material-mobile { display:inline-flex; }
+  .header-actions>.material-toggle { display:inline-flex; }
+  .material-mobile { display:none; }
 }
 @media(prefers-reduced-transparency:reduce) {
   body.lib-glass :is(.site-header,.docs-nav.is-open,.example-surface,.component-demo,.catalog-preview,.workbench,.studio-workbench) {

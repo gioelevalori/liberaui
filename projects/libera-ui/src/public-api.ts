@@ -26,3 +26,8 @@ export * from './lib/components/code/public-api';
 
 export * from './lib/components/switch/switch.component';
 export * from './lib/theme';
+export { TabComponent, TabItem } from './lib/components/tab/tab.component';
+export { AccordionComponent, AccordionItem } from './lib/components/accordion/accordion.component';
+export { AlertComponent } from './lib/components/alert/alert.component';
+
+export { IconComponent } from './lib/components/icon/icon.component';

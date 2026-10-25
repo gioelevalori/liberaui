@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  {path:'forms',loadComponent:()=>import('./site/forms-lab/forms-lab.component').then(m=>m.FormsLabComponent),title:'Forms | LiberaUI'},
+  ...(['tabs','accordion','alert'] as const).map(kind => ({path:kind,loadComponent:()=>import('./site/patterns/patterns-site.component').then(m=>m.PatternsSiteComponent),data:{kind}})),
   { path: 'switch', loadComponent: () => import('./site/switch-site/switch-site.component').then(m => m.SwitchSiteComponent) },
   { path: 'playground', loadComponent: () => import('./site/playground/playground.component').then(m => m.PlaygroundComponent), title: 'Playground | LiberaUI' },
   { path: 'components', loadComponent: () => import('./site/components/components.component').then(m => m.ComponentsComponent) },

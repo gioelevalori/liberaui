@@ -3,8 +3,10 @@
 @import './styles/showcase.css';
 @import './styles/catalog.css';
 @import './styles/glass.css';
+@import './styles/forms.css';
 :root { --docs-accent:#176b3a; --docs-accent-soft:#edf7f0; }
 * { box-sizing:border-box; }
+html:has(body.dark-theme) {color-scheme:dark;scrollbar-color:#2c2c32 #111113;}
 html { scroll-padding-top:90px; scrollbar-color:var(--border-color) var(--background-color); }
 body { margin:0; font-family:'Inter Variable',Inter,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
 body.dark-theme { --docs-accent:#92d4ac; --docs-accent-soft:#172c21; }
@@ -17,7 +19,7 @@ h1,h2,h3 { line-height:1.2; text-wrap:balance; }
 h1 { font-size:clamp(2rem,4vw,2.75rem); font-weight:600; letter-spacing:-.04em; margin:0 0 18px; }
 h2 { margin:40px 0 16px; font-size:22px; font-weight:550; letter-spacing:-.025em; }
 h3 { font-weight:550; letter-spacing:-.02em; }
-p { max-width:72ch; }
+p { max-width:72ch; text-wrap:pretty; }
 a { text-underline-offset:4px; }
 .content-page { width:100%; max-width:900px; margin:0 auto; }
 .content-page > p:first-of-type { color:var(--text-secondary); }

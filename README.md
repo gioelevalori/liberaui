@@ -16,7 +16,9 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 
 </div>
 
-[![LiberaUI in dark mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://gioelevalori.github.io/liberaui/)
+[![LiberaUI in Glass mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://gioelevalori.github.io/liberaui/)
+
+> **LiberaUI 0.5.0:** Glass by default on the site, accessible interface patterns, themed pickers and Angular forms support.
 
 ## Your interface, your details
 
@@ -32,14 +34,14 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## See the components
 
-[![LiberaUI component catalog showing buttons, a switch and a text input](docs/assets/components.png)](https://gioelevalori.github.io/liberaui/#/components)
+[![LiberaUI component catalog showing Tabs, Accordion and Alert](docs/assets/components.png)](https://gioelevalori.github.io/liberaui/#/components)
 
 [Browse the catalog →](https://gioelevalori.github.io/liberaui/#/components)
 [Try the live customization playground →](https://gioelevalori.github.io/liberaui/#/playground)
 
 ## Try the latest source
 
-> **Latest release: 0.4.0.** Glass surfaces, theme helpers, shared tokens and component customization are available on npm.
+> **Latest release: 0.5.0.** Accessible Tabs, Accordion and Alert, themed date picker, coordinated select menus and Angular forms support.
 
 Use Node.js 22 and npm:
 
@@ -57,7 +59,7 @@ Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The
 The published package is available with:
 
 ```sh
-npm install libera-ui@^0.4.0
+npm install libera-ui@^0.5.0
 ```
 
 Add `ButtonComponent` to your standalone component's imports:
@@ -112,6 +114,31 @@ The Glass stylesheet is included by `libera-ui/theme.css` in version 0.4.0 and l
 ```
 
 Set `data-glass-mode="dark"` on a scoped Glass container to preview dark material, or use the body’s `dark-theme` class in your app. Translucency falls back to opaque surfaces without backdrop-filter support and when reduced transparency is requested.
+
+## New in 0.5.0
+
+- **Glass by default on a fresh site visit**, with saved Essential preferences respected.
+- **Tabs**, **Accordion** and **Alert** components, including keyboard navigation and dismissible feedback.
+- **Angular forms support** for text, number, password, date, textarea, select and checkbox controls.
+- **Themed pickers.** A keyboard-friendly calendar with date limits, plus coordinated select menus in browsers supporting customizable selects. Other browsers keep their native select menu.
+- **Icons and motion.** Shared SVG icons, compact mobile controls and transitions that respect reduced motion.
+- **Forms lab** showing live reactive values, reset and disabled behavior.
+- Fixes for initial select values, numeric values, password reveal, numeric bounds and empty Studio submission.
+
+Import the components you use into your standalone component:
+
+```ts
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { InputTextComponent, TabComponent, AccordionComponent, AlertComponent } from 'libera-ui';
+const name = new FormControl('Design studio');
+```
+
+```html
+<lib-input-text label="Workspace name" [formControl]="name" />
+<lib-alert title="Ready" tone="success">Your workspace is ready.</lib-alert>
+```
+
+Use `TabItem[]` with `[(activeId)]` for Tabs, and `AccordionItem[]` with `[(openIds)]` for Accordion. Each item needs a unique ID. Install libera-ui@^0.5.0 to use these APIs.
 
 ## Build something with us
 

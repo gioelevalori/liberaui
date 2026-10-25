@@ -1,3 +1,7 @@
+import { TabComponent } from '../../../../projects/libera-ui/src/lib/components/tab/tab.component';
+import { AccordionComponent } from '../../../../projects/libera-ui/src/lib/components/accordion/accordion.component';
+import { AlertComponent } from '../../../../projects/libera-ui/src/lib/components/alert/alert.component';
+import { InputDateComponent } from '../../../../projects/libera-ui/src/lib/components/input-date/input-date.component';
 import { InputTextComponent } from '../../../../projects/libera-ui/src/lib/components/input-text/input-text.component';
 import { InputNumberComponent } from '../../../../projects/libera-ui/src/lib/components/input-number/input-number.component';
 import { InputPasswordComponent } from '../../../../projects/libera-ui/src/lib/components/input-password/input-password.component';
@@ -17,12 +21,14 @@ import { componentRegistry } from '../../component-registry';
 import { ButtonComponent } from '../../../../projects/libera-ui/src/lib/components/button/button.component';
 import { SwitchComponent } from '../../../../projects/libera-ui/src/lib/components/switch/switch.component';
 
-@Component({ selector:'lib-components', standalone:true, imports:[CommonModule,FormsModule,RouterModule,ButtonComponent,SwitchComponent,InputTextComponent,InputNumberComponent,InputPasswordComponent,InputTextareaComponent,InputFileComponent,InputCheckboxComponent,SelectComponent,CardComponent,TableComponent,SwitchThemeComponent], templateUrl:'./components.component.html', styleUrl:'./components.component.css' })
+@Component({ selector:'lib-components', standalone:true, imports:[CommonModule,FormsModule,RouterModule,ButtonComponent,SwitchComponent,InputTextComponent,InputNumberComponent,InputPasswordComponent,InputTextareaComponent,InputFileComponent,InputCheckboxComponent,SelectComponent,CardComponent,TableComponent,SwitchThemeComponent,TabComponent,AccordionComponent,AlertComponent,InputDateComponent], templateUrl:'./components.component.html', styleUrl:'./components.component.css' })
 export class ComponentsComponent {
   query = '';
   category = 'All';
-  readonly categories = ['All','Actions','Forms','Data','Layout','Appearance','Motion'];
+  readonly categories = ['All','Actions','Forms','Data','Layout','Appearance','Motion','Feedback'];
   readonly components = componentRegistry;
+  readonly previewTabs=[{id:'design',label:'Design',content:'A place for every detail.'},{id:'code',label:'Code',content:'Ready for Angular.'}];
+  readonly previewQuestions=[{id:'customize',title:'Can I customize it?',content:'Choose your colors, typography and spacing.'}];
   previewChecked = true;
   previewCount = 0;
   constructor(route: ActivatedRoute) {

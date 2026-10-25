@@ -38,6 +38,6 @@ describe('Theme Studio configuration', () => {
     expect(studio.message).toContain('invalid');
     studio.form = false; studio.mode = 'dark'; studio.reset();
     expect(studio.form).toBeTrue(); expect(studio.mode).toBe('light');
-    expect(studio.theme).toEqual(DEFAULT_THEME);
+    expect(studio.theme).toEqual({...DEFAULT_THEME,material:'glass'});
   });
 });

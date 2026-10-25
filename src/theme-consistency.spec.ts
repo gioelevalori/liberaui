@@ -14,9 +14,9 @@ describe('Shared theme controls', () => {
       const fixture=TestBed.createComponent(ThemeHost); fixture.detectChanges();
       const buttons: HTMLButtonElement[]=Array.from(fixture.nativeElement.querySelectorAll('button'));
       buttons[0].click(); fixture.detectChanges();
-      expect(buttons.map(button=>button.textContent?.trim())).toEqual(['Light theme','Light theme']);
+      expect(buttons.map(button=>button.getAttribute('aria-label'))).toEqual(['Switch to light theme','Switch to light theme']);
       buttons[1].click(); fixture.detectChanges();
-      expect(buttons.map(button=>button.textContent?.trim())).toEqual(['Dark theme','Dark theme']);
+      expect(buttons.map(button=>button.getAttribute('aria-label'))).toEqual(['Switch to dark theme','Switch to dark theme']);
       fixture.destroy();
     } finally {
       if(saved===null)localStorage.removeItem('theme');else localStorage.setItem('theme',saved);

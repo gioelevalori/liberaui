@@ -26,3 +26,20 @@ body.dark-theme { --docs-accent:#92d4ac; --docs-accent-soft:#172c21; --lib-code-
 *,*::before,*::after { box-sizing:border-box; }
 button,input,select,textarea { font-family:inherit; }
 :focus-visible { outline:2px solid var(--text-primary); outline-offset:3px; }
+
+/* Keep native selection semantics while styling supported browser pickers. */
+select { color-scheme:light; }
+.dark-theme select { color-scheme:dark; }
+select option { background:var(--background-color,#fff);color:var(--text-primary,#18181b); }
+@supports (appearance:base-select) {
+ select:not([multiple]):not([size]), select:not([multiple]):not([size])::picker(select) { appearance:base-select; }
+ select:not([multiple]):not([size]) { display:inline-flex;align-items:center;justify-content:space-between;gap:12px; }
+ select::picker(select) { padding:5px;border:1px solid var(--border-color,#ddd);border-radius:var(--lib-radius,10px);background:var(--background-color,#fff);color:var(--text-primary,#18181b);box-shadow:0 12px 32px #00000026;max-height:300px;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--border-color) transparent; }
+ select option { padding:9px 12px;min-height:38px;border-radius:5px;gap:10px;font:inherit;cursor:pointer; }
+ select option:checked,select option:hover,select option:focus { background:var(--surface-color,#f4f4f5);color:var(--text-primary,#18181b); }
+ select option:disabled { opacity:.45;cursor:default; }
+ select::picker-icon { color:var(--text-secondary,#666);transition:rotate 150ms; }
+ select:open::picker-icon { rotate:180deg; }
+ select option::checkmark { color:var(--text-primary); }
+ @media(prefers-reduced-motion:reduce) { select::picker-icon { transition:none; } }
+}
