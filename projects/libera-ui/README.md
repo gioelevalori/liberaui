@@ -15,12 +15,36 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 ## Install
 
 ```sh
-npm install libera-ui
+npm install libera-ui@^0.2.0
 ```
 
-**Release status:** the demo follows the repository source. The published npm release may not include the latest component APIs or the shared theme. See the [repository README](https://github.com/gioelevalori/ng-library#try-the-latest-source) for current source setup and examples.
+Version 0.2.0 includes the shared theme, button variants and loading states, and a switch with Angular forms support.
 
 The library declares Angular 17–19 peer support. The repository workspace and current CI use Angular 19.
+
+## Shared theme
+
+Import once in your application's global stylesheet:
+
+```css
+@import 'libera-ui/theme.css';
+```
+
+The theme bundles Inter fonts and the shared visual tokens. Add the `dark-theme` class to the body to enable dark mode.
+
+Add `ButtonComponent` to your standalone component's imports:
+
+```ts
+import { ButtonComponent } from 'libera-ui';
+```
+
+```html
+<lib-button variant="outline" [radius]="12" size="comfortable">
+  Create something
+</lib-button>
+```
+
+See the [changelog](https://github.com/gioelevalori/ng-library/blob/master/projects/libera-ui/CHANGELOG.md) for release details.
 
 ## Explore and contribute
 

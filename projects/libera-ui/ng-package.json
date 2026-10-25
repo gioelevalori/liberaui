@@ -6,6 +6,7 @@
   },
   "assets": [
     "theme.css",
-    "fonts"
+    "fonts",
+    "CHANGELOG.md"
   ]
 }
