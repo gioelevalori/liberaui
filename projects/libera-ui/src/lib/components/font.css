@@ -1,1 +1,1 @@
-body { font-family: 'Inter Variable', Inter, sans-serif; }
+body { font-family: var(--lib-font, 'Inter Variable', Inter, sans-serif); }

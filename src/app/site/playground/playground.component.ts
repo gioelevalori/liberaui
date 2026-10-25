@@ -1,3 +1,4 @@
+import { ThemeStudioComponent } from '../theme-studio/theme-studio.component';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,7 @@ import { ButtonComponent, ButtonVariant } from '../../../../projects/libera-ui/s
 @Component({
   selector: 'lib-playground',
   standalone: true,
-  imports: [FormsModule, CommonModule, CodeComponent, ButtonComponent],
+  imports: [FormsModule, CommonModule, CodeComponent, ButtonComponent, ThemeStudioComponent],
   templateUrl: './playground.component.html',
   styleUrl: './playground.component.css'
 })

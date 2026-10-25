@@ -22,7 +22,7 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 
 LiberaUI is an open source Angular component library for people who care about how an interface looks and feels. Explore real components, adjust their appearance, and take the example into your application.
 
-- **Customize live.** Change a button's label, accent, radius, spacing and states, then copy the generated example.
+- **Theme Studio.** Tune accent, typography, radius and spacing across a workspace preview. Choose sections, test states, download CSS and an Angular component, or share a configuration link.
 - **Keep a consistent style.** The library and showcase share typography, colors, surfaces and theme tokens.
 - **Build with Angular.** Standalone components, button variants and loading states, plus a switch with Angular forms support.
 - **Explore real examples.** Try workspace forms, notification settings, checklists and team controls in the demo.
@@ -39,7 +39,7 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## Try the latest source
 
-> **Latest release: 0.2.0.** The shared theme, button variants and loading states, and Angular forms switch are available on npm.
+> **Latest release: 0.3.0.** Theme helpers, shared tokens and component customization are available on npm.
 
 Use Node.js 22 and npm:
 
@@ -57,7 +57,7 @@ Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The
 The published package is available with:
 
 ```sh
-npm install libera-ui@^0.2.0
+npm install libera-ui@^0.3.0
 ```
 
 Add `ButtonComponent` to your standalone component's imports:
@@ -79,6 +79,23 @@ Import the shared theme once in your global stylesheet:
 ```
 
 The theme includes the locally bundled Inter fonts and shared design tokens. Use `dark-theme` on the body, or the library's theme switch, to enable dark mode. The theme export is included in version 0.2.0.
+
+## Theme Studio
+
+[![Theme Studio with live theme controls and workspace composition](docs/assets/theme-studio.png)](https://gioelevalori.github.io/liberaui/#/playground)
+
+Open the [Studio](https://gioelevalori.github.io/liberaui/#/playground) to compose workspace, notification and action sections. Switch between light and dark previews, check a narrow layout, and try loading, disabled, error and long-content fixtures.
+
+Download both files: import `libera-ui/theme.css` followed by `liberaui-theme.css` in your global stylesheet, then use the exported standalone `WorkspaceComponent`. The exported example starts in the ready state and keeps its interactions local. The mobile preview is constrained to 360px or the available width, whichever is smaller.
+
+Share links contain versioned theme and section settings in the URL. They do not save form values or send data to a server. Anyone with the link can read the configuration.
+
+Version 0.3.0 exposes typed helpers:
+
+```ts
+import { createThemeCss, DEFAULT_THEME } from 'libera-ui';
+const css = createThemeCss({ ...DEFAULT_THEME, accent: '#2454ce', radius: 16 });
+```
 
 ## Build something with us
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0
+
+- Export typed theme configuration, input normalization, contrast-aware accent foreground, theme tokens and CSS generation helpers.
+- Support shared font and radius tokens in buttons.
+- Add Theme Studio to the showcase: section composition, light/dark and narrow previews, interaction states, CSS and standalone Angular exports, and versioned share links.
+- Update repository and documentation links after the liberaui rename.
+
 ## 0.2.0
 
 - Add the shared theme export: `@import 'libera-ui/theme.css';`.

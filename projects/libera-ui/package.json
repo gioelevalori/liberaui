@@ -1,6 +1,6 @@
 {
   "name": "libera-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "peerDependencies": {
     "@angular/common": ">=17.0.0 <20.0.0",
     "@angular/core": ">=17.0.0 <20.0.0",
@@ -23,7 +23,7 @@
   "homepage": "https://gioelevalori.github.io/liberaui/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gioelevalori/liberaui.git",
+    "url": "git+https://github.com/gioelevalori/liberaui.git",
     "directory": "projects/libera-ui"
   },
   "bugs": {

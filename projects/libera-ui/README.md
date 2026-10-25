@@ -15,10 +15,10 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 ## Install
 
 ```sh
-npm install libera-ui@^0.2.0
+npm install libera-ui@^0.3.0
 ```
 
-Version 0.2.0 includes the shared theme, button variants and loading states, and a switch with Angular forms support.
+Version 0.3.0 includes the shared theme, button variants and loading states, and a switch with Angular forms support.
 
 The library declares Angular 17–19 peer support. The repository workspace and current CI use Angular 19.
 
@@ -45,6 +45,15 @@ import { ButtonComponent } from 'libera-ui';
 ```
 
 See the [changelog](https://github.com/gioelevalori/liberaui/blob/master/projects/libera-ui/CHANGELOG.md) for release details.
+
+## Theme helpers
+
+```ts
+import { createThemeCss, DEFAULT_THEME } from 'libera-ui';
+const css = createThemeCss({ ...DEFAULT_THEME, accent: '#2454ce', radius: 16 });
+```
+
+The [Theme Studio](https://gioelevalori.github.io/liberaui/#/playground) exports theme CSS and a standalone Angular component. Share links preserve appearance, selected sections and preview settings.
 
 ## Explore and contribute
 

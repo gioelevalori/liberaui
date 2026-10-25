@@ -3,7 +3,7 @@ lib-button .custom-button {
   --lib-fill: var(--lib-button-color, var(--lib-accent, var(--text-primary, #18181b)));
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   max-width: 100%; min-height: 40px; padding: 9px 16px; margin: 0;
-  border: 1px solid transparent; border-radius: 8px; font: 500 13px/1.4 'Inter Variable', Inter, sans-serif;
+  border: 1px solid transparent; border-radius: var(--lib-radius, 8px); font: 500 13px/1.4 var(--lib-font, 'Inter Variable', Inter, sans-serif);
   cursor: pointer; overflow-wrap: anywhere;
   background: var(--lib-fill); color: var(--lib-accent-foreground, var(--background-color, #fff));
   transition: background-color .16s ease, color .16s ease, border-color .16s ease;

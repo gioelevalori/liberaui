@@ -20,7 +20,8 @@ describe('PlaygroundComponent', () => {
     expect(button.textContent?.trim()).toBe('Ship it');
     expect(button.style.borderRadius).toBe('24px');
     expect(button.disabled).toBeTrue();
-    const code = element.querySelector('lib-code code')!.textContent!;
+    const examples = element.querySelectorAll('lib-code code');
+    const code = examples[examples.length - 1].textContent!;
     expect(code).toContain('[radius]="24"');
     expect(code).toContain('color="#2454ce"');
     expect(code).toContain('[disabled]="true"');
