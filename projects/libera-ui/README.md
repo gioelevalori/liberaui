@@ -1,68 +1,33 @@
-# 📦 libera-ui
+<div align="center">
 
-**libera-ui** is a UI component library compatible with Angular versions 17 through 19. It is designed to simplify the development of modern, accessible, and responsive user interfaces.
+<img src="https://raw.githubusercontent.com/gioelevalori/ng-library/master/docs/assets/logo.svg" alt="LiberaUI logo" width="64" height="64">
 
----
+# LiberaUI
 
-## ✅ Compatibility
+Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-- Angular 17 ✅  
-- Angular 18 ✅  
-- Angular 19 ✅
+[Demo](https://gioelevalori.github.io/ng-library/) · [Components](https://gioelevalori.github.io/ng-library/#/components) · [Playground](https://gioelevalori.github.io/ng-library/#/playground) · [GitHub](https://github.com/gioelevalori/ng-library)
 
----
+</div>
 
-## 📥 Installation
+![LiberaUI component catalog](https://raw.githubusercontent.com/gioelevalori/ng-library/master/docs/assets/components.png)
 
-Using npm:
+## Install
 
-```bash
+```sh
 npm install libera-ui
 ```
 
-## 🧩 Available Components
+**Release status:** the demo follows the repository source. The published npm release may not include the latest component APIs or the shared theme. See the [repository README](https://github.com/gioelevalori/ng-library#try-the-latest-source) for current source setup and examples.
 
-Here is the complete list of exported components:
+The library declares Angular 17–19 peer support. The repository workspace and current CI use Angular 19.
 
-| Component                  | Description                                 |
-|---------------------------|---------------------------------------------|
-| `AnimationsComponent`     | Custom animation handling                    |
-| `ButtonComponent`         | Standard UI button                          |
-| `FixedSideBarComponent`   | Fixed sidebar                               |
-| `FooterComponent`         | Responsive footer                           |
-| `InputCheckboxComponent`  | Custom checkbox input                       |
-| `InputDateComponent`      | Input field for selecting dates             |
-| `InputFileComponent`      | File upload field                           |
-| `InputNumberComponent`    | Numeric input field                         |
-| `InputPasswordComponent`  | Password field with visibility toggle       |
-| `InputTextComponent`      | Text input field                            |
-| `InputTextareaComponent`  | Multi-line text area                        |
-| `NavigationBarComponent`  | Horizontal navigation bar                   |
-| `SelectComponent`         | Custom dropdown/select menu                 |
-| `SideNavigationComponent` | Vertical side navigation                    |
-| `SwitchThemeComponent`    | Theme switcher (e.g., light/dark mode)      |
-| `TableComponent`          | Styled data table                           |
+## Explore and contribute
 
----
+Browse the [component catalog](https://gioelevalori.github.io/ng-library/#/components), try the [live playground](https://gioelevalori.github.io/ng-library/#/playground), or read the [contribution guide](https://github.com/gioelevalori/ng-library/blob/master/CONTRIBUTING.md).
 
-## 🛠️ Site
-
-https://libera-ui.netlify.app
-
----
-
-## 📄 License
-
-MIT
-
----
-
-## 🤝 Contributing
-
-Pull requests and suggestions are welcome! Feel free to open issues for bugs or feature requests.
-
----
+Bug reports, examples, documentation improvements and pull requests are welcome.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Created by [Gioele Valori](https://github.com/gioelevalori). [MIT](https://github.com/gioelevalori/ng-library/blob/master/LICENSE), copyright (c) 2025 Libera-UI. Preserve the copyright and license notice when reusing the code.

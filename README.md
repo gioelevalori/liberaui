@@ -1,23 +1,101 @@
+<div align="center">
+
+<img src="docs/assets/logo.svg" alt="LiberaUI logo" width="72" height="72">
+
 # LiberaUI
 
-An MIT-licensed Angular component library with examples and a live customization playground.
+### Good interfaces start with the details.
 
-- [Documentation and playground](https://gioelevalori.github.io/ng-library/)
-- [Report a bug or suggest a component](https://github.com/gioelevalori/ng-library/issues)
-- [Contributing](CONTRIBUTING.md)
+Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-## Run locally
+[Explore the demo](https://gioelevalori.github.io/ng-library/) · [Components](https://gioelevalori.github.io/ng-library/#/components) · [Live playground](https://gioelevalori.github.io/ng-library/#/playground) · [Contribute](CONTRIBUTING.md)
 
-Use Node.js 22 and npm.
+[![Build and deploy](https://github.com/gioelevalori/ng-library/actions/workflows/pages.yml/badge.svg)](https://github.com/gioelevalori/ng-library/actions/workflows/pages.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-18181b.svg)](LICENSE)
+[![Angular](https://img.shields.io/badge/Built_with-Angular-dd0031.svg)](https://angular.dev/)
+
+</div>
+
+[![LiberaUI in dark mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://gioelevalori.github.io/ng-library/)
+
+## Your interface, your details
+
+LiberaUI is an open source Angular component library for people who care about how an interface looks and feels. Explore real components, adjust their appearance, and take the example into your application.
+
+- **Customize live.** Change a button's label, accent, radius, spacing and states, then copy the generated example.
+- **Keep a consistent style.** The library and showcase share typography, colors, surfaces and theme tokens.
+- **Build with Angular.** Standalone components, button variants and loading states, plus a switch with Angular forms support.
+- **Explore real examples.** Try workspace forms, notification settings, checklists and team controls in the demo.
+- **Make it yours.** Light and dark themes, locally bundled Inter fonts and an MIT license.
+
+The visual direction takes inspiration from the clarity of shadcn/ui and Radix. The components are implemented in Angular, with LiberaUI's own geometric logo.
+
+## See the components
+
+[![LiberaUI component catalog showing buttons, a switch and a text input](docs/assets/components.png)](https://gioelevalori.github.io/ng-library/#/components)
+
+[Browse the catalog →](https://gioelevalori.github.io/ng-library/#/components)
+[Try the live customization playground →](https://gioelevalori.github.io/ng-library/#/playground)
+
+## Try the latest source
+
+> **Release status:** the demo follows this repository. The published npm package is an earlier release and does not yet contain all the APIs and shared theme shown here. Use the source to explore the latest version.
+
+Use Node.js 22 and npm:
 
 ```sh
+git clone https://github.com/gioelevalori/ng-library.git
+cd ng-library
 npm ci
 npm start
 ```
 
-Open http://127.0.0.1:4200. The demo workspace uses Angular 19. The library declares peer support for Angular 17–19; only the workspace version is verified by the current CI.
+Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The library declares peer support for Angular 17–19; the current CI verifies Angular 19 only.
 
-## Build and test
+### Use the library
+
+The published package is available with:
+
+```sh
+npm install libera-ui
+```
+
+For the latest source APIs, build the library with `npm run build:lib` and integrate the resulting `dist/libera-ui` package into your application. Add `ButtonComponent` to your standalone component's imports:
+
+```ts
+import { ButtonComponent } from 'libera-ui';
+```
+
+```html
+<lib-button variant="outline" [radius]="12" size="comfortable">
+  Create something
+</lib-button>
+```
+
+When using the latest source build, import the shared theme once in your global stylesheet:
+
+```css
+@import 'libera-ui/theme.css';
+```
+
+The theme includes the locally bundled Inter fonts and shared design tokens. Use `dark-theme` on the body, or the library's theme switch, to enable dark mode. This theme export is a source addition pending a future npm release.
+
+## Build something with us
+
+Small improvements are welcome: a clearer example, a bug fix, a keyboard interaction or a new component.
+
+1. [Report a bug or propose an idea](https://github.com/gioelevalori/ng-library/issues).
+2. Read the [contribution guide](CONTRIBUTING.md).
+3. Fork the repository and open a pull request.
+
+For a large change, start with an issue so we can agree on the direction. Maintainers review contributions before merging.
+
+If you find LiberaUI useful, share something you built with it or star the repository to help others discover it.
+
+<details>
+<summary><strong>Development and deployment</strong></summary>
+
+### Local checks
 
 ```sh
 npm run build
@@ -27,59 +105,18 @@ npm test
 
 Tests use ChromeHeadless. Set `CHROME_BIN` if Chrome is installed outside the standard path.
 
-## Use the library
+### GitHub Pages
 
-```sh
-npm install libera-ui
-```
+Pushes to `master` build the library, run tests, build the demo with the `/ng-library/` base path, and deploy to GitHub Pages. Pull requests run the checks without deploying.
 
-The npm release and this repository may differ. New playground APIs (`radius`, `size`, `type`) are available in source; an npm release is a separate maintainer action.
+Pages must use GitHub Actions as its source. Hash routes support direct links and refresh without custom server routing.
 
-```ts
-import { ButtonComponent } from 'libera-ui';
-// Add ButtonComponent to your standalone component's imports.
-```
+</details>
 
-```html
-<lib-button color="#176b3a" [radius]="12" size="comfortable">
-  Create something
-</lib-button>
-```
+## License
 
-## Playground
+Created by [Gioele Valori](https://github.com/gioelevalori). Released under the [MIT license](LICENSE).
 
-Adjust button label, accent, corner radius, spacing, and disabled state. The preview uses the actual library component, and the generated example updates with your choices. Copy feedback reports both success and clipboard errors.
+Copyright (c) 2025 Libera-UI. You may use, modify and redistribute the code, including commercially, while preserving the copyright and license notice in copies or substantial portions.
 
-## GitHub Pages
-
-The Pages workflow builds the library, runs tests, builds the site with `/ng-library/` as its base path, and deploys on pushes to `master`. Hash routes support refresh and direct links without a custom server. Repository Settings → Pages must use **GitHub Actions** as its source.
-
-Pull requests run the same checks without deployment. CI uses `npm ci` and the committed lockfile.
-
-## Contribute
-
-Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting a large change. External contributors propose changes through forks and pull requests; maintainers review before merging.
-
-## License and attribution
-
-[MIT](LICENSE). Copyright (c) 2025 Libera-UI. Created by Gioele Valori.
-
-You may use, copy, modify, distribute, and sell copies under MIT. You must preserve the copyright and license notice in copies or substantial portions. MIT does not grant exclusive ownership of the original code to downstream users.
-
-## Current site design
-
-The showcase follows an essential, precise direction inspired by the presentation patterns of shadcn/ui and Radix. Inter is bundled locally. Native Angular components remain the implementation; no React runtime or copied React component source is included.
-
-The home includes local workspace, notification, checklist, team-role, and button examples. The catalog supports text and category filtering. `SwitchComponent` supports `ngModel` and reactive forms. Buttons support `solid`, `secondary`, `outline`, `ghost`, and `destructive` variants plus a loading state. These additions are in repository source and are not yet an npm release.
-
-LiberaUI's original geometric mark is supplied as SVG and a multi-resolution ICO favicon (16–256px).
-
-## Share the site's component style
-
-After building the library from this repository, import its shared theme once in your application's global stylesheet:
-
-```css
-@import 'libera-ui/theme.css';
-```
-
-The theme includes the same neutral colors, Inter font files, borders, focus treatment, and light/dark tokens used by this documentation site. Add `dark-theme` to `body` to select dark mode, or use `SwitchThemeComponent`. Components and catalog previews use this shared theme directly. This source addition requires a future npm release before it is available in the published package.
+Inter is bundled under its [SIL Open Font License](projects/libera-ui/fonts/LICENSE).
