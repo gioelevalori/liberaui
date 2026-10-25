@@ -5,7 +5,10 @@ import { PlaygroundComponent } from './playground.component';
 
 describe('PlaygroundComponent', () => {
   beforeEach(async () => {
-    await TestBed.configureTestingModule({ imports: [PlaygroundComponent], providers: [provideNoopAnimations(), provideRouter([])] }).compileComponents();
+    await TestBed.configureTestingModule({
+      imports: [PlaygroundComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
   });
   it('keeps the rendered button and copyable example in sync', () => {
     const fixture = TestBed.createComponent(PlaygroundComponent);
@@ -31,9 +34,13 @@ describe('PlaygroundComponent', () => {
     const component = TestBed.createComponent(PlaygroundComponent).componentInstance;
     component.label = '<b>{{ value }}</b>';
     expect(component.code).toContain('&lt;b&gt;&#123;&#123; value &#125;&#125;&lt;/b&gt;');
-    component.disabled = true; component.clicks = 3; component.radius = 0;
+    component.disabled = true;
+    component.clicks = 3;
+    component.radius = 0;
     component.reset();
-    expect(component.disabled).toBeFalse(); expect(component.clicks).toBe(0);
-    expect(component.radius).toBe(12); expect(component.label).toBe('Create something');
+    expect(component.disabled).toBeFalse();
+    expect(component.clicks).toBe(0);
+    expect(component.radius).toBe(12);
+    expect(component.label).toBe('Create something');
   });
 });

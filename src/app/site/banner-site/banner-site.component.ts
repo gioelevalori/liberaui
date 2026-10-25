@@ -7,7 +7,6 @@ import { BannerComponent } from '../../../../projects/libera-ui/src/lib/componen
   standalone: true,
   imports: [BannerComponent, AnimationsComponent],
   templateUrl: './banner-site.component.html',
-  styleUrl: './banner-site.component.css'
+  styleUrl: './banner-site.component.css',
 })
-export class BannerSiteComponent {
-}
+export class BannerSiteComponent {}

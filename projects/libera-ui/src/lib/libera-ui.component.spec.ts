@@ -8,10 +8,9 @@ describe('LiberaUiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LiberaUiComponent]
-    })
-    .compileComponents();
-    
+      imports: [LiberaUiComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LiberaUiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

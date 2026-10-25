@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { SelectComponent, SelectOption } from '../../../../projects/libera-ui/src/lib/components/select/select.component';
+import {
+  SelectComponent,
+  SelectOption,
+} from '../../../../projects/libera-ui/src/lib/components/select/select.component';
 import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
 import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/components/animations/animations.component';
 
@@ -8,7 +11,7 @@ import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/comp
   standalone: true,
   imports: [SelectComponent, CodeComponent, AnimationsComponent],
   templateUrl: './select-site.component.html',
-  styleUrl: './select-site.component.css'
+  styleUrl: './select-site.component.css',
 })
 export class SelectSiteComponent {
   public cities: SelectOption[] = [
@@ -16,7 +19,7 @@ export class SelectSiteComponent {
     { label: 'Rome', value: 'RM' },
     { label: 'London', value: 'LDN' },
     { label: 'Istanbul', value: 'IST' },
-    { label: 'Paris', value: 'PRS' }
+    { label: 'Paris', value: 'PRS' },
   ];
 
   public codeImport = `import { SelectComponent } from 'libera-ui'`;

@@ -1,0 +1,56 @@
+:where(
+    lib-input-text,
+    lib-input-number,
+    lib-input-textarea,
+    lib-input-password,
+    lib-select,
+    lib-input-search
+  )
+  .custom-input {
+  box-sizing: border-box;
+  min-height: 40px;
+  min-width: 0;
+  max-width: calc(100% - 1rem);
+  padding: 9px 12px;
+  font: 400 13px/1.5 var(--lib-font, 'Inter Variable', Inter, sans-serif);
+  border: 1px solid var(--border-color, #d4d4d8);
+  border-radius: var(--lib-radius, 7px);
+  margin: 0.5rem;
+  background: var(--background-color, #fff);
+  color: var(--text-primary, #18181b);
+}
+:where(
+    lib-input-text,
+    lib-input-number,
+    lib-input-textarea,
+    lib-input-password,
+    lib-select,
+    lib-input-search
+  )
+  .custom-input::placeholder {
+  color: var(--text-secondary, #66666f);
+}
+:where(
+    lib-input-text,
+    lib-input-number,
+    lib-input-textarea,
+    lib-input-password,
+    lib-select,
+    lib-input-search
+  )
+  .custom-input:focus-visible {
+  outline: 2px solid var(--text-primary, #18181b);
+  outline-offset: 3px;
+}
+:where(
+    lib-input-text,
+    lib-input-number,
+    lib-input-textarea,
+    lib-input-password,
+    lib-select,
+    lib-input-search
+  )
+  .custom-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

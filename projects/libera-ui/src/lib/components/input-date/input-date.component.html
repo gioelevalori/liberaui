@@ -1,0 +1,70 @@
+<div class="lib-date-field">
+  <input
+    type="date"
+    [attr.min]="min"
+    [attr.max]="max"
+    [placeholder]="placeholder"
+    [attr.aria-label]="label || placeholder"
+    [disabled]="disabled"
+    [value]="value ?? ''"
+    [required]="required"
+    (input)="commit($any($event.target).value)"
+    (blur)="touched()"
+    class="custom-input"
+  /><button
+    #trigger
+    type="button"
+    class="lib-date-trigger"
+    [disabled]="disabled"
+    aria-label="Open calendar"
+    aria-haspopup="dialog"
+    [attr.aria-expanded]="open"
+    (click)="toggle()"
+  >
+    <lib-icon name="calendar" />
+  </button>
+</div>
+<div
+  #picker
+  popover
+  class="lib-date-picker"
+  role="dialog"
+  aria-label="Choose a date"
+  (toggle)="onToggle($event)"
+  (keydown.escape)="close()"
+>
+  <div class="lib-date-heading">
+    <button type="button" aria-label="Previous month" (click)="moveMonth(-1)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></button
+    ><strong aria-live="polite">{{ monthLabel }}</strong
+    ><button type="button" aria-label="Next month" (click)="moveMonth(1)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+    </button>
+  </div>
+  <div class="lib-date-week" aria-hidden="true">
+    <span *ngFor="let day of weekdays">{{ day }}</span>
+  </div>
+  <div class="lib-date-days" role="group" aria-label="Days of the month">
+    <ng-container *ngFor="let day of days"
+      ><span *ngIf="!day"></span
+      ><button
+        *ngIf="day"
+        type="button"
+        [attr.data-date]="iso(day)"
+        [attr.aria-label]="dayLabel(day)"
+        [attr.aria-pressed]="value === iso(day)"
+        [attr.aria-current]="iso(day) === today ? 'date' : null"
+        [disabled]="unavailable(day)"
+        [tabIndex]="iso(day) === focusDate ? 0 : -1"
+        (click)="choose(day)"
+        (keydown)="navigate($event, day)"
+      >
+        {{ day.getDate() }}
+      </button></ng-container
+    >
+  </div>
+  <div class="lib-date-footer">
+    <button type="button" (click)="chooseToday()" [disabled]="unavailable(todayDate)">Today</button
+    ><button type="button" (click)="close()">Close</button>
+  </div>
+</div>

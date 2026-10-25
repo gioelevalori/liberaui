@@ -4,8 +4,8 @@ import { Component, ViewEncapsulation, Input } from '@angular/core';
   selector: 'lib-input-search',
   standalone: true,
   imports: [],
-  template: '<input [type]="type" [placeholder]="placeholder" [attr.aria-label]="label || placeholder" [disabled]="disabled" class="custom-input" />',
-  styleUrls: ['./input-search.component.css', '../font.css'],
+  templateUrl: './input-search.component.html',
+  styleUrls: ['../form-control.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InputSearchComponent {

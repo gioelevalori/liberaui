@@ -1,0 +1,9 @@
+<button
+  type="button"
+  class="theme-toggle"
+  (click)="toggleTheme()"
+  [attr.aria-label]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'"
+  [attr.title]="isDarkMode ? 'Light theme' : 'Dark theme'"
+>
+  <lib-icon [name]="isDarkMode ? 'sun' : 'moon'" />
+</button>

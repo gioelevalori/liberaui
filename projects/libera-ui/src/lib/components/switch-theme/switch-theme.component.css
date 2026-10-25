@@ -1,1 +1,23 @@
-lib-switch-theme{display:inline-flex}lib-switch-theme .theme-toggle{display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;border-radius:8px;background:transparent;color:var(--text-secondary);cursor:pointer}lib-switch-theme .theme-toggle:hover{color:var(--text-primary);background:var(--surface-color)}lib-switch-theme .theme-toggle:focus-visible{outline:2px solid var(--text-primary);outline-offset:2px}
+lib-switch-theme {
+  display: inline-flex;
+}
+lib-switch-theme .theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+lib-switch-theme .theme-toggle:hover {
+  color: var(--text-primary);
+  background: var(--surface-color);
+}
+lib-switch-theme .theme-toggle:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}

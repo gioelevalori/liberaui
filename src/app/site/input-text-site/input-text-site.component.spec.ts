@@ -10,10 +10,10 @@ describe('InputTextSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputTextSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-    .compileComponents();
-    
+      imports: [InputTextSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(InputTextSiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

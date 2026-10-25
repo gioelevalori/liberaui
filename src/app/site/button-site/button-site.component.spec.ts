@@ -9,9 +9,9 @@ describe('ButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-      .compileComponents();
+      imports: [ButtonSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ButtonSiteComponent);
     component = fixture.componentInstance;

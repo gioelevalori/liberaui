@@ -1,0 +1,27 @@
+<div
+  *ngIf="visible"
+  class="alert"
+  [attr.data-tone]="tone"
+  [attr.role]="tone === 'danger' ? 'alert' : 'status'"
+>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+    <circle cx="12" cy="12" r="9" />
+    <path *ngIf="tone === 'success'; else info" d="m8 12 3 3 5-6" />
+    <ng-template #info><path d="M12 7v6m0 3v1" /></ng-template>
+  </svg>
+  <div>
+    <strong *ngIf="title">{{ title }}</strong>
+    <div class="message"><ng-content /></div>
+  </div>
+  <button *ngIf="dismissible" type="button" [attr.aria-label]="dismissLabel" (click)="dismiss()">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.7"
+      aria-hidden="true"
+    >
+      <path d="m6 6 12 12M18 6 6 18" />
+    </svg>
+  </button>
+</div>

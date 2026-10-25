@@ -10,10 +10,10 @@ describe('SelectSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelectSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-    .compileComponents();
-    
+      imports: [SelectSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SelectSiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

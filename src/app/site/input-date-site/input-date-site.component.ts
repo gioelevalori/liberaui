@@ -8,7 +8,7 @@ import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/comp
   standalone: true,
   imports: [InputDateComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-date-site.component.html',
-  styleUrl: './input-date-site.component.css'
+  styleUrl: './input-date-site.component.css',
 })
 export class InputDateSiteComponent {
   public codeImport = `import { InputDateComponent } from 'libera-ui';`;

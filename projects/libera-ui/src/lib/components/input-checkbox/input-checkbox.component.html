@@ -1,0 +1,9 @@
+<label class="lib-checkbox" [style.--checkbox-color]="color || null"
+  ><input
+    type="checkbox"
+    [disabled]="disabled"
+    [checked]="checked"
+    [attr.aria-label]="label"
+    (change)="change($event)"
+    (blur)="touched()" /><span class="checkmark" aria-hidden="true"></span
+></label>

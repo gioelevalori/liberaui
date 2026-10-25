@@ -9,9 +9,9 @@ describe('NavigationBarSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavigationBarSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-      .compileComponents();
+      imports: [NavigationBarSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NavigationBarSiteComponent);
     component = fixture.componentInstance;

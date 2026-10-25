@@ -1,28 +1,166 @@
 <a class="skip-link" href="#main-content" (click)="skipToContent($event)">Skip to content</a>
 <header class="site-header">
-  <a class="brand" routerLink="/" (click)="menuOpen = false"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 8h5v13h10v5H9z" fill="var(--background-color)"/><path d="M19 8h5v9h-5z" fill="var(--background-color)"/></svg><span>LiberaUI</span></a>
-  <nav class="header-nav" aria-label="Main navigation"><a routerLink="/components" routerLinkActive="current" ariaCurrentWhenActive="page"><lib-icon name="grid" [size]="16" />Components</a><a routerLink="/playground" routerLinkActive="current" ariaCurrentWhenActive="page"><lib-icon name="palette" [size]="16" />Theme Studio</a><a routerLink="/installation" routerLinkActive="current" ariaCurrentWhenActive="page"><lib-icon name="book" [size]="16" />Documentation</a></nav>
+  <a class="brand" routerLink="/" (click)="menuOpen = false"
+    ><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+      <rect width="32" height="32" rx="8" fill="currentColor" />
+      <path d="M9 8h5v13h10v5H9z" fill="var(--background-color)" />
+      <path d="M19 8h5v9h-5z" fill="var(--background-color)" /></svg
+    ><span>LiberaUI</span></a
+  >
+  <nav class="header-nav" aria-label="Main navigation">
+    <a routerLink="/components" routerLinkActive="current" ariaCurrentWhenActive="page"
+      ><lib-icon name="grid" [size]="16" />Components</a
+    ><a routerLink="/playground" routerLinkActive="current" ariaCurrentWhenActive="page"
+      ><lib-icon name="palette" [size]="16" />Theme Studio</a
+    ><a routerLink="/installation" routerLinkActive="current" ariaCurrentWhenActive="page"
+      ><lib-icon name="book" [size]="16" />Documentation</a
+    >
+  </nav>
   <div class="header-actions">
-    <form class="site-search" (ngSubmit)="search()" role="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input #siteSearch [(ngModel)]="searchQuery" name="q" aria-label="Search components" placeholder="Search components..."><kbd>Ctrl K</kbd></form>
-    <a class="repository-link" href="https://github.com/gioelevalori/liberaui" aria-label="LiberaUI on GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-3.5c0-1 .1-1.5-.5-2 3-.3 6-1.5 6-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.2s-1.2-.3-3.5 1.3a12 12 0 0 0-6.4 0C6.9 3.7 5.7 4 5.7 4a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 4.3 10.5c0 4.5 3 5.7 6 6-.5.5-.6 1.1-.6 2V22"/></svg></a>
-<button class="material-toggle" type="button" (click)="toggleMaterial()" [attr.aria-pressed]="glass" aria-label="Glass appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><path d="M7 11V8a1 1 0 0 1 1-1h3"/></svg>Glass</button>
+    <form class="site-search" (ngSubmit)="search()" role="search">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        aria-hidden="true"
+      >
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <path d="m16 16 4 4" /></svg
+      ><input
+        #siteSearch
+        [(ngModel)]="searchQuery"
+        name="q"
+        aria-label="Search components"
+        placeholder="Search components..."
+      /><kbd>Ctrl K</kbd>
+    </form>
+    <a
+      class="repository-link"
+      href="https://github.com/gioelevalori/liberaui"
+      aria-label="LiberaUI on GitHub"
+      ><svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path
+          d="M9 19c-4 1-4-2-6-2m12 5v-3.5c0-1 .1-1.5-.5-2 3-.3 6-1.5 6-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.2s-1.2-.3-3.5 1.3a12 12 0 0 0-6.4 0C6.9 3.7 5.7 4 5.7 4a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 4.3 10.5c0 4.5 3 5.7 6 6-.5.5-.6 1.1-.6 2V22"
+        /></svg
+    ></a>
+    <button
+      class="material-toggle"
+      type="button"
+      (click)="toggleMaterial()"
+      [attr.aria-pressed]="glass"
+      aria-label="Glass appearance"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        aria-hidden="true"
+      >
+        <rect x="4" y="4" width="16" height="16" rx="5" />
+        <path d="M7 11V8a1 1 0 0 1 1-1h3" /></svg
+      >Glass
+    </button>
     <lib-switch-theme />
-    <button class="menu-toggle" type="button" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-controls="documentation-nav" [attr.aria-label]="menuOpen ? 'Close navigation' : 'Open navigation'"><svg class="menu-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path class="menu-line menu-line-top" d="M4 12h16"/><path class="menu-line menu-line-middle" d="M4 12h16"/><path class="menu-line menu-line-bottom" d="M4 12h16"/></svg></button>
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="menuOpen = !menuOpen"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="documentation-nav"
+      [attr.aria-label]="menuOpen ? 'Close navigation' : 'Open navigation'"
+    >
+      <svg
+        class="menu-glyph"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <path class="menu-line menu-line-top" d="M4 12h16" />
+        <path class="menu-line menu-line-middle" d="M4 12h16" />
+        <path class="menu-line menu-line-bottom" d="M4 12h16" />
+      </svg>
+    </button>
   </div>
 </header>
 <div class="docs-layout" [class.showcase-layout]="showcase">
-  <nav id="documentation-nav" class="docs-nav" [class.is-open]="menuOpen" aria-label="Documentation">
+  <nav
+    id="documentation-nav"
+    class="docs-nav"
+    [class.is-open]="menuOpen"
+    aria-label="Documentation"
+  >
     <h2>Get started</h2>
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page" (click)="menuOpen = false"><lib-icon name="book" [size]="16" />Introduction</a>
-    <a routerLink="/installation" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="menuOpen = false"><lib-icon name="code" [size]="16" />Installation</a>
-    <a routerLink="/playground" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="menuOpen = false"><lib-icon name="palette" [size]="16" />Theme Studio</a>
-    <a routerLink="/components" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="menuOpen = false"><lib-icon name="grid" [size]="16" />All components</a>
-    <a routerLink="/forms" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="menuOpen = false"><lib-icon name="check" [size]="16" />Angular forms</a>
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page"
+      (click)="menuOpen = false"
+      ><lib-icon name="book" [size]="16" />Introduction</a
+    >
+    <a
+      routerLink="/installation"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      (click)="menuOpen = false"
+      ><lib-icon name="code" [size]="16" />Installation</a
+    >
+    <a
+      routerLink="/playground"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      (click)="menuOpen = false"
+      ><lib-icon name="palette" [size]="16" />Theme Studio</a
+    >
+    <a
+      routerLink="/components"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      (click)="menuOpen = false"
+      ><lib-icon name="grid" [size]="16" />All components</a
+    >
+    <a
+      routerLink="/forms"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      (click)="menuOpen = false"
+      ><lib-icon name="check" [size]="16" />Angular forms</a
+    >
     <h2>Components</h2>
-    <a *ngFor="let item of navigation" [routerLink]="item.path" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="menuOpen = false"><lib-icon [name]="item.icon" [size]="16" />{{ item.label }}<span *ngIf="['/tabs','/accordion','/alert'].includes(item.path)" class="nav-new">New</span></a>
+    <a
+      *ngFor="let item of navigation"
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      (click)="menuOpen = false"
+      ><lib-icon [name]="item.icon" [size]="16" />{{ item.label
+      }}<span *ngIf="['/tabs', '/accordion', '/alert'].includes(item.path)" class="nav-new"
+        >New</span
+      ></a
+    >
   </nav>
   <main id="main-content" tabindex="-1">
     <router-outlet />
-    <footer class="site-footer"><span>Crafted by <a href="https://github.com/gioelevalori">Gioele Valori</a>. Open source, under MIT.</span><a href="https://github.com/gioelevalori/liberaui/blob/master/CONTRIBUTING.md">Contribute on GitHub</a></footer>
+    <footer class="site-footer">
+      <span
+        >Crafted by <a href="https://github.com/gioelevalori">Gioele Valori</a>. Open source, under
+        MIT.</span
+      ><a href="https://github.com/gioelevalori/liberaui/blob/master/CONTRIBUTING.md"
+        >Contribute on GitHub</a
+      >
+    </footer>
   </main>
 </div>

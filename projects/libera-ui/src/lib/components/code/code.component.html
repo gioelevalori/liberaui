@@ -1,0 +1,6 @@
+<div class="code-example">
+  <pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code></pre>
+  <button type="button" class="code-copy" (click)="copyCode()">
+    <lib-icon [name]="copyButtonText === 'Copied!' ? 'check' : 'copy'" [size]="14" /> Copy</button
+  ><span class="copy-status" role="status">{{ copyButtonText }}</span>
+</div>

@@ -9,9 +9,9 @@ describe('AnimationsSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AnimationsSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-      .compileComponents();
+      imports: [AnimationsSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AnimationsSiteComponent);
     component = fixture.componentInstance;

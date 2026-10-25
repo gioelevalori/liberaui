@@ -4,12 +4,7 @@ import { FixedSideBarComponent } from './fixed-side-bar.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    FixedSideBarComponent
-  ],
-  exports: [
-    FixedSideBarComponent
-  ]
+  imports: [CommonModule, FixedSideBarComponent],
+  exports: [FixedSideBarComponent],
 })
-export class FixedSideBarModule { }
+export class FixedSideBarModule {}

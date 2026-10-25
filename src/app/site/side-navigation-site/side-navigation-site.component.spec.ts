@@ -9,9 +9,9 @@ describe('SideNavigationSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SideNavigationSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-      .compileComponents();
+      imports: [SideNavigationSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SideNavigationSiteComponent);
     component = fixture.componentInstance;

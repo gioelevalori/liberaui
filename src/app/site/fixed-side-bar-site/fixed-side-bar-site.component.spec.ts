@@ -10,10 +10,10 @@ describe('FixedSideBarSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FixedSideBarSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-    .compileComponents();
-    
+      imports: [FixedSideBarSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(FixedSideBarSiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from './button.component';  // Componenti standalone
+import { ButtonComponent } from './button.component'; // Componenti standalone
 
 @NgModule({
   declarations: [
@@ -8,10 +8,11 @@ import { ButtonComponent } from './button.component';  // Componenti standalone
   ],
   imports: [
     CommonModule,
-    ButtonComponent // Importazione di un componente standalone in un modulo
+    ButtonComponent, // Importazione di un componente standalone in un modulo
   ],
-  exports: [ // Esportiamo ButtonComponent per renderlo disponibile ad altri moduli
-    ButtonComponent
-  ]
+  exports: [
+    // Esportiamo ButtonComponent per renderlo disponibile ad altri moduli
+    ButtonComponent,
+  ],
 })
-export class ButtonModule { }
+export class ButtonModule {}

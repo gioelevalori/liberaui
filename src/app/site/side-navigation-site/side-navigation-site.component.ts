@@ -8,7 +8,7 @@ import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/comp
   standalone: true,
   imports: [SideNavigationComponent, CodeComponent, AnimationsComponent],
   templateUrl: './side-navigation-site.component.html',
-  styleUrl: './side-navigation-site.component.css'
+  styleUrl: './side-navigation-site.component.css',
 })
 export class SideNavigationSiteComponent {
   public codeImport = `import { SideNavigationComponent } from 'libera-ui';`;

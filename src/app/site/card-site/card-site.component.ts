@@ -8,7 +8,7 @@ import { CardComponent } from '../../../../projects/libera-ui/src/lib/components
   standalone: true,
   imports: [CardComponent, AnimationsComponent, CodeComponent],
   templateUrl: './card-site.component.html',
-  styleUrl: './card-site.component.css'
+  styleUrl: './card-site.component.css',
 })
 export class CardSiteComponent {
   public codeHtml = `

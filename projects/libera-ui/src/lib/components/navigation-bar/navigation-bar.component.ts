@@ -5,11 +5,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [],
-  template: `<div class="topnav custom-nav">
-    <div class="content-header"><ng-content></ng-content></div>
-  </div>`,
+  templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.css', '../font.css'],
 })
-export class NavigationBarComponent {
-
-}
+export class NavigationBarComponent {}

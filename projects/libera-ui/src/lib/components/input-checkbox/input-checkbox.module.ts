@@ -4,12 +4,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    InputCheckboxComponent
-  ],
-  exports: [
-    InputCheckboxComponent
-  ]
+  imports: [CommonModule, InputCheckboxComponent],
+  exports: [InputCheckboxComponent],
 })
-export class InputCheckboxModule { }
+export class InputCheckboxModule {}

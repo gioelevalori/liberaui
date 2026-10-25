@@ -4,13 +4,8 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    SwitchThemeComponent
-  ],
-  exports: [
-    SwitchThemeComponent
-  ],
-  bootstrap: []
+  imports: [CommonModule, SwitchThemeComponent],
+  exports: [SwitchThemeComponent],
+  bootstrap: [],
 })
-export class SwitchThemeModule { }
+export class SwitchThemeModule {}

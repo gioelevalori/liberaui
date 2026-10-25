@@ -1,0 +1,7 @@
+<nav class="sidenav" [hidden]="!isOpen" aria-label="Side navigation">
+  <button type="button" class="closebtn" (click)="closeNav()">Close</button
+  ><ng-content></ng-content>
+</nav>
+<button type="button" class="nav-trigger" (click)="openNav()" [attr.aria-expanded]="isOpen">
+  Open navigation
+</button>

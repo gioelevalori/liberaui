@@ -10,9 +10,9 @@ describe('InputNumberSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputNumberSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-      .compileComponents();
+      imports: [InputNumberSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InputNumberSiteComponent);
     component = fixture.componentInstance;

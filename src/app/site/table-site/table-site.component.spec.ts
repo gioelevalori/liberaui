@@ -10,10 +10,10 @@ describe('TableSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TableSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-    .compileComponents();
-    
+      imports: [TableSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TableSiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

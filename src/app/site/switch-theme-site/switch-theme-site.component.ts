@@ -8,7 +8,7 @@ import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/comp
   standalone: true,
   imports: [SwitchThemeComponent, CodeComponent, AnimationsComponent],
   templateUrl: './switch-theme-site.component.html',
-  styleUrl: './switch-theme-site.component.css'
+  styleUrl: './switch-theme-site.component.css',
 })
 export class SwitchThemeSiteComponent {
   public codeImport = `import { SwitchThemeComponent } from 'libera-ui';`;

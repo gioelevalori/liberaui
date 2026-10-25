@@ -5,15 +5,23 @@ import { ActivatedRoute } from '@angular/router';
 import { ButtonComponent } from '../../../../projects/libera-ui/src/lib/components/button/button.component';
 import { SwitchComponent } from '../../../../projects/libera-ui/src/lib/components/switch/switch.component';
 import { CodeComponent } from '../../../../projects/libera-ui/src/lib/components/code/code.component';
-import { createThemeCss, DEFAULT_THEME, normalizeTheme, ThemeConfig, themeTokens } from '../../../../projects/libera-ui/src/lib/theme';
+import {
+  createThemeCss,
+  DEFAULT_THEME,
+  normalizeTheme,
+  ThemeConfig,
+  themeTokens,
+} from '../../../../projects/libera-ui/src/lib/theme';
 
 @Component({
-  selector: 'lib-theme-studio', standalone: true,
+  selector: 'lib-theme-studio',
+  standalone: true,
   imports: [CommonModule, FormsModule, ButtonComponent, SwitchComponent, CodeComponent],
-  templateUrl: './theme-studio.component.html', styleUrl: './theme-studio.component.css'
+  templateUrl: './theme-studio.component.html',
+  styleUrl: './theme-studio.component.css',
 })
 export class ThemeStudioComponent {
-  theme: ThemeConfig = {...DEFAULT_THEME, material:'glass'};
+  theme: ThemeConfig = { ...DEFAULT_THEME, material: 'glass' };
   mode = 'light';
   viewport = 'full';
   state = 'ready';
@@ -27,8 +35,11 @@ export class ThemeStudioComponent {
   previewActionCount = 0;
   shareUrl = '';
   readonly palettes = [
-    {name:'Forest', value:'#176b3a'}, {name:'Ocean', value:'#2454ce'},
-    {name:'Plum', value:'#823c9e'}, {name:'Clay', value:'#a33e27'}, {name:'Ink', value:'#25272c'}
+    { name: 'Forest', value: '#176b3a' },
+    { name: 'Ocean', value: '#2454ce' },
+    { name: 'Plum', value: '#823c9e' },
+    { name: 'Clay', value: '#a33e27' },
+    { name: 'Ink', value: '#25272c' },
   ];
   constructor() {
     const raw = inject(ActivatedRoute).snapshot.queryParamMap.get('studio');
@@ -38,43 +49,91 @@ export class ThemeStudioComponent {
       const config = JSON.parse(raw);
       if (config.version !== 1) throw new Error();
       this.theme = normalizeTheme(config.theme);
-      if (['light','dark'].includes(config.mode)) this.mode = config.mode;
-      if (['full','mobile'].includes(config.viewport)) this.viewport = config.viewport;
-      if (['ready','loading','disabled','error','long'].includes(config.state)) this.state = config.state;
-      for (const key of ['form','settings','actions'] as const) if (typeof config[key] === 'boolean') this[key] = config[key];
-    } catch { this.message = 'This shared configuration is invalid. The default theme has been loaded.'; }
+      if (['light', 'dark'].includes(config.mode)) this.mode = config.mode;
+      if (['full', 'mobile'].includes(config.viewport)) this.viewport = config.viewport;
+      if (['ready', 'loading', 'disabled', 'error', 'long'].includes(config.state))
+        this.state = config.state;
+      for (const key of ['form', 'settings', 'actions'] as const)
+        if (typeof config[key] === 'boolean') this[key] = config[key];
+    } catch {
+      this.message = 'This shared configuration is invalid. The default theme has been loaded.';
+    }
   }
-  get tokens() { return themeTokens(this.theme); }
-  get css() { return createThemeCss(this.theme); }
-  get unavailable() { return this.state === 'disabled' || this.state === 'loading'; }
-  get title() { return this.state === 'long' ? 'A workspace for every idea, every collaborator, and everything you want to build next' : 'A space for your next idea.'; }
-  change() { this.shareUrl = ''; this.message = ''; this.submitted = false; }
+  get tokens() {
+    return themeTokens(this.theme);
+  }
+  get css() {
+    return createThemeCss(this.theme);
+  }
+  get unavailable() {
+    return this.state === 'disabled' || this.state === 'loading';
+  }
+  get title() {
+    return this.state === 'long'
+      ? 'A workspace for every idea, every collaborator, and everything you want to build next'
+      : 'A space for your next idea.';
+  }
+  change() {
+    this.shareUrl = '';
+    this.message = '';
+    this.submitted = false;
+  }
   reset() {
-    this.theme = {...DEFAULT_THEME, material:'glass'}; this.mode = 'light'; this.viewport = 'full'; this.state = 'ready';
-    this.form = this.settings = this.actions = this.notifications = true; this.workspaceName = ''; this.previewActionCount = 0; this.change();
+    this.theme = { ...DEFAULT_THEME, material: 'glass' };
+    this.mode = 'light';
+    this.viewport = 'full';
+    this.state = 'ready';
+    this.form = this.settings = this.actions = this.notifications = true;
+    this.workspaceName = '';
+    this.previewActionCount = 0;
+    this.change();
   }
-  submit() { if (!this.unavailable && this.state !== 'error' && this.workspaceName.trim()) this.submitted = true; }
+  submit() {
+    if (!this.unavailable && this.state !== 'error' && this.workspaceName.trim())
+      this.submitted = true;
+  }
   async share() {
-    const config = {version:1, theme:normalizeTheme(this.theme), mode:this.mode, viewport:this.viewport,
-      state:this.state, form:this.form, settings:this.settings, actions:this.actions};
-    this.shareUrl = location.href.split('#')[0] + '#/playground?studio=' + encodeURIComponent(JSON.stringify(config));
+    const config = {
+      version: 1,
+      theme: normalizeTheme(this.theme),
+      mode: this.mode,
+      viewport: this.viewport,
+      state: this.state,
+      form: this.form,
+      settings: this.settings,
+      actions: this.actions,
+    };
+    this.shareUrl =
+      location.href.split('#')[0] +
+      '#/playground?studio=' +
+      encodeURIComponent(JSON.stringify(config));
     try {
       await navigator.clipboard.writeText(this.shareUrl);
       this.message = 'Configuration link copied. Anyone with the link can open this preview.';
-    } catch { this.message = 'Copy the configuration link below to share this preview.'; }
+    } catch {
+      this.message = 'Copy the configuration link below to share this preview.';
+    }
   }
   download(kind: 'css' | 'component') {
-    const blob = new Blob([kind === 'css' ? this.css : this.componentCode], {type:'text/plain;charset=utf-8'});
+    const blob = new Blob([kind === 'css' ? this.css : this.componentCode], {
+      type: 'text/plain;charset=utf-8',
+    });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement('a');
-    anchor.href = url; anchor.download = kind === 'css' ? 'liberaui-theme.css' : 'workspace.component.ts';
-    anchor.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
-    this.message = kind === 'css' ? 'Theme CSS downloaded. Import it after libera-ui/theme.css. Glass: add lib-glass lib-glass-backdrop to your container and lib-glass-panel to surfaces.' : 'Angular component downloaded. Import both theme stylesheets before using it.';
+    anchor.href = url;
+    anchor.download = kind === 'css' ? 'liberaui-theme.css' : 'workspace.component.ts';
+    anchor.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    this.message =
+      kind === 'css'
+        ? 'Theme CSS downloaded. Import it after libera-ui/theme.css. Glass: add lib-glass lib-glass-backdrop to your container and lib-glass-panel to surfaces.'
+        : 'Angular component downloaded. Import both theme stylesheets before using it.';
   }
   get componentCode() {
     const radius = normalizeTheme(this.theme).radius;
     const size = this.theme.spacing < 20 ? 'compact' : 'comfortable';
-    const form = this.form ? `
+    const form = this.form
+      ? `
     <section class="block${this.theme.material === 'glass' ? ' lib-glass-panel' : ''}">
       <h2>A space for your next idea.</h2>
       <p>Create a workspace and bring the details together.</p>
@@ -84,20 +143,25 @@ export class ThemeStudioComponent {
         <lib-button type="submit" [radius]="${radius}" size="${size}">Create workspace</lib-button>
       </form>
       <p role="status">{{ created ? 'Workspace preview created: ' + name : 'Local example. Nothing is sent to a server.' }}</p>
-    </section>` : '';
-    const settings = this.settings ? `
+    </section>`
+      : '';
+    const settings = this.settings
+      ? `
     <section class="block${this.theme.material === 'glass' ? ' lib-glass-panel' : ''}">
       <h2>A little less noise.</h2>
       <div class="row"><span>Product updates</span><lib-switch label="Product updates" [(ngModel)]="notifications" /></div>
       <p>{{ notifications ? 'Updates enabled' : 'Updates paused' }}</p>
-    </section>` : '';
-    const actions = this.actions ? `
+    </section>`
+      : '';
+    const actions = this.actions
+      ? `
     <section class="block${this.theme.material === 'glass' ? ' lib-glass-panel' : ''}">
       <h2>The right kind of emphasis.</h2>
       <div class="buttons"><lib-button [radius]="${radius}" size="${size}" (click)="count = count + 1">Continue</lib-button>
       <lib-button variant="outline" [radius]="${radius}" size="${size}" (click)="count = 0">Reset</lib-button></div>
       <p role="status">Continue activated {{ count }} times.</p>
-    </section>` : '';
+    </section>`
+      : '';
     return `// Install libera-ui. In global CSS import libera-ui/theme.css, then liberaui-theme.css.
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';

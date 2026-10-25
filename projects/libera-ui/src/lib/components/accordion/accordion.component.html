@@ -1,0 +1,19 @@
+<details *ngFor="let item of items" [open]="openIds.includes(item.id)">
+  <summary
+    [attr.aria-disabled]="item.disabled ? true : null"
+    [attr.tabindex]="item.disabled ? -1 : 0"
+    (click)="toggle($event, item)"
+  >
+    <span>{{ item.title }}</span
+    ><svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      aria-hidden="true"
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  </summary>
+  <div class="answer">{{ item.content }}</div>
+</details>

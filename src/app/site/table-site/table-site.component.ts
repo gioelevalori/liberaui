@@ -8,7 +8,7 @@ import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/comp
   standalone: true,
   imports: [TableComponent, CodeComponent, AnimationsComponent],
   templateUrl: './table-site.component.html',
-  styleUrl: './table-site.component.css'
+  styleUrl: './table-site.component.css',
 })
 export class TableSiteComponent {
   public codeImport = `import { TableComponent } from 'libera-ui';`;

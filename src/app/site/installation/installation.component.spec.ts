@@ -10,10 +10,10 @@ describe('InstallationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InstallationComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-    .compileComponents();
-    
+      imports: [InstallationComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(InstallationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

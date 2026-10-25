@@ -3,11 +3,7 @@ import { InputDateComponent } from './input-date.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    InputDateComponent
-  ],
-  exports: [
-    InputDateComponent
-  ]
+  imports: [InputDateComponent],
+  exports: [InputDateComponent],
 })
-export class InputDateModule { }
+export class InputDateModule {}

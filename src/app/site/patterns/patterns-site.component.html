@@ -1,0 +1,59 @@
+<div class="content-page">
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  <section class="pattern-surface lib-glass-panel" aria-label="Interactive example">
+    <ng-container [ngSwitch]="kind">
+      <lib-tabs
+        *ngSwitchCase="'tabs'"
+        [items]="tabs"
+        [(activeId)]="activeTab"
+        label="Workspace settings"
+      />
+      <lib-accordion
+        *ngSwitchCase="'accordion'"
+        [items]="questions"
+        [(openIds)]="openQuestions"
+        [multiple]="multiple"
+      />
+      <lib-alert
+        *ngSwitchCase="'alert'"
+        title="Your workspace is ready"
+        [tone]="tone"
+        dismissible
+        [(visible)]="alertVisible"
+        >Your settings are saved in this local example. You're ready to start building.</lib-alert
+      >
+    </ng-container>
+  </section>
+  <div class="pattern-controls">
+    <label *ngIf="kind === 'accordion'"
+      ><input type="checkbox" [(ngModel)]="multiple" /> Allow multiple sections</label
+    >
+    <label *ngIf="kind === 'alert'"
+      >Tone
+      <select [(ngModel)]="tone">
+        <option value="info">Info</option>
+        <option value="success">Success</option>
+        <option value="warning">Warning</option>
+        <option value="danger">Danger</option>
+      </select></label
+    >
+    <lib-button
+      *ngIf="kind === 'alert' && !alertVisible"
+      variant="outline"
+      (click)="alertVisible = true"
+      >Show notification again</lib-button
+    >
+    <p *ngIf="kind === 'tabs'" role="status">Selected: {{ activeTab }}</p>
+  </div>
+  <h2>Use it in Angular</h2>
+  <p>{{ usage }}</p>
+  <lib-code [code]="code" />
+  <h2>Keyboard and behavior</h2>
+  <p>{{ behavior }}</p>
+  <h2>Glass and themes</h2>
+  <p>
+    These components inherit the shared colors, typography and theme tokens. Place them in a
+    <code>lib-glass-panel</code> inside a Glass container, or use them in the Essential theme.
+  </p>
+</div>

@@ -1,0 +1,14 @@
+<input
+  [type]="type"
+  [attr.min]="min"
+  [attr.max]="max"
+  [attr.step]="step"
+  [placeholder]="placeholder"
+  [attr.aria-label]="label || placeholder"
+  [disabled]="disabled"
+  [value]="value ?? ''"
+  [required]="required"
+  (input)="readNumber($event)"
+  (blur)="touched()"
+  class="custom-input"
+/>

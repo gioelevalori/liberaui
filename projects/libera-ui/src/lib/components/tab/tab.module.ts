@@ -3,11 +3,7 @@ import { TabComponent } from './tab.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    TabComponent
-  ],
-  exports: [
-    TabComponent
-  ]
+  imports: [TabComponent],
+  exports: [TabComponent],
 })
-export class TabModule { }
+export class TabModule {}

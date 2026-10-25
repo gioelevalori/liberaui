@@ -6,9 +6,7 @@ import { CommonModule } from '@angular/common';
   selector: 'lib-animations',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div [@animation]="state"><ng-content></ng-content></div>
-  `,
+  templateUrl: './animations.component.html',
   styleUrls: ['./animations.component.css'],
   animations: [
     trigger('animation', [
@@ -23,14 +21,14 @@ import { CommonModule } from '@angular/common';
       state('fadeInDown-in', style({ opacity: 1, transform: 'translateY(0)' })),
       state('fadeInDown-out', style({ opacity: 0, transform: 'translateY(-50px)' })),
       transition('fadeInDown-in <=> fadeInDown-out', animate('500ms ease-out')),
-    ])
+    ]),
   ],
 })
 export class AnimationsComponent {
   @Input() animation: string = '';
   @Input() animationScrolling: boolean = false;
   state: string = '';
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef) {}
 
   private observer?: IntersectionObserver;
   private animationTimer?: ReturnType<typeof setTimeout>;
@@ -52,7 +50,6 @@ export class AnimationsComponent {
     }
   }
 
-
   private activateAnimation() {
     this.animationTimer = setTimeout(() => {
       this.state = `${this.animation}-in`;
@@ -60,7 +57,10 @@ export class AnimationsComponent {
   }
 
   private observeElement() {
-    if (typeof IntersectionObserver === 'undefined') { this.activateAnimation(); return; }
+    if (typeof IntersectionObserver === 'undefined') {
+      this.activateAnimation();
+      return;
+    }
     this.observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -68,7 +68,7 @@ export class AnimationsComponent {
           this.observer?.disconnect(); // Ferma l'osservazione dopo l'attivazione
         }
       },
-      { threshold: 0.4 } // Attiva l'animazione quando il 30% dell'elemento è visibile
+      { threshold: 0.4 }, // Attiva l'animazione quando il 30% dell'elemento è visibile
     );
 
     this.observer.observe(this.el.nativeElement);

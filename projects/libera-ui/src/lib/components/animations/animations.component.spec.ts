@@ -8,10 +8,7 @@ describe('AnimationsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        AnimationsComponent,
-        NoopAnimationsModule
-      ]
+      imports: [AnimationsComponent, NoopAnimationsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AnimationsComponent);

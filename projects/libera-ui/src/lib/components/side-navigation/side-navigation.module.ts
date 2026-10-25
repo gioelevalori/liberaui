@@ -4,12 +4,7 @@ import { SideNavigationComponent } from './side-navigation.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    SideNavigationComponent
-  ],
-  exports: [
-    SideNavigationComponent
-  ]
+  imports: [CommonModule, SideNavigationComponent],
+  exports: [SideNavigationComponent],
 })
-export class SideNavigationModule { }
+export class SideNavigationModule {}

@@ -3,11 +3,7 @@ import { InputTextComponent } from './input-text.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    InputTextComponent
-  ],
-  exports: [
-    InputTextComponent
-  ]
+  imports: [InputTextComponent],
+  exports: [InputTextComponent],
 })
-export class InputTextModule { }
+export class InputTextModule {}

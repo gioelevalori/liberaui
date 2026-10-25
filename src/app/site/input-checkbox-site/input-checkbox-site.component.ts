@@ -8,7 +8,7 @@ import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/comp
   standalone: true,
   imports: [InputCheckboxComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-checkbox-site.component.html',
-  styleUrl: './input-checkbox-site.component.css'
+  styleUrl: './input-checkbox-site.component.css',
 })
 export class InputCheckboxSiteComponent {
   public codeImport = `import { InputCheckboxComponent } from 'libera-ui';`;

@@ -3,11 +3,7 @@ import { InputNumberComponent } from './input-number.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    InputNumberComponent
-  ],
-  exports: [
-    InputNumberComponent
-  ]
+  imports: [InputNumberComponent],
+  exports: [InputNumberComponent],
 })
-export class InputNumberModule { }
+export class InputNumberModule {}

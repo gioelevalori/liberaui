@@ -1,0 +1,5 @@
+<label class="custom-file-label"
+  ><lib-icon name="upload" [size]="16" /> Choose a file<input
+    type="file"
+    (change)="onFileSelected($event)" /></label
+><span class="file-name" role="status">{{ fileName || 'No file selected' }}</span>

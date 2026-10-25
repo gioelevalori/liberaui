@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Separate component templates and styles from TypeScript logic.
+- Consolidate shared form-control styles and scope them to library hosts.
+- Apply library typography to component hosts instead of the application body.
+- Keep navigation icon metadata with the component registry.
+- Add source formatting checks to CI and regression coverage for style isolation.
+
 ## 0.5.0 - 2026-10-25
 
 - Default new site visits to Glass while retaining a saved Essential preference.

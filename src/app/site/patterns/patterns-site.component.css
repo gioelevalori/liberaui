@@ -1,0 +1,36 @@
+.pattern-surface {
+  padding: 28px;
+  margin: 28px 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--lib-radius, 16px);
+  background: var(--lib-panel-background, var(--background-color));
+  min-width: 0;
+}
+.pattern-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.pattern-controls label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+}
+.pattern-controls select {
+  padding: 9px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--background-color);
+  color: var(--text-primary);
+}
+.pattern-controls p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+@media (max-width: 480px) {
+  .pattern-surface {
+    padding: 18px;
+  }
+}

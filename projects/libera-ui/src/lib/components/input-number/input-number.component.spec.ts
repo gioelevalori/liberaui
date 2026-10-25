@@ -7,10 +7,9 @@ describe('InputNumberComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputNumberComponent]
-    })
-    .compileComponents();
-    
+      imports: [InputNumberComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(InputNumberComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,11 +1,21 @@
 import { IconComponent } from '../icon/icon.component';
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnChanges, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnChanges,
+  Input,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import Prism from 'prismjs';
 
 @Component({
   selector: 'lib-code',
-  standalone: true, imports: [IconComponent],
-  template: `<div class="code-example"><pre><code #codeBlock class="language-javascript"><ng-content></ng-content></code></pre><button type="button" class="code-copy" (click)="copyCode()"><lib-icon [name]="copyButtonText === 'Copied!' ? 'check' : 'copy'" [size]="14" /> Copy</button><span class="copy-status" role="status">{{ copyButtonText }}</span></div>`,
+  standalone: true,
+  imports: [IconComponent],
+  templateUrl: './code.component.html',
   styleUrl: './code.component.css',
   encapsulation: ViewEncapsulation.None,
 })
@@ -15,8 +25,12 @@ export class CodeComponent implements AfterViewInit, OnDestroy, OnChanges {
   public copyButtonText = '';
   private resetTimer?: ReturnType<typeof setTimeout>;
 
-  ngAfterViewInit() { this.highlight(); }
-  ngOnChanges() { if (this.codeBlock) this.highlight(); }
+  ngAfterViewInit() {
+    this.highlight();
+  }
+  ngOnChanges() {
+    if (this.codeBlock) this.highlight();
+  }
   private highlight() {
     if (this.code !== null) this.codeBlock.nativeElement.textContent = this.code;
     Prism.highlightElement(this.codeBlock.nativeElement);
@@ -32,8 +46,10 @@ export class CodeComponent implements AfterViewInit, OnDestroy, OnChanges {
     } catch {
       this.copyButtonText = 'Unable to copy. Select the code and copy manually.';
     }
-    this.resetTimer = setTimeout(() => this.copyButtonText = '', 4000);
+    this.resetTimer = setTimeout(() => (this.copyButtonText = ''), 4000);
   }
 
-  ngOnDestroy() { clearTimeout(this.resetTimer); }
+  ngOnDestroy() {
+    clearTimeout(this.resetTimer);
+  }
 }

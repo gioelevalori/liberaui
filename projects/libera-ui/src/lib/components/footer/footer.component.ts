@@ -4,10 +4,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'lib-footer',
   standalone: true,
   imports: [],
-  template: `<footer><ng-content></ng-content></footer>`,
+  templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class FooterComponent {
-
-}
+export class FooterComponent {}

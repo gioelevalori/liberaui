@@ -3,11 +3,7 @@ import { InputFileComponent } from './input-file.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    InputFileComponent
-  ],
-  exports: [
-    InputFileComponent
-  ]
+  imports: [InputFileComponent],
+  exports: [InputFileComponent],
 })
-export class InputFileModule { }
+export class InputFileModule {}

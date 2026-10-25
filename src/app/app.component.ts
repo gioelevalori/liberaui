@@ -7,20 +7,30 @@ import { SwitchThemeComponent } from './../../projects/libera-ui/src/lib/compone
 import { componentRegistry } from './component-registry';
 
 @Component({
-  selector: 'lib-root', standalone: true,
+  selector: 'lib-root',
+  standalone: true,
   imports: [CommonModule, FormsModule, RouterModule, SwitchThemeComponent, IconComponent],
-  templateUrl: './app.component.html', styleUrl: './app.component.css'
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   constructor(public router: Router) {
     let glass = true;
-    try { glass = localStorage.getItem('liberaui-material') !== 'solid'; } catch { /* Works without storage. */ }
+    try {
+      glass = localStorage.getItem('liberaui-material') !== 'solid';
+    } catch {
+      /* Works without storage. */
+    }
     this.applyMaterial(glass);
   }
   glass = false;
   toggleMaterial() {
     this.applyMaterial(!this.glass);
-    try { localStorage.setItem('liberaui-material', this.glass ? 'glass' : 'solid'); } catch { /* Works without storage. */ }
+    try {
+      localStorage.setItem('liberaui-material', this.glass ? 'glass' : 'solid');
+    } catch {
+      /* Works without storage. */
+    }
   }
   private applyMaterial(glass: boolean) {
     this.glass = glass;
@@ -31,10 +41,20 @@ export class AppComponent {
   title = 'libera-ui';
   menuOpen = false;
   searchQuery = '';
-  readonly navigation = componentRegistry.map(item => ({...item, icon: item.path.includes('password') ? 'lock' : item.path.includes('file') ? 'upload' : item.path === '/switch-theme' ? 'sun' : item.path === '/alert' ? 'bell' : item.path === '/accordion' ? 'list' : item.path === '/input-date' ? 'calendar' : item.path === '/input-checkbox' ? 'check' : item.path === '/table' ? 'table' : item.path.includes('input') ? 'type' : 'grid'}));
-  get showcase() { return ['/', '/components'].includes(this.router.url.split('?')[0]); }
-  skipToContent(event: Event) { event.preventDefault(); document.getElementById('main-content')?.focus(); }
-  search() { this.router.navigate(['/components'], {queryParams: this.searchQuery.trim() ? {q: this.searchQuery.trim()} : {}}); this.menuOpen = false; }
+  readonly navigation = componentRegistry;
+  get showcase() {
+    return ['/', '/components'].includes(this.router.url.split('?')[0]);
+  }
+  skipToContent(event: Event) {
+    event.preventDefault();
+    document.getElementById('main-content')?.focus();
+  }
+  search() {
+    this.router.navigate(['/components'], {
+      queryParams: this.searchQuery.trim() ? { q: this.searchQuery.trim() } : {},
+    });
+    this.menuOpen = false;
+  }
   @HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
       event.preventDefault();

@@ -36,9 +36,9 @@ import { TableModule } from './components/table/table.module';
     SelectModule,
     SideNavigationModule,
     SwitchThemeModule,
-    TableModule
+    TableModule,
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [],
 })
-export class AppModule { }
+export class AppModule {}

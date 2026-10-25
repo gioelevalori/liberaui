@@ -8,7 +8,7 @@ import { AnimationsComponent } from '../../../../projects/libera-ui/src/lib/comp
   standalone: true,
   imports: [InputPasswordComponent, CodeComponent, AnimationsComponent],
   templateUrl: './input-password-site.component.html',
-  styleUrl: './input-password-site.component.css'
+  styleUrl: './input-password-site.component.css',
 })
 export class InputPasswordSiteComponent {
   public codeImport = `import { InputPasswordComponent } from 'libera-ui';`;

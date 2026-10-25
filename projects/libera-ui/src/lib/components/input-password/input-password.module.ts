@@ -3,11 +3,7 @@ import { InputPasswordComponent } from './input-password.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    InputPasswordComponent
-  ],
-  exports: [
-    InputPasswordComponent
-  ]
+  imports: [InputPasswordComponent],
+  exports: [InputPasswordComponent],
 })
-export class InputPasswordModule { }
+export class InputPasswordModule {}

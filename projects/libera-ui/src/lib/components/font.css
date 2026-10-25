@@ -1,1 +1,30 @@
-body { font-family: var(--lib-font, 'Inter Variable', Inter, sans-serif); }
+:where(
+  lib-accordion,
+  lib-alert,
+  lib-animations,
+  lib-banner,
+  lib-button,
+  lib-card,
+  lib-code,
+  lib-fixed-side-bar,
+  lib-footer,
+  lib-icon,
+  lib-input-checkbox,
+  lib-input-date,
+  lib-input-file,
+  lib-input-number,
+  lib-input-password,
+  lib-input-search,
+  lib-input-text,
+  lib-input-textarea,
+  lib-navigation-bar,
+  lib-select,
+  lib-side-navigation,
+  lib-switch,
+  lib-switch-theme,
+  lib-tabs,
+  lib-tab,
+  lib-table
+) {
+  font-family: var(--lib-font, 'Inter Variable', Inter, sans-serif);
+}

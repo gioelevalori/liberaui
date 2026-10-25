@@ -1,0 +1,17 @@
+<select
+  [attr.aria-label]="label || placeholder"
+  (change)="onChange($event)"
+  (blur)="touched()"
+  [required]="required"
+  class="custom-input"
+  [disabled]="disabled"
+>
+  <option value="" disabled [selected]="selectedIndex === ''">{{ placeholder }}</option>
+  <option
+    *ngFor="let option of options; let i = index"
+    [value]="i"
+    [selected]="value === option.value"
+  >
+    {{ option.label }}
+  </option>
+</select>

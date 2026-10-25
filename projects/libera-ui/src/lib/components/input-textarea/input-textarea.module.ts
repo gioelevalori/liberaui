@@ -3,11 +3,7 @@ import { InputTextareaComponent } from './input-textarea.component';
 
 @NgModule({
   declarations: [],
-  imports: [
-    InputTextareaComponent
-  ],
-  exports: [
-    InputTextareaComponent
-  ]
+  imports: [InputTextareaComponent],
+  exports: [InputTextareaComponent],
 })
-export class InputTextareaModule { }
+export class InputTextareaModule {}

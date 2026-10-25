@@ -1,0 +1,44 @@
+:host {
+  display: inline-flex;
+  vertical-align: middle;
+}
+button {
+  display: flex;
+  align-items: center;
+  width: 38px;
+  height: 24px;
+  padding: 3px;
+  border: 1px solid var(--text-secondary, #66666f);
+  border-radius: 20px;
+  background: var(--border-color, #d4d4d8);
+  cursor: pointer;
+  transition: background-color 0.16s;
+}
+button[aria-checked='true'] {
+  background: var(--lib-accent, var(--text-primary, #18181b));
+}
+span {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-secondary, #66666f);
+  transition: transform 0.16s;
+}
+button[aria-checked='true'] span {
+  transform: translateX(14px);
+  background: var(--lib-accent-foreground, var(--background-color, #fff));
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button:focus-visible {
+  outline: 2px solid var(--text-primary, #18181b);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  button,
+  span {
+    transition: none;
+  }
+}

@@ -38,7 +38,9 @@
     "build": "ng build libera-ui-site",
     "build:pages": "ng build libera-ui-site --base-href /liberaui/",
     "build:lib": "ng build libera-ui",
-    "test": "ng test libera-ui-site --watch=false --browsers=ChromeHeadless"
+    "test": "ng test libera-ui-site --watch=false --browsers=ChromeHeadless",
+    "format": "prettier --write \"src/**/*.{ts,html,css}\" \"projects/libera-ui/**/*.{ts,html,css}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,css}\" \"projects/libera-ui/**/*.{ts,html,css}\""
   },
   "license": "MIT"
 }

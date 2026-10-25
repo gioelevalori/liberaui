@@ -9,9 +9,9 @@ describe('SwitchThemeSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SwitchThemeSiteComponent], providers: [provideNoopAnimations(), provideRouter([])]
-    })
-      .compileComponents();
+      imports: [SwitchThemeSiteComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SwitchThemeSiteComponent);
     component = fixture.componentInstance;

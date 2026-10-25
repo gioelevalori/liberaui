@@ -4,13 +4,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'lib-table',
   standalone: true,
   imports: [],
-  template: `
-  <table class="styled-table">
-    <ng-content></ng-content>
-  </table>`,
+  templateUrl: './table.component.html',
   styleUrls: ['./table.component.css', '../font.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class TableComponent {
-
-}
+export class TableComponent {}

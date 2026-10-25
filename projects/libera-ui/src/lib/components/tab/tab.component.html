@@ -1,0 +1,30 @@
+<div class="tabs-list" role="tablist" [attr.aria-label]="label" [attr.dir]="direction">
+  <button
+    #tabButton
+    *ngFor="let item of items; let i = index"
+    type="button"
+    role="tab"
+    [id]="uid + '-tab-' + i"
+    [attr.aria-controls]="uid + '-panel-' + i"
+    [attr.aria-selected]="activeId === item.id"
+    [tabIndex]="activeId === item.id ? 0 : -1"
+    [disabled]="!!item.disabled"
+    (click)="select(item)"
+    (keydown)="navigate($event, i)"
+  >
+    <lib-icon *ngIf="item.icon" [name]="item.icon" [size]="16" />{{ item.label }}
+  </button>
+</div>
+<section
+  *ngFor="let item of items; let i = index"
+  role="tabpanel"
+  [id]="uid + '-panel-' + i"
+  [attr.aria-labelledby]="uid + '-tab-' + i"
+  [hidden]="activeId !== item.id"
+  tabindex="0"
+>
+  <ng-container *ngIf="item.template; else plain" [ngTemplateOutlet]="item.template" /><ng-template
+    #plain
+    >{{ item.content }}</ng-template
+  >
+</section>

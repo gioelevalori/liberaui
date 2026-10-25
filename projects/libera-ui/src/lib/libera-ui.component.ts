@@ -4,13 +4,7 @@ import { Component } from '@angular/core';
   selector: 'lib-libera-ui',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      libera-ui works!
-    </p>
-  `,
-  styles: ``
+  templateUrl: './libera-ui.component.html',
+  styles: ``,
 })
-export class LiberaUiComponent {
-
-}
+export class LiberaUiComponent {}
