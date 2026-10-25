@@ -45,3 +45,11 @@ body.lib-glass .docs-nav a.active { background:var(--lib-glass-fill); }
   --lib-glass-highlight:rgba(255,255,255,.9);
   --lib-glass-shadow:rgba(37,48,75,.12);
 }
+
+@media(max-width:760px){
+ body.lib-glass .docs-layout>.docs-nav{background:var(--background-color)}
+ @supports(backdrop-filter:blur(1px)){
+  body.lib-glass .docs-layout>.docs-nav{background:var(--lib-glass-fill);backdrop-filter:blur(24px) saturate(135%)}
+ }
+}
+@media(max-width:760px) and (prefers-reduced-transparency:reduce){body.lib-glass .docs-layout>.docs-nav{background:var(--background-color);backdrop-filter:none}}

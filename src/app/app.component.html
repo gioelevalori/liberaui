@@ -7,7 +7,7 @@
     <a class="repository-link" href="https://github.com/gioelevalori/liberaui" aria-label="LiberaUI on GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-3.5c0-1 .1-1.5-.5-2 3-.3 6-1.5 6-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.2s-1.2-.3-3.5 1.3a12 12 0 0 0-6.4 0C6.9 3.7 5.7 4 5.7 4a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 4.3 10.5c0 4.5 3 5.7 6 6-.5.5-.6 1.1-.6 2V22"/></svg></a>
 <button class="material-toggle" type="button" (click)="toggleMaterial()" [attr.aria-pressed]="glass" aria-label="Glass appearance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><path d="M7 11V8a1 1 0 0 1 1-1h3"/></svg>Glass</button>
     <lib-switch-theme />
-    <button class="menu-toggle" type="button" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-controls="documentation-nav" [attr.aria-label]="menuOpen ? 'Close navigation' : 'Open navigation'"><lib-icon [name]="menuOpen ? 'close' : 'menu'" /></button>
+    <button class="menu-toggle" type="button" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-controls="documentation-nav" [attr.aria-label]="menuOpen ? 'Close navigation' : 'Open navigation'"><svg class="menu-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path class="menu-line menu-line-top" d="M4 12h16"/><path class="menu-line menu-line-middle" d="M4 12h16"/><path class="menu-line menu-line-bottom" d="M4 12h16"/></svg></button>
   </div>
 </header>
 <div class="docs-layout" [class.showcase-layout]="showcase">
