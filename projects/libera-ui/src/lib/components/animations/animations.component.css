@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+.fadeInOut-in,
+.fadeInOut-out {
+  transition: opacity 2000ms ease-in-out;
+}
+.fadeInOut-in {
+  opacity: 1;
+}
+.fadeInOut-out {
+  opacity: 0;
+}
+.slideInOut-in,
+.slideInOut-out {
+  transition: transform 500ms ease-in-out;
+}
+.slideInOut-in {
+  transform: translateX(0);
+}
+.slideInOut-out {
+  transform: translateX(-100%);
+}
+.fadeInDown-in,
+.fadeInDown-out {
+  transition:
+    opacity 500ms ease-out,
+    transform 500ms ease-out;
+}
+.fadeInDown-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fadeInDown-out {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+@media (prefers-reduced-motion: reduce) {
+  div {
+    transition: none;
+  }
+}

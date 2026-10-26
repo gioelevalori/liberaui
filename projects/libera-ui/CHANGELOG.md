@@ -1,6 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.5.1 - 2026-10-26
+
+- Replace legacy Angular animation triggers with CSS transitions, removing the animations peer dependency and animation-provider setup.
+- Guard animation initialization during server rendering and respect reduced motion.
+
+- Extend Angular peer dependency compatibility to Angular 20 and 21 (>=17 <22).
 
 - Separate component templates and styles from TypeScript logic.
 - Consolidate shared form-control styles and scope them to library hosts.
