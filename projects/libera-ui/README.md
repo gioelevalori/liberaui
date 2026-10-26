@@ -6,7 +6,7 @@
 
 Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-[Demo](https://gioelevalori.github.io/liberaui/) Â· [Components](https://gioelevalori.github.io/liberaui/#/components) Â· [Playground](https://gioelevalori.github.io/liberaui/#/playground) Â· [GitHub](https://github.com/gioelevalori/liberaui)
+[Demo](https://gioelevalori.github.io/liberaui/) · [Components](https://gioelevalori.github.io/liberaui/#/components) · [Playground](https://gioelevalori.github.io/liberaui/#/playground) · [GitHub](https://github.com/gioelevalori/liberaui)
 
 </div>
 
@@ -15,12 +15,14 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 ## Install
 
 ```sh
-npm install libera-ui@^0.5.1
+npm install libera-ui@^0.5.2
 ```
 
-Version 0.5.0 adds accessible Tabs, Accordion and Alert, a themed date picker, coordinated select menus, SVG icons and Angular forms support across the input components.
+The library includes accessible Tabs, Accordion and Alert, a themed date picker, coordinated select menus, SVG icons and Angular forms support across the input components.
 
-The library declares Angular 17â€“19 peer support. The repository workspace and current CI use Angular 19.
+Version 0.5.1 extends the Angular peer range to 17-21, replaces legacy animation triggers with CSS transitions, and isolates shared field styles from the consuming application. No Angular animation provider is required.
+
+The repository workspace and CI use Angular 19. A separate release consumer compiles with Angular 21.2.25. Angular 17, 18 and 20 have not been independently tested.
 
 ## Shared theme
 
@@ -67,7 +69,7 @@ The shared theme includes the opt-in Glass material:
 </div>
 ```
 
-Glass supports light and dark themes, reduced transparency, forced colors and opaque fallback surfaces. In [Theme Studio](https://gioelevalori.github.io/liberaui/#/playground), choose **Surface â†’ Glass** to export a matching Angular component.
+Glass supports light and dark themes, reduced transparency, forced colors and opaque fallback surfaces. In [Theme Studio](https://gioelevalori.github.io/liberaui/#/playground), choose **Surface → Glass** to export a matching Angular component.
 
 ## Theme helpers
 

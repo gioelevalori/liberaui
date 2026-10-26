@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.2 - 2026-10-26
+
+- Correct README character encoding and Angular compatibility notes.
+- No component behavior or API changes from 0.5.1.
+
 ## 0.5.1 - 2026-10-26
 
 - Replace legacy Angular animation triggers with CSS transitions, removing the animations peer dependency and animation-provider setup.
@@ -53,4 +58,4 @@
 - Improve narrow-screen layouts and long-content handling.
 - Refresh package documentation, screenshots and repository links.
 
-The workspace and CI use Angular 19. Angular 17â€“19 remains the declared peer range; Angular 17 and 18 have not been verified by the current CI.
+The workspace and CI use Angular 19. Angular 17–19 remains the declared peer range; Angular 17 and 18 have not been verified by the current CI.
