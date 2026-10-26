@@ -8,7 +8,7 @@
 
 Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-[Explore the demo](https://gioelevalori.github.io/liberaui/) Ã‚Â· [Components](https://gioelevalori.github.io/liberaui/#/components) Ã‚Â· [Live playground](https://gioelevalori.github.io/liberaui/#/playground) Ã‚Â· [Contribute](CONTRIBUTING.md)
+[Explore the demo](https://gioelevalori.github.io/liberaui/) Ãƒâ€šÃ‚Â· [Components](https://gioelevalori.github.io/liberaui/#/components) Ãƒâ€šÃ‚Â· [Live playground](https://gioelevalori.github.io/liberaui/#/playground) Ãƒâ€šÃ‚Â· [Contribute](CONTRIBUTING.md)
 
 [![Build and deploy](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml/badge.svg)](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-18181b.svg)](LICENSE)
@@ -36,12 +36,12 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 [![LiberaUI component catalog showing Tabs, Accordion and Alert](docs/assets/components.png)](https://gioelevalori.github.io/liberaui/#/components)
 
-[Browse the catalog Ã¢â€ â€™](https://gioelevalori.github.io/liberaui/#/components)
-[Try the live customization playground Ã¢â€ â€™](https://gioelevalori.github.io/liberaui/#/playground)
+[Browse the catalog ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢](https://gioelevalori.github.io/liberaui/#/components)
+[Try the live customization playground ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢](https://gioelevalori.github.io/liberaui/#/playground)
 
 ## Try the latest source
 
-> **Latest release: 0.5.1.** Angular 17â€“21 peer compatibility, CSS animations without an animation provider, and isolated form-control styles.
+> **Latest release: 0.5.1.** Angular 17Ã¢â‚¬â€œ21 peer compatibility, CSS animations without an animation provider, and isolated form-control styles.
 
 Use Node.js 22 and npm:
 
@@ -52,7 +52,7 @@ npm ci
 npm start
 ```
 
-Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The library declares peer support for Angular 17Ã¢â‚¬â€œ19; the current CI verifies Angular 19 only.
+Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The library declares peer support for Angular 17ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“19; the current CI verifies Angular 19 only.
 
 ### Use the library
 
@@ -103,7 +103,7 @@ const css = createThemeCss({ ...DEFAULT_THEME, accent: '#2454ce', radius: 16 });
 
 ![Glass material in Theme Studio](docs/assets/glass-theme.png)
 
-Glass is an optional surface treatment, independent of light and dark mode. Use the **Glass** button in the desktop header or mobile menu to try it on the site. In Theme Studio choose **Surface Ã¢â€ â€™ Glass**; share links and Angular exports keep the selection.
+Glass is an optional surface treatment, independent of light and dark mode. Use the **Glass** button in the desktop header or mobile menu to try it on the site. In Theme Studio choose **Surface ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Glass**; share links and Angular exports keep the selection.
 
 The Glass stylesheet is included by `libera-ui/theme.css` in version 0.4.0 and later. You can also import `libera-ui/glass.css` separately when you already provide the core theme tokens.
 
@@ -113,7 +113,7 @@ The Glass stylesheet is included by `libera-ui/theme.css` in version 0.4.0 and l
 </div>
 ```
 
-Set `data-glass-mode="dark"` on a scoped Glass container to preview dark material, or use the bodyÃ¢â‚¬â„¢s `dark-theme` class in your app. Translucency falls back to opaque surfaces without backdrop-filter support and when reduced transparency is requested.
+Set `data-glass-mode="dark"` on a scoped Glass container to preview dark material, or use the bodyÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s `dark-theme` class in your app. Translucency falls back to opaque surfaces without backdrop-filter support and when reduced transparency is requested.
 
 ## New in 0.5.1
 
