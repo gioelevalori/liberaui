@@ -4,9 +4,7 @@
 
 - Replace legacy Angular animation triggers with CSS transitions, removing the animations peer dependency and animation-provider setup.
 - Guard animation initialization during server rendering and respect reduced motion.
-
 - Extend Angular peer dependency compatibility to Angular 20 and 21 (>=17 <22).
-
 - Separate component templates and styles from TypeScript logic.
 - Consolidate shared form-control styles and scope them to library hosts.
 - Apply library typography to component hosts instead of the application body.
@@ -55,4 +53,4 @@
 - Improve narrow-screen layouts and long-content handling.
 - Refresh package documentation, screenshots and repository links.
 
-The workspace and CI use Angular 19. Angular 17–19 remains the declared peer range; Angular 17 and 18 have not been verified by the current CI.
+The workspace and CI use Angular 19. Angular 17â€“19 remains the declared peer range; Angular 17 and 18 have not been verified by the current CI.

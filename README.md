@@ -8,7 +8,7 @@
 
 Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-[Explore the demo](https://gioelevalori.github.io/liberaui/) · [Components](https://gioelevalori.github.io/liberaui/#/components) · [Live playground](https://gioelevalori.github.io/liberaui/#/playground) · [Contribute](CONTRIBUTING.md)
+[Explore the demo](https://gioelevalori.github.io/liberaui/) Ã‚Â· [Components](https://gioelevalori.github.io/liberaui/#/components) Ã‚Â· [Live playground](https://gioelevalori.github.io/liberaui/#/playground) Ã‚Â· [Contribute](CONTRIBUTING.md)
 
 [![Build and deploy](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml/badge.svg)](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-18181b.svg)](LICENSE)
@@ -18,7 +18,7 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 
 [![LiberaUI in Glass mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://gioelevalori.github.io/liberaui/)
 
-> **LiberaUI 0.5.0:** Glass by default on the site, accessible interface patterns, themed pickers and Angular forms support.
+> **LiberaUI 0.5.1:** Glass by default on the site, accessible interface patterns, themed pickers and Angular forms support.
 
 ## Your interface, your details
 
@@ -36,12 +36,12 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 [![LiberaUI component catalog showing Tabs, Accordion and Alert](docs/assets/components.png)](https://gioelevalori.github.io/liberaui/#/components)
 
-[Browse the catalog →](https://gioelevalori.github.io/liberaui/#/components)
-[Try the live customization playground →](https://gioelevalori.github.io/liberaui/#/playground)
+[Browse the catalog Ã¢â€ â€™](https://gioelevalori.github.io/liberaui/#/components)
+[Try the live customization playground Ã¢â€ â€™](https://gioelevalori.github.io/liberaui/#/playground)
 
 ## Try the latest source
 
-> **Latest release: 0.5.0.** Accessible Tabs, Accordion and Alert, themed date picker, coordinated select menus and Angular forms support.
+> **Latest release: 0.5.1.** Angular 17â€“21 peer compatibility, CSS animations without an animation provider, and isolated form-control styles.
 
 Use Node.js 22 and npm:
 
@@ -52,14 +52,14 @@ npm ci
 npm start
 ```
 
-Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The library declares peer support for Angular 17–19; the current CI verifies Angular 19 only.
+Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The library declares peer support for Angular 17Ã¢â‚¬â€œ19; the current CI verifies Angular 19 only.
 
 ### Use the library
 
 The published package is available with:
 
 ```sh
-npm install libera-ui@^0.5.0
+npm install libera-ui@^0.5.1
 ```
 
 Add `ButtonComponent` to your standalone component's imports:
@@ -103,7 +103,7 @@ const css = createThemeCss({ ...DEFAULT_THEME, accent: '#2454ce', radius: 16 });
 
 ![Glass material in Theme Studio](docs/assets/glass-theme.png)
 
-Glass is an optional surface treatment, independent of light and dark mode. Use the **Glass** button in the desktop header or mobile menu to try it on the site. In Theme Studio choose **Surface → Glass**; share links and Angular exports keep the selection.
+Glass is an optional surface treatment, independent of light and dark mode. Use the **Glass** button in the desktop header or mobile menu to try it on the site. In Theme Studio choose **Surface Ã¢â€ â€™ Glass**; share links and Angular exports keep the selection.
 
 The Glass stylesheet is included by `libera-ui/theme.css` in version 0.4.0 and later. You can also import `libera-ui/glass.css` separately when you already provide the core theme tokens.
 
@@ -113,9 +113,16 @@ The Glass stylesheet is included by `libera-ui/theme.css` in version 0.4.0 and l
 </div>
 ```
 
-Set `data-glass-mode="dark"` on a scoped Glass container to preview dark material, or use the body’s `dark-theme` class in your app. Translucency falls back to opaque surfaces without backdrop-filter support and when reduced transparency is requested.
+Set `data-glass-mode="dark"` on a scoped Glass container to preview dark material, or use the bodyÃ¢â‚¬â„¢s `dark-theme` class in your app. Translucency falls back to opaque surfaces without backdrop-filter support and when reduced transparency is requested.
 
-## New in 0.5.0
+## New in 0.5.1
+
+- Angular 20 and 21 are included in the peer dependency range.
+- CSS transitions replace legacy Angular animation triggers; no animation provider is required.
+- Shared field styles are scoped to library hosts and no longer affect unrelated application inputs.
+- Templates and styles live in separate files, with formatting verified in CI.
+
+## Added in 0.5.0
 
 - **Glass by default on a fresh site visit**, with saved Essential preferences respected.
 - **Tabs**, **Accordion** and **Alert** components, including keyboard navigation and dismissible feedback.
