@@ -15,10 +15,12 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 ## Install
 
 ```sh
-npm install libera-ui@^0.6.0
+npm install libera-ui@^0.7.0
 ```
 
 The library includes accessible Tabs, Accordion and Alert, a themed date picker, coordinated select menus, SVG icons and Angular forms support across the input components.
+
+Version 0.7.0 adds Multi-select, Slider, Drawer, Popover, Breadcrumb, Badge, Tag, Avatar, Skeleton, Progress bar and Spinner. The data table gains a cross-column filter, expandable row details and a lazy mode for server-side data. Use `provideLiberaUiText` to translate the text components render or announce on their own.
 
 Version 0.6.0 adds a data table with keyboard multi-column sorting, pagination and selection, plus Dialog, Toast, Tooltip, Menu, Radio group and Combobox. Form controls, animations and copy feedback now update in zoneless applications, and the theme switcher renders on the server. Place `<lib-toast-outlet />` once near your application root to use `ToastService`.
 

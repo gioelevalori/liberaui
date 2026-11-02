@@ -41,7 +41,7 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## Try the latest source
 
-> **Latest release: 0.6.0.** Data table, Dialog, Toast, Tooltip, Menu, Radio group and Combobox, with zoneless and keyboard support across the library.
+> **Latest release: 0.7.0.** Multi-select, Slider, Drawer, Popover, Breadcrumb, Badge, Tag, Avatar, Skeleton and Progress, translatable built-in text, and data table search, row details and server-side loading.
 
 Use Node.js 22 and npm:
 
@@ -59,7 +59,7 @@ Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The
 The published package is available with:
 
 ```sh
-npm install libera-ui@^0.6.0
+npm install libera-ui@^0.7.0
 ```
 
 Add `ButtonComponent` to your standalone component's imports:

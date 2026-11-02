@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.7.0 - 2026-11-03
 
 - Add BadgeComponent, TagComponent, SkeletonComponent, ProgressBarComponent, SpinnerComponent and AvatarComponent.
 - Add SliderComponent and MultiSelectComponent with Angular forms support; the multi-select list is filterable and keyboard operable.
