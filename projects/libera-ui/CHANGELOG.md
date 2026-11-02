@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Render programmatic Angular forms values and disabled states in zoneless applications.
+- Show AnimationsComponent content and code copy feedback in zoneless applications.
+- Move focus into the side navigation when it opens and restore it to the trigger on close; connect the trigger with aria-controls.
+- Render the theme switcher during server rendering without browser globals.
+- Export BannerComponent from the package entry point.
+- Use an English default placeholder for the search input.
+
 ## 0.5.2 - 2026-10-26
 
 - Correct README character encoding and Angular compatibility notes.
@@ -58,4 +67,4 @@
 - Improve narrow-screen layouts and long-content handling.
 - Refresh package documentation, screenshots and repository links.
 
-The workspace and CI use Angular 19. Angular 17â€“19 remains the declared peer range; Angular 17 and 18 have not been verified by the current CI.
+The workspace and CI use Angular 19. Angular 17–19 remains the declared peer range; Angular 17 and 18 have not been verified by the current CI.

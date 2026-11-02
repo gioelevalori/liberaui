@@ -1,4 +1,15 @@
-import { Component, HostListener, ViewEncapsulation } from '@angular/core';
+import {
+  afterNextRender,
+  Component,
+  ElementRef,
+  HostListener,
+  inject,
+  Injector,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
+
+let nextSideNavigationId = 0;
 
 @Component({
   selector: 'lib-side-navigation',
@@ -8,15 +19,26 @@ import { Component, HostListener, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class SideNavigationComponent {
+  @ViewChild('closeButton') closeButton!: ElementRef<HTMLButtonElement>;
+  @ViewChild('trigger') trigger!: ElementRef<HTMLButtonElement>;
+  readonly panelId = 'lib-side-navigation-' + nextSideNavigationId++;
+  private readonly injector = inject(Injector);
   isOpen = false;
   fullWidth = false;
   openNav() {
     this.isOpen = true;
+    this.focusAfterRender(() => this.closeButton);
   }
   closeNav() {
+    if (!this.isOpen) return;
     this.isOpen = false;
+    this.focusAfterRender(() => this.trigger);
   }
   @HostListener('document:keydown.escape') onEscape() {
     this.closeNav();
+  }
+  /** Hidden panels cannot take focus, so wait until the open state is rendered. */
+  private focusAfterRender(target: () => ElementRef<HTMLElement>) {
+    afterNextRender(() => target().nativeElement.focus(), { injector: this.injector });
   }
 }

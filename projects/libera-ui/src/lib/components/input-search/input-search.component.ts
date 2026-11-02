@@ -10,7 +10,7 @@ import { Component, ViewEncapsulation, Input } from '@angular/core';
 })
 export class InputSearchComponent {
   @Input() label = '';
-  @Input() placeholder: string = 'Inserisci testo...';
+  @Input() placeholder: string = 'Search';
   @Input() type: string = 'text';
   @Input() disabled: boolean = false;
 }

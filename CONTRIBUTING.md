@@ -12,7 +12,7 @@ Search existing issues. For a new component or a breaking API change, open an is
 2. Use Node.js 22 and run `npm ci`.
 3. Run `npm start` and check the relevant examples and playground.
 4. Make a focused change. Keep existing component inputs compatible where possible.
-5. Run `npm run format`, then `npm run build`, `npm run build:lib`, and `npm test` with Chrome installed.
+5. Run `npm run format`, then `npm run build`, `npm run build:lib`, `npm run test:lib` and `npm test` with Chrome installed.
 6. Open a pull request explaining the problem, behavior, and verification. Include desktop and mobile screenshots for visual changes.
 
 ## Component quality

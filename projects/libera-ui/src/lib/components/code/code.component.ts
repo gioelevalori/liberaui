@@ -1,8 +1,10 @@
 import { IconComponent } from '../icon/icon.component';
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   ElementRef,
+  inject,
   OnDestroy,
   OnChanges,
   Input,
@@ -24,6 +26,7 @@ export class CodeComponent implements AfterViewInit, OnDestroy, OnChanges {
   @Input() code: string | null = null;
   public copyButtonText = '';
   private resetTimer?: ReturnType<typeof setTimeout>;
+  private readonly changeDetector = inject(ChangeDetectorRef);
 
   ngAfterViewInit() {
     this.highlight();
@@ -46,7 +49,11 @@ export class CodeComponent implements AfterViewInit, OnDestroy, OnChanges {
     } catch {
       this.copyButtonText = 'Unable to copy. Select the code and copy manually.';
     }
-    this.resetTimer = setTimeout(() => (this.copyButtonText = ''), 4000);
+    this.changeDetector.markForCheck();
+    this.resetTimer = setTimeout(() => {
+      this.copyButtonText = '';
+      this.changeDetector.markForCheck();
+    }, 4000);
   }
 
   ngOnDestroy() {

@@ -1,5 +1,6 @@
 import { IconComponent } from '../icon/icon.component';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, inject, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'lib-switch-theme',
@@ -10,14 +11,19 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class SwitchThemeComponent {
+  private readonly document = inject(DOCUMENT);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+
   get isDarkMode() {
-    return document.body.classList.contains('dark-theme');
+    return this.document.body.classList.contains('dark-theme');
   }
   set isDarkMode(value: boolean) {
-    document.body.classList.toggle('dark-theme', value);
+    this.document.body.classList.toggle('dark-theme', value);
   }
 
   ngOnInit() {
+    // Storage and media queries only exist in the browser; servers render the light theme.
+    if (!this.isBrowser) return;
     let savedTheme: string | null = null;
     try {
       savedTheme = localStorage.getItem('theme');
@@ -36,7 +42,7 @@ export class SwitchThemeComponent {
   }
 
   private updateTheme() {
-    document.body.classList.toggle('dark-theme', this.isDarkMode);
+    this.document.body.classList.toggle('dark-theme', this.isDarkMode);
     try {
       localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
     } catch {

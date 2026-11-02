@@ -1,4 +1,12 @@
-import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  forwardRef,
+  inject,
+  Input,
+  Output,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -15,10 +23,12 @@ export class SwitchComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() label = 'Toggle';
   @Output() checkedChange = new EventEmitter<boolean>();
+  private readonly changeDetector = inject(ChangeDetectorRef);
   private onChange: (value: boolean) => void = () => {};
   onTouched = () => {};
   writeValue(value: boolean) {
     this.checked = !!value;
+    this.changeDetector.markForCheck();
   }
   registerOnChange(fn: (value: boolean) => void) {
     this.onChange = fn;
@@ -28,6 +38,7 @@ export class SwitchComponent implements ControlValueAccessor {
   }
   setDisabledState(disabled: boolean) {
     this.disabled = disabled;
+    this.changeDetector.markForCheck();
   }
   toggle() {
     if (this.disabled) return;

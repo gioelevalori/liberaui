@@ -1,7 +1,9 @@
 import {
+  ChangeDetectorRef,
   Component,
   EventEmitter,
   forwardRef,
+  inject,
   Input,
   Output,
   ViewEncapsulation,
@@ -27,10 +29,12 @@ export class InputCheckboxComponent implements ControlValueAccessor {
   @Input() checked = true;
   @Input() label = 'Checkbox';
   @Output() checkedChange = new EventEmitter<boolean>();
+  private readonly changeDetector = inject(ChangeDetectorRef);
   private modelChange: (value: boolean) => void = () => {};
   touched = () => {};
   writeValue(value: boolean | null) {
     this.checked = !!value;
+    this.changeDetector.markForCheck();
   }
   registerOnChange(fn: (value: boolean) => void) {
     this.modelChange = fn;
@@ -40,6 +44,7 @@ export class InputCheckboxComponent implements ControlValueAccessor {
   }
   setDisabledState(value: boolean) {
     this.disabled = value;
+    this.changeDetector.markForCheck();
   }
   change(event: Event) {
     if (this.disabled) return;
