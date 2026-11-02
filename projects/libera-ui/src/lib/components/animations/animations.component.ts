@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, Input, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, Inject, Input, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -10,7 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class AnimationsComponent {
   @Input() animation = '';
   @Input() animationScrolling = false;
-  state = '';
+  readonly state = signal('');
   private observer?: IntersectionObserver;
   private animationTimer?: ReturnType<typeof setTimeout>;
 
@@ -24,10 +24,10 @@ export class AnimationsComponent {
       !isPlatformBrowser(this.platformId) ||
       window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
     ) {
-      this.state = `${this.animation}-in`;
+      this.state.set(`${this.animation}-in`);
       return;
     }
-    this.state = `${this.animation}-out`;
+    this.state.set(`${this.animation}-out`);
     if (!this.animationScrolling || typeof IntersectionObserver === 'undefined') {
       this.activateAnimation();
       return;
@@ -51,7 +51,7 @@ export class AnimationsComponent {
 
   private activateAnimation() {
     this.animationTimer = setTimeout(() => {
-      this.state = `${this.animation}-in`;
+      this.state.set(`${this.animation}-in`);
     });
   }
 }
