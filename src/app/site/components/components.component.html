@@ -140,6 +140,13 @@
           ><lib-button variant="outline">Hover or focus</lib-button></lib-tooltip
         >
         <lib-menu *ngSwitchCase="'/menu'" label="Actions" [items]="previewMenu" />
+        <lib-data-table
+          *ngSwitchCase="'/data-table'"
+          rowKey="name"
+          rowHeader="name"
+          [columns]="previewColumns"
+          [rows]="previewRows"
+        />
         <lib-radio-group
           *ngSwitchCase="'/radio-group'"
           label="Size"

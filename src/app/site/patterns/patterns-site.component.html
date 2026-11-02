@@ -75,6 +75,22 @@
         [options]="countries"
         [(ngModel)]="country"
       />
+      <lib-data-table
+        *ngSwitchCase="'data-table'"
+        caption="Workspace members"
+        rowKey="id"
+        rowHeader="name"
+        selectable
+        [columns]="memberColumns"
+        [rows]="members"
+        [pageSize]="5"
+        [(sort)]="memberSort"
+        [(selection)]="selectedMembers"
+      >
+        <ng-template libCell="status" let-member>
+          <span class="member-status" [attr.data-status]="member.status">{{ member.status }}</span>
+        </ng-template>
+      </lib-data-table>
     </ng-container>
   </section>
   <div class="pattern-controls">
@@ -95,6 +111,7 @@
     <p *ngIf="kind === 'menu'" role="status">Last action: {{ lastAction || 'none' }}</p>
     <p *ngIf="kind === 'radio-group'" role="status">Selected: {{ plan }}</p>
     <p *ngIf="kind === 'combobox'" role="status">Selected: {{ countryLabel }}</p>
+    <p *ngIf="kind === 'data-table'">{{ selectedMembers.length }} selected</p>
     <label *ngIf="kind === 'accordion'"
       ><input type="checkbox" [(ngModel)]="multiple" /> Allow multiple sections</label
     >

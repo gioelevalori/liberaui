@@ -34,6 +34,24 @@
     padding: 18px;
   }
 }
+.member-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.member-status::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success-color);
+}
+.member-status[data-status='Invited']::before {
+  background: var(--info-color);
+}
+.member-status[data-status='Away']::before {
+  background: var(--warning-color);
+}
 .pattern-row {
   display: flex;
   flex-wrap: wrap;

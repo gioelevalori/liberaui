@@ -1,0 +1,96 @@
+<div class="lib-data-table-scroll">
+  <table>
+    <caption *ngIf="caption">
+      {{
+        caption
+      }}
+    </caption>
+    <thead>
+      <tr>
+        <th *ngIf="selectable" scope="col" class="select-cell">
+          <input
+            type="checkbox"
+            aria-label="Select all rows on this page"
+            [checked]="pageSelection.all"
+            [indeterminate]="pageSelection.some && !pageSelection.all"
+            [disabled]="!view.length"
+            (change)="togglePage()"
+          />
+        </th>
+        <th
+          *ngFor="let column of columns"
+          scope="col"
+          [class.align-end]="column.align === 'end'"
+          [attr.aria-sort]="ariaSort(column.key)"
+        >
+          <button
+            *ngIf="column.sortable; else plainHeader"
+            type="button"
+            (click)="onSortClick($event, column.key)"
+            (keydown)="onSortKeydown($event, column.key)"
+          >
+            {{ column.label }}
+            <span
+              class="sort-indicator"
+              aria-hidden="true"
+              [attr.data-direction]="sort[sortIndex(column.key)]?.direction"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="m8 10 4-4 4 4M8 14l4 4 4-4" />
+              </svg>
+              <small *ngIf="sort.length > 1 && sortIndex(column.key) >= 0">{{
+                sortIndex(column.key) + 1
+              }}</small>
+            </span>
+          </button>
+          <ng-template #plainHeader>{{ column.label }}</ng-template>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of view" [class.selected]="selection.includes(row[rowKey])">
+        <td *ngIf="selectable" class="select-cell">
+          <input
+            type="checkbox"
+            [attr.aria-label]="'Select ' + rowLabel(row)"
+            [checked]="selection.includes(row[rowKey])"
+            (change)="toggleRow(row)"
+          />
+        </td>
+        <ng-container *ngFor="let column of columns">
+          <th
+            *ngIf="column.key === rowHeader; else dataCell"
+            scope="row"
+            [class.align-end]="column.align === 'end'"
+          >
+            <ng-container *ngTemplateOutlet="cell; context: { column, row }" />
+          </th>
+          <ng-template #dataCell>
+            <td [class.align-end]="column.align === 'end'">
+              <ng-container *ngTemplateOutlet="cell; context: { column, row }" />
+            </td>
+          </ng-template>
+        </ng-container>
+      </tr>
+      <tr *ngIf="!view.length">
+        <td class="empty" [attr.colspan]="columns.length + (selectable ? 1 : 0)">
+          {{ emptyText }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #cell let-column="column" let-row="row">
+  <ng-container
+    *ngIf="template(column.key) as custom; else plainCell"
+    [ngTemplateOutlet]="custom"
+    [ngTemplateOutletContext]="{ $implicit: row }"
+  />
+  <ng-template #plainCell>{{ text(column, row) }}</ng-template>
+</ng-template>
+<nav *ngIf="pageSize > 0 && pageCount > 1" class="lib-data-table-pager" aria-label="Pagination">
+  <button type="button" [disabled]="page === 0" (click)="movePage(-1)">Previous</button>
+  <span aria-live="polite">Page {{ page + 1 }} of {{ pageCount }}</span>
+  <button type="button" [disabled]="page >= pageCount - 1" (click)="movePage(1)">Next</button>
+</nav>
+<span class="lib-visually-hidden" role="status">{{ sortMessage }}</span>

@@ -133,6 +133,13 @@ export const componentRegistry = [
     description: 'Choose an option from a native dropdown.',
   },
   {
+    path: '/data-table',
+    icon: 'table',
+    label: 'Data table',
+    category: 'Data',
+    description: 'Sort by several columns, page through rows and select them.',
+  },
+  {
     path: '/table',
     icon: 'table',
     label: 'Table',

@@ -28,6 +28,12 @@ import {
   ComboboxComponent,
   ComboboxOption,
 } from '../../../../projects/libera-ui/src/lib/components/combobox/combobox.component';
+import {
+  DataTableCellDirective,
+  DataTableColumn,
+  DataTableComponent,
+  DataTableSort,
+} from '../../../../projects/libera-ui/src/lib/components/data-table/data-table.component';
 type PatternKind =
   | 'tabs'
   | 'accordion'
@@ -37,7 +43,16 @@ type PatternKind =
   | 'tooltip'
   | 'menu'
   | 'radio-group'
-  | 'combobox';
+  | 'combobox'
+  | 'data-table';
+interface Member {
+  id: number;
+  name: string;
+  role: string;
+  status: string;
+  joined: number;
+  reviews: number;
+}
 @Component({
   selector: 'lib-patterns-site',
   standalone: true,
@@ -54,6 +69,8 @@ type PatternKind =
     MenuComponent,
     RadioGroupComponent,
     ComboboxComponent,
+    DataTableComponent,
+    DataTableCellDirective,
   ],
   templateUrl: './patterns-site.component.html',
   styleUrl: './patterns-site.component.css',
@@ -114,6 +131,53 @@ export class PatternsSiteComponent {
     }[this.toastTone];
     this.toasts.show({ title: copy[0], message: copy[1], tone: this.toastTone });
   }
+  readonly members: Member[] = [
+    { id: 1, name: 'Chiara Ferri', role: 'Design', status: 'Active', joined: 2019, reviews: 128 },
+    {
+      id: 2,
+      name: 'Andrea Costa',
+      role: 'Engineering',
+      status: 'Active',
+      joined: 2021,
+      reviews: 87,
+    },
+    { id: 3, name: 'Bruno Galli', role: 'Design', status: 'Invited', joined: 2026, reviews: 0 },
+    {
+      id: 4,
+      name: 'Davide Marino',
+      role: 'Engineering',
+      status: 'Active',
+      joined: 2018,
+      reviews: 211,
+    },
+    { id: 5, name: 'Elena Ricci', role: 'Product', status: 'Away', joined: 2020, reviews: 64 },
+    {
+      id: 6,
+      name: 'Federica Bruno',
+      role: 'Engineering',
+      status: 'Active',
+      joined: 2023,
+      reviews: 45,
+    },
+    {
+      id: 7,
+      name: 'Giorgio Lombardi',
+      role: 'Product',
+      status: 'Active',
+      joined: 2022,
+      reviews: 39,
+    },
+    { id: 8, name: 'Ilaria Conti', role: 'Design', status: 'Away', joined: 2024, reviews: 12 },
+  ];
+  readonly memberColumns: DataTableColumn<Member>[] = [
+    { key: 'name', label: 'Name', sortable: true },
+    { key: 'role', label: 'Team', sortable: true },
+    { key: 'status', label: 'Status', sortable: true },
+    { key: 'joined', label: 'Joined', sortable: true, align: 'end' },
+    { key: 'reviews', label: 'Reviews', sortable: true, align: 'end' },
+  ];
+  memberSort: DataTableSort[] = [{ key: 'role', direction: 'asc' }];
+  selectedMembers: unknown[] = [];
   get countryLabel() {
     return this.countries.find((c) => c.value === this.country)?.label ?? 'none';
   }
@@ -173,6 +237,7 @@ export class PatternsSiteComponent {
       menu: 'Menu',
       'radio-group': 'Radio group',
       combobox: 'Combobox',
+      'data-table': 'Data table',
     }[this.kind];
   }
   get description() {
@@ -186,6 +251,7 @@ export class PatternsSiteComponent {
       menu: 'Offer related actions from a single button.',
       'radio-group': 'Choose exactly one option from a short, visible list.',
       combobox: 'Find one option in a long list by typing.',
+      'data-table': 'Explore structured data by sorting, paging and selecting rows.',
     }[this.kind];
   }
   get usage() {
@@ -206,6 +272,8 @@ export class PatternsSiteComponent {
         'Import RadioGroupComponent, provide options and bind the value with ngModel or a form control.',
       combobox:
         'Import ComboboxComponent, provide options and bind the selected value with ngModel or a form control. The value is the option value, not the typed text.',
+      'data-table':
+        'Import DataTableComponent, describe your columns and pass rows. Bind sort, selection and pageSize as needed. Use an ng-template with libCell to render a column with your own markup; the row is the implicit context.',
     }[this.kind];
   }
   get behavior() {
@@ -226,10 +294,14 @@ export class PatternsSiteComponent {
         'Native radio buttons in a fieldset: Tab enters the group and arrow keys change the selection. Descriptions are announced with each option.',
       combobox:
         'Typing filters the list and highlights the first match. Up and Down Arrow move through results, Enter selects, Escape closes and Alt+Down Arrow opens the list. Leaving the field restores the selected option.',
+      'data-table':
+        'Column headers are buttons: activate one to sort ascending, again for descending and again to clear. Hold Shift with a click, Enter or Space to add a secondary sort. The new order is announced, the primary column exposes aria-sort, and every row is named by its row header. Selection checkboxes name the row they select.',
     }[this.kind];
   }
   get code() {
     return {
+      'data-table':
+        'import { DataTableComponent, DataTableCellDirective, DataTableColumn } from \'libera-ui\';\n// Add DataTableComponent and DataTableCellDirective to your standalone imports.\n// In your class:\ncolumns: DataTableColumn<Member>[] = [\n  { key: \'name\', label: \'Name\', sortable: true },\n  { key: \'reviews\', label: \'Reviews\', sortable: true, align: \'end\' }\n];\nselection: unknown[] = [];\n\n// In your template:\n<lib-data-table caption="Team" rowKey="id" rowHeader="name" [columns]="columns"\n  [rows]="members" [pageSize]="10" selectable [(selection)]="selection">\n  <ng-template libCell="name" let-member><strong>{{ member.name }}</strong></ng-template>\n</lib-data-table>',
       dialog:
         'import { DialogComponent } from \'libera-ui\';\n// Add DialogComponent to your standalone imports.\n// In your class:\nopen = false;\n\n// In your template:\n<lib-button (click)="open = true">Delete project</lib-button>\n<lib-dialog title="Delete project?" description="This cannot be undone." [(open)]="open">\n  Everything in this project will be removed.\n  <lib-button dialog-actions variant="outline" (click)="open = false">Cancel</lib-button>\n  <lib-button dialog-actions (click)="delete()">Delete</lib-button>\n</lib-dialog>',
       toast:

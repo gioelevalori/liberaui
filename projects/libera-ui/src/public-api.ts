@@ -42,3 +42,9 @@ export {
   RadioOption,
 } from './lib/components/radio-group/radio-group.component';
 export { ComboboxComponent, ComboboxOption } from './lib/components/combobox/combobox.component';
+export {
+  DataTableComponent,
+  DataTableCellDirective,
+  DataTableColumn,
+  DataTableSort,
+} from './lib/components/data-table/data-table.component';

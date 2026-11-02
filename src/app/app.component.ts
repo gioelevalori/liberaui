@@ -50,7 +50,15 @@ export class AppComponent {
   menuOpen = false;
   searchQuery = '';
   readonly navigation = componentRegistry;
-  readonly newPages = ['/dialog', '/toast', '/tooltip', '/menu', '/radio-group', '/combobox'];
+  readonly newPages = [
+    '/dialog',
+    '/toast',
+    '/tooltip',
+    '/menu',
+    '/radio-group',
+    '/combobox',
+    '/data-table',
+  ];
   get showcase() {
     return ['/', '/components'].includes(this.router.url.split('?')[0]);
   }

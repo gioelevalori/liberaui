@@ -13,6 +13,7 @@ import { CardComponent } from '../../../../projects/libera-ui/src/lib/components
 import { TableComponent } from '../../../../projects/libera-ui/src/lib/components/table/table.component';
 import { SwitchThemeComponent } from '../../../../projects/libera-ui/src/lib/components/switch-theme/switch-theme.component';
 import { Component, DestroyRef, inject } from '@angular/core';
+import { DataTableComponent } from '../../../../projects/libera-ui/src/lib/components/data-table/data-table.component';
 import { DialogComponent } from '../../../../projects/libera-ui/src/lib/components/dialog/dialog.component';
 import { ToastService } from '../../../../projects/libera-ui/src/lib/components/toast/toast.service';
 import { TooltipComponent } from '../../../../projects/libera-ui/src/lib/components/tooltip/tooltip.component';
@@ -55,6 +56,7 @@ import { SwitchComponent } from '../../../../projects/libera-ui/src/lib/componen
     MenuComponent,
     RadioGroupComponent,
     ComboboxComponent,
+    DataTableComponent,
   ],
   templateUrl: './components.component.html',
   styleUrl: './components.component.css',
@@ -87,6 +89,15 @@ export class ComponentsComponent {
   ];
   previewChecked = true;
   previewDialog = false;
+  readonly previewColumns = [
+    { key: 'name', label: 'Name', sortable: true },
+    { key: 'score', label: 'Score', sortable: true, align: 'end' as const },
+  ];
+  readonly previewRows = [
+    { name: 'Ada', score: 92 },
+    { name: 'Linus', score: 78 },
+    { name: 'Grace', score: 85 },
+  ];
   previewSize: string | number | null = 'm';
   readonly previewSizes = ['S', 'M', 'L'].map((label) => ({ value: label.toLowerCase(), label }));
   readonly previewMenu = [

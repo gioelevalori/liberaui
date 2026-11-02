@@ -18,6 +18,7 @@ export const routes: Routes = [
       'menu',
       'radio-group',
       'combobox',
+      'data-table',
     ] as const
   ).map((kind) => ({
     path: kind,

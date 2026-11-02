@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Add DataTableComponent with multi-column sorting, pagination, row selection, row headers and custom cell templates. The existing TableComponent is unchanged.
 - Add DialogComponent on the native modal dialog, with an inert background, Escape and backdrop dismissal and focus restoration.
 - Add ToastService and ToastOutletComponent with live-region announcements and timers that pause on hover and focus.
 - Add TooltipComponent, shown on focus and hover, dismissible with Escape and rendered in the top layer.
@@ -46,7 +47,6 @@
 - Prevent empty workspace submission in Theme Studio and its Angular export.
 - Respect reduced motion and disconnect animation observers/timers on destruction.
 - Correct table example addresses, update form examples and refresh screenshots.
-
 
 ## 0.4.0
 
