@@ -32,3 +32,13 @@ export { AccordionComponent, AccordionItem } from './lib/components/accordion/ac
 export { AlertComponent } from './lib/components/alert/alert.component';
 
 export { IconComponent } from './lib/components/icon/icon.component';
+export { DialogComponent, DialogCloseReason } from './lib/components/dialog/dialog.component';
+export { ToastOutletComponent } from './lib/components/toast/toast.component';
+export { ToastService, Toast, ToastOptions, ToastTone } from './lib/components/toast/toast.service';
+export { TooltipComponent, TooltipPlacement } from './lib/components/tooltip/tooltip.component';
+export { MenuComponent, MenuItem } from './lib/components/menu/menu.component';
+export {
+  RadioGroupComponent,
+  RadioOption,
+} from './lib/components/radio-group/radio-group.component';
+export { ComboboxComponent, ComboboxOption } from './lib/components/combobox/combobox.component';

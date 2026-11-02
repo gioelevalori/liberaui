@@ -1,0 +1,29 @@
+<dialog
+  #dialog
+  class="lib-dialog"
+  [attr.aria-labelledby]="uid + '-title'"
+  [attr.aria-describedby]="description ? uid + '-description' : null"
+  (cancel)="onCancel($event)"
+  (close)="onClose()"
+  (click)="onClick($event)"
+>
+  <div class="lib-dialog-panel">
+    <header>
+      <div>
+        <h2 [id]="uid + '-title'">{{ title }}</h2>
+        <p *ngIf="description" [id]="uid + '-description'">{{ description }}</p>
+      </div>
+      <button
+        *ngIf="dismissible"
+        type="button"
+        class="lib-dialog-close"
+        [attr.aria-label]="closeLabel"
+        (click)="dismiss()"
+      >
+        <lib-icon name="close" [size]="16" />
+      </button>
+    </header>
+    <div class="lib-dialog-body"><ng-content /></div>
+    <footer><ng-content select="[dialog-actions]" /></footer>
+  </div>
+</dialog>

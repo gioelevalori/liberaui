@@ -130,6 +130,29 @@
           <p>Give your content a place to live.</p></lib-card
         >
         <lib-switch-theme *ngSwitchCase="'/switch-theme'" />
+        <lib-button *ngSwitchCase="'/dialog'" variant="outline" (click)="previewDialog = true"
+          >Open dialog</lib-button
+        >
+        <lib-button *ngSwitchCase="'/toast'" variant="outline" (click)="showPreviewToast()"
+          >Show toast</lib-button
+        >
+        <lib-tooltip *ngSwitchCase="'/tooltip'" text="Short and helpful"
+          ><lib-button variant="outline">Hover or focus</lib-button></lib-tooltip
+        >
+        <lib-menu *ngSwitchCase="'/menu'" label="Actions" [items]="previewMenu" />
+        <lib-radio-group
+          *ngSwitchCase="'/radio-group'"
+          label="Size"
+          orientation="horizontal"
+          [options]="previewSizes"
+          [(ngModel)]="previewSize"
+        />
+        <lib-combobox
+          *ngSwitchCase="'/combobox'"
+          label="Combobox preview"
+          placeholder="Search fruit"
+          [options]="previewFruit"
+        />
         <div *ngSwitchCase="'/animations'" class="catalog-motion-preview">
           <span></span>
           <p>Hover to move</p>
@@ -161,4 +184,12 @@
     The previews use the library components and the same shared theme as this site. The motion tile
     illustrates the transition pattern.
   </p>
+  <lib-dialog
+    title="A focused decision"
+    description="Press Escape or choose an action to close."
+    [(open)]="previewDialog"
+  >
+    The page behind stays in place and keyboard focus returns to the button.
+    <lib-button dialog-actions (click)="previewDialog = false">Done</lib-button>
+  </lib-dialog>
 </div>

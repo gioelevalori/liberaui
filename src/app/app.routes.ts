@@ -7,7 +7,19 @@ export const routes: Routes = [
       import('./site/forms-lab/forms-lab.component').then((m) => m.FormsLabComponent),
     title: 'Forms | LiberaUI',
   },
-  ...(['tabs', 'accordion', 'alert'] as const).map((kind) => ({
+  ...(
+    [
+      'tabs',
+      'accordion',
+      'alert',
+      'dialog',
+      'toast',
+      'tooltip',
+      'menu',
+      'radio-group',
+      'combobox',
+    ] as const
+  ).map((kind) => ({
     path: kind,
     loadComponent: () =>
       import('./site/patterns/patterns-site.component').then((m) => m.PatternsSiteComponent),

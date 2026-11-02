@@ -1,0 +1,42 @@
+<div class="lib-combobox">
+  <input
+    type="text"
+    role="combobox"
+    class="custom-input"
+    autocomplete="off"
+    aria-autocomplete="list"
+    [attr.aria-label]="label || placeholder"
+    [attr.aria-expanded]="open"
+    [attr.aria-controls]="uid + '-listbox'"
+    [attr.aria-activedescendant]="open && active >= 0 ? optionId(active) : null"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [required]="required"
+    [value]="query"
+    (input)="onInput($event)"
+    (keydown)="onKeydown($event)"
+    (blur)="onBlur()"
+  />
+  <ul
+    role="listbox"
+    class="lib-combobox-list"
+    [id]="uid + '-listbox'"
+    [attr.aria-label]="label || placeholder"
+    [hidden]="!open || !filtered.length"
+  >
+    <li
+      *ngFor="let option of filtered; let i = index"
+      role="option"
+      [id]="optionId(i)"
+      [class.active]="i === active"
+      [attr.aria-selected]="option.value === value"
+      (mousedown)="$event.preventDefault()"
+      (click)="choose(option)"
+    >
+      {{ option.label }}
+    </li>
+  </ul>
+  <p *ngIf="open && !filtered.length" class="lib-combobox-empty" role="status">
+    {{ emptyText }}
+  </p>
+</div>

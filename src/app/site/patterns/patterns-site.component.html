@@ -23,9 +23,78 @@
         [(visible)]="alertVisible"
         >Your settings are saved in this local example. You're ready to start building.</lib-alert
       >
+      <ng-container *ngSwitchCase="'dialog'">
+        <lib-button (click)="dialogOpen = true">Delete project</lib-button>
+        <lib-dialog
+          title="Delete project?"
+          description="This removes the project and its themes from this preview."
+          [dismissible]="dismissible"
+          [(open)]="dialogOpen"
+          (closed)="dialogResult = $event === 'dismiss' ? 'Dismissed' : dialogResult"
+        >
+          People who shared this project will lose access to it.
+          <lib-button
+            dialog-actions
+            variant="outline"
+            (click)="dialogResult = 'Cancelled'; dialogOpen = false"
+            >Cancel</lib-button
+          >
+          <lib-button
+            dialog-actions
+            variant="destructive"
+            (click)="dialogResult = 'Deleted'; dialogOpen = false"
+            >Delete project</lib-button
+          >
+        </lib-dialog>
+      </ng-container>
+      <lib-button *ngSwitchCase="'toast'" (click)="showToast()">Show notification</lib-button>
+      <div *ngSwitchCase="'tooltip'" class="pattern-row">
+        <lib-tooltip text="Copy the share link">
+          <lib-button variant="outline">Copy link</lib-button>
+        </lib-tooltip>
+        <lib-tooltip text="Adjust colors and spacing" placement="bottom">
+          <lib-button variant="ghost">Customize</lib-button>
+        </lib-tooltip>
+      </div>
+      <lib-menu
+        *ngSwitchCase="'menu'"
+        label="Project actions"
+        [items]="menuItems"
+        (itemSelected)="lastAction = $event.label"
+      />
+      <lib-radio-group
+        *ngSwitchCase="'radio-group'"
+        label="Plan"
+        [options]="plans"
+        [(ngModel)]="plan"
+      />
+      <lib-combobox
+        *ngSwitchCase="'combobox'"
+        label="Country"
+        placeholder="Search countries"
+        [options]="countries"
+        [(ngModel)]="country"
+      />
     </ng-container>
   </section>
   <div class="pattern-controls">
+    <label *ngIf="kind === 'dialog'"
+      ><input type="checkbox" [(ngModel)]="dismissible" /> Allow Escape and backdrop
+      dismissal</label
+    >
+    <p *ngIf="kind === 'dialog'" role="status">Last result: {{ dialogResult || 'none' }}</p>
+    <label *ngIf="kind === 'toast'"
+      >Tone
+      <select [(ngModel)]="toastTone">
+        <option value="info">Info</option>
+        <option value="success">Success</option>
+        <option value="warning">Warning</option>
+        <option value="danger">Danger</option>
+      </select></label
+    >
+    <p *ngIf="kind === 'menu'" role="status">Last action: {{ lastAction || 'none' }}</p>
+    <p *ngIf="kind === 'radio-group'" role="status">Selected: {{ plan }}</p>
+    <p *ngIf="kind === 'combobox'" role="status">Selected: {{ countryLabel }}</p>
     <label *ngIf="kind === 'accordion'"
       ><input type="checkbox" [(ngModel)]="multiple" /> Allow multiple sections</label
     >

@@ -1,0 +1,17 @@
+<fieldset [disabled]="disabled" [attr.data-orientation]="orientation">
+  <legend>{{ label }}</legend>
+  <label *ngFor="let option of options; let i = index" [class.disabled]="option.disabled">
+    <input
+      type="radio"
+      [name]="name"
+      [checked]="value === option.value"
+      [disabled]="!!option.disabled"
+      [attr.aria-describedby]="option.description ? name + '-' + i : null"
+      (change)="commit(option.value)"
+      (blur)="touched()"
+    /><span class="lib-radio-text"
+      >{{ option.label }}
+      <small *ngIf="option.description" [id]="name + '-' + i">{{ option.description }}</small></span
+    >
+  </label>
+</fieldset>

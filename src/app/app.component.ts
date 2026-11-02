@@ -1,4 +1,5 @@
 import { IconComponent } from '../../projects/libera-ui/src/lib/components/icon/icon.component';
+import { ToastOutletComponent } from '../../projects/libera-ui/src/lib/components/toast/toast.component';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +10,14 @@ import { componentRegistry } from './component-registry';
 @Component({
   selector: 'lib-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, SwitchThemeComponent, IconComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    SwitchThemeComponent,
+    IconComponent,
+    ToastOutletComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -42,6 +50,7 @@ export class AppComponent {
   menuOpen = false;
   searchQuery = '';
   readonly navigation = componentRegistry;
+  readonly newPages = ['/dialog', '/toast', '/tooltip', '/menu', '/radio-group', '/combobox'];
   get showcase() {
     return ['/', '/components'].includes(this.router.url.split('?')[0]);
   }

@@ -1,0 +1,30 @@
+:host {
+  display: inline-block;
+}
+.lib-tooltip {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  box-sizing: border-box;
+  max-width: min(280px, calc(100vw - 16px));
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--background-color, #fff);
+  background: var(--text-primary, #18181b);
+  font: 500 12px/1.4 var(--lib-font, 'Inter Variable', sans-serif);
+  overflow-wrap: anywhere;
+}
+.lib-tooltip:popover-open {
+  animation: lib-tooltip-open 120ms ease-out;
+}
+@keyframes lib-tooltip-open {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lib-tooltip:popover-open {
+    animation: none;
+  }
+}

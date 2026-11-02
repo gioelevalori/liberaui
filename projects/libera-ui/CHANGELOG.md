@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add DialogComponent on the native modal dialog, with an inert background, Escape and backdrop dismissal and focus restoration.
+- Add ToastService and ToastOutletComponent with live-region announcements and timers that pause on hover and focus.
+- Add TooltipComponent, shown on focus and hover, dismissible with Escape and rendered in the top layer.
+- Add MenuComponent following the WAI-ARIA menu button pattern, with arrow keys, Home/End and type-ahead.
+- Add RadioGroupComponent and ComboboxComponent with Angular forms support.
 - Render programmatic Angular forms values and disabled states in zoneless applications.
 - Show AnimationsComponent content and code copy feedback in zoneless applications.
 - Move focus into the side navigation when it opens and restore it to the trigger on close; connect the trigger with aria-controls.
@@ -67,4 +72,4 @@
 - Improve narrow-screen layouts and long-content handling.
 - Refresh package documentation, screenshots and repository links.
 
-The workspace and CI use Angular 19. Angular 17–19 remains the declared peer range; Angular 17 and 18 have not been verified by the current CI.
+The workspace and CI use Angular 19. Angular 17â€“19 remains the declared peer range; Angular 17 and 18 have not been verified by the current CI.

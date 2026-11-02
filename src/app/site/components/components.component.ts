@@ -13,6 +13,12 @@ import { CardComponent } from '../../../../projects/libera-ui/src/lib/components
 import { TableComponent } from '../../../../projects/libera-ui/src/lib/components/table/table.component';
 import { SwitchThemeComponent } from '../../../../projects/libera-ui/src/lib/components/switch-theme/switch-theme.component';
 import { Component, DestroyRef, inject } from '@angular/core';
+import { DialogComponent } from '../../../../projects/libera-ui/src/lib/components/dialog/dialog.component';
+import { ToastService } from '../../../../projects/libera-ui/src/lib/components/toast/toast.service';
+import { TooltipComponent } from '../../../../projects/libera-ui/src/lib/components/tooltip/tooltip.component';
+import { MenuComponent } from '../../../../projects/libera-ui/src/lib/components/menu/menu.component';
+import { RadioGroupComponent } from '../../../../projects/libera-ui/src/lib/components/radio-group/radio-group.component';
+import { ComboboxComponent } from '../../../../projects/libera-ui/src/lib/components/combobox/combobox.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
@@ -44,6 +50,11 @@ import { SwitchComponent } from '../../../../projects/libera-ui/src/lib/componen
     AccordionComponent,
     AlertComponent,
     InputDateComponent,
+    DialogComponent,
+    TooltipComponent,
+    MenuComponent,
+    RadioGroupComponent,
+    ComboboxComponent,
   ],
   templateUrl: './components.component.html',
   styleUrl: './components.component.css',
@@ -60,6 +71,7 @@ export class ComponentsComponent {
     'Appearance',
     'Motion',
     'Feedback',
+    'Overlays',
   ];
   readonly components = componentRegistry;
   readonly previewTabs = [
@@ -74,6 +86,21 @@ export class ComponentsComponent {
     },
   ];
   previewChecked = true;
+  previewDialog = false;
+  previewSize: string | number | null = 'm';
+  readonly previewSizes = ['S', 'M', 'L'].map((label) => ({ value: label.toLowerCase(), label }));
+  readonly previewMenu = [
+    { id: 'edit', label: 'Edit' },
+    { id: 'archive', label: 'Archive' },
+  ];
+  readonly previewFruit = ['Apple', 'Apricot', 'Banana', 'Cherry', 'Mango'].map((label) => ({
+    value: label,
+    label,
+  }));
+  private readonly toasts = inject(ToastService);
+  showPreviewToast() {
+    this.toasts.show({ title: 'Saved', message: 'This is a toast preview.', tone: 'success' });
+  }
   previewCount = 0;
   constructor(route: ActivatedRoute) {
     route.queryParamMap

@@ -4,7 +4,8 @@
     lib-input-textarea,
     lib-input-password,
     lib-select,
-    lib-input-search
+    lib-input-search,
+    lib-combobox
   )
   .custom-input {
   box-sizing: border-box;
@@ -25,7 +26,8 @@
     lib-input-textarea,
     lib-input-password,
     lib-select,
-    lib-input-search
+    lib-input-search,
+    lib-combobox
   )
   .custom-input::placeholder {
   color: var(--text-secondary, #66666f);
@@ -36,7 +38,8 @@
     lib-input-textarea,
     lib-input-password,
     lib-select,
-    lib-input-search
+    lib-input-search,
+    lib-combobox
   )
   .custom-input:focus-visible {
   outline: 2px solid var(--text-primary, #18181b);
@@ -48,7 +51,8 @@
     lib-input-textarea,
     lib-input-password,
     lib-select,
-    lib-input-search
+    lib-input-search,
+    lib-combobox
   )
   .custom-input:disabled {
   opacity: 0.5;

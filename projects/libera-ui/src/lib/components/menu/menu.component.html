@@ -1,0 +1,39 @@
+<button
+  #trigger
+  type="button"
+  class="lib-menu-trigger"
+  [id]="uid + '-button'"
+  aria-haspopup="menu"
+  [attr.aria-controls]="uid + '-menu'"
+  [attr.aria-expanded]="open"
+  [attr.popovertarget]="uid + '-menu'"
+  (keydown)="onTriggerKeydown($event)"
+>
+  {{ label }}
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+</button>
+<div
+  #menu
+  popover="auto"
+  role="menu"
+  class="lib-menu"
+  [id]="uid + '-menu'"
+  [attr.aria-labelledby]="uid + '-button'"
+  (toggle)="onToggle($event)"
+>
+  <button
+    #item
+    *ngFor="let entry of items; let i = index"
+    type="button"
+    role="menuitem"
+    tabindex="-1"
+    [class.danger]="entry.danger"
+    [attr.aria-disabled]="entry.disabled ? true : null"
+    (click)="choose(entry)"
+    (keydown)="onMenuKeydown($event, i)"
+  >
+    <lib-icon *ngIf="entry.icon" [name]="entry.icon" [size]="16" />{{ entry.label }}
+  </button>
+</div>

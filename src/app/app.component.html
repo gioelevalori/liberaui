@@ -147,13 +147,12 @@
       ariaCurrentWhenActive="page"
       (click)="menuOpen = false"
       ><lib-icon [name]="item.icon" [size]="16" />{{ item.label
-      }}<span *ngIf="['/tabs', '/accordion', '/alert'].includes(item.path)" class="nav-new"
-        >New</span
-      ></a
+      }}<span *ngIf="newPages.includes(item.path)" class="nav-new">New</span></a
     >
   </nav>
   <main id="main-content" tabindex="-1">
     <router-outlet />
+    <lib-toast-outlet />
     <footer class="site-footer">
       <span
         >Crafted by <a href="https://github.com/gioelevalori">Gioele Valori</a>. Open source, under

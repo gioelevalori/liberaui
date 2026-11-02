@@ -1,0 +1,52 @@
+lib-combobox {
+  display: inline-block;
+  max-width: 100%;
+}
+lib-combobox .lib-combobox {
+  position: relative;
+}
+lib-combobox .lib-combobox-list,
+lib-combobox .lib-combobox-empty {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% - 4px);
+  right: 0.5rem;
+  left: 0.5rem;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid var(--border-color, #e5e5e8);
+  border-radius: var(--lib-radius, 8px);
+  color: var(--text-primary, #18181b);
+  background: var(--background-color, #fff);
+  box-shadow: 0 14px 40px #00000026;
+  font: 400 13px/1.4 var(--lib-font, 'Inter Variable', sans-serif);
+}
+lib-combobox .lib-combobox-list {
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 4px;
+  list-style: none;
+}
+lib-combobox .lib-combobox-list[hidden] {
+  display: none;
+}
+lib-combobox .lib-combobox-list li {
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+lib-combobox .lib-combobox-list li:hover,
+lib-combobox .lib-combobox-list li.active {
+  background: var(--surface-color, #f7f7f8);
+}
+lib-combobox .lib-combobox-list li.active {
+  outline: 1px solid var(--border-color, #e5e5e8);
+}
+lib-combobox .lib-combobox-list li[aria-selected='true'] {
+  font-weight: 600;
+}
+lib-combobox .lib-combobox-empty {
+  padding: 10px 12px;
+  color: var(--text-secondary, #66666f);
+}

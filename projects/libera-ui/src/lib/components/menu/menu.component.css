@@ -1,0 +1,91 @@
+:host {
+  display: inline-block;
+  font-family: var(--lib-font, 'Inter Variable', sans-serif);
+}
+.lib-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 9px 12px 9px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--lib-radius, 8px);
+  color: var(--text-primary);
+  background: var(--background-color);
+  font: 500 13px/1.4 var(--lib-font, 'Inter Variable', sans-serif);
+  cursor: pointer;
+}
+.lib-menu-trigger svg {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+  transition: transform 160ms ease;
+}
+.lib-menu-trigger[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+.lib-menu-trigger:hover {
+  background: var(--surface-color);
+}
+.lib-menu-trigger:focus-visible,
+.lib-menu button:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+.lib-menu {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  box-sizing: border-box;
+  min-width: 180px;
+  max-width: calc(100vw - 16px);
+  padding: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--lib-radius, 10px);
+  color: var(--text-primary);
+  background: var(--background-color);
+  box-shadow: 0 14px 40px #00000026;
+}
+.lib-menu:popover-open {
+  display: grid;
+  animation: lib-menu-open 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lib-menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 6px;
+  color: inherit;
+  background: transparent;
+  font: 400 13px/1.4 var(--lib-font, 'Inter Variable', sans-serif);
+  text-align: start;
+  cursor: pointer;
+}
+.lib-menu button:hover,
+.lib-menu button:focus {
+  background: var(--surface-color);
+}
+.lib-menu button.danger {
+  color: var(--danger-color);
+}
+.lib-menu button[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@keyframes lib-menu-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lib-menu:popover-open {
+    animation: none;
+  }
+  .lib-menu-trigger svg {
+    transition: none;
+  }
+}
