@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.6.0 - 2026-11-02
 
 - Add DataTableComponent with multi-column sorting, pagination, row selection, row headers and custom cell templates. The existing TableComponent is unchanged.
 - Add DialogComponent on the native modal dialog, with an inert background, Escape and backdrop dismissal and focus restoration.

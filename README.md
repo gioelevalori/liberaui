@@ -41,7 +41,7 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## Try the latest source
 
-> **Latest release: 0.5.2.** Angular 17–21 peer compatibility, CSS animations without an animation provider, and isolated form-control styles.
+> **Latest release: 0.6.0.** Data table, Dialog, Toast, Tooltip, Menu, Radio group and Combobox, with zoneless and keyboard support across the library.
 
 Use Node.js 22 and npm:
 
@@ -59,7 +59,7 @@ Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The
 The published package is available with:
 
 ```sh
-npm install libera-ui@^0.5.2
+npm install libera-ui@^0.6.0
 ```
 
 Add `ButtonComponent` to your standalone component's imports:
