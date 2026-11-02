@@ -12,6 +12,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import Prism from 'prismjs';
+import { LIBERA_UI_TEXT } from '../../text';
 
 @Component({
   selector: 'lib-code',
@@ -22,6 +23,7 @@ import Prism from 'prismjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class CodeComponent implements AfterViewInit, OnDestroy, OnChanges {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   @ViewChild('codeBlock') codeBlock!: ElementRef<HTMLElement>;
   @Input() code: string | null = null;
   public copyButtonText = '';
@@ -45,9 +47,9 @@ export class CodeComponent implements AfterViewInit, OnDestroy, OnChanges {
     clearTimeout(this.resetTimer);
     try {
       await navigator.clipboard.writeText(text);
-      this.copyButtonText = 'Copied!';
+      this.copyButtonText = this.text.copied;
     } catch {
-      this.copyButtonText = 'Unable to copy. Select the code and copy manually.';
+      this.copyButtonText = this.text.copyFailed;
     }
     this.changeDetector.markForCheck();
     this.resetTimer = setTimeout(() => {

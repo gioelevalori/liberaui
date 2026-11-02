@@ -147,6 +147,41 @@
           [columns]="previewColumns"
           [rows]="previewRows"
         />
+        <div *ngSwitchCase="'/badge'" class="catalog-inline">
+          Inbox <lib-badge [value]="8" tone="info" label="8 unread messages" />
+        </div>
+        <div *ngSwitchCase="'/tag'" class="catalog-inline">
+          <lib-tag tone="success">Published</lib-tag><lib-tag tone="warning">Draft</lib-tag>
+        </div>
+        <lib-skeleton *ngSwitchCase="'/skeleton'" [lines]="3" width="160px" />
+        <lib-progress-bar
+          *ngSwitchCase="'/progress'"
+          label="Progress preview"
+          [value]="64"
+          showValue
+          visibleLabel
+        />
+        <div *ngSwitchCase="'/avatar'" class="catalog-inline">
+          <lib-avatar name="Ada Lovelace" /><lib-avatar name="Grace Hopper" />
+        </div>
+        <lib-slider *ngSwitchCase="'/slider'" label="Volume" unit="%" [(ngModel)]="previewVolume" />
+        <lib-breadcrumb
+          *ngSwitchCase="'/breadcrumb'"
+          label="Breadcrumb preview"
+          [items]="[{ label: 'Home', href: '#/' }, { label: 'Atlas' }]"
+        />
+        <lib-button *ngSwitchCase="'/drawer'" variant="outline" (click)="previewDrawer = true"
+          >Open drawer</lib-button
+        >
+        <lib-popover *ngSwitchCase="'/popover'" label="Options"
+          >Room for quick settings.</lib-popover
+        >
+        <lib-multi-select
+          *ngSwitchCase="'/multi-select'"
+          label="Fruit"
+          [options]="previewFruit"
+          [(ngModel)]="previewPicks"
+        />
         <lib-radio-group
           *ngSwitchCase="'/radio-group'"
           label="Size"
@@ -191,6 +226,9 @@
     The previews use the library components and the same shared theme as this site. The motion tile
     illustrates the transition pattern.
   </p>
+  <lib-drawer title="A side panel" [(open)]="previewDrawer">
+    Details and settings live here without leaving the page.
+  </lib-drawer>
   <lib-dialog
     title="A focused decision"
     description="Press Escape or choose an action to close."

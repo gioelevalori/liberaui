@@ -14,6 +14,16 @@ import { TableComponent } from '../../../../projects/libera-ui/src/lib/component
 import { SwitchThemeComponent } from '../../../../projects/libera-ui/src/lib/components/switch-theme/switch-theme.component';
 import { Component, DestroyRef, inject } from '@angular/core';
 import { DataTableComponent } from '../../../../projects/libera-ui/src/lib/components/data-table/data-table.component';
+import { BadgeComponent } from '../../../../projects/libera-ui/src/lib/components/badge/badge.component';
+import { TagComponent } from '../../../../projects/libera-ui/src/lib/components/tag/tag.component';
+import { SkeletonComponent } from '../../../../projects/libera-ui/src/lib/components/skeleton/skeleton.component';
+import { ProgressBarComponent } from '../../../../projects/libera-ui/src/lib/components/progress/progress.component';
+import { AvatarComponent } from '../../../../projects/libera-ui/src/lib/components/avatar/avatar.component';
+import { SliderComponent } from '../../../../projects/libera-ui/src/lib/components/slider/slider.component';
+import { BreadcrumbComponent } from '../../../../projects/libera-ui/src/lib/components/breadcrumb/breadcrumb.component';
+import { DrawerComponent } from '../../../../projects/libera-ui/src/lib/components/drawer/drawer.component';
+import { PopoverComponent } from '../../../../projects/libera-ui/src/lib/components/popover/popover.component';
+import { MultiSelectComponent } from '../../../../projects/libera-ui/src/lib/components/multi-select/multi-select.component';
 import { DialogComponent } from '../../../../projects/libera-ui/src/lib/components/dialog/dialog.component';
 import { ToastService } from '../../../../projects/libera-ui/src/lib/components/toast/toast.service';
 import { TooltipComponent } from '../../../../projects/libera-ui/src/lib/components/tooltip/tooltip.component';
@@ -57,6 +67,16 @@ import { SwitchComponent } from '../../../../projects/libera-ui/src/lib/componen
     RadioGroupComponent,
     ComboboxComponent,
     DataTableComponent,
+    BadgeComponent,
+    TagComponent,
+    SkeletonComponent,
+    ProgressBarComponent,
+    AvatarComponent,
+    SliderComponent,
+    BreadcrumbComponent,
+    DrawerComponent,
+    PopoverComponent,
+    MultiSelectComponent,
   ],
   templateUrl: './components.component.html',
   styleUrl: './components.component.css',
@@ -89,6 +109,9 @@ export class ComponentsComponent {
   ];
   previewChecked = true;
   previewDialog = false;
+  previewDrawer = false;
+  previewVolume: number | null = 60;
+  previewPicks: (string | number)[] | null = ['Apple'];
   readonly previewColumns = [
     { key: 'name', label: 'Name', sortable: true },
     { key: 'score', label: 'Score', sortable: true, align: 'end' as const },

@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation, Input } from '@angular/core';
+import { Component, inject, Input, ViewEncapsulation } from '@angular/core';
+import { LIBERA_UI_TEXT } from '../../text';
 
 @Component({
   selector: 'lib-input-search',
@@ -9,8 +10,9 @@ import { Component, ViewEncapsulation, Input } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class InputSearchComponent {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   @Input() label = '';
-  @Input() placeholder: string = 'Search';
+  @Input() placeholder: string = this.text.search;
   @Input() type: string = 'text';
   @Input() disabled: boolean = false;
 }

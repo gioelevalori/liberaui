@@ -8,6 +8,7 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { LIBERA_UI_TEXT } from '../../text';
 
 let nextSideNavigationId = 0;
 
@@ -19,6 +20,7 @@ let nextSideNavigationId = 0;
   encapsulation: ViewEncapsulation.None,
 })
 export class SideNavigationComponent {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   @ViewChild('closeButton') closeButton!: ElementRef<HTMLButtonElement>;
   @ViewChild('trigger') trigger!: ElementRef<HTMLButtonElement>;
   readonly panelId = 'lib-side-navigation-' + nextSideNavigationId++;

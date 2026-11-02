@@ -12,6 +12,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
+import { LIBERA_UI_TEXT } from '../../text';
 
 export interface MenuItem {
   id: string;
@@ -32,7 +33,8 @@ let nextMenuId = 0;
   styleUrl: './menu.component.css',
 })
 export class MenuComponent {
-  @Input() label = 'Options';
+  protected readonly text = inject(LIBERA_UI_TEXT);
+  @Input() label = this.text.options;
   @Input() items: MenuItem[] = [];
   @Output() itemSelected = new EventEmitter<MenuItem>();
   @ViewChild('trigger') trigger!: ElementRef<HTMLButtonElement>;

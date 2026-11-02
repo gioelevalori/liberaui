@@ -45,6 +45,28 @@ export { ComboboxComponent, ComboboxOption } from './lib/components/combobox/com
 export {
   DataTableComponent,
   DataTableCellDirective,
+  DataTableRowDetailDirective,
+  DataTableState,
   DataTableColumn,
   DataTableSort,
 } from './lib/components/data-table/data-table.component';
+export * from './lib/text';
+export { BadgeComponent, StatusTone } from './lib/components/badge/badge.component';
+export { TagComponent } from './lib/components/tag/tag.component';
+export { SkeletonComponent } from './lib/components/skeleton/skeleton.component';
+export {
+  ProgressBarComponent,
+  SpinnerComponent,
+} from './lib/components/progress/progress.component';
+export { AvatarComponent } from './lib/components/avatar/avatar.component';
+export { SliderComponent } from './lib/components/slider/slider.component';
+export {
+  BreadcrumbComponent,
+  BreadcrumbItem,
+} from './lib/components/breadcrumb/breadcrumb.component';
+export { DrawerComponent } from './lib/components/drawer/drawer.component';
+export { PopoverComponent } from './lib/components/popover/popover.component';
+export {
+  MultiSelectComponent,
+  MultiSelectOption,
+} from './lib/components/multi-select/multi-select.component';

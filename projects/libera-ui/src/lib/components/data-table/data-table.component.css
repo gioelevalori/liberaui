@@ -4,6 +4,7 @@
   color: var(--text-primary, #18181b);
 }
 .lib-data-table-scroll {
+  position: relative;
   overflow-x: auto;
   border: 1px solid var(--border-color, #e5e5e8);
   border-radius: var(--lib-radius, 10px);
@@ -104,6 +105,79 @@ input[type='checkbox'] {
   margin: 0;
   accent-color: var(--lib-accent, var(--text-primary));
   cursor: pointer;
+}
+.expand {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: var(--text-secondary, #66666f);
+  background: transparent;
+  cursor: pointer;
+}
+.expand:hover {
+  color: var(--text-primary, #18181b);
+  background: var(--surface-color, #f7f7f8);
+}
+.expand:focus-visible {
+  outline: 2px solid var(--text-primary, #18181b);
+  outline-offset: 2px;
+}
+.expand svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 160ms ease;
+}
+.expand[aria-expanded='true'] svg {
+  transform: rotate(90deg);
+}
+.detail-row > td {
+  padding: 14px 16px 18px 60px;
+  color: var(--text-secondary, #66666f);
+  background: var(--surface-color, #f7f7f8);
+}
+.loading tbody {
+  opacity: 0.45;
+}
+.lib-data-table-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--border-color, #e5e5e8);
+  border-radius: 999px;
+  color: var(--text-primary, #18181b);
+  background: var(--background-color, #fff);
+  box-shadow: 0 8px 24px #0000001f;
+  font-size: 12px;
+  transform: translate(-50%, -50%);
+}
+.lib-data-table-loading .spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: lib-data-table-spin 0.8s linear infinite;
+}
+@keyframes lib-data-table-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .expand svg {
+    transition: none;
+  }
+  .lib-data-table-loading .spinner {
+    animation-duration: 2.4s;
+  }
 }
 .empty {
   padding: 32px 16px;

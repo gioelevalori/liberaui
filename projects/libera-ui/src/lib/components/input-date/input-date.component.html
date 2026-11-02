@@ -16,7 +16,7 @@
     type="button"
     class="lib-date-trigger"
     [disabled]="disabled"
-    aria-label="Open calendar"
+    [attr.aria-label]="text.openCalendar"
     aria-haspopup="dialog"
     [attr.aria-expanded]="open"
     (click)="toggle()"
@@ -29,22 +29,22 @@
   popover
   class="lib-date-picker"
   role="dialog"
-  aria-label="Choose a date"
+  [attr.aria-label]="text.chooseDate"
   (toggle)="onToggle($event)"
   (keydown.escape)="close()"
 >
   <div class="lib-date-heading">
-    <button type="button" aria-label="Previous month" (click)="moveMonth(-1)">
+    <button type="button" [attr.aria-label]="text.previousMonth" (click)="moveMonth(-1)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></button
     ><strong aria-live="polite">{{ monthLabel }}</strong
-    ><button type="button" aria-label="Next month" (click)="moveMonth(1)">
+    ><button type="button" [attr.aria-label]="text.nextMonth" (click)="moveMonth(1)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
     </button>
   </div>
   <div class="lib-date-week" aria-hidden="true">
     <span *ngFor="let day of weekdays">{{ day }}</span>
   </div>
-  <div class="lib-date-days" role="group" aria-label="Days of the month">
+  <div class="lib-date-days" role="group" [attr.aria-label]="text.daysOfMonth">
     <ng-container *ngFor="let day of days"
       ><span *ngIf="!day"></span
       ><button
@@ -64,7 +64,8 @@
     >
   </div>
   <div class="lib-date-footer">
-    <button type="button" (click)="chooseToday()" [disabled]="unavailable(todayDate)">Today</button
-    ><button type="button" (click)="close()">Close</button>
+    <button type="button" (click)="chooseToday()" [disabled]="unavailable(todayDate)">
+      {{ text.today }}</button
+    ><button type="button" (click)="close()">{{ text.close }}</button>
   </div>
 </div>

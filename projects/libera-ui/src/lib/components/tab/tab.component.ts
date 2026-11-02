@@ -4,6 +4,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   Output,
@@ -11,6 +12,7 @@ import {
   TemplateRef,
   ViewChildren,
 } from '@angular/core';
+import { LIBERA_UI_TEXT } from '../../text';
 export interface TabItem {
   id: string;
   label: string;
@@ -28,8 +30,9 @@ let nextTabsId = 0;
   styleUrl: './tab.component.css',
 })
 export class TabComponent implements OnChanges {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   @Input() items: TabItem[] = [];
-  @Input() label = 'Sections';
+  @Input() label = this.text.sections;
   @Input() direction: 'ltr' | 'rtl' = 'ltr';
   @Input() activeId = '';
   @Output() activeIdChange = new EventEmitter<string>();

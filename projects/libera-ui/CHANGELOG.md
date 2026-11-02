@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Add BadgeComponent, TagComponent, SkeletonComponent, ProgressBarComponent, SpinnerComponent and AvatarComponent.
+- Add SliderComponent and MultiSelectComponent with Angular forms support; the multi-select list is filterable and keyboard operable.
+- Add BreadcrumbComponent with a labelled landmark, aria-current and separators hidden from screen readers.
+- Add DrawerComponent, a side panel with the modal behavior of DialogComponent, and PopoverComponent for non-modal panels.
+- Add provideLiberaUiText to translate the text components render or announce on their own.
+- DataTableComponent: add a cross-column filter, expandable row details with DataTableRowDetailDirective, and a lazy mode with totalRows, loading and stateChange for server-side data.
+
 ## 0.6.0 - 2026-11-02
 
 - Add DataTableComponent with multi-column sorting, pagination, row selection, row headers and custom cell templates. The existing TableComponent is unchanged.

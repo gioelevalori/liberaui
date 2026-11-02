@@ -31,9 +31,23 @@ import {
 import {
   DataTableCellDirective,
   DataTableColumn,
+  DataTableRowDetailDirective,
   DataTableComponent,
   DataTableSort,
 } from '../../../../projects/libera-ui/src/lib/components/data-table/data-table.component';
+import { BadgeComponent } from '../../../../projects/libera-ui/src/lib/components/badge/badge.component';
+import { TagComponent } from '../../../../projects/libera-ui/src/lib/components/tag/tag.component';
+import { SkeletonComponent } from '../../../../projects/libera-ui/src/lib/components/skeleton/skeleton.component';
+import {
+  ProgressBarComponent,
+  SpinnerComponent,
+} from '../../../../projects/libera-ui/src/lib/components/progress/progress.component';
+import { AvatarComponent } from '../../../../projects/libera-ui/src/lib/components/avatar/avatar.component';
+import { SliderComponent } from '../../../../projects/libera-ui/src/lib/components/slider/slider.component';
+import { BreadcrumbComponent } from '../../../../projects/libera-ui/src/lib/components/breadcrumb/breadcrumb.component';
+import { DrawerComponent } from '../../../../projects/libera-ui/src/lib/components/drawer/drawer.component';
+import { PopoverComponent } from '../../../../projects/libera-ui/src/lib/components/popover/popover.component';
+import { MultiSelectComponent } from '../../../../projects/libera-ui/src/lib/components/multi-select/multi-select.component';
 type PatternKind =
   | 'tabs'
   | 'accordion'
@@ -44,7 +58,17 @@ type PatternKind =
   | 'menu'
   | 'radio-group'
   | 'combobox'
-  | 'data-table';
+  | 'data-table'
+  | 'badge'
+  | 'tag'
+  | 'skeleton'
+  | 'progress'
+  | 'avatar'
+  | 'slider'
+  | 'breadcrumb'
+  | 'drawer'
+  | 'popover'
+  | 'multi-select';
 interface Member {
   id: number;
   name: string;
@@ -71,6 +95,18 @@ interface Member {
     ComboboxComponent,
     DataTableComponent,
     DataTableCellDirective,
+    DataTableRowDetailDirective,
+    BadgeComponent,
+    TagComponent,
+    SkeletonComponent,
+    ProgressBarComponent,
+    SpinnerComponent,
+    AvatarComponent,
+    SliderComponent,
+    BreadcrumbComponent,
+    DrawerComponent,
+    PopoverComponent,
+    MultiSelectComponent,
   ],
   templateUrl: './patterns-site.component.html',
   styleUrl: './patterns-site.component.css',
@@ -122,6 +158,9 @@ export class PatternsSiteComponent {
     'United Kingdom',
     'United States',
   ].map((label) => ({ value: label.toLowerCase().replace(/ /g, '-'), label }));
+  removeTag(tag: string) {
+    this.tags = this.tags.filter((t) => t !== tag);
+  }
   showToast() {
     const copy = {
       info: ['Sync scheduled', 'Your theme will sync in a moment.'],
@@ -178,6 +217,30 @@ export class PatternsSiteComponent {
   ];
   memberSort: DataTableSort[] = [{ key: 'role', direction: 'asc' }];
   selectedMembers: unknown[] = [];
+  memberFilter = '';
+  tags = ['Design', 'Accessibility', 'Angular'];
+  loaded = false;
+  progress: number | null = 40;
+  radius: number | null = 12;
+  drawerOpen = false;
+  showArchived = false;
+  compact = true;
+  selectedTeams: (string | number)[] | null = ['design'];
+  readonly crumbs = [
+    { label: 'Home', href: '#/' },
+    { label: 'Components', href: '#/components' },
+    { label: 'Breadcrumb' },
+  ];
+  readonly teams = [
+    'Design',
+    'Engineering',
+    'Product',
+    'Marketing',
+    'Sales',
+    'Support',
+    'Research',
+    'Operations',
+  ].map((label) => ({ value: label.toLowerCase(), label }));
   get countryLabel() {
     return this.countries.find((c) => c.value === this.country)?.label ?? 'none';
   }
@@ -238,6 +301,16 @@ export class PatternsSiteComponent {
       'radio-group': 'Radio group',
       combobox: 'Combobox',
       'data-table': 'Data table',
+      badge: 'Badge',
+      tag: 'Tag',
+      skeleton: 'Skeleton',
+      progress: 'Progress',
+      avatar: 'Avatar',
+      slider: 'Slider',
+      breadcrumb: 'Breadcrumb',
+      drawer: 'Drawer',
+      popover: 'Popover',
+      'multi-select': 'Multi-select',
     }[this.kind];
   }
   get description() {
@@ -251,7 +324,17 @@ export class PatternsSiteComponent {
       menu: 'Offer related actions from a single button.',
       'radio-group': 'Choose exactly one option from a short, visible list.',
       combobox: 'Find one option in a long list by typing.',
-      'data-table': 'Explore structured data by sorting, paging and selecting rows.',
+      'data-table': 'Explore structured data by searching, sorting, paging and selecting rows.',
+      badge: 'Show a count or a status at a glance.',
+      tag: 'Label a status or category, and let people remove it.',
+      skeleton: 'Hold the shape of content while it loads.',
+      progress: 'Show how far a task has come, or that it is still working.',
+      avatar: 'Represent a person with a picture or their initials.',
+      slider: 'Pick a value from a continuous range.',
+      breadcrumb: 'Show where a page sits in the hierarchy.',
+      drawer: 'Open a side panel for details or settings without leaving the page.',
+      popover: 'Keep quick settings and filters one click away.',
+      'multi-select': 'Choose several options from a long list.',
     }[this.kind];
   }
   get usage() {
@@ -273,7 +356,25 @@ export class PatternsSiteComponent {
       combobox:
         'Import ComboboxComponent, provide options and bind the selected value with ngModel or a form control. The value is the option value, not the typed text.',
       'data-table':
-        'Import DataTableComponent, describe your columns and pass rows. Bind sort, selection and pageSize as needed. Use an ng-template with libCell to render a column with your own markup; the row is the implicit context.',
+        'Import DataTableComponent, describe your columns and pass rows. Bind sort, selection and pageSize as needed. Use an ng-template with libCell to render a column with your own markup; the row is the implicit context. Add an ng-template with libRowDetail for expandable details, bind filter to a search field, and set lazy with totalRows and stateChange to load pages from a server.',
+      badge:
+        'Import BadgeComponent. Pass a value and, when the number needs context, a label such as "3 unread messages". Use dot for a status without a number.',
+      tag: 'Import TagComponent and project the text. Add removable and a removeLabel that names the item, then handle removed.',
+      skeleton:
+        'Import SkeletonComponent. Use text lines, a rectangle or a circle, then replace it with the real content.',
+      progress:
+        'Import ProgressBarComponent and SpinnerComponent. Pass a value from 0 to 100, or null when the amount is unknown. Give both a label.',
+      avatar:
+        'Import AvatarComponent. Pass a name and an optional image source. Set decorative when the name is already visible next to it.',
+      slider:
+        'Import SliderComponent and bind it with ngModel or a form control. Set min, max, step and an optional unit.',
+      breadcrumb:
+        'Import BreadcrumbComponent and pass items with a label and an href. The last item is the current page.',
+      drawer:
+        'Import DrawerComponent and bind open, just like DialogComponent. Choose position start or end.',
+      popover: 'Import PopoverComponent, set the button label and project the panel content.',
+      'multi-select':
+        'Import MultiSelectComponent, pass options and bind an array with ngModel or a form control.',
     }[this.kind];
   }
   get behavior() {
@@ -295,11 +396,49 @@ export class PatternsSiteComponent {
       combobox:
         'Typing filters the list and highlights the first match. Up and Down Arrow move through results, Enter selects, Escape closes and Alt+Down Arrow opens the list. Leaving the field restores the selected option.',
       'data-table':
-        'Column headers are buttons: activate one to sort ascending, again for descending and again to clear. Hold Shift with a click, Enter or Space to add a secondary sort. The new order is announced, the primary column exposes aria-sort, and every row is named by its row header. Selection checkboxes name the row they select.',
+        'Column headers are buttons: activate one to sort ascending, again for descending and again to clear. Hold Shift with a click, Enter or Space to add a secondary sort. The new order is announced, the primary column exposes aria-sort, and every row is named by its row header. Selection checkboxes name the row they select. Detail buttons expose aria-expanded, and a loading table is marked busy.',
+      badge:
+        'Counts above max are shown as "99+". With a label, the badge is announced as an image with that name; without one it is read as plain text.',
+      tag: 'The remove button is a real button with its own name, such as "Remove Design", so each one is distinct when read aloud.',
+      skeleton:
+        'Skeletons are hidden from assistive technology. Announce loading with a spinner or a busy region elsewhere. The shimmer stops when reduced motion is requested.',
+      progress:
+        'The bar is a progressbar with its current value. Without a value it is indeterminate. The spinner announces its label through a status region.',
+      avatar:
+        'The avatar is named after the person. If the image is missing or fails to load, initials are shown instead. Decorative avatars are hidden from assistive technology.',
+      slider:
+        'A native range input: arrow keys move by one step, Page Up and Page Down by larger amounts, and Home and End jump to the limits. With a unit, the value is announced with it.',
+      breadcrumb:
+        'A labelled navigation landmark with an ordered list. The current page is marked with aria-current, and separators are drawn in CSS so they are not read aloud.',
+      drawer:
+        'The drawer behaves like a modal dialog: the page is inert, focus stays inside, Escape closes it and focus returns to the opener.',
+      popover:
+        'The panel opens in the top layer next to its button and moves focus to its first control. Clicking outside closes it; Escape closes it and returns focus to the button.',
+      'multi-select':
+        'The button opens a filterable list that allows several selections. Type to filter, use Up and Down Arrow to move and Enter to select or clear an option. Escape closes the list and returns focus. The button announces how many options are selected.',
     }[this.kind];
   }
   get code() {
     return {
+      badge:
+        'import { BadgeComponent } from \'libera-ui\';\n\n<lib-badge [value]="unread" tone="info" label="{{ unread }} unread messages" />\n<lib-badge dot tone="danger" label="New activity" />',
+      tag: 'import { TagComponent } from \'libera-ui\';\n\n<lib-tag tone="success" removable removeLabel="Remove Design" (removed)="remove(\'design\')">\n  Design\n</lib-tag>',
+      skeleton:
+        'import { SkeletonComponent } from \'libera-ui\';\n\n<lib-skeleton shape="circle" width="40px" />\n<lib-skeleton [lines]="3" />',
+      progress:
+        'import { ProgressBarComponent, SpinnerComponent } from \'libera-ui\';\n\n<lib-progress-bar label="Uploading theme" [value]="progress" visibleLabel showValue />\n<lib-spinner label="Loading members" />',
+      avatar:
+        'import { AvatarComponent } from \'libera-ui\';\n\n<lib-avatar name="Ada Lovelace" src="/people/ada.jpg" />\n<lib-avatar name="Grace Hopper" decorative /> Grace Hopper',
+      slider:
+        'import { SliderComponent } from \'libera-ui\';\n\n<lib-slider label="Corner radius" unit=" px" [min]="0" [max]="28" [(ngModel)]="radius" />',
+      breadcrumb:
+        "import { BreadcrumbComponent } from 'libera-ui';\n\n<lib-breadcrumb [items]=\"[\n  { label: 'Home', href: '/' },\n  { label: 'Projects', href: '/projects' },\n  { label: 'Atlas' }\n]\" />",
+      drawer:
+        'import { DrawerComponent } from \'libera-ui\';\n\n<lib-button (click)="open = true">Settings</lib-button>\n<lib-drawer title="Settings" position="end" [(open)]="open">\u2026</lib-drawer>',
+      popover:
+        'import { PopoverComponent } from \'libera-ui\';\n\n<lib-popover label="Filters">\n  <label><input type="checkbox" /> Show archived</label>\n</lib-popover>',
+      'multi-select':
+        'import { MultiSelectComponent } from \'libera-ui\';\n\n<lib-multi-select label="Teams" [options]="teams" [(ngModel)]="selectedTeams" />',
       'data-table':
         'import { DataTableComponent, DataTableCellDirective, DataTableColumn } from \'libera-ui\';\n// Add DataTableComponent and DataTableCellDirective to your standalone imports.\n// In your class:\ncolumns: DataTableColumn<Member>[] = [\n  { key: \'name\', label: \'Name\', sortable: true },\n  { key: \'reviews\', label: \'Reviews\', sortable: true, align: \'end\' }\n];\nselection: unknown[] = [];\n\n// In your template:\n<lib-data-table caption="Team" rowKey="id" rowHeader="name" [columns]="columns"\n  [rows]="members" [pageSize]="10" selectable [(selection)]="selection">\n  <ng-template libCell="name" let-member><strong>{{ member.name }}</strong></ng-template>\n</lib-data-table>',
       dialog:

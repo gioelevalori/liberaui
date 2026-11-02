@@ -1,7 +1,15 @@
 import { IconComponent } from '../icon/icon.component';
-import { booleanAttribute, Component, forwardRef, Input, ViewEncapsulation } from '@angular/core';
+import {
+  booleanAttribute,
+  Component,
+  forwardRef,
+  inject,
+  Input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormValueControl } from '../form-value-control';
+import { LIBERA_UI_TEXT } from '../../text';
 @Component({
   selector: 'lib-input-password',
   standalone: true,
@@ -18,6 +26,7 @@ import { FormValueControl } from '../form-value-control';
   ],
 })
 export class InputPasswordComponent extends FormValueControl<string> {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   @Input() label = '';
   @Input() placeholder = 'Your password';
   @Input({ transform: booleanAttribute }) required = false;

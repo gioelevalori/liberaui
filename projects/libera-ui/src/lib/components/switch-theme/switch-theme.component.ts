@@ -1,6 +1,7 @@
 import { IconComponent } from '../icon/icon.component';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, inject, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
+import { LIBERA_UI_TEXT } from '../../text';
 
 @Component({
   selector: 'lib-switch-theme',
@@ -11,6 +12,7 @@ import { Component, inject, PLATFORM_ID, ViewEncapsulation } from '@angular/core
   encapsulation: ViewEncapsulation.None,
 })
 export class SwitchThemeComponent {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   private readonly document = inject(DOCUMENT);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 

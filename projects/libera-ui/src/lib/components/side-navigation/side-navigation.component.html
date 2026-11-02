@@ -1,5 +1,5 @@
-<nav class="sidenav" [id]="panelId" [hidden]="!isOpen" aria-label="Side navigation">
-  <button #closeButton type="button" class="closebtn" (click)="closeNav()">Close</button
+<nav class="sidenav" [id]="panelId" [hidden]="!isOpen" [attr.aria-label]="text.sideNavigation">
+  <button #closeButton type="button" class="closebtn" (click)="closeNav()">{{ text.close }}</button
   ><ng-content></ng-content>
 </nav>
 <button
@@ -10,5 +10,5 @@
   [attr.aria-controls]="panelId"
   [attr.aria-expanded]="isOpen"
 >
-  Open navigation
+  {{ text.openNavigation }}
 </button>

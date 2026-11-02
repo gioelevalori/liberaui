@@ -1,0 +1,49 @@
+:host {
+  display: grid;
+  gap: 8px;
+}
+.lib-skeleton {
+  display: block;
+  max-width: 100%;
+  border-radius: 6px;
+  background:
+    linear-gradient(
+        90deg,
+        transparent,
+        color-mix(in srgb, var(--background-color, #fff) 55%, transparent),
+        transparent
+      )
+      0 0 / 200% 100% no-repeat,
+    var(--surface-color, #f2f2f4);
+  animation: lib-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+.lib-skeleton[data-shape='text'] {
+  height: 0.9em;
+}
+.lib-skeleton[data-shape='rect'] {
+  border-radius: var(--lib-radius, 10px);
+}
+.lib-skeleton[data-shape='circle'] {
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+:host-context(.dark-theme) .lib-skeleton {
+  background-color: color-mix(in srgb, var(--text-primary) 10%, transparent);
+}
+@keyframes lib-skeleton-shimmer {
+  from {
+    background-position:
+      150% 0,
+      0 0;
+  }
+  to {
+    background-position:
+      -50% 0,
+      0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lib-skeleton {
+    animation: none;
+  }
+}

@@ -57,7 +57,16 @@ export class AppComponent {
     '/menu',
     '/radio-group',
     '/combobox',
-    '/data-table',
+    '/badge',
+    '/tag',
+    '/skeleton',
+    '/progress',
+    '/avatar',
+    '/slider',
+    '/breadcrumb',
+    '/drawer',
+    '/popover',
+    '/multi-select',
   ];
   get showcase() {
     return ['/', '/components'].includes(this.router.url.split('?')[0]);

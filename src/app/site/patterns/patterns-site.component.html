@@ -75,22 +75,108 @@
         [options]="countries"
         [(ngModel)]="country"
       />
-      <lib-data-table
-        *ngSwitchCase="'data-table'"
-        caption="Workspace members"
-        rowKey="id"
-        rowHeader="name"
-        selectable
-        [columns]="memberColumns"
-        [rows]="members"
-        [pageSize]="5"
-        [(sort)]="memberSort"
-        [(selection)]="selectedMembers"
-      >
-        <ng-template libCell="status" let-member>
-          <span class="member-status" [attr.data-status]="member.status">{{ member.status }}</span>
+      <ng-container *ngSwitchCase="'data-table'">
+        <label class="pattern-search"
+          >Search members
+          <input type="search" [(ngModel)]="memberFilter" placeholder="Name, team or status"
+        /></label>
+        <lib-data-table
+          caption="Workspace members"
+          rowKey="id"
+          rowHeader="name"
+          selectable
+          [columns]="memberColumns"
+          [rows]="members"
+          [pageSize]="5"
+          [(sort)]="memberSort"
+          [(selection)]="selectedMembers"
+          [filter]="memberFilter"
+        >
+          <ng-template libCell="status" let-member>
+            <span class="member-status" [attr.data-status]="member.status">{{
+              member.status
+            }}</span>
+          </ng-template>
+          <ng-template libRowDetail let-member>
+            {{ member.name }} joined in {{ member.joined }} and has completed
+            {{ member.reviews }} reviews.
+          </ng-template>
+        </lib-data-table>
+      </ng-container>
+      <div *ngSwitchCase="'badge'" class="pattern-row">
+        <span>Inbox <lib-badge [value]="8" tone="info" label="8 unread messages" /></span>
+        <span>Alerts <lib-badge [value]="128" tone="danger" label="128 alerts" /></span>
+        <span>Status <lib-badge dot tone="success" label="Online" /></span>
+      </div>
+      <div *ngSwitchCase="'tag'" class="pattern-row">
+        <lib-tag
+          *ngFor="let tag of tags"
+          tone="info"
+          removable
+          [removeLabel]="'Remove ' + tag"
+          (removed)="removeTag(tag)"
+          >{{ tag }}</lib-tag
+        >
+        <lib-tag tone="success" icon="check">Published</lib-tag>
+        <lib-tag tone="warning">Draft</lib-tag>
+      </div>
+      <div *ngSwitchCase="'skeleton'" class="pattern-skeleton">
+        <ng-container *ngIf="!loaded; else loadedProfile">
+          <lib-skeleton shape="circle" width="48px" />
+          <lib-skeleton [lines]="3" />
+        </ng-container>
+        <ng-template #loadedProfile>
+          <lib-avatar name="Chiara Ferri" [size]="48" decorative />
+          <p>
+            <strong>Chiara Ferri</strong><br />Design lead. Reviews themes and component states.
+          </p>
         </ng-template>
-      </lib-data-table>
+      </div>
+      <div *ngSwitchCase="'progress'" class="pattern-stack">
+        <lib-progress-bar label="Uploading theme" [value]="progress" visibleLabel showValue />
+        <lib-progress-bar label="Syncing workspace" [value]="null" visibleLabel tone="success" />
+        <lib-spinner label="Loading members" />
+      </div>
+      <div *ngSwitchCase="'avatar'" class="pattern-row">
+        <lib-avatar name="Ada Lovelace" />
+        <lib-avatar name="Grace Hopper" [size]="44" />
+        <lib-avatar name="Linus" shape="square" />
+        <span class="pattern-person"
+          ><lib-avatar name="Alan Turing" [size]="28" decorative /> Alan Turing</span
+        >
+      </div>
+      <lib-slider
+        *ngSwitchCase="'slider'"
+        label="Corner radius"
+        unit=" px"
+        [min]="0"
+        [max]="28"
+        [(ngModel)]="radius"
+      />
+      <lib-breadcrumb *ngSwitchCase="'breadcrumb'" [items]="crumbs" />
+      <ng-container *ngSwitchCase="'drawer'">
+        <lib-button (click)="drawerOpen = true">Open settings</lib-button>
+        <lib-drawer
+          title="Workspace settings"
+          description="Changes apply to this preview."
+          [(open)]="drawerOpen"
+        >
+          <lib-slider label="Corner radius" unit=" px" [min]="0" [max]="28" [(ngModel)]="radius" />
+          <lib-button dialog-actions (click)="drawerOpen = false">Done</lib-button>
+        </lib-drawer>
+      </ng-container>
+      <lib-popover *ngSwitchCase="'popover'" label="View options">
+        <div class="pattern-stack">
+          <label><input type="checkbox" [(ngModel)]="showArchived" /> Show archived projects</label>
+          <label><input type="checkbox" [(ngModel)]="compact" /> Compact rows</label>
+        </div>
+      </lib-popover>
+      <lib-multi-select
+        *ngSwitchCase="'multi-select'"
+        label="Teams"
+        [options]="teams"
+        [(ngModel)]="selectedTeams"
+      />
     </ng-container>
   </section>
   <div class="pattern-controls">
@@ -112,6 +198,22 @@
     <p *ngIf="kind === 'radio-group'" role="status">Selected: {{ plan }}</p>
     <p *ngIf="kind === 'combobox'" role="status">Selected: {{ countryLabel }}</p>
     <p *ngIf="kind === 'data-table'">{{ selectedMembers.length }} selected</p>
+    <lib-button *ngIf="kind === 'skeleton'" variant="outline" (click)="loaded = !loaded">{{
+      loaded ? 'Show placeholder' : 'Load content'
+    }}</lib-button>
+    <lib-button
+      *ngIf="kind === 'progress'"
+      variant="outline"
+      (click)="progress = progress === null || progress >= 100 ? 0 : progress + 20"
+      >Advance upload</lib-button
+    >
+    <p *ngIf="kind === 'slider'" role="status">Radius: {{ radius }} px</p>
+    <p *ngIf="kind === 'popover'">
+      Archived {{ showArchived ? 'shown' : 'hidden' }}, {{ compact ? 'compact' : 'regular' }} rows
+    </p>
+    <p *ngIf="kind === 'multi-select'" role="status">
+      Selected: {{ selectedTeams?.join(', ') || 'none' }}
+    </p>
     <label *ngIf="kind === 'accordion'"
       ><input type="checkbox" [(ngModel)]="multiple" /> Allow multiple sections</label
     >

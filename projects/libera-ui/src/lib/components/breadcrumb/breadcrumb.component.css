@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  font: 13px/1.5 var(--lib-font, 'Inter Variable', sans-serif);
+}
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  color: var(--text-secondary, #66666f);
+}
+li + li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin: 0 10px;
+  border-top: 1.4px solid currentColor;
+  border-right: 1.4px solid currentColor;
+  opacity: 0.6;
+  transform: rotate(45deg);
+}
+:host-context([dir='rtl']) li + li::before {
+  transform: rotate(-135deg);
+}
+a {
+  border-radius: 4px;
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+a:hover {
+  color: var(--text-primary, #18181b);
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: 2px solid var(--text-primary, #18181b);
+  outline-offset: 2px;
+}
+[aria-current='page'] {
+  color: var(--text-primary, #18181b);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}

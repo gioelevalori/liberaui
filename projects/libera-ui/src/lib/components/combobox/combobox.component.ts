@@ -3,12 +3,14 @@ import {
   booleanAttribute,
   Component,
   forwardRef,
+  inject,
   Input,
   OnChanges,
   ViewEncapsulation,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormValueControl } from '../form-value-control';
+import { LIBERA_UI_TEXT } from '../../text';
 
 export interface ComboboxOption {
   value: string | number;
@@ -29,9 +31,10 @@ let nextComboboxId = 0;
   ],
 })
 export class ComboboxComponent extends FormValueControl<string | number> implements OnChanges {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   @Input() label = '';
-  @Input() placeholder = 'Search';
-  @Input() emptyText = 'No results';
+  @Input() placeholder = this.text.search;
+  @Input() emptyText = this.text.noResults;
   @Input({ transform: booleanAttribute }) required = false;
   @Input() options: ComboboxOption[] = [];
   readonly uid = 'lib-combobox-' + nextComboboxId++;

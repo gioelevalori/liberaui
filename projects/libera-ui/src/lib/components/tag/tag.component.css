@@ -1,0 +1,56 @@
+:host {
+  display: inline-flex;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.lib-tag {
+  --tone: var(--text-secondary, #66666f);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  min-height: 24px;
+  padding: 2px 9px;
+  border: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
+  border-radius: 999px;
+  color: var(--text-primary, #18181b);
+  background: color-mix(in srgb, var(--tone) 10%, transparent);
+  font: 500 12px/1.4 var(--lib-font, 'Inter Variable', sans-serif);
+  overflow-wrap: anywhere;
+}
+.lib-tag[data-tone='info'] {
+  --tone: var(--info-color);
+}
+.lib-tag[data-tone='success'] {
+  --tone: var(--success-color);
+}
+.lib-tag[data-tone='warning'] {
+  --tone: var(--warning-color);
+}
+.lib-tag[data-tone='danger'] {
+  --tone: var(--danger-color);
+}
+lib-icon {
+  color: var(--tone);
+}
+button {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin: -4px -7px -4px -2px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: var(--text-secondary, #66666f);
+  background: transparent;
+  cursor: pointer;
+}
+button:hover {
+  color: var(--text-primary, #18181b);
+  background: color-mix(in srgb, var(--tone) 18%, transparent);
+}
+button:focus-visible {
+  outline: 2px solid var(--text-primary, #18181b);
+  outline-offset: 1px;
+}

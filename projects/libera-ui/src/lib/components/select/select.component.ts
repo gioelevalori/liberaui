@@ -4,12 +4,14 @@ import {
   Component,
   EventEmitter,
   forwardRef,
+  inject,
   Input,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormValueControl } from '../form-value-control';
+import { LIBERA_UI_TEXT } from '../../text';
 export interface SelectOption {
   value: string | number;
   label: string;
@@ -26,8 +28,9 @@ export interface SelectOption {
   ],
 })
 export class SelectComponent extends FormValueControl<string | number> {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   @Input() label = '';
-  @Input() placeholder = 'Choose an option';
+  @Input() placeholder = this.text.chooseOption;
   @Input({ transform: booleanAttribute }) required = false;
   @Input() options: SelectOption[] = [];
   @Input() set selectedValue(value: string | number | undefined) {

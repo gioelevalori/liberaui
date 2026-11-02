@@ -1,0 +1,36 @@
+:host {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.lib-badge {
+  --tone: var(--text-secondary, #66666f);
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: var(--background-color, #fff);
+  background: var(--tone);
+  font: 600 11px/1 var(--lib-font, 'Inter Variable', sans-serif);
+  font-variant-numeric: tabular-nums;
+}
+.lib-badge[data-tone='info'] {
+  --tone: var(--info-color);
+}
+.lib-badge[data-tone='success'] {
+  --tone: var(--success-color);
+}
+.lib-badge[data-tone='warning'] {
+  --tone: var(--warning-color);
+}
+.lib-badge[data-tone='danger'] {
+  --tone: var(--danger-color);
+}
+.lib-badge.dot {
+  min-width: 8px;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+}

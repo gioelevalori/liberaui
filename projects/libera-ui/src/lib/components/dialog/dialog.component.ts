@@ -5,6 +5,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   OnDestroy,
@@ -12,6 +13,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
+import { LIBERA_UI_TEXT } from '../../text';
 
 export type DialogCloseReason = 'dismiss' | 'close';
 let nextDialogId = 0;
@@ -25,11 +27,12 @@ let nextDialogId = 0;
   styleUrl: './dialog.component.css',
 })
 export class DialogComponent implements AfterViewInit, OnChanges, OnDestroy {
+  protected readonly text = inject(LIBERA_UI_TEXT);
   @Input() title = '';
   @Input() description = '';
   @Input({ transform: booleanAttribute }) open = false;
   @Input({ transform: booleanAttribute }) dismissible = true;
-  @Input() closeLabel = 'Close dialog';
+  @Input() closeLabel = this.text.closeDialog;
   @Output() openChange = new EventEmitter<boolean>();
   @Output() closed = new EventEmitter<DialogCloseReason>();
   @ViewChild('dialog') dialog!: ElementRef<HTMLDialogElement>;

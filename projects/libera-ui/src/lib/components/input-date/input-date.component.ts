@@ -4,6 +4,7 @@ import {
   Component,
   ElementRef,
   forwardRef,
+  inject,
   Input,
   OnDestroy,
   ViewChild,
@@ -12,6 +13,7 @@ import {
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormValueControl } from '../form-value-control';
 import { IconComponent } from '../icon/icon.component';
+import { LIBERA_UI_TEXT } from '../../text';
 @Component({
   selector: 'lib-input-date',
   standalone: true,
@@ -24,8 +26,9 @@ import { IconComponent } from '../icon/icon.component';
   ],
 })
 export class InputDateComponent extends FormValueControl<string> implements OnDestroy {
-  @Input() label = 'Choose a date';
-  @Input() placeholder = 'Enter a value';
+  protected readonly text = inject(LIBERA_UI_TEXT);
+  @Input() label = this.text.chooseDate;
+  @Input() placeholder = this.text.enterValue;
   @Input({ transform: booleanAttribute }) required = false;
   @Input() min: string | null = null;
   @Input() max: string | null = null;

@@ -1,0 +1,69 @@
+<button
+  #trigger
+  type="button"
+  class="lib-multi-select-trigger"
+  aria-haspopup="listbox"
+  [id]="uid + '-button'"
+  [attr.aria-label]="label ? label + ': ' + summary : null"
+  [attr.aria-expanded]="open"
+  [attr.aria-controls]="uid + '-panel'"
+  [attr.popovertarget]="uid + '-panel'"
+  [disabled]="disabled"
+  [class.placeholder]="!selected.length"
+  (keydown)="onTriggerKeydown($event)"
+>
+  <span>{{ summary }}</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+</button>
+<div
+  #panel
+  popover="auto"
+  class="lib-multi-select-panel"
+  [id]="uid + '-panel'"
+  (toggle)="onToggle($event)"
+>
+  <input
+    #filterInput
+    *ngIf="filterable"
+    type="text"
+    role="combobox"
+    aria-autocomplete="list"
+    aria-expanded="true"
+    autocomplete="off"
+    [attr.aria-label]="filterLabel"
+    [attr.aria-controls]="uid + '-list'"
+    [attr.aria-activedescendant]="filtered.length ? optionId(active) : null"
+    [placeholder]="filterLabel"
+    [value]="query"
+    (input)="onFilter($event)"
+    (keydown)="onKeydown($event)"
+  />
+  <ul
+    #list
+    role="listbox"
+    aria-multiselectable="true"
+    [id]="uid + '-list'"
+    [attr.aria-label]="label || placeholder"
+    [attr.tabindex]="filterable ? null : 0"
+    [attr.aria-activedescendant]="!filterable && filtered.length ? optionId(active) : null"
+    (keydown)="filterable ? null : onKeydown($event)"
+  >
+    <li
+      *ngFor="let option of filtered; let i = index"
+      role="option"
+      [id]="optionId(i)"
+      [class.active]="i === active"
+      [attr.aria-selected]="isSelected(option)"
+      (mousedown)="$event.preventDefault()"
+      (click)="active = i; toggle(option)"
+    >
+      <span class="check" aria-hidden="true"></span>{{ option.label }}
+    </li>
+  </ul>
+  <p *ngIf="!filtered.length" class="lib-multi-select-empty" role="status">{{ emptyText }}</p>
+  <footer *ngIf="selected.length">
+    <button type="button" (click)="clear()">{{ clearLabel }}</button>
+  </footer>
+</div>
