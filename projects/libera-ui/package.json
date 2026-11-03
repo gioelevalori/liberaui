@@ -21,7 +21,7 @@
     "./glass.css": "./glass.css"
   },
   "description": "Thoughtful Angular components with a shared theme and live customization playground",
-  "homepage": "https://gioelevalori.github.io/liberaui/",
+  "homepage": "https://liberaui.js.org/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gioelevalori/liberaui.git",

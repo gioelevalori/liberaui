@@ -6,7 +6,7 @@
 
 Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-[Demo](https://gioelevalori.github.io/liberaui/) · [Components](https://gioelevalori.github.io/liberaui/#/components) · [Playground](https://gioelevalori.github.io/liberaui/#/playground) · [GitHub](https://github.com/gioelevalori/liberaui)
+[Demo](https://liberaui.js.org/) · [Components](https://liberaui.js.org/#/components) · [Playground](https://liberaui.js.org/#/playground) · [GitHub](https://github.com/gioelevalori/liberaui)
 
 </div>
 
@@ -73,7 +73,7 @@ The shared theme includes the opt-in Glass material:
 </div>
 ```
 
-Glass supports light and dark themes, reduced transparency, forced colors and opaque fallback surfaces. In [Theme Studio](https://gioelevalori.github.io/liberaui/#/playground), choose **Surface → Glass** to export a matching Angular component.
+Glass supports light and dark themes, reduced transparency, forced colors and opaque fallback surfaces. In [Theme Studio](https://liberaui.js.org/#/playground), choose **Surface → Glass** to export a matching Angular component.
 
 ## Theme helpers
 
@@ -82,11 +82,11 @@ import { createThemeCss, DEFAULT_THEME } from 'libera-ui';
 const css = createThemeCss({ ...DEFAULT_THEME, accent: '#2454ce', radius: 16 });
 ```
 
-The [Theme Studio](https://gioelevalori.github.io/liberaui/#/playground) exports theme CSS and a standalone Angular component. Share links preserve appearance, selected sections and preview settings.
+The [Theme Studio](https://liberaui.js.org/#/playground) exports theme CSS and a standalone Angular component. Share links preserve appearance, selected sections and preview settings.
 
 ## Explore and contribute
 
-Browse the [component catalog](https://gioelevalori.github.io/liberaui/#/components), try the [live playground](https://gioelevalori.github.io/liberaui/#/playground), or read the [contribution guide](https://github.com/gioelevalori/liberaui/blob/master/CONTRIBUTING.md).
+Browse the [component catalog](https://liberaui.js.org/#/components), try the [live playground](https://liberaui.js.org/#/playground), or read the [contribution guide](https://github.com/gioelevalori/liberaui/blob/master/CONTRIBUTING.md).
 
 Bug reports, examples, documentation improvements and pull requests are welcome.
 

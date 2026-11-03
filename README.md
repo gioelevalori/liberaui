@@ -8,7 +8,7 @@
 
 Thoughtful Angular components. A shared visual language. A playground to make them yours.
 
-[Explore the demo](https://gioelevalori.github.io/liberaui/) · [Components](https://gioelevalori.github.io/liberaui/#/components) · [Live playground](https://gioelevalori.github.io/liberaui/#/playground) · [Contribute](CONTRIBUTING.md)
+[Explore the demo](https://liberaui.js.org/) · [Components](https://liberaui.js.org/#/components) · [Live playground](https://liberaui.js.org/#/playground) · [Contribute](CONTRIBUTING.md)
 
 [![Build and deploy](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml/badge.svg)](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-18181b.svg)](LICENSE)
@@ -16,7 +16,7 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 
 </div>
 
-[![LiberaUI in Glass mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://gioelevalori.github.io/liberaui/)
+[![LiberaUI in Glass mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://liberaui.js.org/)
 
 > **LiberaUI 0.5.2:** Glass by default on the site, accessible interface patterns, themed pickers and Angular forms support.
 
@@ -34,10 +34,10 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## See the components
 
-[![LiberaUI component catalog showing Tabs, Accordion and Alert](docs/assets/components.png)](https://gioelevalori.github.io/liberaui/#/components)
+[![LiberaUI component catalog showing Tabs, Accordion and Alert](docs/assets/components.png)](https://liberaui.js.org/#/components)
 
-[Browse the catalog →](https://gioelevalori.github.io/liberaui/#/components)
-[Try the live customization playground →](https://gioelevalori.github.io/liberaui/#/playground)
+[Browse the catalog →](https://liberaui.js.org/#/components)
+[Try the live customization playground →](https://liberaui.js.org/#/playground)
 
 ## Try the latest source
 
@@ -84,9 +84,9 @@ The theme includes the locally bundled Inter fonts and shared design tokens. Use
 
 ## Theme Studio
 
-[![Theme Studio with live theme controls and workspace composition](docs/assets/theme-studio.png)](https://gioelevalori.github.io/liberaui/#/playground)
+[![Theme Studio with live theme controls and workspace composition](docs/assets/theme-studio.png)](https://liberaui.js.org/#/playground)
 
-Open the [Studio](https://gioelevalori.github.io/liberaui/#/playground) to compose workspace, notification and action sections. Switch between light and dark previews, check a narrow layout, and try loading, disabled, error and long-content fixtures.
+Open the [Studio](https://liberaui.js.org/#/playground) to compose workspace, notification and action sections. Switch between light and dark previews, check a narrow layout, and try loading, disabled, error and long-content fixtures.
 
 Download both files: import `libera-ui/theme.css` followed by `liberaui-theme.css` in your global stylesheet, then use the exported standalone `WorkspaceComponent`. The exported example starts in the ready state and keeps its interactions local. The mobile preview is constrained to 360px or the available width, whichever is smaller.
 
