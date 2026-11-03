@@ -10,8 +10,6 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 
 [Explore the demo](https://liberaui.js.org/) · [Components](https://liberaui.js.org/#/components) · [Live playground](https://liberaui.js.org/#/playground) · [Contribute](CONTRIBUTING.md)
 
-> **liberaui.js.org is being activated.** Until it is live, browse the same documentation at [gioelevalori.github.io/liberaui-preview](https://gioelevalori.github.io/liberaui-preview/).
-
 [![Build and deploy](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml/badge.svg)](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-18181b.svg)](LICENSE)
 [![Angular](https://img.shields.io/badge/Built_with-Angular-dd0031.svg)](https://angular.dev/)
