@@ -1,0 +1,59 @@
+<main [style.--lib-radius.px]="radius">
+  <header>
+    <div>
+      <h1>LiberaUI starter</h1>
+      <p>Accessible Angular components, running here without zone.js.</p>
+    </div>
+    <label class="theme">
+      Dark theme
+      <lib-switch label="Dark theme" [ngModel]="dark" (ngModelChange)="toggleTheme($event)" />
+    </label>
+  </header>
+
+  <section>
+    <h2>Forms</h2>
+    <div class="grid">
+      <lib-combobox label="Country" [options]="countries" [(ngModel)]="country" />
+      <lib-multi-select label="Teams" [options]="teamOptions" [(ngModel)]="teams" />
+      <lib-slider label="Corner radius" unit=" px" [min]="0" [max]="24" [(ngModel)]="radius" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Data table <lib-badge [value]="members.length" label="{{ members.length }} members" /></h2>
+    <lib-data-table
+      caption="Team"
+      rowKey="id"
+      rowHeader="name"
+      [columns]="columns"
+      [rows]="members"
+    >
+      <ng-template libCell="team" let-member>
+        <lib-tag tone="info">{{ member.team }}</lib-tag>
+      </ng-template>
+    </lib-data-table>
+  </section>
+
+  <section class="actions">
+    <lib-tooltip text="Shows a toast notification">
+      <lib-button (click)="save()">Save settings</lib-button>
+    </lib-tooltip>
+    <lib-button variant="outline" (click)="dialogOpen = true">Open dialog</lib-button>
+  </section>
+
+  <lib-dialog
+    title="Reset workspace?"
+    description="This only resets this example."
+    [(open)]="dialogOpen"
+  >
+    Focus stays in the dialog and returns to the button when it closes.
+    <lib-button dialog-actions variant="outline" (click)="dialogOpen = false">Cancel</lib-button>
+    <lib-button dialog-actions (click)="dialogOpen = false">Reset</lib-button>
+  </lib-dialog>
+  <lib-toast-outlet />
+
+  <footer>
+    Docs: <a href="https://liberaui.js.org">liberaui.js.org</a> · npm:
+    <code>libera-ui</code>
+  </footer>
+</main>

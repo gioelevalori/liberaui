@@ -10,15 +10,18 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 
 [Explore the demo](https://liberaui.js.org/) · [Components](https://liberaui.js.org/#/components) · [Live playground](https://liberaui.js.org/#/playground) · [Contribute](CONTRIBUTING.md)
 
+[![npm](https://img.shields.io/npm/v/libera-ui.svg?color=18181b)](https://www.npmjs.com/package/libera-ui)
 [![Build and deploy](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml/badge.svg)](https://github.com/gioelevalori/liberaui/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-18181b.svg)](LICENSE)
 [![Angular](https://img.shields.io/badge/Built_with-Angular-dd0031.svg)](https://angular.dev/)
 
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gioelevalori/liberaui/tree/master/examples/stackblitz)
+
 </div>
 
-[![LiberaUI in Glass mode: workspace form, notification controls, checklist and team examples](docs/assets/showcase.png)](https://liberaui.js.org/)
+[![LiberaUI demo: changing the accent color, switching to the dark theme, sorting and expanding the data table, and selecting options in the multi-select](docs/assets/demo.gif)](https://liberaui.js.org/)
 
-> **LiberaUI 0.5.2:** Glass by default on the site, accessible interface patterns, themed pickers and Angular forms support.
+> **LiberaUI 0.7.1:** data table with keyboard multi-column sorting, dialogs, menus, comboboxes, multi-select and more, all working without zone.js. [Try it in StackBlitz](https://stackblitz.com/github/gioelevalori/liberaui/tree/master/examples/stackblitz) without installing anything.
 
 ## Your interface, your details
 
@@ -26,7 +29,9 @@ LiberaUI is an open source Angular component library for people who care about h
 
 - **Theme Studio.** Tune accent, typography, radius and spacing across a workspace preview. Choose sections, test states, download CSS and an Angular component, or share a configuration link.
 - **Keep a consistent style.** The library and showcase share typography, colors, surfaces and theme tokens.
-- **Build with Angular.** Standalone components, button variants and loading states, plus a switch with Angular forms support.
+- **Build with Angular.** Standalone components for forms, overlays, navigation, feedback and data, with Angular forms support.
+- **Accessible by default.** Keyboard interaction, focus management and screen reader announcements follow WAI-ARIA patterns and are covered by regression tests.
+- **Zoneless ready.** Components update correctly in applications that run without zone.js.
 - **Explore real examples.** Try workspace forms, notification settings, checklists and team controls in the demo.
 - **Make it yours.** Light and dark themes, locally bundled Inter fonts and an MIT license.
 
