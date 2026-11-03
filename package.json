@@ -36,7 +36,7 @@
   "scripts": {
     "start": "ng serve libera-ui-site --host 127.0.0.1",
     "build": "ng build libera-ui-site",
-    "build:pages": "ng build libera-ui-site --base-href /",
+    "build:pages": "ng build libera-ui-site --base-href ./",
     "build:lib": "ng build libera-ui",
     "test": "ng test libera-ui-site --watch=false --browsers=ChromeHeadless",
     "test:lib": "ng test libera-ui --watch=false --browsers=ChromeHeadless",
