@@ -41,7 +41,7 @@ The visual direction takes inspiration from the clarity of shadcn/ui and Radix. 
 
 ## Try the latest source
 
-> **Latest release: 0.7.0.** Multi-select, Slider, Drawer, Popover, Breadcrumb, Badge, Tag, Avatar, Skeleton and Progress, translatable built-in text, and data table search, row details and server-side loading.
+> **Latest release: 0.7.1.** Documentation now lives at [liberaui.js.org](https://liberaui.js.org/). 0.7.0 added Multi-select, Slider, Drawer, Popover, Breadcrumb, Badge, Tag, Avatar, Skeleton and Progress, translatable built-in text, and data table search, row details and server-side loading.
 
 Use Node.js 22 and npm:
 
@@ -59,7 +59,7 @@ Open [localhost:4200](http://127.0.0.1:4200). The workspace uses Angular 19. The
 The published package is available with:
 
 ```sh
-npm install libera-ui@^0.7.0
+npm install libera-ui@^0.7.1
 ```
 
 Add `ButtonComponent` to your standalone component's imports:

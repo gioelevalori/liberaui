@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.1 - 2026-11-03
+
+- Point the package homepage and documentation links to the new site address, https://liberaui.js.org/.
+- No component behavior or API changes from 0.7.0.
+
 ## 0.7.0 - 2026-11-03
 
 - Add BadgeComponent, TagComponent, SkeletonComponent, ProgressBarComponent, SpinnerComponent and AvatarComponent.

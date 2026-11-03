@@ -15,7 +15,7 @@ Thoughtful Angular components. A shared visual language. A playground to make th
 ## Install
 
 ```sh
-npm install libera-ui@^0.7.0
+npm install libera-ui@^0.7.1
 ```
 
 The library includes accessible Tabs, Accordion and Alert, a themed date picker, coordinated select menus, SVG icons and Angular forms support across the input components.
